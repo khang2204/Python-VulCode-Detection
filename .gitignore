@@ -25,6 +25,11 @@ __pycache__/
 *.safetensors
 *.bin
 
+# Preprocessed graph datasets are versioned through Git LFS.
+!artifacts/benchmarkpython_binary_pyg/benchmarkpython_binary_graphs.pt
+!artifacts/vudenc_binary_pyg/vudenc_binary_graphs.pt
+!artifacts/realvuln_human_binary_pyg/realvuln_human_binary_graphs.pt
+
 # Editor and operating-system files
 .DS_Store
 Thumbs.db
