@@ -1,15 +1,5 @@
 # QProtoGAT-Vul Binary Detection Results
 
-## Finalized fixed-split protocol
-
-All results below use a fixed stratified 70/15/15 train/validation/test split
-with `split_seed=101`. Values are mean ± sample standard deviation across
-`training_seed` 101, 202, and 303. Classical and Quantum use the same split
-and training seeds. The QProtoGAT-Vul_Quantum model uses 10 qubits, circuit depth 5,
-attention/value dimension 64, and learning rate 0.002. In-domain 10% also
-uses the same fixed stratified 10% subset (`sampling_seed=101`) for all three
-training seeds.
-
 ## In-domain
 
 | Dataset | Method | Accuracy | Balanced Acc. | Precision | Recall | F1 |
