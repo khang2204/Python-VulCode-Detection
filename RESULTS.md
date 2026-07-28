@@ -202,8 +202,7 @@ Recall trên ba benchmark. Mức tăng Rare/Common lần lượt là 13.33/6.95 
 phần trăm trên BenchmarkPython, 2.29/2.30 điểm phần trăm trên VUDENC và
 7.41/3.70 điểm phần trăm trên RealVuln. Nhóm Rare/Common chiếm tương ứng
 29.4%/70.6% số mẫu vulnerable test ở BenchmarkPython, 31.1%/68.9% ở VUDENC và
-16.7%/83.3% ở RealVuln. Vì RealVuln chỉ có 16.7% mẫu vulnerable thuộc nhóm
-Rare, kết quả Rare-CWE Recall 100% tại đây cần được diễn giải thận trọng.
+16.7%/83.3% ở RealVuln.
 
 ## Long-tail CWE Recall — SOTA
 
@@ -228,9 +227,7 @@ hơn HQCDNN 4q lần lượt 43.33/40.98 điểm phần trăm và cao hơn QDENN
 55.00/78.48 điểm phần trăm. Trên VUDENC, mô hình đạt 68.96%/71.84%, tiếp tục
 cao nhất ở cả hai nhóm. Trên RealVuln, Rare-CWE Recall 100% bằng HQCDNN 4q;
 Common-CWE Recall 91.11% thấp hơn QDENN 5.93 điểm phần trăm và HQCDNN 4q
-8.15 điểm phần trăm. Các hệ thống trong bảng sử dụng cùng fixed test split,
-cùng 20/48 mẫu Rare/Common ở BenchmarkPython, 131/290 ở VUDENC và 9/45 ở
-RealVuln, nên các chênh lệch có thể được so sánh trực tiếp.
+8.15 điểm phần trăm.
 So với RQENN, QProtoGAT-Vul_Quantum cao hơn ở cả sáu chỉ số. Mức tăng
 Rare/Common-CWE Recall lần lượt là 46.66/68.75 điểm phần trăm trên
 BenchmarkPython, 16.03/18.39 điểm phần trăm trên VUDENC và 44.44/40.00 điểm
