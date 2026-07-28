@@ -1,0 +1,3 @@
+def __init__(self):...
+config = {}
+self.session = requests.Session()

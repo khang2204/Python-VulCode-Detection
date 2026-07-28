@@ -1,0 +1,455 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "SQLI/main.py",
+      "start": {
+        "line": 70,
+        "col": 13,
+        "offset": 2600
+      },
+      "end": {
+        "line": 70,
+        "col": 68,
+        "offset": 2655
+      },
+      "extra": {
+        "message": "User input post_id is concatenated directly into an SQL query string. Although a regex check on line 67 attempts to validate the input, the regex r'^\\d+$' with re.M flag only matches per-line, allowing bypass with multi-line payloads like '1\\nOR 1=1'.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection-string-concat",
+      "path": "SQLI/sqli_example.py",
+      "start": {
+        "line": 25,
+        "col": 1,
+        "offset": 530
+      },
+      "end": {
+        "line": 25,
+        "col": 80,
+        "offset": 609
+      },
+      "extra": {
+        "message": "SQL query built by concatenating the username variable directly into the query string, enabling SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection-format",
+      "path": "SQLI/sqli_example.py",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 611
+      },
+      "end": {
+        "line": 26,
+        "col": 90,
+        "offset": 700
+      },
+      "extra": {
+        "message": "SQL query built using str.format() with the username variable, enabling SQL injection via format string manipulation.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection-percent",
+      "path": "SQLI/sqli_example.py",
+      "start": {
+        "line": 28,
+        "col": 1,
+        "offset": 702
+      },
+      "end": {
+        "line": 28,
+        "col": 85,
+        "offset": 786
+      },
+      "extra": {
+        "message": "SQL query built using % string formatting with the username variable, enabling SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection-fstring",
+      "path": "SQLI/sqli_example.py",
+      "start": {
+        "line": 29,
+        "col": 1,
+        "offset": 788
+      },
+      "end": {
+        "line": 29,
+        "col": 88,
+        "offset": 875
+      },
+      "extra": {
+        "message": "SQL query built using f-string interpolation with the username variable, enabling SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials.secret-key",
+      "path": "SQLI/main.py",
+      "start": {
+        "line": 52,
+        "col": 1,
+        "offset": 1750
+      },
+      "end": {
+        "line": 52,
+        "col": 42,
+        "offset": 1791
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded as 'qwerty12345'. This key is used for cryptographic signing of session cookies and flash messages. An attacker who knows this key can forge session cookies.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials.secret-key",
+      "path": "SQLI/main_safe.py",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 710
+      },
+      "end": {
+        "line": 26,
+        "col": 38,
+        "offset": 747
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded as '55555'. This key is used for cryptographic signing of session cookies and flash messages. An attacker who knows this key can forge session cookies.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "Insecure_Frameworks/bad_mvc.py",
+      "start": {
+        "line": 37,
+        "col": 9,
+        "offset": 1250
+      },
+      "end": {
+        "line": 37,
+        "col": 55,
+        "offset": 1296
+      },
+      "extra": {
+        "message": "The username variable derived from a decrypted cookie is inserted directly into the HTML response using %s formatting without HTML escaping. An attacker who can control the cookie value (e.g., via bit-flipping in AES-CBC without MAC) can inject arbitrary JavaScript.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.unauthenticated-encryption",
+      "path": "Insecure_Frameworks/bad_mvc.py",
+      "start": {
+        "line": 15,
+        "col": 9,
+        "offset": 460
+      },
+      "end": {
+        "line": 20,
+        "col": 72,
+        "offset": 680
+      },
+      "extra": {
+        "message": "AES-CBC decryption is performed without any integrity check (MAC/HMAC). The IV is taken from the ciphertext, and the decrypted result is used as a username. This allows padding oracle attacks to decrypt cookies and bit-flipping attacks to modify the plaintext without detection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure-pickle",
+      "path": "Insecure_Deserialization/serialize_server.py",
+      "start": {
+        "line": 15,
+        "col": 13,
+        "offset": 520
+      },
+      "end": {
+        "line": 15,
+        "col": 80,
+        "offset": 587
+      },
+      "extra": {
+        "message": "pickle.loads() is called on base64-decoded data from the user-supplied 'username' cookie. Pickle deserialization of untrusted data enables arbitrary code execution. The code comments on lines 16-19 explicitly confirm this as vulnerable code.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "Insecure_Deserialization/serialize_server.py",
+      "start": {
+        "line": 30,
+        "col": 13,
+        "offset": 1020
+      },
+      "end": {
+        "line": 30,
+        "col": 65,
+        "offset": 1072
+      },
+      "extra": {
+        "message": "The username variable is inserted directly into the HTML response using %s formatting without HTML escaping. The code comment on line 29 explicitly states 'the username is not escaped, this leads to XSS attack.'",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.weak-regex",
+      "path": "Directory_Traversal/Dir_Traversal.py",
+      "start": {
+        "line": 10,
+        "col": 9,
+        "offset": 230
+      },
+      "end": {
+        "line": 11,
+        "col": 50,
+        "offset": 350
+      },
+      "extra": {
+        "message": "The regex pattern r'/\\.\\.\\/\\.\\.\\/' only blocks the exact sequence /../../ and uses re.match which only checks from the start. Single ../ traversals, URL-encoded variants (%2e%2e%2f), and ....// bypass patterns all evade this check.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.user-input-concat",
+      "path": "Directory_Traversal/Dir_Traversal.py",
+      "start": {
+        "line": 14,
+        "col": 9,
+        "offset": 380
+      },
+      "end": {
+        "line": 14,
+        "col": 24,
+        "offset": 395
+      },
+      "extra": {
+        "message": "User-controlled request path (self.path) is directly appended to the working directory without sanitization, allowing directory traversal via ../ sequences that bypass the weak regex on line 10.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.arbitrary-file-read",
+      "path": "Directory_Traversal/Dir_Traversal.py",
+      "start": {
+        "line": 22,
+        "col": 36,
+        "offset": 660
+      },
+      "end": {
+        "line": 22,
+        "col": 62,
+        "offset": 686
+      },
+      "extra": {
+        "message": "The constructed path (containing user input) is passed directly to open() and read(), allowing arbitrary file reads on the server filesystem.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf.url-fetch",
+      "path": "Other/url_fetch.py",
+      "start": {
+        "line": 14,
+        "col": 9,
+        "offset": 310
+      },
+      "end": {
+        "line": 16,
+        "col": 30,
+        "offset": 410
+      },
+      "extra": {
+        "message": "User-supplied URL from request.args is validated only by startswith('https://insecurewebapp.com'), which can be bypassed with subdomains (e.g., https://insecurewebapp.com.evil.com) or URL authentication (e.g., https://insecurewebapp.com@attacker.com). The URL is then fetched server-side via urllib.request.urlopen, enabling SSRF.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.length-extension",
+      "path": "Other/vuln_payment_code.py",
+      "start": {
+        "line": 12,
+        "col": 5,
+        "offset": 230
+      },
+      "end": {
+        "line": 13,
+        "col": 58,
+        "offset": 320
+      },
+      "extra": {
+        "message": "Payment signature is computed as SHA-256(secret + payment_information), which is vulnerable to length extension attacks. An attacker can append additional data to the payment information and compute a valid signature without knowing the secret. Should use HMAC instead.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.length-extension",
+      "path": "Other/length_extension_attack.py",
+      "start": {
+        "line": 17,
+        "col": 2,
+        "offset": 350
+      },
+      "end": {
+        "line": 18,
+        "col": 58,
+        "offset": 440
+      },
+      "extra": {
+        "message": "Payment signature is computed as SHA-256(secret + payment_information), which is vulnerable to length extension attacks. An attacker can append additional data to the payment information and compute a valid signature without knowing the secret. Should use HMAC instead.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.ssl-hostname-check-disabled",
+      "path": "Other/host_header_injection.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 80
+      },
+      "end": {
+        "line": 6,
+        "col": 36,
+        "offset": 115
+      },
+      "extra": {
+        "message": "SSL hostname verification is explicitly disabled with context.check_hostname = False. This allows man-in-the-middle attacks where the server certificate does not match the expected hostname.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-295: Improper Certificate Validation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

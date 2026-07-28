@@ -1,0 +1,3 @@
+@staticmethod...
+"""docstring"""
+return list(listfiles(pattern, restriction=restriction, omit_value=omit_value))

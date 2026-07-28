@@ -1,0 +1,3 @@
+def __init__(self, wires, **kwargs):...
+kwargs['backend'] = 'ClassicalSimulator'
+super().__init__(wires, **kwargs)

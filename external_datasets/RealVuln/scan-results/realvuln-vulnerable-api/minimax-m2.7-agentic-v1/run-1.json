@@ -1,0 +1,180 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "sqli.py",
+      "start": {
+        "line": 16,
+        "col": 13,
+        "offset": 285
+      },
+      "end": {
+        "line": 16,
+        "col": 58,
+        "offset": 330
+      },
+      "extra": {
+        "message": "User input from sqli['username'] is concatenated directly into SQL string passed to cursor.execute(). This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "xss.py",
+      "start": {
+        "line": 10,
+        "col": 11,
+        "offset": 175
+      },
+      "end": {
+        "line": 10,
+        "col": 39,
+        "offset": 203
+      },
+      "extra": {
+        "message": "User input from xss['username'] is reflected directly in JSON response without sanitization. This allows reflected XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "ssti.py",
+      "start": {
+        "line": 10,
+        "col": 8,
+        "offset": 168
+      },
+      "end": {
+        "line": 12,
+        "col": 27,
+        "offset": 227
+      },
+      "extra": {
+        "message": "User input from ssti['mathexp'] is passed directly to Jinja2 Template and rendered, enabling server-side template injection with potential remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.rfi",
+      "path": "rfi.py",
+      "start": {
+        "line": 5,
+        "col": 15,
+        "offset": 85
+      },
+      "end": {
+        "line": 5,
+        "col": 67,
+        "offset": 137
+      },
+      "extra": {
+        "message": "User input from rfi['imagelink'] is used as URL in requests.get() without validation, enabling remote file inclusion attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-98: Remote File Inclusion"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.lfi",
+      "path": "lfi.py",
+      "start": {
+        "line": 3,
+        "col": 11,
+        "offset": 48
+      },
+      "end": {
+        "line": 3,
+        "col": 27,
+        "offset": 64
+      },
+      "extra": {
+        "message": "User input from lfi['filename'] is passed directly to open() without sanitization, enabling local file inclusion/path traversal attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.hhi",
+      "path": "hhi.py",
+      "start": {
+        "line": 18,
+        "col": 18,
+        "offset": 308
+      },
+      "end": {
+        "line": 18,
+        "col": 46,
+        "offset": 336
+      },
+      "extra": {
+        "message": "HTTP Host header from request is reflected in HTML output without sanitization, enabling HTTP header injection attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-113: HTTP Header Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "custom_db.py",
+      "start": {
+        "line": 25,
+        "col": 20,
+        "offset": 436
+      },
+      "end": {
+        "line": 25,
+        "col": 40,
+        "offset": 456
+      },
+      "extra": {
+        "message": "Hardcoded credentials 'mike/kaines' and 'admin/admin' are directly inserted into database without proper quoting or use of parameterized queries.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

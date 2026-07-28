@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self.config.getint(self.section, 'max_authn_failures_per_month')

@@ -1,0 +1,6 @@
+def sendRandomPic(self, chat_id, MMKM):...
+"""docstring"""
+def getLocalFile(filepath):...
+"""docstring"""
+data = f.read()
+return data

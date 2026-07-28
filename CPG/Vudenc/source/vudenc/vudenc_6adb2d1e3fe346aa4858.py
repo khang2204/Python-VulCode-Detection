@@ -1,0 +1,3 @@
+@classmethod...
+options_dict['inference'] = True
+options_dict['abort_on_error'] = False

@@ -1,0 +1,3 @@
+def on_watch_folder_corrupt_torrent(self, subject, changetype, objectID, *args...
+self.write_data({'type': 'watch_folder_corrupt_torrent', 'event': {'name':
+    args[0]}})

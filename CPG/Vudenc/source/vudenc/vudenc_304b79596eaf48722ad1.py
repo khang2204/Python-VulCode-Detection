@@ -1,0 +1,3 @@
+def __init__(self, item, length=100, **kw):...
+VLength.__init__(self, item, length=length, length_error=errors.
+    LOCATION_TOO_LONG, empty_error=None, **kw)

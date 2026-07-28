@@ -1,0 +1,3 @@
+def is_function_or_method(obj):...
+"""docstring"""
+return inspect.isfunction(obj) or inspect.ismethod(obj) or is_cython(obj)

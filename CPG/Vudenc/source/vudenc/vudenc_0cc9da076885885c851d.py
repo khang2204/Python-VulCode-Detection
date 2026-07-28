@@ -1,0 +1,3 @@
+@property...
+self.validate()
+return self._is_jdk

@@ -1,0 +1,3 @@
+def test_approval(self):...
+response = self.client.get('/qa/extractionscript/5', follow=True)
+response = self.client.get('/qa/extractedtext/7', follow=True)

@@ -1,0 +1,3 @@
+def __init__(self, *argv, **kwargs):...
+super(TestMakeTorrent, self).__init__(*argv, **kwargs)
+self.http_server = None

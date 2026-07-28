@@ -1,0 +1,3 @@
+def run(self, headers={}):...
+self.connection.request(self.verb, self.path, headers=headers)
+return self.connection.getresponse()

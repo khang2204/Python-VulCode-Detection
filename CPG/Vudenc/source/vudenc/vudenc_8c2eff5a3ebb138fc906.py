@@ -1,0 +1,3 @@
+def goal_name_exists(goal_name):...
+file_name = get_goal_file_path(goal_name)
+return os.path.isfile(file_name)

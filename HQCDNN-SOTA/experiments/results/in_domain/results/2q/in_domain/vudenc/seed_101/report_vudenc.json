@@ -1,0 +1,214 @@
+{
+  "architecture": "HQCDNN",
+  "protocol": "in_domain",
+  "source": "vudenc",
+  "target": "vudenc",
+  "training_seed": 101,
+  "split_seed": 101,
+  "evaluation_scope": "fixed_test_split_101",
+  "train_samples": 11088,
+  "validation_samples": 2376,
+  "test_samples": 2376,
+  "source_manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+  "configuration": {
+    "qubits": 2,
+    "quantum_layers": 1,
+    "tfidf": "normalized Python token bigrams",
+    "tfidf_max_features": 512,
+    "epochs": 50,
+    "batch_size": 64,
+    "optimizer": "Adam",
+    "learning_rate": 0.005,
+    "adaptation_note": "The paper uses EVM opcode bigrams. Python lexical-token bigrams are the declared cross-language adaptation."
+  },
+  "metrics": {
+    "accuracy": 0.8371212121212122,
+    "balanced_accuracy": 0.6969382362053569,
+    "precision": 0.5459459459459459,
+    "recall": 0.47980997624703087,
+    "f1": 0.5107458912768646,
+    "vulnerable_recall": 0.47980997624703087
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.4653231779820303,
+      "validation": {
+        "accuracy": 0.8228114478114478,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "vulnerable_recall": 0.0
+      }
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.38120799289121254,
+      "validation": {
+        "accuracy": 0.8455387205387206,
+        "balanced_accuracy": 0.6023406698215794,
+        "precision": 0.6985294117647058,
+        "recall": 0.22565320665083136,
+        "f1": 0.34111310592459604,
+        "vulnerable_recall": 0.22565320665083136
+      }
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.3521490411625968,
+      "validation": {
+        "accuracy": 0.8472222222222222,
+        "balanced_accuracy": 0.6369118710171252,
+        "precision": 0.6421568627450981,
+        "recall": 0.31116389548693585,
+        "f1": 0.41919999999999996,
+        "vulnerable_recall": 0.31116389548693585
+      }
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.3428703330639981,
+      "validation": {
+        "accuracy": 0.8446969696969697,
+        "balanced_accuracy": 0.6679936334752841,
+        "precision": 0.5928571428571429,
+        "recall": 0.39429928741092635,
+        "f1": 0.4736091298145506,
+        "vulnerable_recall": 0.39429928741092635
+      }
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.33697704699906433,
+      "validation": {
+        "accuracy": 0.8446969696969697,
+        "balanced_accuracy": 0.6950185589055409,
+        "precision": 0.5769230769230769,
+        "recall": 0.46318289786223277,
+        "f1": 0.5138339920948616,
+        "vulnerable_recall": 0.46318289786223277
+      }
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.33391672196498334,
+      "validation": {
+        "accuracy": 0.8476430976430976,
+        "balanced_accuracy": 0.6520779291784875,
+        "precision": 0.625531914893617,
+        "recall": 0.3491686460807601,
+        "f1": 0.4481707317073171,
+        "vulnerable_recall": 0.3491686460807601
+      }
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.33129378574837165,
+      "validation": {
+        "accuracy": 0.8493265993265994,
+        "balanced_accuracy": 0.6829215544526186,
+        "precision": 0.6067796610169491,
+        "recall": 0.4251781472684085,
+        "f1": 0.5,
+        "vulnerable_recall": 0.4251781472684085
+      }
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.32999376632262445,
+      "validation": {
+        "accuracy": 0.8493265993265994,
+        "balanced_accuracy": 0.6549647350420081,
+        "precision": 0.6340425531914894,
+        "recall": 0.35391923990498814,
+        "f1": 0.4542682926829269,
+        "vulnerable_recall": 0.35391923990498814
+      }
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.3284766628886714,
+      "validation": {
+        "accuracy": 0.8514309764309764,
+        "balanced_accuracy": 0.6832684328507815,
+        "precision": 0.6180555555555556,
+        "recall": 0.42280285035629456,
+        "f1": 0.5021156558533145,
+        "vulnerable_recall": 0.42280285035629456
+      }
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.3269599602163956,
+      "validation": {
+        "accuracy": 0.8493265993265994,
+        "balanced_accuracy": 0.664283674845545,
+        "precision": 0.6235294117647059,
+        "recall": 0.37767220902612825,
+        "f1": 0.47041420118343197,
+        "vulnerable_recall": 0.37767220902612825
+      }
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.3258512598525566,
+      "validation": {
+        "accuracy": 0.8468013468013468,
+        "balanced_accuracy": 0.6534302081877882,
+        "precision": 0.6182572614107884,
+        "recall": 0.35391923990498814,
+        "f1": 0.45015105740181266,
+        "vulnerable_recall": 0.35391923990498814
+      }
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.32503237840847193,
+      "validation": {
+        "accuracy": 0.8476430976430976,
+        "balanced_accuracy": 0.6586011870409633,
+        "precision": 0.6184738955823293,
+        "recall": 0.3657957244655582,
+        "f1": 0.45970149253731346,
+        "vulnerable_recall": 0.3657957244655582
+      }
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.32407097247513855,
+      "validation": {
+        "accuracy": 0.8480639730639731,
+        "balanced_accuracy": 0.6952008067504601,
+        "precision": 0.5920245398773006,
+        "recall": 0.4584323040380047,
+        "f1": 0.5167336010709505,
+        "vulnerable_recall": 0.4584323040380047
+      }
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.32433411741325524,
+      "validation": {
+        "accuracy": 0.8526936026936027,
+        "balanced_accuracy": 0.6691253925922326,
+        "precision": 0.6403162055335968,
+        "recall": 0.3847980997624703,
+        "f1": 0.48071216617210677,
+        "vulnerable_recall": 0.3847980997624703
+      }
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.3234829008579254,
+      "validation": {
+        "accuracy": 0.8497474747474747,
+        "balanced_accuracy": 0.6813135209676145,
+        "precision": 0.6103448275862069,
+        "recall": 0.42042755344418054,
+        "f1": 0.4978902953586498,
+        "vulnerable_recall": 0.42042755344418054
+      }
+    }
+  ]
+}

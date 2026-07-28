@@ -1,0 +1,3 @@
+def ev_init():...
+from lib.evaluators.PyQt4Evaluator import Evaluator
+return Evaluator()

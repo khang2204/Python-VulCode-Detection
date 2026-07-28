@@ -1,0 +1,3 @@
+def set_route_for_dhcp_broadcast(self, ifname):...
+return shellutil.run('route add 255.255.255.255 -iface {0}'.format(ifname),
+    chk_err=False)

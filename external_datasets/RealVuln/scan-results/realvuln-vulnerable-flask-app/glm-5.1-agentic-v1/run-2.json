@@ -1,0 +1,405 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/app.py",
+      "start": {
+        "line": 261,
+        "col": 13,
+        "offset": 8400
+      },
+      "end": {
+        "line": 265,
+        "col": 49,
+        "offset": 8620
+      },
+      "extra": {
+        "message": "User input from request.json['search'] is concatenated directly into a SQL query string using Python % string formatting: `\"SELECT first_name, last_name, username FROM customer WHERE username = '%s';\" % search_term`. The resulting string is passed to `db.engine.execute()`, enabling SQL injection. An attacker can extract or modify any data in the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "app/app.py",
+      "start": {
+        "line": 103,
+        "col": 5,
+        "offset": 3400
+      },
+      "end": {
+        "line": 114,
+        "col": 80,
+        "offset": 3750
+      },
+      "extra": {
+        "message": "The 404 error handler constructs an HTML template using `%s` string formatting with `request.url` (line 112), then passes it to `render_template_string()` (line 114). Since `request.url` is user-controlled and inserted before Jinja2 template processing, this enables Server-Side Template Injection (SSTI). Additionally, `dir`, `help`, and `locals` are passed to the template context, facilitating remote code execution. An attacker can craft a URL containing Jinja2 syntax like `{{config}}` or `{{''.__class__.__mro__[1].__subclasses__()}}` to execute arbitrary code.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti-error",
+      "path": "app/app.py",
+      "start": {
+        "line": 271,
+        "col": 9,
+        "offset": 8800
+      },
+      "end": {
+        "line": 281,
+        "col": 85,
+        "offset": 9200
+      },
+      "extra": {
+        "message": "In the `/search` endpoint's exception handler, `str(e)` is inserted into an HTML template via `%s` string formatting (line 280) and passed to `render_template_string()` (line 281). Exception messages from the SQL engine can contain user-supplied input (e.g., from the SQL injection on line 261), enabling Server-Side Template Injection. Combined with `dir`, `help`, and `locals` in the template context, this can lead to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.insecure-jwt-verification",
+      "path": "app/app.py",
+      "start": {
+        "line": 96,
+        "col": 5,
+        "offset": 3150
+      },
+      "end": {
+        "line": 99,
+        "col": 20,
+        "offset": 3280
+      },
+      "extra": {
+        "message": "The `insecure_verify()` function calls `jwt.decode(token, verify=False)` which skips all JWT verification including signature validation, expiration, and issuer checks. This function always returns True (line 99) as long as the token can be decoded. It is used in the `/get/<cust_id>` endpoint (line 227), allowing any attacker to forge a JWT token and bypass authentication entirely.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml-load",
+      "path": "app/app.py",
+      "start": {
+        "line": 329,
+        "col": 9,
+        "offset": 10300
+      },
+      "end": {
+        "line": 329,
+        "col": 27,
+        "offset": 10318
+      },
+      "extra": {
+        "message": "User-uploaded YAML file content is parsed using `yaml.load(y)` without specifying `Loader=yaml.SafeLoader`. PyYAML 3.12's `yaml.load()` allows deserialization of arbitrary Python objects via YAML tags (e.g., `!!python/object/apply:`), enabling remote code execution. An attacker can upload a malicious YAML file that executes arbitrary commands on the server.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.hardcoded-secret-keys",
+      "path": "app/app.py",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 880
+      },
+      "end": {
+        "line": 28,
+        "col": 58,
+        "offset": 1060
+      },
+      "extra": {
+        "message": "Three hardcoded secret keys are defined: `SECRET_KEY_HMAC = 'secret'` (line 26), `SECRET_KEY_HMAC_2 = 'am0r3C0mpl3xK3y'` (line 27), and `app.secret_key = 'F12Zr47j\\3yX R~X@H!jmM]Lwf/,?KT'` (line 28). These keys are used for JWT signing and Flask session security. An attacker with access to the source code can forge JWT tokens and session cookies, bypassing all authentication.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.hardcoded-admin-credentials",
+      "path": "app/app.py",
+      "start": {
+        "line": 62,
+        "col": 13,
+        "offset": 2100
+      },
+      "end": {
+        "line": 63,
+        "col": 34,
+        "offset": 2150
+      },
+      "extra": {
+        "message": "Hardcoded admin credentials are used to seed the database: `user.username = 'admin'` and `user.password = 'admin123'` (lines 62-63). These credentials grant full access to the application and are trivially guessable.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor",
+      "path": "app/app.py",
+      "start": {
+        "line": 221,
+        "col": 1,
+        "offset": 7200
+      },
+      "end": {
+        "line": 241,
+        "col": 50,
+        "offset": 7900
+      },
+      "extra": {
+        "message": "The `/get/<cust_id>` endpoint (line 221) uses `insecure_verify()` (line 227) which performs no real JWT validation, and directly fetches a customer record by user-supplied `cust_id` (line 231) without any authorization check. Any user can access any customer's data including credit card numbers by simply changing the `cust_id` in the URL. Similarly, the `/fetch/customer` endpoint (line 196) allows access to any customer record by ID without authorization checks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-password-hashing",
+      "path": "app/app.py",
+      "start": {
+        "line": 141,
+        "col": 13,
+        "offset": 4800
+      },
+      "end": {
+        "line": 141,
+        "col": 54,
+        "offset": 4841
+      },
+      "extra": {
+        "message": "Passwords are hashed using `hashlib.md5(password).hexdigest()` (line 141). MD5 is cryptographically broken and unsuitable for password hashing: it is fast to compute, making brute-force attacks trivial, and it is vulnerable to collision attacks. Passwords should be hashed using a dedicated password hashing algorithm like bcrypt, scrypt, or Argon2.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Reversible One-Way Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.data-exposure.plaintext-password-storage",
+      "path": "app/app.py",
+      "start": {
+        "line": 155,
+        "col": 9,
+        "offset": 5250
+      },
+      "end": {
+        "line": 161,
+        "col": 56,
+        "offset": 5480
+      },
+      "extra": {
+        "message": "Customer passwords are stored in plaintext. In the `/register/customer` endpoint, `password = content['password']` (line 156) is passed directly to `Customer(...)` (line 161) without any hashing. The Customer model's `password` column (line 49) stores the raw password. This means anyone with database access can read all customer passwords.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-256: Plaintext Storage of a Password"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.data-exposure.credit-card-numbers",
+      "path": "app/app.py",
+      "start": {
+        "line": 209,
+        "col": 17,
+        "offset": 6900
+      },
+      "end": {
+        "line": 212,
+        "col": 50,
+        "offset": 7050
+      },
+      "extra": {
+        "message": "Credit card numbers (`ccn`) are returned in API responses at lines 211 and 235. The `/fetch/customer` endpoint (line 196) and `/get/<cust_id>` endpoint (line 221) both include `cc_num: customer_record.ccn` in the JSON response. Sensitive financial data like credit card numbers should never be returned in full; they should be masked or omitted entirely.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.missing-auth-registration",
+      "path": "app/app.py",
+      "start": {
+        "line": 134,
+        "col": 1,
+        "offset": 4500
+      },
+      "end": {
+        "line": 167,
+        "col": 60,
+        "offset": 5700
+      },
+      "extra": {
+        "message": "The `/register/user` (line 134) and `/register/customer` (line 150) endpoints require no authentication. Any unauthenticated user can create new User accounts (which have login privileges) and Customer records. The `/register/user` endpoint is especially dangerous as it allows creation of admin-level users with no access control, enabling privilege escalation.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure.error-messages",
+      "path": "app/app.py",
+      "start": {
+        "line": 148,
+        "col": 13,
+        "offset": 5020
+      },
+      "end": {
+        "line": 148,
+        "col": 60,
+        "offset": 5067
+      },
+      "extra": {
+        "message": "Exception messages are returned directly to users in API responses: `jsonify({'Error': str(e.message)})` at lines 148 and 167. This can leak sensitive internal information such as database schema details, stack traces, or file paths, aiding attackers in further exploitation.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure.error-messages-customer",
+      "path": "app/app.py",
+      "start": {
+        "line": 167,
+        "col": 13,
+        "offset": 5620
+      },
+      "end": {
+        "line": 167,
+        "col": 60,
+        "offset": 5667
+      },
+      "extra": {
+        "message": "Exception messages are returned directly to users in API responses: `jsonify({'Error': str(e.message)})` at line 167. This can leak sensitive internal information such as database schema details, stack traces, or file paths.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.xxe-docx",
+      "path": "app/app.py",
+      "start": {
+        "line": 303,
+        "col": 9,
+        "offset": 9550
+      },
+      "end": {
+        "line": 305,
+        "col": 35,
+        "offset": 9650
+      },
+      "extra": {
+        "message": "User-uploaded files are processed by `Document(file_path)` (line 303) which parses .docx files containing XML using python-docx with lxml. The endpoint is explicitly named `/xxe_uploader`, indicating XML External Entity vulnerability. If the underlying XML parser processes external entities, an attacker can upload a malicious .docx file to read arbitrary files from the server or perform SSRF.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.weak-file-upload-naming",
+      "path": "app/app.py",
+      "start": {
+        "line": 295,
+        "col": 9,
+        "offset": 9400
+      },
+      "end": {
+        "line": 300,
+        "col": 27,
+        "offset": 9530
+      },
+      "extra": {
+        "message": "Uploaded files are saved with a prefix of `random.randint(1, 100)` (line 295), giving only 100 possible filename prefixes. Combined with `secure_filename()` which produces deterministic output, the resulting filenames are trivially predictable. An attacker can easily guess uploaded file paths. There is also no validation of file types or content, allowing upload of potentially dangerous files.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-614: Sensitive Cookie Without 'Secure' Flag"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

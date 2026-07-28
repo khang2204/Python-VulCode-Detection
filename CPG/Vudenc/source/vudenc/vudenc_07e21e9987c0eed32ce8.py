@@ -1,0 +1,3 @@
+def identify_mdadm(device):...
+"""docstring"""
+return block.path_to_kname(device).startswith('md')

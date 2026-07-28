@@ -1,0 +1,3 @@
+def dispatch(self, request, *args, **kwargs):...
+self._dispatch_processing()
+return super().dispatch(request, *args, **kwargs)

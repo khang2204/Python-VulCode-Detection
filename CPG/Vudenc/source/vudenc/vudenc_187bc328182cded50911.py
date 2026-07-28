@@ -1,0 +1,3 @@
+def test_flask_debug_true(self):...
+expect = {'SEVERITY': {'HIGH': 1}, 'CONFIDENCE': {'MEDIUM': 1}}
+self.check_example('flask_debug.py', expect)

@@ -1,0 +1,3 @@
+def build_absolute_uri(self, path=None):...
+"""docstring"""
+return self.request.build_absolute_uri(self.build_absolute_path(path))

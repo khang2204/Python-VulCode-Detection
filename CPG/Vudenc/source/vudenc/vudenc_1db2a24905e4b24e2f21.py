@@ -1,0 +1,3 @@
+def getlist(option, sep=',', chars=None):...
+"""docstring"""
+return [chunk.strip(chars) for chunk in option.split(sep)]

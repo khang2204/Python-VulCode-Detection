@@ -1,0 +1,3 @@
+def validateClient(client):...
+if re.search('[^a-zA-Z0-9]', client):
+if not os.path.isdir('keys/' + client):

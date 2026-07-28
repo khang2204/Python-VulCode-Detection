@@ -1,0 +1,255 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.secrets.hardcoded-secret-key",
+      "path": "SQLI/main.py",
+      "start": {
+        "line": 52,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 52,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded as 'qwerty12345'. An attacker who knows this value can forge session cookies and impersonate users.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret-key",
+      "path": "SQLI/main_safe.py",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 26,
+        "col": 36,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded as '55555'. An attacker who knows this value can forge session cookies and impersonate users.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "Other/vuln_payment_code.py",
+      "start": {
+        "line": 5,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 5,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Payment signing secret is hardcoded as '[....]'. This allows attackers who know the secret to forge valid payment signatures.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "Other/length_extension_attack.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 7,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Payment signing secret is hardcoded as '[....]'. This allows attackers who know the secret to forge valid payment signatures.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf.ssrf",
+      "path": "Other/url_fetch.py",
+      "start": {
+        "line": 14,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 17,
+        "col": 15,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-supplied URL parameter is passed to urllib.request.urlopen() after a weak startswith() check. This check can be bypassed (e.g., https://insecurewebapp.com.evil.com) allowing Server-Side Request Forgery to internal or external hosts.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.path-traversal",
+      "path": "Directory_Traversal/Dir_Traversal.py",
+      "start": {
+        "line": 10,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 22,
+        "col": 65,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled self.path is concatenated to the base path and opened after a weak regex check. The pattern r'/\\.\\.\\/\\.\\.\\/' with re.match() only matches the start of the string and is trivially bypassed (e.g., ../../../etc/passwd), allowing arbitrary file reads.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss",
+      "path": "Insecure_Frameworks/bad_mvc.py",
+      "start": {
+        "line": 37,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 37,
+        "col": 65,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The decrypted username from a user-controlled cookie is written directly to the HTTP response body without HTML escaping. An attacker can craft a malicious cookie that decrypts to arbitrary JavaScript, resulting in reflected XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.bind-all-interfaces",
+      "path": "Directory_Traversal/Dir_Traversal.py",
+      "start": {
+        "line": 28,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 28,
+        "col": 55,
+        "offset": 0
+      },
+      "extra": {
+        "message": "HTTP server is bound to 0.0.0.0, exposing the application on all network interfaces and increasing the attack surface.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-1327: Binding to Unrestricted IP Addresses"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.bind-all-interfaces",
+      "path": "Insecure_Deserialization/serialize_server.py",
+      "start": {
+        "line": 35,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 35,
+        "col": 55,
+        "offset": 0
+      },
+      "extra": {
+        "message": "HTTP server is bound to 0.0.0.0, exposing the application on all network interfaces and increasing the attack surface.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-1327: Binding to Unrestricted IP Addresses"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.disabled-cert-validation",
+      "path": "Other/host_header_injection.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 6,
+        "col": 33,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SSL context has check_hostname set to False, disabling TLS certificate hostname verification and making the client vulnerable to man-in-the-middle attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-295: Improper Certificate Validation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

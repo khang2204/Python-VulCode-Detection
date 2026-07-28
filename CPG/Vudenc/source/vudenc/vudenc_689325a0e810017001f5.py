@@ -1,0 +1,3 @@
+def on_torrent_error(self, subject, changetype, objectID, *args):...
+self.write_data({'type': 'torrent_error', 'event': {'infohash': hexlify(
+    objectID), 'error': args[0]}})

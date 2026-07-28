@@ -1,0 +1,580 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "python/app.py",
+      "start": {
+        "line": 165,
+        "col": 13,
+        "offset": 6200
+      },
+      "end": {
+        "line": 165,
+        "col": 88,
+        "offset": 6275
+      },
+      "extra": {
+        "message": "User input from form.username.data and form.password.data is concatenated directly into a SQL query string passed to conn.execute(). This allows authentication bypass and data extraction via SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "python/app.py",
+      "start": {
+        "line": 247,
+        "col": 17,
+        "offset": 9500
+      },
+      "end": {
+        "line": 247,
+        "col": 82,
+        "offset": 9565
+      },
+      "extra": {
+        "message": "User input from form.search.data is concatenated directly into a SQL query string passed to cursor.execute(). This allows unauthorized data access via SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "python/app.py",
+      "start": {
+        "line": 492,
+        "col": 17,
+        "offset": 18900
+      },
+      "end": {
+        "line": 492,
+        "col": 62,
+        "offset": 18945
+      },
+      "extra": {
+        "message": "User input from form.user_id.data is concatenated directly into a SQL query string passed to conn.execute(). This allows blind SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle-loads",
+      "path": "python/app.py",
+      "start": {
+        "line": 436,
+        "col": 13,
+        "offset": 16800
+      },
+      "end": {
+        "line": 436,
+        "col": 35,
+        "offset": 16822
+      },
+      "extra": {
+        "message": "User-provided base64 data is decoded and passed to pickle.loads() without validation, enabling arbitrary code execution during deserialization.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.network.ssrf",
+      "path": "python/app.py",
+      "start": {
+        "line": 384,
+        "col": 13,
+        "offset": 14400
+      },
+      "end": {
+        "line": 384,
+        "col": 47,
+        "offset": 14434
+      },
+      "extra": {
+        "message": "User input from form.url.data is passed directly to requests.get() without URL validation or allowlisting, allowing server-side request forgery to internal services and resources.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "html.security.xss.dom-xss",
+      "path": "python/templates/dom_xss.html",
+      "start": {
+        "line": 143,
+        "col": 13,
+        "offset": 6100
+      },
+      "end": {
+        "line": 143,
+        "col": 62,
+        "offset": 6149
+      },
+      "extra": {
+        "message": "URL hash content is extracted and assigned directly to element.innerHTML without sanitization, allowing DOM-based cross-site scripting.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret",
+      "path": "python/app.py",
+      "start": {
+        "line": 25,
+        "col": 1,
+        "offset": 900
+      },
+      "end": {
+        "line": 25,
+        "col": 54,
+        "offset": 953
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded as 'secure-secret-key-12345', allowing session forgery, cookie tampering, and security bypass.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "python/database.py",
+      "start": {
+        "line": 97,
+        "col": 22,
+        "offset": 3200
+      },
+      "end": {
+        "line": 97,
+        "col": 63,
+        "offset": 3241
+      },
+      "extra": {
+        "message": "Default admin credentials (username: 'admin', password: 'password') are hardcoded in the database initialization script.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "php.security.secrets.hardcoded-credentials",
+      "path": "static/uploads/connect.php",
+      "start": {
+        "line": 4,
+        "col": 1,
+        "offset": 100
+      },
+      "end": {
+        "line": 4,
+        "col": 28,
+        "offset": 127
+      },
+      "extra": {
+        "message": "Database password 'examplePW' is hardcoded in the PHP database connection file, exposing credentials if the file is accessed.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access.idor",
+      "path": "python/app.py",
+      "start": {
+        "line": 345,
+        "col": 9,
+        "offset": 12800
+      },
+      "end": {
+        "line": 345,
+        "col": 85,
+        "offset": 12876
+      },
+      "extra": {
+        "message": "The /profile/<int:user_id> endpoint retrieves any user's profile by ID without verifying the logged-in user owns that profile, allowing insecure direct object reference (IDOR).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access.bola",
+      "path": "python/app.py",
+      "start": {
+        "line": 608,
+        "col": 1,
+        "offset": 23200
+      },
+      "end": {
+        "line": 620,
+        "col": 52,
+        "offset": 23500
+      },
+      "extra": {
+        "message": "The /api/user/<int:user_id> endpoint returns any user's sensitive data (including email and role) without proper authorization checks, allowing broken object-level authorization (BOLA).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "python/app.py",
+      "start": {
+        "line": 622,
+        "col": 1,
+        "offset": 23550
+      },
+      "end": {
+        "line": 624,
+        "col": 58,
+        "offset": 23608
+      },
+      "extra": {
+        "message": "The /api/flag endpoint returns a sensitive CTF flag without requiring any authentication, exposing challenge solutions to unauthenticated users.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "python/app.py",
+      "start": {
+        "line": 626,
+        "col": 1,
+        "offset": 23650
+      },
+      "end": {
+        "line": 633,
+        "col": 40,
+        "offset": 23740
+      },
+      "extra": {
+        "message": "The /comments-log endpoint reads and returns file contents without any authentication check, potentially exposing internal logs.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-enabled",
+      "path": "python/app.py",
+      "start": {
+        "line": 661,
+        "col": 5,
+        "offset": 24600
+      },
+      "end": {
+        "line": 661,
+        "col": 51,
+        "offset": 24646
+      },
+      "extra": {
+        "message": "Flask debug mode is enabled (debug=True), which exposes detailed error pages with stack traces and enables interactive debugging in production.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.error-messages",
+      "path": "python/app.py",
+      "start": {
+        "line": 203,
+        "col": 21,
+        "offset": 7800
+      },
+      "end": {
+        "line": 203,
+        "col": 55,
+        "offset": 7834
+      },
+      "extra": {
+        "message": "Detailed database exception messages are exposed to users in the login form response, revealing internal database structure and error details.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.error-messages",
+      "path": "python/app.py",
+      "start": {
+        "line": 256,
+        "col": 17,
+        "offset": 9800
+      },
+      "end": {
+        "line": 256,
+        "col": 57,
+        "offset": 9840
+      },
+      "extra": {
+        "message": "Detailed SQL query execution error messages are exposed to users in the comment search response, revealing database schema and query structure.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.error-messages",
+      "path": "python/app.py",
+      "start": {
+        "line": 387,
+        "col": 13,
+        "offset": 14600
+      },
+      "end": {
+        "line": 387,
+        "col": 53,
+        "offset": 14640
+      },
+      "extra": {
+        "message": "Detailed exception messages from SSRF requests are exposed to users, potentially leaking internal network topology and service information.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.file-upload.unrestricted-upload",
+      "path": "python/app.py",
+      "start": {
+        "line": 320,
+        "col": 17,
+        "offset": 12100
+      },
+      "end": {
+        "line": 322,
+        "col": 32,
+        "offset": 12150
+      },
+      "extra": {
+        "message": "File upload accepts any file type without validation and saves it to the uploads directory, allowing attackers to upload and execute malicious files such as PHP shells.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-434: Unrestricted Upload of File with Dangerous Type"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.csrf-exempt",
+      "path": "python/app.py",
+      "start": {
+        "line": 304,
+        "col": 1,
+        "offset": 11500
+      },
+      "end": {
+        "line": 304,
+        "col": 13,
+        "offset": 11512
+      },
+      "extra": {
+        "message": "The /upload route is decorated with @csrf.exempt, disabling CSRF protection and allowing cross-site request forgery for file uploads.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.csrf-exempt",
+      "path": "python/app.py",
+      "start": {
+        "line": 538,
+        "col": 1,
+        "offset": 20500
+      },
+      "end": {
+        "line": 538,
+        "col": 13,
+        "offset": 20512
+      },
+      "extra": {
+        "message": "The /csrf route is decorated with @csrf.exempt, disabling CSRF protection for email update operations.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.get-request-state-change",
+      "path": "python/app.py",
+      "start": {
+        "line": 275,
+        "col": 9,
+        "offset": 10800
+      },
+      "end": {
+        "line": 276,
+        "col": 55,
+        "offset": 10855
+      },
+      "extra": {
+        "message": "The /transfer endpoint processes GET requests to perform state-changing transfer operations, allowing CSRF attacks via malicious links or images.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.predictable-session",
+      "path": "python/app.py",
+      "start": {
+        "line": 186,
+        "col": 9,
+        "offset": 7200
+      },
+      "end": {
+        "line": 186,
+        "col": 68,
+        "offset": 7259
+      },
+      "extra": {
+        "message": "Session token is generated using a predictable pattern (SESSION_<username>_12345), allowing attackers to guess and hijack user sessions.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.predictable-session",
+      "path": "python/app.py",
+      "start": {
+        "line": 190,
+        "col": 9,
+        "offset": 7400
+      },
+      "end": {
+        "line": 190,
+        "col": 68,
+        "offset": 7459
+      },
+      "extra": {
+        "message": "Session ID is generated using a predictable pattern (<username>_auth_123), enabling authentication bypass via session guessing attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

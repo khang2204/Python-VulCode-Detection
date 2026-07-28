@@ -1,0 +1,3 @@
+def auth_check_password(user, password):...
+print('auth_check_password', user.password_hash, password)
+return check_password_hash(user.password_hash, password)

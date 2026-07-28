@@ -1,0 +1,3 @@
+@app.route('/search', methods=['POST'])...
+search = request.form.get('search')
+return redirect('/%s' % search)

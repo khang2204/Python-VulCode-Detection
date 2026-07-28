@@ -1,0 +1,336 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "server/routes.py",
+      "start": {
+        "line": 137,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 138,
+        "col": 28,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from request.args.get('search') is interpolated directly into SQL string via f-string. The search_query variable at line 126 is user-controlled and concatenated into the SQL query without sanitization, allowing SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssrf",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 254,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 254,
+        "col": 41,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled URL from request payload (picture_url at line 250) is passed directly to requests.get() without validation. This allows Server-Side Request Forgery (SSRF) attacks, enabling attackers to make requests to internal services or arbitrary external URLs.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 220,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 238,
+        "col": 42,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The delete user endpoint has authentication disabled. The @token_required decorator is commented out (lines 221-222), allowing any unauthenticated user to delete any user account by ID. This is a critical Broken Function Level Authorization vulnerability.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function",
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 146,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 170,
+        "col": 45,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The profile API endpoint has authentication disabled. The @token_required decorator is commented out (lines 152-153), allowing any unauthenticated user to retrieve any user's profile information including email, role, permissions, and team by providing a user_id.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization",
+            "CWE-200: Exposure of Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret",
+      "path": "server/config.py",
+      "start": {
+        "line": 7,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 7,
+        "col": 38,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded secret key 'just_another_secret' is used for Flask sessions and JWT token signing. This allows attackers who read the source code to forge session cookies and JWT tokens.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "server/routes.py",
+      "start": {
+        "line": 393,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 403,
+        "col": 45,
+        "offset": 0
+      },
+      "extra": {
+        "message": "MD5 is used for password hashing. MD5 is cryptographically broken and unsuitable for password hashing due to collision vulnerabilities and fast computation enabling brute-force attacks. Passwords should be hashed with bcrypt, scrypt, or Argon2.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash",
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.insecure-cookie",
+      "path": "server/config.py",
+      "start": {
+        "line": 6,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 6,
+        "col": 31,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SESSION_COOKIE_HTTPONLY is set to False, which allows JavaScript to access session cookies. This makes the application vulnerable to session hijacking via XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "server/routes.py",
+      "start": {
+        "line": 262,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 264,
+        "col": 32,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled filename from file upload is used directly without sanitization. An attacker can upload files with names like '../../../etc/crontab' to write files outside the intended upload directory using path traversal sequences.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "server/routes.py",
+      "start": {
+        "line": 342,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 364,
+        "col": 33,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled filename from URL path is used directly to construct file path and delete files. Although there's a database check, if an attacker previously uploaded a file with a path traversal name, they can delete arbitrary files on the system using os.remove().",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.privilege-escalation",
+      "path": "server/routes.py",
+      "start": {
+        "line": 187,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 196,
+        "col": 49,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The update_profile endpoint allows users to set their own 'role' and 'permissions' values through form data. A regular user can submit 'role=admin' and 'permissions=all' to escalate their privileges to administrator level.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management",
+            "CWE-284: Improper Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor",
+      "path": "server/routes.py",
+      "start": {
+        "line": 307,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 309,
+        "col": 59,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The profile pictures endpoint serves files without any authentication check. Any unauthenticated user can access any profile picture by guessing the numeric ID, leading to unauthorized access to user data.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key",
+            "CWE-284: Improper Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-enabled",
+      "path": "server/config.py",
+      "start": {
+        "line": 5,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 5,
+        "col": 17,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Debug mode is enabled (DEBUG = True), which exposes detailed error messages, stack traces, and enables the interactive debugger in production. This can leak sensitive information about the application's internals.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-215: Insertion of Sensitive Information Into Debugging Code",
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.exception-leak",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 298,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 298,
+        "col": 38,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Exception message is returned directly to the user in the API response. This can leak sensitive internal information such as file paths, database errors, or stack traces to attackers.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

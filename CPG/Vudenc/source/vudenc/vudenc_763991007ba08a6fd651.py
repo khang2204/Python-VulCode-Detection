@@ -1,0 +1,3 @@
+def register():...
+register_parser(CONTENT_TYPE, JSONParser)
+register_renderer(CONTENT_TYPE, JSONRenderer)

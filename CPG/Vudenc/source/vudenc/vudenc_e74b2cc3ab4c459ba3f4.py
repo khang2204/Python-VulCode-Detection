@@ -1,0 +1,3 @@
+def send_main_session_command(session, cmd):...
+window = find_window(session, 'Main')
+window.cmd('send-keys', cmd, 'Enter')

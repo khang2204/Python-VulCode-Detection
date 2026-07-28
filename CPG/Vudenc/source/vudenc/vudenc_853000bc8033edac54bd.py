@@ -1,0 +1,3 @@
+def join_threads(self):...
+for t in self.threads:
+t.join()

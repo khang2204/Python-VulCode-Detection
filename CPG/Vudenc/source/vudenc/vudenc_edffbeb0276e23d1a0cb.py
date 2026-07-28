@@ -1,0 +1,3 @@
+@memoized_property...
+return self._zinc_factory.tool_classpath_from_products(self._products, self
+    .ZINC_EXTRACTOR_TOOL_NAME, scope=self._zinc_factory.options_scope)

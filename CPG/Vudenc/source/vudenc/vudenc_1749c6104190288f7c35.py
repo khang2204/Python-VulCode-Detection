@@ -1,0 +1,3 @@
+@detail_route(methods=['post'])...
+return self.set_pending_action(pending_actions.REMOVE, *args, perms=(
+    'delete_project',), **kwargs)

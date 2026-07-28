@@ -1,0 +1,3 @@
+def check_protected_output(self):...
+protected = list(filter(lambda f: f.protected, self.expanded_output))
+if protected:

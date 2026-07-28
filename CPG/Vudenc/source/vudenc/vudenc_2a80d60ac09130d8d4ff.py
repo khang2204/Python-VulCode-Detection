@@ -1,0 +1,3 @@
+def load_json(name):...
+filename = os.path.join(app.static_folder, name)
+return json.load(open(filename))

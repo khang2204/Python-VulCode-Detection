@@ -1,0 +1,3 @@
+def __init__(self, param, options=(), *a, **kw):...
+Validator.__init__(self, param, *a, **kw)
+self.options = options

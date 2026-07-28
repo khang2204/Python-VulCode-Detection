@@ -1,0 +1,3 @@
+def __str__(self):...
+"""docstring"""
+return self.summary()

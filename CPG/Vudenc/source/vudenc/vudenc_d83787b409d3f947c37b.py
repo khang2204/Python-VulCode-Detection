@@ -1,0 +1,3 @@
+def __init__(self, max_length=MAX_LENGTH, *args, **kwargs):...
+super(CharField, self).__init__(*args, **kwargs)
+self.max_length = max_length

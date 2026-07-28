@@ -1,0 +1,3 @@
+def check_settings(settings):...
+"""docstring"""
+return True

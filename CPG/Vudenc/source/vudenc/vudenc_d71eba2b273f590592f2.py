@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self.config.getint(self.section, 'num_threads')

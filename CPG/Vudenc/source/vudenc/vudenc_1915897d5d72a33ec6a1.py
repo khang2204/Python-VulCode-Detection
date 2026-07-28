@@ -1,0 +1,3 @@
+def __repr__(self):...
+return 'Distribution({!r}, minimum_version={!r}, maximum_version={!r} jdk={!r})'.format(
+    self._bin_path, self._minimum_version, self._maximum_version, self._jdk)

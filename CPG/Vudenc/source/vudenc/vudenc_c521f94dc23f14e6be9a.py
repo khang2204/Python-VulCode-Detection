@@ -1,0 +1,3 @@
+def u_add_phrase(self, nphrase):...
+"""docstring"""
+self.add_phrase(nphrase, database='user_db', commit=False)

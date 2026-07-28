@@ -1,0 +1,3 @@
+def __init__(self, *args, **kwargs):...
+super(MetalTemplate, self).__init__(*args, **kwargs)
+self._tags = kwargs.get('tags', None)

@@ -1,0 +1,3 @@
+def decorate(ruleinfo):...
+ruleinfo.docstring = string
+return ruleinfo

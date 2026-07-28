@@ -1,0 +1,3 @@
+async def ret(request):...
+out = await func(request, base)
+return out

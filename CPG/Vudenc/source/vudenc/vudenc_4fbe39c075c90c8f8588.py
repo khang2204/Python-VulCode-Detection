@@ -1,0 +1,3 @@
+@auth.route('/logout')...
+logout_user()
+return redirect(url_for('auth.test'))

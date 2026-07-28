@@ -1,0 +1,3 @@
+def _fmt_sos_opt_list(self, opts):...
+"""docstring"""
+return ','.join(o for o in opts if self._plugin_exists(o))

@@ -1,0 +1,3 @@
+def setUp(self):...
+self.assertTrue(self.client.login(username='autotest', password='password'))
+settings.SSH_PRIVATE_KEY = '<some-ssh-private-key>'

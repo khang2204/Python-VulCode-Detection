@@ -1,0 +1,3 @@
+def test_name_contains_integer(self):...
+"""docstring"""
+tournament.registerPlayer(player_name='1')

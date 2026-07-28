@@ -1,0 +1,3 @@
+def format_time(dt):...
+"""docstring"""
+return '{t.day} {t:%b} {t:%y} {t:%X} PDT'.format(t=dt)

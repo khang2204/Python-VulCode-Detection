@@ -1,0 +1,3 @@
+@app.route('/api/server/devices/<name>/properties', methods=['GET'])...
+device = controller.indi_server.device(name=name)
+return [p.to_map() for p in device.properties()]

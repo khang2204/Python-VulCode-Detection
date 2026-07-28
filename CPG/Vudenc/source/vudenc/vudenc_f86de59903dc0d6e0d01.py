@@ -1,0 +1,3 @@
+def splitlines(text):...
+"""docstring"""
+return text.splitlines()

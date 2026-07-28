@@ -1,0 +1,3 @@
+def IDToCoord(self, ID):...
+return int(ID[:len(str(self.mapWidth))].rstrip('-')), int(ID[len(str(self.
+    mapHeight)):].rstrip('-'))

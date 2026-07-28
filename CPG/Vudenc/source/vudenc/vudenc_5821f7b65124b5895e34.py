@@ -1,0 +1,3 @@
+@classmethod...
+"""docstring"""
+return j('Hent {0} fra databasen og returner som JSON'.format(uuid))

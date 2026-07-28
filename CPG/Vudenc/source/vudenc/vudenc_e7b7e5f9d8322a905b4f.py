@@ -1,0 +1,3 @@
+def add(self, *rulenames):...
+"""docstring"""
+self.order.append(list(rulenames))

@@ -1,0 +1,3 @@
+def __init__(self):...
+self.builtins = {'exit': self._builtin_exit, 'pwd': self._builtin_pwd, 'cd':
+    self._builtin_cd}

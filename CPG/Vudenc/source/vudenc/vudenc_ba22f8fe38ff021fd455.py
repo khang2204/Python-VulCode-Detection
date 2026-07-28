@@ -1,0 +1,3 @@
+def on_headerbar_back_button_clicked(self, widget):...
+self.window.set_headerbar()
+self.window.close_tab(self.parent_widget)

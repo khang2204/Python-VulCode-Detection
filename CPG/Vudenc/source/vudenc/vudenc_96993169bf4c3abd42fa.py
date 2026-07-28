@@ -1,0 +1,3 @@
+def __init__(self, pid, comp_name):...
+"""docstring"""
+super(LocalComponentMonitoringJob, self).__init__(pid, comp_name)

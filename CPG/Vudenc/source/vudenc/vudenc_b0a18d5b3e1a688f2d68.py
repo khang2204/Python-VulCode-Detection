@@ -1,0 +1,3 @@
+def __init__(self, method_name, connection_string):...
+unittest.TestCase.__init__(self, method_name)
+self.connection_string = connection_string

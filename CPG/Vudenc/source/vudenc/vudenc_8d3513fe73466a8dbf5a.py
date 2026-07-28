@@ -1,0 +1,3 @@
+def __init__(self, *args, **kwargs):...
+super(JavacCompile, self).__init__(*args, **kwargs)
+self.set_distribution(jdk=True)

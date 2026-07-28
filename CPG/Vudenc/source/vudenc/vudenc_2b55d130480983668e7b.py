@@ -1,0 +1,3 @@
+def mkdir_p(path):...
+if path.strip() != '' and not os.path.exists(path):
+os.makedirs(path)

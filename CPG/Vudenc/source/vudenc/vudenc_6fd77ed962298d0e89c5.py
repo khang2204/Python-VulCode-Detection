@@ -1,0 +1,3 @@
+def register_level(cls):...
+FnLevel[cls.__name__] = cls()
+return cls

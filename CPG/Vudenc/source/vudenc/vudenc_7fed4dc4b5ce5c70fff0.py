@@ -1,0 +1,3 @@
+def path_head(path):...
+head, tail = os.path.split(path)
+return head

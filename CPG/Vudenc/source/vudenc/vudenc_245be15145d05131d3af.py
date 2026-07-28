@@ -1,0 +1,3 @@
+def remaining_processes_alive(self):...
+"""docstring"""
+return not any(self.dead_processes())

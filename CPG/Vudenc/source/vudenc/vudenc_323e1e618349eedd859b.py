@@ -1,0 +1,3 @@
+def get_by_id(self, entity_id):...
+"""docstring"""
+return self.__id_map.get(entity_id)

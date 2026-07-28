@@ -1,0 +1,3 @@
+@property...
+if self._resource_stack:
+return self._resource_stack[-1]

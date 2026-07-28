@@ -1,0 +1,3 @@
+@contextmanager...
+"""docstring"""
+yield workunit

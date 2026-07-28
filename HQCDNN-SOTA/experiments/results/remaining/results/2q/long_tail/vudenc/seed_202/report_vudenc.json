@@ -1,0 +1,51 @@
+{
+  "architecture": "HQCDNN",
+  "protocol": "long_tail",
+  "source": "vudenc",
+  "target": "vudenc",
+  "training_seed": 202,
+  "split_seed": 101,
+  "evaluation_scope": "fixed_test_split_101",
+  "train_samples": 11088,
+  "validation_samples": 2376,
+  "test_samples": 2376,
+  "source_manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+  "configuration": {
+    "qubits": 2,
+    "quantum_layers": 1,
+    "tfidf": "normalized Python token bigrams",
+    "tfidf_max_features": 512,
+    "epochs": 50,
+    "batch_size": 64,
+    "optimizer": "Adam",
+    "learning_rate": 0.005,
+    "adaptation_note": "The paper uses EVM opcode bigrams. Python lexical-token bigrams are the declared cross-language adaptation.",
+    "reused_fixed_split_in_domain_model": true
+  },
+  "metrics": {
+    "accuracy": 0.8463804713804713,
+    "balanced_accuracy": 0.6951096828280006,
+    "precision": 0.5843373493975904,
+    "recall": 0.46080760095011875,
+    "f1": 0.5152722443559098,
+    "vulnerable_recall": 0.46080760095011875
+  },
+  "history": [],
+  "long_tail": {
+    "rare_cwes": [
+      "VUDENC-TYPE-2",
+      "VUDENC-TYPE-3",
+      "VUDENC-TYPE-6",
+      "VUDENC-TYPE-7"
+    ],
+    "rare_test_samples": 131,
+    "rare_cwe_vulnerable_recall": 0.4122137427330017,
+    "common_cwes": [
+      "VUDENC-TYPE-1",
+      "VUDENC-TYPE-4",
+      "VUDENC-TYPE-5"
+    ],
+    "common_test_samples": 290,
+    "common_cwe_vulnerable_recall": 0.48275861144065857
+  }
+}

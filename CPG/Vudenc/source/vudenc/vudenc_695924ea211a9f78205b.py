@@ -1,0 +1,3 @@
+def __init__(self, *args, **kwargs):...
+FlaskForm.__init__(self, *args, **kwargs)
+self.user = None

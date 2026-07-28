@@ -1,0 +1,3 @@
+@cached_property...
+"""docstring"""
+return [p._meta.resource_name for p in self.parents]

@@ -1,0 +1,3 @@
+def send_to_router(self, msg):...
+msg.insert(0, b'')
+self.wz_sock.send_multipart(msg)

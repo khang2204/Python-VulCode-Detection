@@ -1,0 +1,3 @@
+def setUp(self):...
+super(ViewTestsBase, self).setUp()
+self._xsrf_tool = utils.XsrfTool()

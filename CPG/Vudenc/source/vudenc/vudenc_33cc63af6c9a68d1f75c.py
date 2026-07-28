@@ -1,0 +1,3 @@
+def call(headers):...
+api.reset_local_state()
+return app.get('/request', headers=headers).body

@@ -1,0 +1,3 @@
+def test_link_habitandpractice_to_puc(self):...
+found = resolve(f'/link_habitandpractice_to_puc/{self.objects.ehp.pk}/')
+self.assertEqual(found.func, views.link_habitsandpractices)

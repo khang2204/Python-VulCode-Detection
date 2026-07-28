@@ -1,0 +1,3 @@
+@template_utility...
+return Markup('<input type="hidden" name="_xsrf" value="{}"/>'.format(
+    xhtml_escape(xsrf_token())))

@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "main.py",
+      "start": {
+        "line": 14,
+        "col": 5,
+        "offset": 270
+      },
+      "end": {
+        "line": 14,
+        "col": 70,
+        "offset": 335
+      },
+      "extra": {
+        "message": "User input from 'username' is concatenated directly into a template string passed to Jinja2.from_string(). This leads to Server-Side Template Injection (SSTI) and can result in Remote Code Execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-1336: Improper Neutralization of Special Elements Used in a Template Engine",
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

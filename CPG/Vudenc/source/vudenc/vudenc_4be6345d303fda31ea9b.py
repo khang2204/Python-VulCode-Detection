@@ -1,0 +1,3 @@
+def command(self, command, expected_output=[], error_message=None,...
+return super().command(command, expected_output, error_message, log_event,
+    '\r\n', False)

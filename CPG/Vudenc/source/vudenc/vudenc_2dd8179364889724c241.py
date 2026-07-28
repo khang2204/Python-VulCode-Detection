@@ -1,0 +1,3 @@
+def SetUpInputRedirect(cmd):...
+import pdb
+pdb.set_trace()

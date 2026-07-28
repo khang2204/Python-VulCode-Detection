@@ -1,0 +1,3 @@
+@cached_property...
+"""docstring"""
+return [f for f in self.fields if not f.is_attribute]

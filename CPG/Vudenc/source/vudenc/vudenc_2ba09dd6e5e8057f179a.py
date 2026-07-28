@@ -1,0 +1,3 @@
+def dummy_player(player_name='', country=''):...
+s = tournament.registerPlayer(player_name=player_name, country=country)
+return s

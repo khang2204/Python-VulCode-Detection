@@ -1,0 +1,355 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 22,
+        "col": 5,
+        "offset": 700
+      },
+      "end": {
+        "line": 23,
+        "col": 27,
+        "offset": 800
+      },
+      "extra": {
+        "message": "User input from request.get_json()['username'] is directly concatenated into SQL INSERT query without sanitization. This allows SQL injection via the username field during registration.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 36,
+        "col": 5,
+        "offset": 1050
+      },
+      "end": {
+        "line": 37,
+        "col": 43,
+        "offset": 1130
+      },
+      "extra": {
+        "message": "User input from request.get_json()['username'] is directly concatenated into SQL SELECT query without sanitization. This allows SQL injection via the username field during login.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 49,
+        "col": 5,
+        "offset": 1400
+      },
+      "end": {
+        "line": 50,
+        "col": 35,
+        "offset": 1580
+      },
+      "extra": {
+        "message": "User input from request.args.get('user_id') is directly concatenated into SQL query without sanitization. This allows SQL injection via the user_id query parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 93,
+        "col": 5,
+        "offset": 2700
+      },
+      "end": {
+        "line": 95,
+        "col": 35,
+        "offset": 3050
+      },
+      "extra": {
+        "message": "User input from request.args.get('description') is directly concatenated into SQL LIKE clause without sanitization. This allows SQL injection via the description search parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 157,
+        "col": 9,
+        "offset": 5000
+      },
+      "end": {
+        "line": 157,
+        "col": 60,
+        "offset": 5051
+      },
+      "extra": {
+        "message": "yaml.load() is called with yaml.Loader which allows arbitrary code execution through YAML deserialization attacks. An attacker can execute arbitrary Python code by sending a malicious YAML payload.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 141,
+        "col": 5,
+        "offset": 4500
+      },
+      "end": {
+        "line": 148,
+        "col": 50,
+        "offset": 4700
+      },
+      "extra": {
+        "message": "The update_password endpoint allows any authenticated user to update any other user's password by providing a different user_id. There is no authorization check to ensure current_user can only update their own password.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cors.misconfiguration",
+      "path": "backend/app.py",
+      "start": {
+        "line": 47,
+        "col": 1,
+        "offset": 1450
+      },
+      "end": {
+        "line": 56,
+        "col": 18,
+        "offset": 1800
+      },
+      "extra": {
+        "message": "CORS configuration reflects any origin from the Origin header and sets Access-Control-Allow-Credentials to 'true'. This allows any website to make credentialed cross-origin requests, enabling CSRF and data theft attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-942: Permissive Cross-domain Policy with Untrusted Domains"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.secrets.hardcoded",
+      "path": "backend/app.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 450
+      },
+      "end": {
+        "line": 16,
+        "col": 42,
+        "offset": 492
+      },
+      "extra": {
+        "message": "Hardcoded secret key 'supersecret' is used for Flask session signing. This allows attackers to forge session cookies and potentially impersonate any user.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.secrets.hardcoded",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 47,
+        "col": 13,
+        "offset": 1400
+      },
+      "end": {
+        "line": 49,
+        "col": 24,
+        "offset": 1480
+      },
+      "extra": {
+        "message": "Hardcoded JWT secret 'secret' is used for token signing and verification. This allows attackers to forge JWT tokens and impersonate any user.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.secrets.hardcoded",
+      "path": "backend/auth.py",
+      "start": {
+        "line": 23,
+        "col": 37,
+        "offset": 750
+      },
+      "end": {
+        "line": 23,
+        "col": 68,
+        "offset": 781
+      },
+      "extra": {
+        "message": "Hardcoded JWT secret 'secret' is used for token verification. This allows attackers to forge JWT tokens and impersonate any user.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "backend/models.py",
+      "start": {
+        "line": 23,
+        "col": 5,
+        "offset": 700
+      },
+      "end": {
+        "line": 24,
+        "col": 60,
+        "offset": 780
+      },
+      "extra": {
+        "message": "MD5 is used for password hashing. MD5 is cryptographically broken and unsuitable for password storage. Passwords should be hashed using bcrypt, scrypt, or Argon2.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "backend/models.py",
+      "start": {
+        "line": 26,
+        "col": 5,
+        "offset": 800
+      },
+      "end": {
+        "line": 27,
+        "col": 75,
+        "offset": 890
+      },
+      "extra": {
+        "message": "MD5 is used for password verification. MD5 is cryptographically broken and unsuitable for password storage.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-mode",
+      "path": "backend/app.py",
+      "start": {
+        "line": 228,
+        "col": 1,
+        "offset": 7500
+      },
+      "end": {
+        "line": 228,
+        "col": 50,
+        "offset": 7550
+      },
+      "extra": {
+        "message": "Flask application runs with debug=True which enables the Werkzeug debugger. In production, this exposes an interactive debugger that allows arbitrary code execution on the server.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-215: Insertion of Sensitive Information Into Debugging Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.sensitive-data.exposure",
+      "path": "backend/app.py",
+      "start": {
+        "line": 93,
+        "col": 20,
+        "offset": 3100
+      },
+      "end": {
+        "line": 93,
+        "col": 38,
+        "offset": 3118
+      },
+      "extra": {
+        "message": "Social Security Number (SSN) is stored in plaintext in user profile data. SSNs are highly sensitive PII and should be encrypted at rest.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-312: Cleartext Storage of Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

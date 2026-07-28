@@ -1,0 +1,3 @@
+def convert_local_ts_to_utc(self, ts, local_timezone):...
+return int(datetime.utcfromtimestamp(ts).replace(tzinfo=local_timezone).
+    timestamp())

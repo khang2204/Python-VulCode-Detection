@@ -1,0 +1,3 @@
+def test_faceted_search_returns_upc(self):...
+response = self.c.get('/find/?q=avcat')
+self.assertContains(response, 'stub_1845')

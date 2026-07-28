@@ -1,0 +1,3 @@
+def contains(self, command):...
+"""docstring"""
+return any(command in line for line in [' '.join(line) for line in self.lines])

@@ -1,0 +1,3 @@
+def on_event_socket_opened(self, response):...
+response.deliverBody(EventDataProtocol(self.messages_to_wait_for, self.
+    events_deferred, response))

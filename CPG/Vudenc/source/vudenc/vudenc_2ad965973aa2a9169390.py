@@ -1,0 +1,3 @@
+def render_loginInvalid(form):...
+return render_form(form, True, url_for('auth_login'), 'Login',
+    'Invalid username or password.')

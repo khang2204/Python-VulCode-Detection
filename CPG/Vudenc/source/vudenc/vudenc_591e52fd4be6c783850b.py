@@ -1,0 +1,3 @@
+def __init__(self, authenticated, exceptions=None):...
+super(RdpPollResult, self).__init__(exceptions)
+self.authenticated = authenticated

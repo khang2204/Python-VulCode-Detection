@@ -1,0 +1,3 @@
+def _parse_or(self, data):...
+"""docstring"""
+return self._parse_conditions(self.OR_CONDITION, data)

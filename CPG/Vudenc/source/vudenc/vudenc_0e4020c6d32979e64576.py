@@ -1,0 +1,3 @@
+def run(self):...
+if not c.user_is_admin:
+abort(404, 'page not found')

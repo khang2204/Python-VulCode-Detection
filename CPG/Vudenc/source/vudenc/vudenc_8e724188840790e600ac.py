@@ -1,0 +1,3 @@
+def create_session_secret():...
+fernet_key = fernet.Fernet.generate_key()
+return base64.urlsafe_b64decode(fernet_key)

@@ -1,0 +1,3 @@
+def register_scala_compiler_tool(version):...
+cls.register_jvm_tool(register, cls._key_for_tool_version('scalac', version
+    ), classpath=[cls._create_compiler_jardep(version)])

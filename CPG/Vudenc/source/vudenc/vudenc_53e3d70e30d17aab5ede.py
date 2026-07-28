@@ -1,0 +1,3 @@
+def __init__(self, dirstructure):...
+self._store = []
+self._ds = dirstructure

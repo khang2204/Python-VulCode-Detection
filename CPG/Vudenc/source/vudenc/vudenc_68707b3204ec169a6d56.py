@@ -1,0 +1,3 @@
+def __init__(self, show_users=False, **kwargs):...
+super().__init__(**kwargs)
+self._show_users = show_users

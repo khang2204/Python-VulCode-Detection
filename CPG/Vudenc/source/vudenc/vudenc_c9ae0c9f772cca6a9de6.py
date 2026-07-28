@@ -1,0 +1,3 @@
+def get_extract_models(self):...
+"""docstring"""
+return extract_models.get(self.type)

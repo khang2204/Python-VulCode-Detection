@@ -1,0 +1,3 @@
+def connectDB():...
+conn = sqlite3.connect(CFG('dbname'))
+return conn, conn.cursor()

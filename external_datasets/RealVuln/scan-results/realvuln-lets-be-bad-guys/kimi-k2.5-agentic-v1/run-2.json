@@ -1,0 +1,411 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 42,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 42,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled filename from request.GET.get('p') is concatenated directly into a file path using os.path.join() and passed to open(). This allows path traversal attacks (e.g., '../../../etc/passwd') to read arbitrary files on the filesystem.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-execution",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 72,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 76,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from request.POST.get('first_name') is base64 decoded and passed directly to exec() function. This allows arbitrary Python code execution on the server, leading to complete system compromise.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.unsafe-template-filter",
+      "path": "badguys/templates/vulnerable/xss/query.html",
+      "start": {
+        "line": 37,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 37,
+        "col": 35,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input 'qs' from request.GET is rendered in a JavaScript context using the '|safe' filter, which disables Django's auto-escaping. This allows injection of arbitrary JavaScript code (XSS) that executes in the victim's browser.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.unsafe-template-filter",
+      "path": "badguys/templates/vulnerable/xss/path.html",
+      "start": {
+        "line": 49,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 49,
+        "col": 37,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input 'path' from URL path parameter is rendered in a JavaScript context using the '|safe' filter, which disables Django's auto-escaping. This allows injection of arbitrary JavaScript code (XSS) that executes in the victim's browser.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.unsafe-template-filter",
+      "path": "badguys/templates/vulnerable/xss/form.html",
+      "start": {
+        "line": 28,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 28,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input 'qs' from request.GET is rendered in an HTML input value attribute using the '|safe' filter, which disables Django's auto-escaping. This allows HTML/JS injection (XSS) that can break out of the attribute context and execute arbitrary code.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.unsafe-template-filter",
+      "path": "badguys/templates/vulnerable/csrf/image.html",
+      "start": {
+        "line": 48,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 48,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input 'qs' from request.GET is rendered in a JavaScript context using the '|safe' filter, which disables Django's auto-escaping. This allows injection of arbitrary JavaScript code (XSS) that executes in the victim's browser.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 128,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 139,
+        "col": 64,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The dor_user_profile function allows accessing and modifying any user's profile by changing the userid parameter in the URL (e.g., /direct-object-references/users/1 or /direct-object-references/users/2). There is no authentication or authorization check to verify the requesting user should have access to the requested profile data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Insecure Direct Object Reference (IDOR)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 155,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 159,
+        "col": 67,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The missing_access_control function grants access to the admin interface based solely on a query string parameter (?action=admin) without any authentication or authorization checks. Any unauthenticated user can access admin functionality by adding this parameter to the URL.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization",
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.csrf-exempt",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 164,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 167,
+        "col": 66,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The csrf_image view is decorated with @csrf_exempt, which disables Django's CSRF protection. Additionally, there are no alternative CSRF protection mechanisms in place. This allows attackers to perform CSRF attacks, tricking authenticated users into performing unintended actions.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirect.open-redirect",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 176,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 178,
+        "col": 22,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The unvalidated_redirect function takes a URL from user input (request.GET.get('url')) and passes it directly to the redirect() function without validation. This allows attackers to construct malicious URLs that redirect users to phishing sites or malicious domains.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site (Open Redirect)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf.unvalidated-forward",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 181,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 189,
+        "col": 69,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The unvalidated_forward function takes a function name from user input (request.GET.get('fwd')) and dynamically calls it using globals().get(). This allows attackers to invoke arbitrary functions accessible in the global namespace, potentially leading to unauthorized access or data exposure.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.exposure.debug-mode",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 10,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 11,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "DEBUG is set to True in production settings. When DEBUG is enabled, Django exposes detailed error pages with stack traces, settings values, and system information that can aid attackers in reconnaissance and exploitation.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration",
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.exposure.secret-key",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 90,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 90,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The SECRET_KEY is hardcoded in the settings file with a predictable value. This key is used for cryptographic signing in Django (sessions, password reset tokens, messages). If exposed, attackers can forge sessions, bypass authentication, and perform other attacks.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials",
+            "CWE-259: Use of Hard-coded Password"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.disabled-csrf",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 102,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 102,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The CsrfViewMiddleware is commented out in MIDDLEWARE_CLASSES, which disables Django's built-in CSRF protection across the entire application. This makes all state-changing operations vulnerable to CSRF attacks unless individual views implement their own protection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)",
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.exposure.debug-toolbar",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 180,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 189,
+        "col": 2,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The show_toolbar function enables the Django Debug Toolbar when 'debug' is present in GET, POST, or cookies. Combined with DEBUG=True, this exposes sensitive information including SQL queries, settings, and request data to anyone who adds ?debug=1 to any URL.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Information Exposure",
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.exposure.error-messages",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 143,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 144,
+        "col": 27,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The boom function intentionally raises an unhandled exception. When DEBUG=True (as configured in settings.py), this exposes detailed stack traces with file paths, code snippets, and system information to the end user, aiding attackers in reconnaissance.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Information Exposure Through an Error Message",
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

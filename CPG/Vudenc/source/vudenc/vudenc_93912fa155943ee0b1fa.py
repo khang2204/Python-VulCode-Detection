@@ -1,0 +1,3 @@
+def decorate(ruleinfo):...
+ruleinfo.shellcmd = cmd
+return ruleinfo

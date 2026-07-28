@@ -1,0 +1,3 @@
+def __init__(self, type, **kwargs):...
+self._type = type
+self._db_params = kwargs

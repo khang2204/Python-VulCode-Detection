@@ -1,0 +1,3 @@
+def write(self, fd, string):...
+"""docstring"""
+return os.write(fd, string)

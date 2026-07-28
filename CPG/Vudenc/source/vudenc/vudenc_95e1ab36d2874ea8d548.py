@@ -1,0 +1,3 @@
+def test_run_shell_command_kwargs_delegation(self):...
+run_shell_command('super-cool-command', weird_parameter2='abc')
+run_shell_command('super-cool-command', universal_newlines=False)

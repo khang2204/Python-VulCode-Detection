@@ -1,0 +1,27 @@
+def test_delete(self):...
+self.assertTrue(self.client.login(username='autotest-1', password='password'))
+response = self.client.get('/api/apps')
+app_id = response.data['results'][0]['id']
+url = '/api/apps/{}/perms'.format(app_id)
+body = {'username': 'autotest-2'}
+response = self.client.post(url, json.dumps(body), content_type=
+    'application/json')
+self.assertEqual(response.status_code, 201)
+self.assertTrue(self.client.login(username='autotest-2', password='password'))
+response = self.client.get('/api/apps')
+self.assertEqual(response.status_code, 200)
+self.assertEqual(len(response.data['results']), 2)
+url = '/api/apps/{}/perms/{}'.format(app_id, 'autotest-2')
+response = self.client.delete(url, content_type='application/json')
+self.assertEqual(response.status_code, 403)
+self.assertIsNone(response.data)
+self.assertTrue(self.client.login(username='autotest-1', password='password'))
+response = self.client.delete(url, content_type='application/json')
+self.assertEqual(response.status_code, 204)
+self.assertIsNone(response.data)
+self.assertTrue(self.client.login(username='autotest-2', password='password'))
+response = self.client.get('/api/apps')
+self.assertEqual(len(response.data['results']), 1)
+self.assertTrue(self.client.login(username='autotest-1', password='password'))
+response = self.client.delete(url, content_type='application/json')
+self.assertEqual(response.status_code, 404)

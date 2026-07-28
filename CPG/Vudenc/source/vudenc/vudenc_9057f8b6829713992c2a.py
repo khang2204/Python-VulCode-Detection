@@ -1,0 +1,3 @@
+@staticmethod...
+user = users.get_current_user()
+return CurrentUser(user.user_id(), user.email(), None) if user else None

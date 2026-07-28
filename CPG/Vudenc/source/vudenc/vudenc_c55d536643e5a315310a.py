@@ -1,0 +1,3 @@
+def decorate(ruleinfo):...
+ruleinfo.resources = args, resources
+return ruleinfo

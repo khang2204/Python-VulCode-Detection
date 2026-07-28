@@ -1,0 +1,3 @@
+@deferred...
+log.msg('Error while rendering http %s', system='httprest')
+log.err(error, system='httprest')

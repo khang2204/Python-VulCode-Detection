@@ -1,0 +1,3 @@
+def test_name_less_two_characters(self):...
+"""docstring"""
+tournament.registerPlayer(player_name='a')

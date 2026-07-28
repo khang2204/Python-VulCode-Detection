@@ -1,0 +1,3 @@
+def fix_sort(string):...
+return ''.join([(text.zfill(5) if text.isdigit() else text.lower()) for
+    text in split('([0-9]+)', str(string))])

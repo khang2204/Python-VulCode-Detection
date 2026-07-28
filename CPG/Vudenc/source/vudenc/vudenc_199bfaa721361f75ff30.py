@@ -1,0 +1,3 @@
+def run(self, val):...
+if val and self.valid_re.match(val):
+return self.splitter.split(val)

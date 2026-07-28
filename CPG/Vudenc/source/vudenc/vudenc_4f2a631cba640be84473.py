@@ -1,0 +1,3 @@
+@data((' ', ''), ('test', 'test'), ('testé', 'teste'))...
+output_string = clean_title(input_string)
+self.assertEqual(desired_string, output_string)

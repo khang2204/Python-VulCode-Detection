@@ -1,0 +1,3 @@
+def print_deps(graph):...
+for c, deps in graph.items():
+print(c, '->', deps)

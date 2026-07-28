@@ -1,0 +1,3 @@
+def query_boilerplate(self, q):...
+q = q + 'LIMIT {0}'.format(self.limit)
+return q

@@ -1,0 +1,3 @@
+def __init__(self):...
+SQLConnector.__init__(self)
+self.table_name = TABLE_NAME

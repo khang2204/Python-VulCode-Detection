@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 320,
+        "col": 30,
+        "offset": 8500
+      },
+      "end": {
+        "line": 320,
+        "col": 80,
+        "offset": 8550
+      },
+      "extra": {
+        "message": "User input from 'filter' parameter is concatenated directly into SQL string via text() and % formatting. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 211,
+        "col": 32,
+        "offset": 5600
+      },
+      "end": {
+        "line": 211,
+        "col": 60,
+        "offset": 5628
+      },
+      "extra": {
+        "message": "User input from URL parameters (host, port, path, scheme) is passed to run_cmd() which executes commands via os.popen. Command injection possible via shell metacharacters.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

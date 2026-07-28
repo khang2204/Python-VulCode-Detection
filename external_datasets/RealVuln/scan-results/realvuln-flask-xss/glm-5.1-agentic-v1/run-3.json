@@ -1,0 +1,380 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.xss.reflected-xss-unsafe-params",
+      "path": "app/blueprints/sandboxes/views.py",
+      "start": {
+        "line": 13,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 14,
+        "col": 84,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from request.args.get('name') is passed to the template and rendered with the '| safe' filter in unsafe_params.html:6 ('{{ name | safe }}'), which disables Jinja2 auto-escaping. This allows an attacker to inject arbitrary HTML/JavaScript via the 'name' GET parameter, resulting in reflected XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss-unsafe-cookies",
+      "path": "app/blueprints/sandboxes/views.py",
+      "start": {
+        "line": 27,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 38,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from request.cookies.get('name') and request.form.get('name') is passed to the template and rendered with the '| safe' filter in unsafe_cookies.html:6 ('{{ name | safe }}'), disabling Jinja2 auto-escaping. An attacker can inject arbitrary HTML/JavaScript via cookies or form submission, resulting in stored/reflected XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss-feedback-messages",
+      "path": "app/blueprints/account_area/views.py",
+      "start": {
+        "line": 75,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 75,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User feedback from request.form is stored in the Message model and later rendered unescaped with '| safe' in admin/message.html:29-31 (message.from_user, message.message, message.date). This allows any authenticated user to store malicious HTML/JS that executes when an admin views the messages page, resulting in stored XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss-api-messages",
+      "path": "app/blueprints/api/views.py",
+      "start": {
+        "line": 50,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 52,
+        "col": 52,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The 'from_user' field in the MessagesView.post() method is taken directly from user-supplied JSON data (data.get('from_user', 'Anonymous')) without authentication or validation. This value is stored and later rendered with '| safe' in admin/message.html:29, allowing unauthenticated stored XSS against admin users.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss-username",
+      "path": "app/templates/_base.html",
+      "start": {
+        "line": 54,
+        "col": 58,
+        "offset": 0
+      },
+      "end": {
+        "line": 54,
+        "col": 85,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The username is rendered with the '| safe' filter ('{{ g.user.username | safe }}') in the base template navbar, which appears on every page. If a user registers with a malicious username containing HTML/JS, it will execute on every page load for all users who can see that username, resulting in stored XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirect.open-redirect",
+      "path": "app/blueprints/xss_protection/views.py",
+      "start": {
+        "line": 11,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 12,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The 'next' parameter from request.args is used directly in redirect() without any validation or allowlist. An attacker can craft a URL like /toggle_xss_protection/?next=https://evil.com to redirect users to an arbitrary external site, facilitating phishing attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: Open Redirect"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.hardcoded-secret-key",
+      "path": "app/flask_xss.py",
+      "start": {
+        "line": 23,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 23,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "A hardcoded, guessable secret key ('Keep it secret, keep it safe') is used for Flask session signing. An attacker who knows this key can forge session cookies, potentially gaining unauthorized access including admin privileges.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.plaintext-password-storage",
+      "path": "app/models/models.py",
+      "start": {
+        "line": 16,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 16,
+        "col": 32,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Passwords are stored as plaintext in the database (self.password = password) and compared with direct string equality in login/views.py:17 (user.password == password). Passwords should be hashed using a strong algorithm like bcrypt or argon2. Plaintext storage means any database compromise exposes all user passwords.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-256: Plaintext Storage of a Password"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-exposure.password-in-serialization",
+      "path": "app/models/models.py",
+      "start": {
+        "line": 27,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 27,
+        "col": 36,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The User.serialize property includes the plaintext password field ('password': self.password). This property is used by API endpoints (api/views.py:72,84) to return user data as JSON, exposing passwords to any caller with access to the users API.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication-api-post",
+      "path": "app/blueprints/api/views.py",
+      "start": {
+        "line": 43,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 56,
+        "col": 38,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The MessagesView.post() method has no @admin_required decorator (unlike index, get, delete, and acknowledge_message), allowing any unauthenticated user to create messages via the API. Combined with stored XSS in the admin message view, this creates an unauthenticated stored XSS attack chain.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.xss-protection-header-disabled",
+      "path": "app/flask_xss.py",
+      "start": {
+        "line": 74,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 75,
+        "col": 47,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The X-XSS-Protection header is explicitly set to 0 (disabled) when xss_protection_enabled is False. This disables the browser's built-in XSS auditor/filter, removing a defense-in-depth layer against reflected XSS attacks.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-693: Protection Mechanism Failure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-mode-enabled",
+      "path": "app/flask_xss.py",
+      "start": {
+        "line": 26,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 26,
+        "col": 30,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Flask DEBUG mode is explicitly set to True (app.config['DEBUG'] = True). In production, this exposes detailed error tracebacks, the interactive debugger, and sensitive application internals to attackers.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-215: Insertion of Sensitive Information Into Debugging Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.unquoted-attribute-value-path",
+      "path": "app/templates/_base.html",
+      "start": {
+        "line": 67,
+        "col": 40,
+        "offset": 0
+      },
+      "end": {
+        "line": 67,
+        "col": 56,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The hidden input value attribute uses an unquoted attribute value (value={{ g.path }}) where g.path comes from request.path. Without quotes, crafted URL paths could break out of the attribute and inject additional HTML attributes or event handlers, leading to XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.unquoted-attribute-script-src",
+      "path": "app/templates/_base.html",
+      "start": {
+        "line": 79,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 79,
+        "col": 59,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The script src attribute uses an unquoted value (src={{ url_for(...) }}). Without quotes, if the URL generation were manipulated, it could allow attribute injection leading to XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "LOW",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss-admin-message-template",
+      "path": "app/templates/admin/message.html",
+      "start": {
+        "line": 29,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 31,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Message fields (from_user, message, date) are rendered with '| safe' filter in the admin message template, disabling auto-escaping. Since messages can be created by any user (including via the unauthenticated API endpoint), this is a stored XSS vulnerability targeting admin users.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

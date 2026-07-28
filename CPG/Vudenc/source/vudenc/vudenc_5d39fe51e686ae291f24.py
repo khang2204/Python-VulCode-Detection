@@ -1,0 +1,3 @@
+def t_error(t):...
+warn('Skip lexing error..', t)
+t.lexer.skip(1)

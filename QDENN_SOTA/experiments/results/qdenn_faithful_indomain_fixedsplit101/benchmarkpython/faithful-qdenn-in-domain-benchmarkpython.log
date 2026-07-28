@@ -1,0 +1,65 @@
+[{"stream_name":"stderr","time":5.187302214,"data":"/usr/local/lib/python3.12/dist-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":5.187353394,"data":"  validate(nb)\n"}
+,{"stream_name":"stderr","time":5.98414253,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":5.9841823,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":5.98418704,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":5.98419034,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.531136148,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.531173348,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.531176558,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.531178778,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":12.012769798,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.3/57.3 kB 768.1 kB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.216338222,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.3/57.3 kB 768.1 kB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.425283227,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 17.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.505943092,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 937.5/937.5 kB 38.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.627556321,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 17.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.627587081,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 937.5/937.5 kB 38.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.972078544,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 25.5/25.5 MB 42.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.060736831,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 70.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.174048408,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 25.5/25.5 MB 42.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.174083878,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 70.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.20017679,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 167.2/167.2 kB 9.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.402108974,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 167.2/167.2 kB 9.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.415028055,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.8/8.8 MB 55.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.61692983,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.8/8.8 MB 55.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.373011648,"data":"COMMAND /usr/bin/python3 /kaggle/input/datasets/ryhvic/qdenn-faithful-fixedsplit101-assets/run_in_domain.py --model qdenn --dataset benchmarkpython --epochs 10 --output /kaggle/working/results --cache /kaggle/input/datasets/ryhvic/qdenn-faithful-fixedsplit101-assets/cache\n"}
+,{"stream_name":"stdout","time":72.784122007,"data":"qdenn/benchmarkpython/seed_101 epoch=1/10 val_recall=0.1324\n"}
+,{"stream_name":"stdout","time":111.961734736,"data":"qdenn/benchmarkpython/seed_101 epoch=2/10 val_recall=0.1765\n"}
+,{"stream_name":"stdout","time":151.013836627,"data":"qdenn/benchmarkpython/seed_101 epoch=3/10 val_recall=0.3382\n"}
+,{"stream_name":"stdout","time":190.843469517,"data":"qdenn/benchmarkpython/seed_101 epoch=4/10 val_recall=0.1324\n"}
+,{"stream_name":"stdout","time":231.15866458,"data":"qdenn/benchmarkpython/seed_101 epoch=5/10 val_recall=0.1912\n"}
+,{"stream_name":"stdout","time":270.886926584,"data":"qdenn/benchmarkpython/seed_101 epoch=6/10 val_recall=0.1765\n"}
+,{"stream_name":"stdout","time":310.938177436,"data":"qdenn/benchmarkpython/seed_101 epoch=7/10 val_recall=0.2206\n"}
+,{"stream_name":"stdout","time":351.033971117,"data":"qdenn/benchmarkpython/seed_101 epoch=8/10 val_recall=0.2059\n"}
+,{"stream_name":"stdout","time":391.193683299,"data":"qdenn/benchmarkpython/seed_101 epoch=9/10 val_recall=0.0588\n"}
+,{"stream_name":"stdout","time":431.108990146,"data":"qdenn/benchmarkpython/seed_101 epoch=10/10 val_recall=0.1324\n"}
+,{"stream_name":"stdout","time":473.830564173,"data":"qdenn/benchmarkpython/seed_202 epoch=1/10 val_recall=0.1029\n"}
+,{"stream_name":"stdout","time":513.323936059,"data":"qdenn/benchmarkpython/seed_202 epoch=2/10 val_recall=0.1618\n"}
+,{"stream_name":"stdout","time":553.055193124,"data":"qdenn/benchmarkpython/seed_202 epoch=3/10 val_recall=0.0441\n"}
+,{"stream_name":"stdout","time":592.954503915,"data":"qdenn/benchmarkpython/seed_202 epoch=4/10 val_recall=0.3529\n"}
+,{"stream_name":"stdout","time":632.879646176,"data":"qdenn/benchmarkpython/seed_202 epoch=5/10 val_recall=0.0735\n"}
+,{"stream_name":"stdout","time":672.673029134,"data":"qdenn/benchmarkpython/seed_202 epoch=6/10 val_recall=0.1618\n"}
+,{"stream_name":"stdout","time":712.8015029,"data":"qdenn/benchmarkpython/seed_202 epoch=7/10 val_recall=0.2353\n"}
+,{"stream_name":"stdout","time":752.729115967,"data":"qdenn/benchmarkpython/seed_202 epoch=8/10 val_recall=0.1912\n"}
+,{"stream_name":"stdout","time":792.736640113,"data":"qdenn/benchmarkpython/seed_202 epoch=9/10 val_recall=0.0588\n"}
+,{"stream_name":"stdout","time":832.43123272,"data":"qdenn/benchmarkpython/seed_202 epoch=10/10 val_recall=0.1912\n"}
+,{"stream_name":"stdout","time":875.448981116,"data":"qdenn/benchmarkpython/seed_303 epoch=1/10 val_recall=0.1765\n"}
+,{"stream_name":"stdout","time":915.349495775,"data":"qdenn/benchmarkpython/seed_303 epoch=2/10 val_recall=0.1324\n"}
+,{"stream_name":"stdout","time":955.042269036,"data":"qdenn/benchmarkpython/seed_303 epoch=3/10 val_recall=0.1324\n"}
+,{"stream_name":"stdout","time":994.949179309,"data":"qdenn/benchmarkpython/seed_303 epoch=4/10 val_recall=0.1029\n"}
+,{"stream_name":"stdout","time":1034.530895428,"data":"qdenn/benchmarkpython/seed_303 epoch=5/10 val_recall=0.1176\n"}
+,{"stream_name":"stdout","time":1074.256064436,"data":"qdenn/benchmarkpython/seed_303 epoch=6/10 val_recall=0.2500\n"}
+,{"stream_name":"stdout","time":1113.82605976,"data":"qdenn/benchmarkpython/seed_303 epoch=7/10 val_recall=0.1618\n"}
+,{"stream_name":"stdout","time":1153.681256183,"data":"qdenn/benchmarkpython/seed_303 epoch=8/10 val_recall=0.0735\n"}
+,{"stream_name":"stdout","time":1193.22859198,"data":"qdenn/benchmarkpython/seed_303 epoch=9/10 val_recall=0.1029\n"}
+,{"stream_name":"stdout","time":1232.549172036,"data":"qdenn/benchmarkpython/seed_303 epoch=10/10 val_recall=0.1618\n"}
+,{"stream_name":"stdout","time":1237.484754468,"data":"QDENN_IN_DOMAIN_COMPLETE benchmarkpython\n"}
+,{"stream_name":"stderr","time":1240.021532376,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1240.021574236,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1240.163592264,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1240.163632674,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1240.74600995,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":1240.990894467,"data":"[NbConvertApp] Writing 6448 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":1243.218597536,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1243.913116641,"data":"[NbConvertApp] Writing 281925 bytes to __results__.html\n"}
+]

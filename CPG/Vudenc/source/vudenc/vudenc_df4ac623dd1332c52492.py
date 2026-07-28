@@ -1,0 +1,3 @@
+def __init__(self, adapted, dumps=None, encoder=None):...
+self.encoder = encoder
+super().__init__(adapted, dumps=dumps)

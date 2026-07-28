@@ -1,0 +1,3 @@
+@classmethod...
+return cls.tool_jar_from_products(products, 'compiler-bridge', cls.
+    options_scope)

@@ -1,0 +1,3 @@
+def describe(self):...
+return 'submit sources %s for task %s (ID %d) %s' % (repr(self.filenames),
+    self.task[1], self.task[0], self.url)

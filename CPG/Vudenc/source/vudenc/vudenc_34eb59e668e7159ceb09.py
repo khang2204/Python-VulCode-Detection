@@ -1,0 +1,3 @@
+def test_empty_unicode(self):...
+self.cursor.execute('create table t1(s nvarchar(20))')
+self.cursor.execute('insert into t1 values(?)', u'')

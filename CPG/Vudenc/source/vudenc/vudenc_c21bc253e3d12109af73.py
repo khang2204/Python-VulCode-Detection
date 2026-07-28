@@ -1,0 +1,3 @@
+def unbind_methods(self):...
+for i, m, f, t in self.wz_bind_methods:
+self.unbind_route(i, m)

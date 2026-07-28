@@ -1,0 +1,3 @@
+def __init__(self, from_object: str, client):...
+self.from_object = from_object
+self.client = client

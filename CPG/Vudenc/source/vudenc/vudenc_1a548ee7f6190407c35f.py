@@ -1,0 +1,3 @@
+def link_redirect(request, pk):...
+instance = get_object_or_404(JustURL, pk=pk)
+return redirect(instance.input_url)

@@ -1,0 +1,3 @@
+def version():...
+return 'munins node on ' + socket.getfqdn(
+    ) + ' version: ' + VERSION + LINEBREAK

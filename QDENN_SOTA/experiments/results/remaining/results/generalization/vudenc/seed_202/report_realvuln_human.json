@@ -1,0 +1,31 @@
+{
+  "architecture": "QDENN",
+  "protocol": "generalization",
+  "source": "vudenc",
+  "target": "realvuln_human",
+  "training_seed": 202,
+  "split_seed": 101,
+  "evaluation_scope": "full_target_dataset",
+  "train_samples": 11088,
+  "validation_samples": 2376,
+  "test_samples": 431,
+  "source_manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+  "configuration": {
+    "vocabulary": 128,
+    "qubits": 7,
+    "max_length": 100,
+    "epochs": 10,
+    "batch_size": 32,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "fidelity_note": "Learning rate is not reported by the source paper; 0.01 is the declared reproduction choice."
+  },
+  "metrics": {
+    "accuracy": 0.19953596287703015,
+    "balanced_accuracy": 0.48242453358955883,
+    "precision": 0.7741935483870968,
+    "recall": 0.06629834254143646,
+    "f1": 0.12213740458015265,
+    "vulnerable_recall": 0.06629834254143646
+  }
+}

@@ -1,0 +1,3 @@
+def test_fields(self):...
+self.assertTrue({'name': 'DocType', 'issingle': 0} in DatabaseQuery(
+    'DocType').execute(fields=['name', 'issingle'], limit_page_length=None))

@@ -1,0 +1,357 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 42,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 42,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from request.GET.get('p') is concatenated into a filesystem path via os.path.join() and passed to open() without sanitization, allowing arbitrary file read via path traversal.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-execution",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 72,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 76,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from request.POST.get('first_name') is base64 decoded and passed directly to exec(), allowing arbitrary Python code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "badguys/templates/vulnerable/xss/query.html",
+      "start": {
+        "line": 37,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 37,
+        "col": 35,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled query parameter 'qs' is rendered with the '|safe' filter inside a JavaScript string context, bypassing Django auto-escaping and enabling reflected XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "badguys/templates/vulnerable/xss/path.html",
+      "start": {
+        "line": 49,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 49,
+        "col": 31,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled URL path parameter 'path' is rendered with the '|safe' filter inside a JavaScript string context, bypassing Django auto-escaping and enabling reflected XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "badguys/templates/vulnerable/xss/form.html",
+      "start": {
+        "line": 28,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 28,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled query parameter 'qs' is rendered with the '|safe' filter inside an HTML input value attribute, bypassing Django auto-escaping and enabling reflected XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "badguys/templates/vulnerable/csrf/image.html",
+      "start": {
+        "line": 48,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 48,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled query parameter 'qs' is rendered with the '|safe' filter inside a JavaScript string context, bypassing Django auto-escaping and enabling reflected XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 157,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 158,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The admin interface is exposed solely based on a query string parameter (?action=admin) without any authentication or authorization checks, allowing unauthenticated access to admin functionality.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function",
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.idor",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 128,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 139,
+        "col": 75,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The dor_user_profile view accepts a userid from the URL path and retrieves/modifies the corresponding user data without verifying that the requesting user is authorized to access that profile, enabling Insecure Direct Object Reference (IDOR).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Insecure Direct Object Reference",
+            "CWE-284: Improper Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirect.open-redirect",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 177,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 178,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from request.GET.get('url') is passed directly to redirect() without validation, allowing attackers to redirect users to arbitrary external domains.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: Open Redirect"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-execution",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 183,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 186,
+        "col": 30,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from request.GET.get('fwd') is used to look up and call arbitrary functions from globals(), allowing an attacker to invoke any accessible function in the module namespace.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.exposure.debug-mode",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 10,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 11,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "DEBUG and TEMPLATE_DEBUG are set to True, which exposes sensitive stack traces, source code, and local variables in error responses.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret-key",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 90,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 90,
+        "col": 65,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The Django SECRET_KEY is hardcoded in the settings file, which could lead to session forgery and cryptographic attacks if the code is exposed.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.disabled-csrf",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 99,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 108,
+        "col": 2,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The django.middleware.csrf.CsrfViewMiddleware is commented out in MIDDLEWARE_CLASSES, globally disabling CSRF protection for the application.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.exposure.debug-toolbar",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 180,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 189,
+        "col": 2,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The show_toolbar function enables the Django Debug Toolbar based on user-controlled GET, POST, or COOKIE parameters, potentially exposing SQL queries, settings, and request data to unauthenticated users.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

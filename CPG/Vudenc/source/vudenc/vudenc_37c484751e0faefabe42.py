@@ -1,0 +1,3 @@
+def playerStandings():...
+"""docstring"""
+return fetchall('select * from player_static_view order by wins')

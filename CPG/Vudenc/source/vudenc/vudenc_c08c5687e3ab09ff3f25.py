@@ -1,0 +1,3 @@
+@auth.public...
+params = {'is_admin': auth.is_admin()}
+self.response.write(template.render('templates/root.html', params=params))

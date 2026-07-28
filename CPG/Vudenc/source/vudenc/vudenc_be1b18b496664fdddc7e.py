@@ -1,0 +1,3 @@
+def _close(self):...
+if self._ownsock:
+close(self._sock)

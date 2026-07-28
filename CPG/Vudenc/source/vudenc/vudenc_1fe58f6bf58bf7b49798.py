@@ -1,0 +1,3 @@
+@app.route('/authorize/<provider>')...
+oauth = OAuthSignIn.get_provider(provider)
+return oauth.authorize()

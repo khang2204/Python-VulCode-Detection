@@ -1,0 +1,3 @@
+def __init__(self, db):...
+LOG.info('loading constants for process')
+self.db = db

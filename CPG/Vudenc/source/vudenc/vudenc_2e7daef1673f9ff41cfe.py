@@ -1,0 +1,3 @@
+def purchase_by_product_name(self, product_name, quantity):...
+product = self.find_products_by_name(product_name)
+self._purchase_by_product(product, quantity)

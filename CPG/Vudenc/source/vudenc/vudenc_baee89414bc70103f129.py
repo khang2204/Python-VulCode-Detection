@@ -1,0 +1,3 @@
+def get_list_of_scene_names():...
+return ['sms', 'austin', 'smashbrews', 'colorado', 'colorado_doubles',
+    'pro', 'pro_wiiu', 'test1', 'test2']

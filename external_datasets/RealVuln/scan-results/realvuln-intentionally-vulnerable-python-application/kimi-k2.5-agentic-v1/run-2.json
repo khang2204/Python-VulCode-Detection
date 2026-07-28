@@ -1,0 +1,130 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 12,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 12,
+        "col": 65,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from request.args.get('ip') is passed directly to subprocess.check_output() without validation. Although using a list instead of shell=True provides some protection, the 'ip' parameter can still contain shell metacharacters or be manipulated to execute arbitrary commands.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 17,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded credentials found in source code. USERNAME='admin' and PASSWORD='password123' are embedded directly in the application code, making them accessible to anyone with source code access.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure-deserialization",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 33,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 33,
+        "col": 24,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure deserialization using pickle.loads() on user-controlled data from request.data. An attacker can craft malicious pickle payloads to execute arbitrary code on the server during deserialization.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 46,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 46,
+        "col": 62,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SQL Injection vulnerability: User input from request.args.get('id') is concatenated directly into SQL query string using string concatenation. An attacker can inject malicious SQL commands to read, modify, or delete database data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.configuration.debug-mode-enabled",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 55,
+        "col": 15,
+        "offset": 0
+      },
+      "end": {
+        "line": 55,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Flask application is running with debug=True enabled. This exposes detailed error messages, stack traces, and potentially sensitive information. In debug mode, the Werkzeug debugger allows remote code execution through the browser console.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

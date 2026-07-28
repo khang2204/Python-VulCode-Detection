@@ -1,0 +1,3 @@
+def mock_nsx_clustered_api(self, session_response=None, **kwargs):...
+return NsxClientTestCase.MockNSXClusteredAPI(session_response=
+    session_response, **kwargs)

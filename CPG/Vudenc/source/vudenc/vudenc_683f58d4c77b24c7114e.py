@@ -1,0 +1,3 @@
+@app.route('/logout')...
+session.pop('username', None)
+return redirect(url_for('index'))

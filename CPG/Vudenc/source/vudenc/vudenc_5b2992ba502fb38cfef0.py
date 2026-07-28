@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self._key_for_tool_version('scala-repl', self.version)

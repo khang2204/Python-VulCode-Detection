@@ -1,0 +1,3 @@
+def get(self, submission_id: str):...
+response = api.submission.get_one(submission_id, email=get_email(self))
+self.write(response)

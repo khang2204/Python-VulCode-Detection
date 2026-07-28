@@ -1,0 +1,3 @@
+def initFile(self, filename):...
+"""docstring"""
+self.test_name = filename + ('jerky' if self.jerky else 'smooth')

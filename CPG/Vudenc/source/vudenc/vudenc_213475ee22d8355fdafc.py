@@ -1,0 +1,3 @@
+@staticmethod...
+user = openid.get_current_user(request)
+return CurrentUser(user.sub, user.email, user.picture) if user else None

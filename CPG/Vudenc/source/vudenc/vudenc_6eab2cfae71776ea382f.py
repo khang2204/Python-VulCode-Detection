@@ -1,0 +1,3 @@
+def shutdown(app, context):...
+"""docstring"""
+get_db(app, context).close()

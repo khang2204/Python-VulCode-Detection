@@ -1,0 +1,3 @@
+def get(self):...
+self.delete_session_cookie()
+self.redirect('/')

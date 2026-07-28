@@ -1,0 +1,3 @@
+def __init__(self, path):...
+self.conn = sqlite3.connect(path)
+self.c = self.conn.cursor()

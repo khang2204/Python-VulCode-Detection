@@ -1,0 +1,3 @@
+def lchmod(f, mode):...
+return os.chmod(f, mode, follow_symlinks=os.chmod not in os.
+    supports_follow_symlinks)

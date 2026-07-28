@@ -1,0 +1,3 @@
+def _init_http_session(self, request, user_id):...
+session = IPixelatedSession(request.getSession())
+session.user_uuid = user_id

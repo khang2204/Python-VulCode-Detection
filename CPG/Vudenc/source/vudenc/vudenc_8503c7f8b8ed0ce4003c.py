@@ -1,0 +1,3 @@
+def get(self):...
+context = {'title': 'Admin: Chrome Infra Monitoring Proxy'}
+self.render_response('admin.html', **context)

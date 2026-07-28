@@ -1,0 +1,3 @@
+def query_model_relation(self, col_name):...
+model = self.get_related_model(col_name)
+return self.session.query(model).all()

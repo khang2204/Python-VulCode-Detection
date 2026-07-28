@@ -1,0 +1,3 @@
+def get_table_names(self, connection_url):...
+engine = self._get_engine(connection_url)
+return engine.table_names()

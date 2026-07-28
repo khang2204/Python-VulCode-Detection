@@ -1,0 +1,3 @@
+def run(self, url):...
+if url and is_banned_domain(url):
+c.errors.add(errors.BANNED_DOMAIN)

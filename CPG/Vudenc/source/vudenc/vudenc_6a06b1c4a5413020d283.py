@@ -1,0 +1,3 @@
+def get_local_table_definition():...
+return get_table_definition(settings.DEFAULT_LOCAL_TABLE,
+    get_replicated_engine(name=settings.DEFAULT_LOCAL_TABLE))

@@ -1,0 +1,3 @@
+def test_arg_delete_player(self):...
+"""docstring"""
+self.parser.parse_args(['--delete-player'])

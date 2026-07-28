@@ -1,0 +1,3 @@
+def getDBFilename(self):...
+"""docstring"""
+return self.filename

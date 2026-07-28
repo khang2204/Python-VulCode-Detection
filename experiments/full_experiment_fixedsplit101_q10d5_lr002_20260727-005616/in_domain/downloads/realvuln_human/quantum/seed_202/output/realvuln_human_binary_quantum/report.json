@@ -1,0 +1,145 @@
+{
+  "config": {
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "seed": 202,
+    "split_seed": 101,
+    "hidden_dim": 128,
+    "embedding_dim": 128,
+    "attention_dim": 64,
+    "value_dim": 64,
+    "gat_layers": 3,
+    "gat_heads": 4,
+    "dropout": 0.3,
+    "warmup_epochs": 50,
+    "head_epochs": 50,
+    "batch_size": 16,
+    "learning_rate": 0.002,
+    "head_learning_rate": 0.002,
+    "weight_decay": 0.0001,
+    "top_cwes": 6,
+    "prototypes_per_cwe": 3,
+    "benign_prototypes": 4,
+    "attention": "quantum",
+    "n_qubits": 10,
+    "quantum_depth": 5,
+    "quantum_device": "default.qubit"
+  },
+  "split_mode": "standard",
+  "split_sizes": {
+    "train": 303,
+    "validation": 64,
+    "test": 64
+  },
+  "split_binary_counts": {
+    "train": {
+      "0": 49,
+      "1": 254
+    },
+    "validation": {
+      "0": 10,
+      "1": 54
+    },
+    "test": {
+      "0": 10,
+      "1": 54
+    }
+  },
+  "class_weights": [
+    3.09183669090271,
+    0.5964567065238953
+  ],
+  "prototype_manifest": [
+    {
+      "kind": "benign",
+      "cwe": "BENIGN",
+      "count": 4
+    },
+    {
+      "kind": "vulnerable",
+      "cwe": "CWE-89",
+      "count": 3,
+      "train_samples": 27
+    },
+    {
+      "kind": "vulnerable",
+      "cwe": "CWE-798",
+      "count": 3,
+      "train_samples": 21
+    },
+    {
+      "kind": "vulnerable",
+      "cwe": "CWE-79",
+      "count": 3,
+      "train_samples": 20
+    },
+    {
+      "kind": "vulnerable",
+      "cwe": "CWE-400",
+      "count": 3,
+      "train_samples": 16
+    },
+    {
+      "kind": "vulnerable",
+      "cwe": "CWE-22",
+      "count": 3,
+      "train_samples": 13
+    },
+    {
+      "kind": "vulnerable",
+      "cwe": "CWE-918",
+      "count": 3,
+      "train_samples": 12
+    }
+  ],
+  "prototype_shape": [
+    22,
+    128
+  ],
+  "warmup_last": {
+    "accuracy": 0.484375,
+    "macro_f1": 0.44523246650906223,
+    "per_class_f1": [
+      0.2978723404255319,
+      0.5925925925925926
+    ],
+    "epoch": 31,
+    "train_loss": 0.40830085468370925
+  },
+  "head_last": {
+    "accuracy": 0.75,
+    "balanced_accuracy": 0.5259259259259259,
+    "precision": 0.8518518518518519,
+    "recall": 0.8518518518518519,
+    "f1": 0.8518518518518519,
+    "confusion_matrix": [
+      [
+        2,
+        8
+      ],
+      [
+        8,
+        46
+      ]
+    ],
+    "epoch": 50,
+    "train_loss": 0.19794294238090515
+  },
+  "test": {
+    "accuracy": 0.828125,
+    "balanced_accuracy": 0.6944444444444444,
+    "precision": 0.9056603773584906,
+    "recall": 0.8888888888888888,
+    "f1": 0.897196261682243,
+    "confusion_matrix": [
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        48
+      ]
+    ]
+  }
+}

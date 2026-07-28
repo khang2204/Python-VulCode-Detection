@@ -1,0 +1,3 @@
+def deleteMatches():...
+"""docstring"""
+execute('delete from Match')

@@ -1,0 +1,3 @@
+@property...
+return base64.b64encode((self.rule.name + ''.join(self.output)).encode('utf-8')
+    ).decode('utf-8')

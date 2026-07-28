@@ -1,0 +1,3 @@
+def pop(self):...
+"""docstring"""
+self.nodes.pop()

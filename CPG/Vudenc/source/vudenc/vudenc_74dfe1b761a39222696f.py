@@ -1,0 +1,3 @@
+def getJwtKey():...
+"""docstring"""
+return SERVER_JWT_PUBLIC_KEY

@@ -1,0 +1,3 @@
+def __init__(self, new_name, **kwargs):...
+super().__init__(**kwargs)
+self._new_name = new_name

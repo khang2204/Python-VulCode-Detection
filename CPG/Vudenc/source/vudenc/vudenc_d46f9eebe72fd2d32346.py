@@ -1,0 +1,3 @@
+def __process_status(self, job_id):...
+self.__process_text(job_id)
+self.__process_percent(job_id)

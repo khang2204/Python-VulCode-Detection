@@ -1,0 +1,3 @@
+def dumps(self, obj):...
+options = {'cls': self.encoder} if self.encoder else {}
+return json.dumps(obj, **options)

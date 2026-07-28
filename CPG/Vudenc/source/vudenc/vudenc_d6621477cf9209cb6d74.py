@@ -1,0 +1,3 @@
+def test_temporary_dir_with_root_dir(self):...
+self.assertTrue(os.path.realpath(path2).startswith(os.path.realpath(path1)),
+    'Nested temporary dir should be created within outer dir.')

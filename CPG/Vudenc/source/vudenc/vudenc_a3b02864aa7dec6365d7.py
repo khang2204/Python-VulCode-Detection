@@ -1,0 +1,3 @@
+def test_datasources(self):...
+p = pyodbc.dataSources()
+self.assertTrue(isinstance(p, dict))

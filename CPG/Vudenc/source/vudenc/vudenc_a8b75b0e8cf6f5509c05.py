@@ -1,0 +1,3 @@
+def test_serversonly(self):...
+suite = BokChoyTestSuite('', serversonly=True)
+self.assertEqual(suite.cmd, '')

@@ -1,0 +1,359 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/app.py",
+      "start": {
+        "line": 261,
+        "col": 22,
+        "offset": 6595
+      },
+      "end": {
+        "line": 261,
+        "col": 93,
+        "offset": 6666
+      },
+      "extra": {
+        "message": "User input from request.json['search'] is directly concatenated into SQL query string via Python string formatting. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-798.hardcoded-credentials",
+      "path": "app/app.py",
+      "start": {
+        "line": 62,
+        "col": 1,
+        "offset": 1554
+      },
+      "end": {
+        "line": 63,
+        "col": 31,
+        "offset": 1584
+      },
+      "extra": {
+        "message": "Hardcoded credentials 'admin'/'admin123' are created in setup_users() for default user account. These credentials are visible in source code.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-347.insecure-jwt-verification",
+      "path": "app/app.py",
+      "start": {
+        "line": 96,
+        "col": 1,
+        "offset": 2366
+      },
+      "end": {
+        "line": 99,
+        "col": 17,
+        "offset": 2413
+      },
+      "extra": {
+        "message": "Function insecure_verify() calls jwt.decode(token, verify=False) which disables JWT signature verification. This allows attackers to forge valid JWT tokens.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-347: Use of Unverified JWT"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-306.missing-authentication",
+      "path": "app/app.py",
+      "start": {
+        "line": 221,
+        "col": 1,
+        "offset": 5557
+      },
+      "end": {
+        "line": 241,
+        "col": 40,
+        "offset": 5992
+      },
+      "extra": {
+        "message": "Route /get/<cust_id> uses insecure_verify() which disables JWT signature verification (line 227), effectively bypassing authentication. Any user can access any customer record by providing any token.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication",
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-639.idor",
+      "path": "app/app.py",
+      "start": {
+        "line": 196,
+        "col": 1,
+        "offset": 4880
+      },
+      "end": {
+        "line": 218,
+        "col": 40,
+        "offset": 5363
+      },
+      "extra": {
+        "message": "Route /fetch/customer accepts customer_id directly from request body without verifying the authenticated user owns that customer. This allows IDOR attacks where one user can access other users' data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key",
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-639.idor",
+      "path": "app/app.py",
+      "start": {
+        "line": 221,
+        "col": 1,
+        "offset": 5557
+      },
+      "end": {
+        "line": 241,
+        "col": 40,
+        "offset": 5992
+      },
+      "extra": {
+        "message": "Route /get/<cust_id> returns full customer record (including credit card number) for any customer ID without authorization check. Authenticated users can access any customer's sensitive data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key",
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-22.path-traversal",
+      "path": "app/app.py",
+      "start": {
+        "line": 296,
+        "col": 1,
+        "offset": 7165
+      },
+      "end": {
+        "line": 300,
+        "col": 20,
+        "offset": 7238
+      },
+      "extra": {
+        "message": "File upload path constructed by concatenating user-provided filename without validation. An attacker could upload files to arbitrary locations using path traversal sequences like '../' in the filename.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-22.path-traversal",
+      "path": "app/app.py",
+      "start": {
+        "line": 320,
+        "col": 1,
+        "offset": 7798
+      },
+      "end": {
+        "line": 324,
+        "col": 20,
+        "offset": 7871
+      },
+      "extra": {
+        "message": "File upload path constructed by concatenating user-provided filename without validation in yaml_hammer route. Path traversal sequences could allow writing files to arbitrary locations.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-502.insecure-deserialization",
+      "path": "app/app.py",
+      "start": {
+        "line": 329,
+        "col": 1,
+        "offset": 7930
+      },
+      "end": {
+        "line": 329,
+        "col": 20,
+        "offset": 7949
+      },
+      "extra": {
+        "message": "yaml.load(y) uses unsafe loader that can deserialize arbitrary Python objects. Malicious YAML input can execute arbitrary code.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-79.xss",
+      "path": "app/app.py",
+      "start": {
+        "line": 103,
+        "col": 1,
+        "offset": 2513
+      },
+      "end": {
+        "line": 114,
+        "col": 69,
+        "offset": 2688
+      },
+      "extra": {
+        "message": "404 error handler reflects request.url directly into HTML template without sanitization. This allows reflected XSS attacks via malicious URLs.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-79.xss",
+      "path": "app/app.py",
+      "start": {
+        "line": 271,
+        "col": 1,
+        "offset": 6636
+      },
+      "end": {
+        "line": 281,
+        "col": 69,
+        "offset": 6826
+      },
+      "extra": {
+        "message": "Error handler in search_customer reflects exception message directly into HTML template without sanitization. This allows reflected XSS via malicious search input that causes errors.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-200.sensitive-data-exposure",
+      "path": "app/app.py",
+      "start": {
+        "line": 47,
+        "col": 1,
+        "offset": 1137
+      },
+      "end": {
+        "line": 47,
+        "col": 25,
+        "offset": 1161
+      },
+      "extra": {
+        "message": "Customer model stores credit card number (ccn) in plain text in the database without encryption. This sensitive data is exposed via API endpoints.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-798.hardcoded-secret",
+      "path": "app/app.py",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 650
+      },
+      "end": {
+        "line": 28,
+        "col": 53,
+        "offset": 702
+      },
+      "extra": {
+        "message": "Hardcoded secret keys are used for JWT signing and Flask session management. SECRET_KEY_HMAC='secret' is trivially guessable.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials",
+            "CWE-259: Hard-coded Password"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cwe-312.sensitive-data-transmission",
+      "path": "app/app.py",
+      "start": {
+        "line": 171,
+        "col": 1,
+        "offset": 4193
+      },
+      "end": {
+        "line": 194,
+        "col": 43,
+        "offset": 4725
+      },
+      "extra": {
+        "message": "Login endpoint compares passwords in plain text (line 182: password=password). Passwords should be hashed before comparison.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-312: Cleartext Storage of Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

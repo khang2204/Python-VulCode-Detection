@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self.config.get(self.section, 'password_reset_link')

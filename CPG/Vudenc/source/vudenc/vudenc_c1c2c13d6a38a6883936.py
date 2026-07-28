@@ -1,0 +1,3 @@
+@classmethod...
+"""docstring"""
+return gate.new_agent(bindings)

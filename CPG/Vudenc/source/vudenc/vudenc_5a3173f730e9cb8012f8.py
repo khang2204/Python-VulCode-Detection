@@ -1,0 +1,3 @@
+def get(self):...
+self.response.headers['Content-Type'] = 'text/plain; charset=utf-8'
+self.response.out.write('Server up')

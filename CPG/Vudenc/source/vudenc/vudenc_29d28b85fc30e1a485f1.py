@@ -1,0 +1,3 @@
+def __init__(self, size):...
+assert size in (32, 64)
+self.size = size

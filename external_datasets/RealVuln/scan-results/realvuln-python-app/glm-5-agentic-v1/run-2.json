@@ -1,0 +1,381 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "target/project/models/Dashboard.py",
+      "start": {
+        "line": 7,
+        "col": 9,
+        "offset": 130
+      },
+      "end": {
+        "line": 7,
+        "col": 74,
+        "offset": 195
+      },
+      "extra": {
+        "message": "User-controlled pageId parameter is concatenated directly into SQL query string without sanitization. The pageId parameter flows from the route /dashboard/<pageId> to this function, allowing SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "target/project/controllers/404.py",
+      "start": {
+        "line": 94,
+        "col": 5,
+        "offset": 3280
+      },
+      "end": {
+        "line": 95,
+        "col": 45,
+        "offset": 3375
+      },
+      "extra": {
+        "message": "Server-Side Template Injection vulnerability. The request.url is formatted directly into the template string and rendered using render_template_string(). This allows attackers to inject Jinja2 template expressions through the URL path, potentially achieving remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xxe",
+      "path": "target/project/controllers/Validator.py",
+      "start": {
+        "line": 15,
+        "col": 5,
+        "offset": 380
+      },
+      "end": {
+        "line": 15,
+        "col": 45,
+        "offset": 420
+      },
+      "extra": {
+        "message": "XML External Entity (XXE) vulnerability. The parseString() function from xml.dom.pulldom is used to parse user-supplied XML from request.form['customers'] without disabling external entity processing. This allows attackers to read local files, perform SSRF, or cause denial of service.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "target/project/controllers/Validator.py",
+      "start": {
+        "line": 29,
+        "col": 5,
+        "offset": 850
+      },
+      "end": {
+        "line": 34,
+        "col": 25,
+        "offset": 1100
+      },
+      "extra": {
+        "message": "Path traversal vulnerability. The fileName parameter from request.form['example_file'] is used directly in open() and send_file() without validation or sanitization. Attackers can read arbitrary files on the system using path traversal sequences like '../'.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml",
+      "path": "target/project/controllers/Information.py",
+      "start": {
+        "line": 18,
+        "col": 5,
+        "offset": 490
+      },
+      "end": {
+        "line": 18,
+        "col": 35,
+        "offset": 520
+      },
+      "extra": {
+        "message": "Insecure deserialization vulnerability. yaml.load() is used on user-controlled base64-decoded input without specifying a safe loader. This allows arbitrary Python code execution through YAML deserialization attacks. Should use yaml.safe_load() instead.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle",
+      "path": "target/project/controllers/About.py",
+      "start": {
+        "line": 22,
+        "col": 5,
+        "offset": 590
+      },
+      "end": {
+        "line": 27,
+        "col": 35,
+        "offset": 880
+      },
+      "extra": {
+        "message": "Insecure deserialization vulnerability. User-controlled data from request.form['data_obj'] is converted from hex to bytes, written to a file, and then deserialized using pickle.load(). Pickle deserialization of untrusted data allows arbitrary code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command",
+      "path": "target/project/controllers/Monitoring.py",
+      "start": {
+        "line": 12,
+        "col": 5,
+        "offset": 260
+      },
+      "end": {
+        "line": 14,
+        "col": 18,
+        "offset": 330
+      },
+      "extra": {
+        "message": "Command injection vulnerability. The system_call() function uses os.popen() to execute commands and is exposed to Jinja2 templates via context_processor. If templates can be manipulated or through SSTI, attackers can execute arbitrary system commands.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "target/project/controllers/Search.py",
+      "start": {
+        "line": 11,
+        "col": 5,
+        "offset": 340
+      },
+      "end": {
+        "line": 11,
+        "col": 45,
+        "offset": 380
+      },
+      "extra": {
+        "message": "Cross-Site Scripting (XSS) vulnerability. XSS protection is explicitly disabled by setting X-XSS-Protection header to '0', and the search parameter is rendered in the template with autoescaping disabled ({% autoescape false %}), allowing injection of malicious scripts.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "target/project/templates/search/index.html",
+      "start": {
+        "line": 13,
+        "col": 41,
+        "offset": 450
+      },
+      "end": {
+        "line": 13,
+        "col": 75,
+        "offset": 484
+      },
+      "extra": {
+        "message": "Cross-Site Scripting (XSS) vulnerability. User input from the search parameter is rendered with autoescaping explicitly disabled using {% autoescape false %}{{search}}{% endautoescape %}, allowing injection of malicious JavaScript.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded",
+      "path": "target/project/controllers/Login.py",
+      "start": {
+        "line": 12,
+        "col": 5,
+        "offset": 320
+      },
+      "end": {
+        "line": 12,
+        "col": 50,
+        "offset": 365
+      },
+      "extra": {
+        "message": "Hardcoded credentials. The username 'admin' and password 'admin' are hardcoded in plain text for authentication, allowing unauthorized access to the system.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.broken-access-control",
+      "path": "target/project/controllers/Confidential.py",
+      "start": {
+        "line": 8,
+        "col": 5,
+        "offset": 230
+      },
+      "end": {
+        "line": 8,
+        "col": 30,
+        "offset": 255
+      },
+      "extra": {
+        "message": "Broken access control. The session['loggedin'] check only verifies the key exists in the session, not that it contains a valid authentication token. Any user can set this session variable through /webmaster route and gain access to confidential information.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded",
+      "path": "target/project/__init__.py",
+      "start": {
+        "line": 5,
+        "col": 1,
+        "offset": 95
+      },
+      "end": {
+        "line": 5,
+        "col": 34,
+        "offset": 128
+      },
+      "extra": {
+        "message": "Hardcoded secret key. The Flask SECRET_KEY is hardcoded as 'random' in the source code, which allows attackers to forge session cookies and potentially execute other attacks relying on the secret key.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug",
+      "path": "target/project/__init__.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 129
+      },
+      "end": {
+        "line": 6,
+        "col": 18,
+        "offset": 146
+      },
+      "extra": {
+        "message": "Debug mode is enabled in production (app.debug = True). This exposes detailed error messages, stack traces, and potentially allows remote code execution through the Werkzeug debugger.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag",
+            "CWE-215: Insertion of Sensitive Information Into Debugging Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.cors",
+      "path": "target/runserver.py",
+      "start": {
+        "line": 8,
+        "col": 5,
+        "offset": 140
+      },
+      "end": {
+        "line": 8,
+        "col": 55,
+        "offset": 190
+      },
+      "extra": {
+        "message": "CORS misconfiguration. The application allows all origins ('origins': '*') for all routes, which enables cross-origin attacks. Combined with Access-Control-Allow-Credentials: true in the confidential endpoint, this could allow credential theft.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-942: Permissive Cross-domain Policy with Untrusted Domains"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.link-injection",
+      "path": "target/project/templates/messaging/index.html",
+      "start": {
+        "line": 56,
+        "col": 25,
+        "offset": 2250
+      },
+      "end": {
+        "line": 56,
+        "col": 45,
+        "offset": 2270
+      },
+      "extra": {
+        "message": "User-controlled link injection. The href attribute is set to {{item[3]}} which is user input from the message form. This allows javascript: URLs and other malicious schemes, enabling XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

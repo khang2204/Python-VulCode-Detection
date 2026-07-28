@@ -1,0 +1,3 @@
+def find_window(session, window_name):...
+window = session.find_where({'window_name': window_name})
+return window

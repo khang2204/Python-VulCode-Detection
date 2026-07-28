@@ -1,0 +1,81 @@
+{
+  "model": "qdenn",
+  "dataset": "vudenc",
+  "training_seed": 202,
+  "split_seed": 101,
+  "epochs": 10,
+  "batch_size": 32,
+  "train_samples": 11088,
+  "validation_samples": 2376,
+  "test_samples": 2376,
+  "split_manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+  "vocab_size": 128,
+  "max_len": 100,
+  "optimizer": "SGD",
+  "learning_rate": 0.01,
+  "fidelity_note": "QDENN learning rate is not reported by the source paper; 0.01 is a declared reproduction choice.",
+  "test_loss": 0.4125779786328345,
+  "vulnerable_recall": 0.13539192080497742,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.43483520493269984,
+      "validation_loss": 0.43660474928984144,
+      "validation_vulnerable_recall": 0.07838480174541473
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.42309883998424574,
+      "validation_loss": 0.4247591456524615,
+      "validation_vulnerable_recall": 0.09976246953010559
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.41641791336779244,
+      "validation_loss": 0.4272020128755078,
+      "validation_vulnerable_recall": 0.07125891000032425
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.41219605085882555,
+      "validation_loss": 0.41993373254519506,
+      "validation_vulnerable_recall": 0.07838480174541473
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.4088979989536963,
+      "validation_loss": 0.42117926018414936,
+      "validation_vulnerable_recall": 0.12826603651046753
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.40602369005183586,
+      "validation_loss": 0.4173330368462134,
+      "validation_vulnerable_recall": 0.0950118750333786
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.40350844408275394,
+      "validation_loss": 0.42211345052054716,
+      "validation_vulnerable_recall": 0.09976246953010559
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.4026465789413246,
+      "validation_loss": 0.41728039828512503,
+      "validation_vulnerable_recall": 0.10688836127519608
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.4009687836908041,
+      "validation_loss": 0.41455364874625017,
+      "validation_vulnerable_recall": 0.0973871722817421
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.40006649799799315,
+      "validation_loss": 0.41553545291834637,
+      "validation_vulnerable_recall": 0.11638955026865005
+    }
+  ]
+}

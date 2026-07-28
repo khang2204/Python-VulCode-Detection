@@ -1,0 +1,3 @@
+@app.route('/data/jobnames/')...
+json_jobnames = {'results': JOBSDATA.jobnames_query()}
+return json_jobnames

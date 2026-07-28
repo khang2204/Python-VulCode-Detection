@@ -1,0 +1,3 @@
+def get_image_column_list(self):...
+return [i.name for i in self.obj.__mapper__.columns if isinstance(i.type,
+    ImageColumn)]

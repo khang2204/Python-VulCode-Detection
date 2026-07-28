@@ -1,0 +1,3 @@
+def get_queryset(self):...
+return self.get_serializer_class().setup_eager_loading(Submission.objects.
+    filter(Q(action__isnull=True) | Q(action__published=True), published=True))

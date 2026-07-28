@@ -1,0 +1,3 @@
+def add_handler(logger, handler):...
+handler.setFormatter(logging.Formatter(LOG_FORMAT, datefmt=DATE_FORMAT))
+logger.addHandler(handler)

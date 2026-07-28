@@ -1,0 +1,3 @@
+def _cmd_update(self, expected_version):...
+out = {'cmd': 'update', 'version': expected_version}
+self.send_response(out)

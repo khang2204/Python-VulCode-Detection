@@ -1,0 +1,3 @@
+def mark_many_as_unread(self, idents):...
+res, req = self.post('/mails/unread', json.dumps({'idents': idents}))
+return res

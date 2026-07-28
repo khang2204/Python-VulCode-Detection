@@ -1,0 +1,3 @@
+def match(msg):...
+result['msg'] = msg
+return msg.type == 'event' and msg.event == event

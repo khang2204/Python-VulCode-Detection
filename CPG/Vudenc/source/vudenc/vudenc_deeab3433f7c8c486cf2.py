@@ -1,0 +1,3 @@
+def get_columns_list(self):...
+"""docstring"""
+return list(self.list_properties.keys())

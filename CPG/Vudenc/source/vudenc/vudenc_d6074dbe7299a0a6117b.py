@@ -1,0 +1,3 @@
+def do_draft(self, cr, uid, ids, *args):...
+self.write(cr, uid, ids, {'state': 'draft'})
+return True

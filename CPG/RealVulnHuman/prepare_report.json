@@ -1,0 +1,58 @@
+{
+  "benchmark_version": "2.0.0",
+  "binary_counts": {
+    "benign": 78,
+    "vulnerable": 388
+  },
+  "conflicting_source_hashes": [
+    "5a7de05cea7f01fa6442fbac08da618f90aba5859a5aeab41e5e9d23fc3e5cab",
+    "a7ffdcfef4da15d5e889345c0011e8c60c109e1e155be9b3642ec6d3a2f6393b",
+    "dc7a0e30c69a9f17a1ed829b96a65c22dcfbcc0c8983be04006b83894abc1a13"
+  ],
+  "context_lines": 10,
+  "dataset": "RealVulnHuman",
+  "excluded": {
+    "conflicting_binary_labels": 6,
+    "non_human_repository": 1358,
+    "non_manual_label_source": 116,
+    "non_python_source": 52,
+    "repository_unavailable_at_pinned_commit": 164,
+    "same_label_duplicate_context": 20
+  },
+  "metadata": "/mnt/c/users/gulli/downloads/python-vulcode-detection/CPG/RealVulnHuman/metadata.jsonl",
+  "raw_candidate_findings": 492,
+  "representation": "finding line range with +/-10 source lines",
+  "selected_unique_contexts": 466,
+  "selection": "human_authored repositories; manual_review findings; Python files; exact pinned commits",
+  "source_root": "/mnt/c/users/gulli/downloads/python-vulcode-detection/CPG/RealVulnHuman/source/realvuln_human",
+  "unavailable_repositories": [
+    {
+      "expected_sha": "5e682aca1b58e03362a5fbd9fc88c37626e429ce",
+      "findings": 34,
+      "repo_id": "owasp-web-playground",
+      "repo_url": "https://github.com/yourrepo/OWASP-Web-Playground",
+      "slug": "realvuln-owasp-web-playground"
+    },
+    {
+      "expected_sha": "2fb0c600245f50670e8b9233c784afe61e8b340b",
+      "findings": 88,
+      "repo_id": "pygoat",
+      "repo_url": "https://github.com/OWASP/PyGoat",
+      "slug": "realvuln-pygoat"
+    },
+    {
+      "expected_sha": "a33452268ef7489ebeb44f65a1bae06eda2072ab",
+      "findings": 25,
+      "repo_id": "realvuln-python-app",
+      "repo_url": "https://github.com/RiieCco/owasp-bay-area",
+      "slug": "realvuln-python-app"
+    },
+    {
+      "expected_sha": "f7797964e1cd63a1cbcc8ced721fa41db674c8e0",
+      "findings": 17,
+      "repo_id": "vulnerable-api",
+      "repo_url": "https://github.com/kolega-ai/realvuln-Vulnerable-API",
+      "slug": "realvuln-vulnerable-api"
+    }
+  ]
+}

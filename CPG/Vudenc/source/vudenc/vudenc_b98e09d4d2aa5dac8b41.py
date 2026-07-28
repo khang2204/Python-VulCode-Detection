@@ -1,0 +1,3 @@
+def encode_json(value):...
+"""docstring"""
+return base64.b64encode(json.dumps(value, cls=JsonEncoder))

@@ -1,0 +1,3 @@
+def iterate_node_fn(node):...
+for item in node.sub_items:
+node.sub_names_idx[item.file_name]

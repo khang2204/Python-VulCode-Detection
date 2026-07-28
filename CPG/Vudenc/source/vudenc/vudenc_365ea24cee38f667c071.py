@@ -1,0 +1,3 @@
+def decorate(ruleinfo):...
+ruleinfo.norun = True
+return ruleinfo

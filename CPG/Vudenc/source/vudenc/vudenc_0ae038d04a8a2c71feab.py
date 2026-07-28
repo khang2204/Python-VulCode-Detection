@@ -1,0 +1,3 @@
+def _num_failures_stage(self, stage):...
+stats = self.runner.stats
+return len([t for t in stats.failures() if t.failed_stage == stage])

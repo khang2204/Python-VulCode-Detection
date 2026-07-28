@@ -1,0 +1,3 @@
+def get_phrase_table_column_names(self):...
+"""docstring"""
+return self._phrase_table_column_names[:]

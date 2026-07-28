@@ -1,0 +1,3 @@
+def is_rule(self, name):...
+"""docstring"""
+return name in self._rules

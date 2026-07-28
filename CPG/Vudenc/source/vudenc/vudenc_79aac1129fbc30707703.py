@@ -1,0 +1,3 @@
+def check_xsrf(self):...
+if self.check_xsrf_cookie() == False:
+return self.redirect('ftypeerror')

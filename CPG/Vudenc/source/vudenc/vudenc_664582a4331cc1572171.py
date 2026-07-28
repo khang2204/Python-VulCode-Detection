@@ -1,0 +1,3 @@
+def removeActors(self):...
+self.actors = {}
+self.ids = 0

@@ -1,0 +1,4 @@
+@app.teardown_appcontext...
+"""docstring"""
+if hasattr(g, 'sqlite_db'):
+g.sqlite_db.close()

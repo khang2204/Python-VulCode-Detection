@@ -1,0 +1,3 @@
+@classmethod...
+super(BaseZincCompile, cls).prepare(options, round_manager)
+ScalaPlatform.prepare_tools(round_manager)

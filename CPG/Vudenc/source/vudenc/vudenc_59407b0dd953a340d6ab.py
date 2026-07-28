@@ -1,0 +1,3 @@
+def get_run_isolated():...
+"""docstring"""
+return [sys.executable, THIS_FILE, 'run_isolated']

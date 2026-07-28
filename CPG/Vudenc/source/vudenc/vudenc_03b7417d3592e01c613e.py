@@ -1,0 +1,3 @@
+def _signature():...
+"""docstring"""
+return 'bibclassify v%s' % (bconfig.VERSION,)

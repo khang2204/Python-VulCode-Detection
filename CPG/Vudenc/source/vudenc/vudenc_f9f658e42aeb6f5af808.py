@@ -1,0 +1,3 @@
+def write(self, value):...
+"""docstring"""
+return value

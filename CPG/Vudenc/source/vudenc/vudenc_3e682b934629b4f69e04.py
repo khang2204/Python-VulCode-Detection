@@ -1,0 +1,3 @@
+def insert_format(self, value):...
+value = u"'{0}'".format(value)
+return value

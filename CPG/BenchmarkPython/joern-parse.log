@@ -1,0 +1,26 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by scala.runtime.LazyVals$ (file:/home/khang/bin/joern/joern-cli/lib/org.scala-lang.scala3-library_3-3.7.4.jar)
+WARNING: Please consider reporting this to the maintainers of class scala.runtime.LazyVals$
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+Parsing code at: /mnt/c/users/gulli/downloads/pipeline/data/external/BenchmarkPython - language: `PYTHONSRC`
+[+] Running language frontend
+=======================================================================================================
+Invoking CPG generator in a separate process. Note that the new process will consume additional memory.
+If you are importing a large codebase (and/or running into memory issues), please try the following:
+1) exit joern
+2) invoke the frontend: /home/khang/bin/joern/joern-cli/pysrc2cpg -J-Xmx1954m /mnt/c/users/gulli/downloads/pipeline/data/external/BenchmarkPython -o /mnt/c/users/gulli/downloads/pipeline/results/joern_benchmarkpython/cpg.bin
+3) start joern, import the cpg: `importCpg("path/to/cpg")`
+=======================================================================================================
+
+[+] Applying default overlays
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by com.github.luben.zstd.util.Native$2 in an unnamed module (file:/home/khang/bin/joern/joern-cli/lib/com.github.luben.zstd-jni-1.5.7-2.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-07-08 17:27:22.498 WARN  CfgCreator$               Using order fallback for break statement jump argument
+2026-07-08 17:27:22.502 WARN  CfgCreator$               Using order fallback for try statement catch body
+2026-07-08 17:27:22.505 WARN  CfgCreator$               Using order fallback for try statement finally body
+2026-07-08 17:27:22.759 WARN  CfgCreator$               Using order fallback for continue statement jump argument
+Successfully wrote graph to: /mnt/c/users/gulli/downloads/pipeline/results/joern_benchmarkpython/cpg.bin
+To load the graph, type `joern /mnt/c/users/gulli/downloads/pipeline/results/joern_benchmarkpython/cpg.bin`

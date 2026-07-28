@@ -1,0 +1,3 @@
+def generate_salt():...
+chars = [random.choice(ALPHABET) for _ in xrange(16)]
+return ''.join(chars)

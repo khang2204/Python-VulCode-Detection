@@ -1,0 +1,3 @@
+def __init__(self, bot: neko.NekoBot):...
+"""docstring"""
+self.bot = bot

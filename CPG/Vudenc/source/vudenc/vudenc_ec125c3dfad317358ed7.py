@@ -1,0 +1,6 @@
+def test_anonymous(self):...
+"""docstring"""
+test = self
+@classmethod...
+non_applicable = lambda _request: None
+return [non_applicable, non_applicable]

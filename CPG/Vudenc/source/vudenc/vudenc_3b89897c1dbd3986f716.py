@@ -1,0 +1,3 @@
+def set_relationship(self, attribute, relationship):...
+"""docstring"""
+self._relationships[attribute.entity_attr] = relationship

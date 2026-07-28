@@ -1,0 +1,3 @@
+def log_event_success(self, event, success=True):...
+event['success'] = success
+self.update('event', event)

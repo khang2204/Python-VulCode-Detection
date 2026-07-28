@@ -1,0 +1,3 @@
+def render_moustache(text, config):...
+r = renderers.JsonRenderer(missing_tags='ignore')
+return r.render(text, config)

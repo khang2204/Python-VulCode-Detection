@@ -1,0 +1,6 @@
+def test_cluster_proxy_connection_error(self):...
+def connect_timeout():...
+api = self.mock_nsx_clustered_api(session_response=connect_timeout)
+api._validate = mock.Mock()
+self.assertRaises(nsxlib_exc.ServiceClusterUnavailable, api.get,
+    'api/v1/transport-zones')

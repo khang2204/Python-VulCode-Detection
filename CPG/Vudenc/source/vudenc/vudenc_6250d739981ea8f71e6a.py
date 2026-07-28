@@ -1,0 +1,3 @@
+def on_torrent_finished(self, subject, changetype, objectID, *args):...
+self.write_data({'type': 'torrent_finished', 'event': {'infohash': hexlify(
+    objectID), 'name': args[0]}})

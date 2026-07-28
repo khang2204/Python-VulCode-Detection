@@ -1,0 +1,3 @@
+def init_db():...
+import benwaonline.models
+db.create_all()

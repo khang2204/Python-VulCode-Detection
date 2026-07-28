@@ -1,0 +1,13 @@
+def make_fake_response(content, url, headers=None):...
+"""docstring"""
+headers = dict(headers or {})
+headers['Content-Length'] = len(content)
+def __init__(self):...
+self.content = content
+def iter_content(self, chunk_size):...
+c = self.content
+while c:
+yield c[:chunk_size]
+def read(self):...
+c = c[chunk_size:]
+return self.content

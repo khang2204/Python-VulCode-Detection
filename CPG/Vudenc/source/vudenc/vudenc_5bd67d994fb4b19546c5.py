@@ -1,0 +1,3 @@
+def cleanup(self):...
+soledad_test_folder = os.path.join(self._leap_home, self._uuid)
+shutil.rmtree(soledad_test_folder)

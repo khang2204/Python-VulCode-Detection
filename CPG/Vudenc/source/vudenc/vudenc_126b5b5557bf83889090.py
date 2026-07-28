@@ -1,0 +1,3 @@
+def augmentDatabaseArgs(self, args, pool=False):...
+if not args.get('database'):
+args['database'] = self._model.sqlDatabaseName()

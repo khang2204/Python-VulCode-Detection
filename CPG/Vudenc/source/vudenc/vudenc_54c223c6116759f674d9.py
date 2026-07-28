@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return len(self._path) - 1

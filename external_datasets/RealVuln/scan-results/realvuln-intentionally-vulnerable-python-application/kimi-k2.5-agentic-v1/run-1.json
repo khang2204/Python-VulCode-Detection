@@ -1,0 +1,107 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 46,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 46,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from request.args.get('id', '') is concatenated directly into SQL query string without parameterization. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 33,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 33,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled data from request.data is passed to pickle.loads() without validation. Insecure deserialization can lead to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 17,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded credentials (USERNAME = 'admin', PASSWORD = 'password123') found in source code. These should be stored securely in environment variables or a secrets manager.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials",
+            "CWE-259: Use of Hard-coded Password"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-mode",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 55,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 55,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Flask debug mode is enabled (debug=True). This can expose sensitive information through detailed error pages and should never be used in production.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code",
+            "CWE-532: Insertion of Sensitive Information into Log File"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

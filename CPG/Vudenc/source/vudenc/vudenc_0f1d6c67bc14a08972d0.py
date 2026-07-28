@@ -1,0 +1,3 @@
+def __log_run(self, visitor):...
+self.__logger.debug('Traversing %s->%s with %s' % (self._src_prx, self.
+    _tgt_prx, visitor))

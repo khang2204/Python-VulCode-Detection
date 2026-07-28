@@ -1,0 +1,3 @@
+def test_get_dimensions_load_test(self):...
+os.environ['SWARMING_LOAD_TEST'] = '1'
+self.assertEqual(['id', 'load_test'], sorted(bot_main.get_dimensions(None)))

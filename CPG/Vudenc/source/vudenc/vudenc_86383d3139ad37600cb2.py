@@ -1,0 +1,3 @@
+def validate_api_request(schema, raw_request):...
+request = normalize_request(raw_request)
+validate_request(request=request, schema=schema)

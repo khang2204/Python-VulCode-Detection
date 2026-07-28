@@ -1,0 +1,3 @@
+@data((' ', ''), ('Frecon', 'frecon'), ('Frecon', 'frecon'), (...
+output_string = clean_company_name(input_string)
+self.assertEqual(desired_string, output_string)

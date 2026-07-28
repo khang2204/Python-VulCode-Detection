@@ -1,0 +1,3 @@
+def test_spaces_between_arg(self):...
+self._tab_after('ls comp')
+eq_(self.terminal.method_calls, [('write', ('utes ',), {})])

@@ -1,0 +1,3 @@
+@property...
+if self.is_ordered():
+return self.current_columns.index(self.column_id) + 1

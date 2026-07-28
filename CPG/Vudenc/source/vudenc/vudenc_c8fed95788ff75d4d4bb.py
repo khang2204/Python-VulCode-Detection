@@ -1,0 +1,3 @@
+def get_table_summary(self, connection_url, table_name):...
+query = 'select * from {} limit 10000'.format(table_name)
+return self.execute_query(connection_url, query)

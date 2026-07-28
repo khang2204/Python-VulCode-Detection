@@ -1,0 +1,3 @@
+@handler('registered', channel='*')...
+if isinstance(component, BaseController
+self.paths[component.channel] = component

@@ -1,0 +1,3 @@
+def get_mode(self):...
+cpsr = int(self.get_register_value('cpsr', 'CPU', None), base=16)
+return self.modes[str(bin(cpsr))[-5:]]

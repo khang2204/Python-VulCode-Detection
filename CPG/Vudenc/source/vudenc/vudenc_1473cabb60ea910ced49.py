@@ -1,0 +1,3 @@
+@data((' ', ''), ('\n  #2404\n', '2404'), ('no. 2404', '2404'), ('# 2404',...
+output_string = clean_job_number(input_string)
+self.assertEqual(desired_string, output_string)

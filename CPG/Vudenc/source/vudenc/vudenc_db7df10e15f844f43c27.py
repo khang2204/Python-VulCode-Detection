@@ -1,0 +1,3 @@
+def __init__(self):...
+self.conn = MySQLdb.connect(*self.dsn)
+self.cur = self.conn.cursor()

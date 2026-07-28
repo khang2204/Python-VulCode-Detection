@@ -1,0 +1,3 @@
+def given_an_apple_appid(self, appid):...
+settings.APPLE_APPID = appid
+return self

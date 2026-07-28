@@ -1,0 +1,3 @@
+def __init__(self, *java_dist_dirs):...
+if len(java_dist_dirs) == 0:
+self._java_dist_dirs = java_dist_dirs

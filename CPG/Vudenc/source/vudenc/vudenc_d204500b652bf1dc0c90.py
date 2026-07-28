@@ -1,0 +1,3 @@
+@register.assignment_tag(takes_context=True)...
+points = _prepare_context(context)
+return points.total()['max_group_size']

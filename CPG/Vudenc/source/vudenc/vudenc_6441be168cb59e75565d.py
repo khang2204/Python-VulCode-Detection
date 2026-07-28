@@ -1,0 +1,3 @@
+def make_input(self, version, name, value, attribute=None):...
+"""docstring"""
+return self.text_input(name, value)

@@ -1,0 +1,3 @@
+def test_is_profitable(self):...
+path = expected_paths_small_same_currency()[0]
+self.assertEqual(False, is_profitable(path))

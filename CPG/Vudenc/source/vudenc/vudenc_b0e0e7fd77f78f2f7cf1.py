@@ -1,0 +1,3 @@
+@view_config(route_name='note', permission='edit', request_method='POST',...
+_save_or_create_note(context.note, request)
+return HTTPFound(location=request.route_url('notes'))

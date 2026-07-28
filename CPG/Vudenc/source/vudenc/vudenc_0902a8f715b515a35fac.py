@@ -1,0 +1,3 @@
+@api.public...
+self.response.write(json.dumps({'peer_id': api.get_peer_identity().to_bytes
+    (), 'cur_id': api.get_current_identity().to_bytes()}))

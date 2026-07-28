@@ -1,0 +1,3 @@
+def add_node(self, obj, metadata=None):...
+if self.find_ord(obj) is None:
+self.nodes.append(dict(node_object=obj, metadata=metadata))

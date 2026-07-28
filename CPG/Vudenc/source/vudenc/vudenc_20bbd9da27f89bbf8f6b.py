@@ -1,0 +1,3 @@
+def get_success_url(self):...
+self.object.restart()
+return '/twitter_hunter'

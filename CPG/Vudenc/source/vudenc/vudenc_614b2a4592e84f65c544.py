@@ -1,0 +1,3 @@
+def call(ip):...
+api.reset_local_state()
+return app.get('/request', extra_environ={'REMOTE_ADDR': ip}).body

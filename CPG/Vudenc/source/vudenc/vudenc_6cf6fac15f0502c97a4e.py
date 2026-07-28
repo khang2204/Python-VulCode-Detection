@@ -1,0 +1,3 @@
+def _PathToServerScript():...
+dir_of_current_script = os.path.dirname(os.path.abspath(__file__))
+return os.path.join(dir_of_current_script, 'server/ycmd.py')

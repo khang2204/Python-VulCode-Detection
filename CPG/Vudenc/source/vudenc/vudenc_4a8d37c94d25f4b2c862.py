@@ -1,0 +1,3 @@
+def has_permission(self, request, view):...
+"""docstring"""
+return True

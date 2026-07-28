@@ -1,0 +1,3 @@
+def __eq__(self, b):...
+assert isinstance(b, SetEntry)
+return self.value == b.value

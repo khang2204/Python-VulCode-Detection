@@ -1,0 +1,3 @@
+@register.assignment_tag(takes_context=True)...
+points = _prepare_context(context)
+return points.total()['min_group_size']

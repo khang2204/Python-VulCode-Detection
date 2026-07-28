@@ -1,0 +1,3 @@
+def _check_report_owner(self):...
+if not self.report.owner == self.request.user:
+logger.warn(self.invalid_access_user_message)

@@ -1,0 +1,3 @@
+def test_blacklist_input(self):...
+expect = {'SEVERITY': {'HIGH': 1}, 'CONFIDENCE': {'HIGH': 1}}
+self.check_example('input.py', expect)

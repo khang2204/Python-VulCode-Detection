@@ -1,0 +1,555 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/views/users/views.py",
+      "start": {
+        "line": 74,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 76,
+        "col": 36,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from form['user_id'] is concatenated directly into a raw SQL query using string formatting. The query uses User.objects.raw() with unsanitized user input, allowing SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/models/Analytics/analytics.py",
+      "start": {
+        "line": 57,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 60,
+        "col": 37,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'ip' and 'col' parameters are concatenated directly into SQL query using string formatting. The hits_by_ip() method passes unsanitized user input to cursor.execute(), allowing SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "app/models/Benefits/benefits.py",
+      "start": {
+        "line": 73,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 73,
+        "col": 59,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled filename (orig_file.name) is passed directly to os.system() without sanitization, allowing command injection. An attacker can inject shell commands through the uploaded filename.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-injection",
+      "path": "app/views/api/mobile/views.py",
+      "start": {
+        "line": 14,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 17,
+        "col": 69,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'class' parameter from request.GET is passed directly to eval(), allowing arbitrary code execution. An attacker can execute any Python code by providing a malicious class name.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-injection",
+      "path": "app/views/api/mobile/views.py",
+      "start": {
+        "line": 25,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 28,
+        "col": 74,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'class' parameter from request.GET is passed directly to eval(), allowing arbitrary code execution. An attacker can execute any Python code by providing a malicious class name.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure-deserialization",
+      "path": "app/views/password_resets/views.py",
+      "start": {
+        "line": 67,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 67,
+        "col": 52,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User object is serialized using pickle.dumps() and base64 encoded. This serialized data is later deserialized with pickle.loads(), which can lead to remote code execution if the data is tampered with.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure-deserialization",
+      "path": "app/views/password_resets/views.py",
+      "start": {
+        "line": 84,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 84,
+        "col": 56,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled data from request.POST['user'] is deserialized using pickle.loads() after base64 decoding. This allows remote code execution through crafted pickle payloads.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.path-traversal",
+      "path": "app/views/users/benefit_forms/views.py",
+      "start": {
+        "line": 25,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 25,
+        "col": 58,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'name' parameter from request.GET is concatenated directly into a file path without sanitization. This allows path traversal attacks to read arbitrary files from the filesystem.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.path-traversal",
+      "path": "app/models/Benefits/benefits.py",
+      "start": {
+        "line": 33,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 33,
+        "col": 69,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled filename (uploaded_file.name) is used directly in os.path.join() without sanitization. This allows path traversal attacks via filenames containing '../' sequences.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirect.open-redirect",
+      "path": "app/views/sessions/views.py",
+      "start": {
+        "line": 26,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 51,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'path' parameter from request.POST is used directly in HttpResponseRedirect() without validation. This allows open redirect attacks to arbitrary URLs.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: Open Redirect"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.mark-safe-xss",
+      "path": "app/models/User/user.py",
+      "start": {
+        "line": 156,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 156,
+        "col": 44,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled first_name is passed to mark_safe() which disables Django's auto-escaping. This allows stored XSS attacks if the first_name contains malicious JavaScript.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.mark-safe-xss",
+      "path": "app/models/Message/message.py",
+      "start": {
+        "line": 28,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 28,
+        "col": 55,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Static HTML is passed to mark_safe(), but this pattern indicates unsafe usage of mark_safe() in the codebase. Combined with the creator_name() method returning unsafely marked data, this enables XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "app/models/User/user.py",
+      "start": {
+        "line": 107,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 107,
+        "col": 65,
+        "offset": 0
+      },
+      "extra": {
+        "message": "MD5 hash algorithm is used for password hashing. MD5 is cryptographically broken and should not be used for password storage. Use bcrypt, scrypt, or Argon2 instead.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "app/models/User/user.py",
+      "start": {
+        "line": 133,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 134,
+        "col": 42,
+        "offset": 0
+      },
+      "extra": {
+        "message": "MD5 hash algorithm is used for password hashing. MD5 is cryptographically broken and should not be used for password storage. Use bcrypt, scrypt, or Argon2 instead.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.broken-regex-auth",
+      "path": "app/views/api/users/views.py",
+      "start": {
+        "line": 47,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 61,
+        "col": 44,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The regex pattern '(.*?)-(.*)' in check_if_valid_token() uses greedy matching that can be bypassed. An attacker can manipulate the token format to bypass authentication checks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.idor.insecure-direct-object-reference",
+      "path": "app/views/users/messages/views.py",
+      "start": {
+        "line": 46,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 61,
+        "col": 62,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The user_message() function does not verify that the message_id belongs to the current user before allowing deletion or viewing. This allows IDOR attacks to access other users' messages.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.idor.insecure-direct-object-reference",
+      "path": "app/views/users/work_info/views.py",
+      "start": {
+        "line": 11,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 16,
+        "col": 73,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The user_work_info_index() function looks up any user by ID without verifying the current user is authorized to view that user's work info. This allows IDOR attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-admin-check",
+      "path": "app/views/admin/views.py",
+      "start": {
+        "line": 12,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 108,
+        "col": 58,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Admin endpoints (admin_dashboard, admin_get_user, admin_delete_user, admin_update_user, admin_get_all_users, admin_analytics) only check if user is authenticated but do not verify the user has admin privileges.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret-key",
+      "path": "pygoat/settings.py",
+      "start": {
+        "line": 22,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 22,
+        "col": 62,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded Django SECRET_KEY in settings file. This should be loaded from environment variables or a secure secrets management system.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-encryption-key",
+      "path": "pygoat/settings.py",
+      "start": {
+        "line": 125,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 125,
+        "col": 36,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded encryption KEY in settings file used for AES encryption. This should be loaded from environment variables or a secure secrets management system.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-mode-enabled",
+      "path": "pygoat/settings.py",
+      "start": {
+        "line": 25,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 25,
+        "col": 11,
+        "offset": 0
+      },
+      "extra": {
+        "message": "DEBUG mode is enabled (DEBUG = True). This should be disabled in production as it exposes sensitive information including stack traces and configuration details.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.idor.missing-ownership-check",
+      "path": "app/views/users/pay/views.py",
+      "start": {
+        "line": 70,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 73,
+        "col": 32,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The user_pay() function deletes a pay record by pay_id without verifying the record belongs to the current user. This allows users to delete other users' payment information.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

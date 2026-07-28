@@ -1,0 +1,168 @@
+{
+  "architecture": "HQCDNN",
+  "protocol": "ten_percent",
+  "source": "realvuln_human",
+  "target": "realvuln_human",
+  "training_seed": 303,
+  "split_seed": 101,
+  "sampling_seed": 101,
+  "evaluation_scope": "fixed_test_split_101",
+  "train_samples": 56,
+  "validation_samples": 64,
+  "test_samples": 64,
+  "source_manifest_sha256": "4ca4484834b2a0a45b26f67e0795158b246c98c2f6a973e7259f6e3c87eac14f",
+  "configuration": {
+    "qubits": 4,
+    "quantum_layers": 1,
+    "tfidf": "normalized Python token bigrams",
+    "tfidf_max_features": 512,
+    "epochs": 50,
+    "batch_size": 64,
+    "optimizer": "Adam",
+    "learning_rate": 0.005,
+    "adaptation_note": "The paper uses EVM opcode bigrams. Python lexical-token bigrams are the declared cross-language adaptation.",
+    "reused_fixed_split_in_domain_model": false
+  },
+  "metrics": {
+    "accuracy": 0.15625,
+    "balanced_accuracy": 0.5,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "vulnerable_recall": 0.0
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.6100927591323853,
+      "validation": {
+        "accuracy": 0.15625,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "vulnerable_recall": 0.0
+      }
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.5615968704223633,
+      "validation": {
+        "accuracy": 0.15625,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "vulnerable_recall": 0.0
+      }
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.503753423690796,
+      "validation": {
+        "accuracy": 0.15625,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "vulnerable_recall": 0.0
+      }
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.4387476444244385,
+      "validation": {
+        "accuracy": 0.15625,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "vulnerable_recall": 0.0
+      }
+    },
+    {
+      "epoch": 5,
+      "train_loss": 1.370727777481079,
+      "validation": {
+        "accuracy": 0.15625,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "vulnerable_recall": 0.0
+      }
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.3042011260986328,
+      "validation": {
+        "accuracy": 0.15625,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "vulnerable_recall": 0.0
+      }
+    },
+    {
+      "epoch": 7,
+      "train_loss": 1.243094563484192,
+      "validation": {
+        "accuracy": 0.15625,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "vulnerable_recall": 0.0
+      }
+    },
+    {
+      "epoch": 8,
+      "train_loss": 1.1900964975357056,
+      "validation": {
+        "accuracy": 0.15625,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "vulnerable_recall": 0.0
+      }
+    },
+    {
+      "epoch": 9,
+      "train_loss": 1.1463831663131714,
+      "validation": {
+        "accuracy": 0.15625,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "vulnerable_recall": 0.0
+      }
+    },
+    {
+      "epoch": 10,
+      "train_loss": 1.1116973161697388,
+      "validation": {
+        "accuracy": 0.15625,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "vulnerable_recall": 0.0
+      }
+    },
+    {
+      "epoch": 11,
+      "train_loss": 1.084743857383728,
+      "validation": {
+        "accuracy": 0.15625,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "vulnerable_recall": 0.0
+      }
+    }
+  ]
+}

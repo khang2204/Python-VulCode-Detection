@@ -1,0 +1,3 @@
+def reconnect(self):...
+print('INFO: Reconnecting...')
+return DeadConnectionDetector.reconnect(self)

@@ -1,0 +1,3 @@
+def decorate(ruleinfo):...
+ruleinfo.benchmark = benchmark
+return ruleinfo

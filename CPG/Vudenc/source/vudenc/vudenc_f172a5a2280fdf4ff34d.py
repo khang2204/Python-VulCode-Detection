@@ -1,0 +1,3 @@
+def innerFunc():...
+super(Stretch, self).__init__(slideParser.parse(txt, slideLexer) if txt else []
+    )

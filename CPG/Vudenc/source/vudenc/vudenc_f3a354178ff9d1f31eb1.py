@@ -1,0 +1,3 @@
+def set_cancel(self, cr, uid, ids, context={}):...
+self.write(cr, uid, ids, {'state': 'cancelled'}, context=context)
+return True

@@ -1,0 +1,12 @@
+{
+  "attention": "quantum",
+  "trainer_args": {
+    "seed": 303,
+    "split_seed": 101,
+    "attention_dim": 64,
+    "value_dim": 64,
+    "head_learning_rate": 0.002,
+    "n_qubits": 10,
+    "quantum_depth": 5
+  }
+}

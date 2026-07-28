@@ -1,0 +1,3 @@
+def get_group_id(self):...
+group = self.get_group()
+return group.id if group else 0

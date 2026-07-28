@@ -1,0 +1,3 @@
+def delete_tmp_dir(self):...
+"""docstring"""
+shutil.rmtree(self.config['tmp_dir'])

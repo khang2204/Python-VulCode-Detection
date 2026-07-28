@@ -1,0 +1,3 @@
+def add_field(self, field):...
+self.fields.append(field)
+cached_property.clear_caches(self)

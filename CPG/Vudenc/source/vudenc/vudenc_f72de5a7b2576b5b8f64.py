@@ -1,0 +1,3 @@
+def login(self, login_request):...
+self.read_xsrf_token(login_request.base_url)
+login_request.execute()

@@ -1,0 +1,3 @@
+@cached_property...
+"""docstring"""
+return [f for f in self.composite_fields if getattr(f, 'use_container', False)]

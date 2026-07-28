@@ -1,0 +1,21 @@
+{
+  "binary_counts": {
+    "benign": 13036,
+    "vulnerable": 2805
+  },
+  "dataset": "VUDENC",
+  "excluded_before_joern": {},
+  "metadata": "/mnt/c/users/gulli/downloads/python-vulcode-detection/CPG/Vudenc/metadata.jsonl",
+  "raw_labelled_samples": 15841,
+  "representation": "raw_statement_context_blocks",
+  "source_root": "/mnt/c/users/gulli/downloads/python-vulcode-detection/CPG/Vudenc/source/vudenc",
+  "vulnerable_type_counts": {
+    "VUDENC-TYPE-1": 314,
+    "VUDENC-TYPE-2": 315,
+    "VUDENC-TYPE-3": 56,
+    "VUDENC-TYPE-4": 1128,
+    "VUDENC-TYPE-5": 531,
+    "VUDENC-TYPE-6": 248,
+    "VUDENC-TYPE-7": 213
+  }
+}

@@ -1,0 +1,3 @@
+def get_tags(self, **kwargs):...
+res, req = self.get('/tags', kwargs)
+return res

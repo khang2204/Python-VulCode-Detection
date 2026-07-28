@@ -1,0 +1,3 @@
+def fry(theta):...
+"""docstring"""
+return expm(-1.0j * theta / 2 * Y)

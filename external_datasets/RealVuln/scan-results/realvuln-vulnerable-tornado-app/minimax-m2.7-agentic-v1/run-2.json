@@ -1,0 +1,181 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "server.py",
+      "start": {
+        "line": 106,
+        "col": 13,
+        "offset": 2667
+      },
+      "end": {
+        "line": 107,
+        "col": 46,
+        "offset": 2766
+      },
+      "extra": {
+        "message": "User input from 'username' and 'password' request arguments are concatenated directly into SQL query in cur.execute(). This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "server.py",
+      "start": {
+        "line": 77,
+        "col": 27,
+        "offset": 1995
+      },
+      "end": {
+        "line": 77,
+        "col": 53,
+        "offset": 2021
+      },
+      "extra": {
+        "message": "User input 'file' parameter is concatenated directly to file path without sanitization. Allows path traversal attacks using values like '../../../etc/passwd'.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "server.py",
+      "start": {
+        "line": 125,
+        "col": 14,
+        "offset": 3234
+      },
+      "end": {
+        "line": 125,
+        "col": 40,
+        "offset": 3260
+      },
+      "extra": {
+        "message": "User input 'server' parameter is passed directly to os.popen() without sanitization. Allows command injection via payloads like '; ls -la' or '127.0.0.1; cat /etc/passwd'.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "server.py",
+      "start": {
+        "line": 89,
+        "col": 26,
+        "offset": 2263
+      },
+      "end": {
+        "line": 89,
+        "col": 56,
+        "offset": 2293
+      },
+      "extra": {
+        "message": "User input 'q' parameter is rendered directly in template without encoding. X-XSS-Protection header is explicitly disabled. Allows reflected XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded",
+      "path": "server.py",
+      "start": {
+        "line": 140,
+        "col": 35,
+        "offset": 3567
+      },
+      "end": {
+        "line": 147,
+        "col": 56,
+        "offset": 3710
+      },
+      "extra": {
+        "message": "Multiple hardcoded credentials are present in database initialization code: admin/admin, test-user/test@123, sagar/lall0l, alias/ohrealli, jacky/st40ngp@55, sam/tomTOM123, maxi/D@ni3lDizaark, lelol/Leeee@Looo@!$.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-true",
+      "path": "server.py",
+      "start": {
+        "line": 31,
+        "col": 12,
+        "offset": 814
+      },
+      "end": {
+        "line": 31,
+        "col": 22,
+        "offset": 824
+      },
+      "extra": {
+        "message": "Application is running with debug=True in production, which exposes sensitive debugging information and stack traces.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Security Misconfiguration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.no-auth",
+      "path": "server.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 408
+      },
+      "end": {
+        "line": 28,
+        "col": 1,
+        "offset": 726
+      },
+      "extra": {
+        "message": "Entire application has no authentication or session management. All handlers (including /upload, /read, /server.html, /search) are publicly accessible without any access control.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication",
+            "CWE-284: Improper Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

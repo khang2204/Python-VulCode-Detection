@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return import_from_settings('LOGOUT_REDIRECT_URL', '/')

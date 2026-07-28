@@ -1,0 +1,3 @@
+def __init__(self, sig):...
+super(MustExit, self).__init__()
+self.signal = sig

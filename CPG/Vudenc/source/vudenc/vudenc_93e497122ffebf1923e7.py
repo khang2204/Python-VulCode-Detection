@@ -1,0 +1,3 @@
+def __init__(self, name=''):...
+self.marks = [(name, time.time())]
+self.final = None

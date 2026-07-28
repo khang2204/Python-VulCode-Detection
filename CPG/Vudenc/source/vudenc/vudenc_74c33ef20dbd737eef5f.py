@@ -1,0 +1,3 @@
+def set_open(self, cr, uid, ids, context={}):...
+self.write(cr, uid, ids, {'state': 'open'}, context=context)
+return True

@@ -1,0 +1,3 @@
+def get_current_li():...
+return db.GqlQuery('SELECT * FROM LoginInformation WHERE user_id = :1',
+    users.get_current_user.user_id()).get()

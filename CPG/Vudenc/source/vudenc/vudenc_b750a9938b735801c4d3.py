@@ -1,0 +1,3 @@
+def get_relationship(self, attribute):...
+"""docstring"""
+return self._relationships[attribute.entity_attr]

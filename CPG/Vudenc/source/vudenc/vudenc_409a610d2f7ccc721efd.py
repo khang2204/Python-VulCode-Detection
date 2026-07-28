@@ -1,0 +1,6 @@
+def test_login_assertion_consumer_service(self):...
+eppn = 'hubba-bubba'
+def _check():...
+eppn = 'hubba-bubba'
+self.assertEquals(session['eduPersonPrincipalName'], eppn)
+self.acs('/login', eppn, _check)

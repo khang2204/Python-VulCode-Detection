@@ -1,0 +1,3 @@
+@api.public...
+test.assertEqual(ident, api.get_current_identity())
+self.response.write('OK')

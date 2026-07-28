@@ -1,0 +1,3 @@
+def get_all_shoppinglists(self):...
+"""docstring"""
+return self.cursor.execute('select listid, listhash from lists')

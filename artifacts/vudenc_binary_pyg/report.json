@@ -1,0 +1,41 @@
+{
+  "binary_counts": {
+    "benign": 13035,
+    "vulnerable": 2805
+  },
+  "dataset": "VUDENC",
+  "dataset_path": "/mnt/c/users/gulli/downloads/python-vulcode-detection/artifacts/vudenc_binary_pyg_rebuilt/vudenc_binary_graphs.pt",
+  "edge_counts_with_reverse_edges": {
+    "AST": 2734972,
+    "CFG": 2092610,
+    "REACHING_DEF": 3615976
+  },
+  "edge_type_to_id": {
+    "AST": 0,
+    "CFG": 1,
+    "REACHING_DEF": 2
+  },
+  "exported_graphs": 15840,
+  "feature_dim": 128,
+  "labels": {
+    "benign": 0,
+    "vulnerable": 1
+  },
+  "not_exported_by_joern": 1,
+  "not_exported_preview": [
+    "vudenc/vudenc_19b03027370c08e4f932.py"
+  ],
+  "raw_joern_graphs": "/mnt/c/users/gulli/downloads/python-vulcode-detection/artifacts/vudenc_binary_pyg_rebuilt/joern_graphs.jsonl",
+  "raw_labelled_samples": 15841,
+  "representation": "raw_statement_context_blocks_joern_filtered",
+  "skipped_graphs": [],
+  "vulnerable_counts_by_cwe": {
+    "VUDENC-TYPE-1": 314,
+    "VUDENC-TYPE-2": 315,
+    "VUDENC-TYPE-3": 56,
+    "VUDENC-TYPE-4": 1128,
+    "VUDENC-TYPE-5": 531,
+    "VUDENC-TYPE-6": 248,
+    "VUDENC-TYPE-7": 213
+  }
+}

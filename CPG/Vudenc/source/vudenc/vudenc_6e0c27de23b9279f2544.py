@@ -1,0 +1,3 @@
+def test_drivers(self):...
+p = pyodbc.drivers()
+self.assertTrue(isinstance(p, list))

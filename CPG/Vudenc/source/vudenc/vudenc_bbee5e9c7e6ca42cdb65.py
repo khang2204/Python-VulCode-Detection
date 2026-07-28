@@ -1,0 +1,3 @@
+def __eq__(self, other):...
+"""docstring"""
+return self.__hash__() == hash(other)

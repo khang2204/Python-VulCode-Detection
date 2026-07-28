@@ -1,0 +1,3 @@
+def get_io(rule):...
+return (rule.input, rule.dynamic_input) if input else (rule.output, rule.
+    dynamic_output)

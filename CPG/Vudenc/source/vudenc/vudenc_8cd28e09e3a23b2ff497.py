@@ -1,0 +1,3 @@
+def extract_boolean(self, request, name):...
+bool_string = request.GET.get(name)
+return bool(bool_string and bool_string.lower() == 'true')

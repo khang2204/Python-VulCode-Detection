@@ -1,0 +1,3 @@
+def __init__(self, redirections):...
+self.redirections = redirections
+self.stack = None

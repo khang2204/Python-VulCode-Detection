@@ -1,0 +1,3 @@
+async def on_member_join(self, member):...
+for callback in self.on_member_join_callbacks:
+await callback(member)

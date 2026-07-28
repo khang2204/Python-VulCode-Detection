@@ -1,0 +1,3 @@
+def npm_command(self, args):...
+"""docstring"""
+return self._create_command('npm', args)

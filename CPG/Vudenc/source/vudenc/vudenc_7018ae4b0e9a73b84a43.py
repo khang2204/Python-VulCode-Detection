@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self._plasma_store_socket_name

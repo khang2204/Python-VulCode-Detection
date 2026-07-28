@@ -1,0 +1,3 @@
+def retrieve_data_async():...
+block = file_stream.read(file_block_size)
+future.set_result(block)

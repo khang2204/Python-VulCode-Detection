@@ -1,0 +1,3 @@
+@wraps(func)...
+kwargs['timer'] = Timer(name)
+return func(*args, **kwargs)

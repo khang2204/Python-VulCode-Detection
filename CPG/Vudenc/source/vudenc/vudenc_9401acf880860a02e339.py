@@ -1,0 +1,3 @@
+def setUp(self):...
+self.user = self.make_user()
+self.factory = RequestFactory()

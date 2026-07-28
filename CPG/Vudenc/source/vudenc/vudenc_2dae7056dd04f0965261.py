@@ -1,0 +1,3 @@
+def __init__(self, csrf_enabled=False, *args, **kwargs):...
+super(ChangeOneModelForm, self).__init__(*args, csrf_enabled=csrf_enabled,
+    **kwargs)

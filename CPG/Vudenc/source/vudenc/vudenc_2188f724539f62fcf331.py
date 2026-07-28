@@ -1,0 +1,3 @@
+def aasa_redirect(request):...
+return JsonResponse({'applinks': {'apps': [], 'details': [{'appID':
+    settings.APPLE_APPID, 'paths': ['*']}]}})

@@ -1,0 +1,3 @@
+def test_y_delete_load_balancer_vpc(self):...
+self.run_test_case(self.scenario.delete_load_balancer(use_vpc=True),
+    max_retries=5)

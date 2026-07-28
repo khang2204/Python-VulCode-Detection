@@ -1,0 +1,230 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "target/project/models/Dashboard.py",
+      "start": {
+        "line": 7,
+        "col": 6,
+        "offset": 0
+      },
+      "end": {
+        "line": 7,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from the URL pageId parameter is concatenated directly into the SQL query string passed to db.execute(). This allows SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle",
+      "path": "target/project/controllers/About.py",
+      "start": {
+        "line": 27,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 27,
+        "col": 33,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The endpoint /about/sync reads user input via request.form['data_obj'], converts it from hex to bytes, writes it to a file, and then deserializes it using pickle.load(). This allows arbitrary code execution via unsafe deserialization.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml",
+      "path": "target/project/controllers/Information.py",
+      "start": {
+        "line": 18,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 18,
+        "col": 41,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The endpoint /information/<input> decodes base64 user input and then calls yaml.load() on it without a safe loader, allowing arbitrary code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.traversal.path-traversal-read",
+      "path": "target/project/controllers/Validator.py",
+      "start": {
+        "line": 30,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 31,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The endpoint /validator/getXML reads user-supplied filename request.form['example_file'] and passes it directly to open() and send_file(), permitting arbitrary file read/path traversal.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.traversal.path-traversal-upload",
+      "path": "target/project/controllers/Validator.py",
+      "start": {
+        "line": 48,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 48,
+        "col": 43,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The file upload endpoint /validator/uploads saves files using a user-controlled filename file.filename without sanitization, permitting arbitrary file write and potential path traversal.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss",
+      "path": "target/project/controllers/Search.py",
+      "start": {
+        "line": 10,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 11,
+        "col": 45,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The search controller passes user input search directly to search/index.html, which renders it with {% autoescape false %} without escaping. The controller also explicitly disables XSS protection with the X-XSS-Protection header set to 0.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-Site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "target/project/controllers/404.py",
+      "start": {
+        "line": 94,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 95,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The 404 handler dynamically constructs a Jinja2 template string by formatting user-controlled request.url directly into the template and then calls render_template_string(). This allows remote code execution via Server-Side Template Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "target/project/controllers/Monitoring.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 8,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The endpoint /monitoring is accessible to unauthenticated users. Although hidden in the navigation bar for non-logged-in users, the route itself lacks any authentication or authorization checks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.bypass-route",
+      "path": "target/project/controllers/Webmaster.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 13,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The endpoint /webmaster automatically sets session['loggedin'] to a random UUID without verifying any credentials, permitting any user to bypass authentication and gain logged-in status.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

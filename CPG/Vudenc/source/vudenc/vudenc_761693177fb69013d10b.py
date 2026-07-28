@@ -1,0 +1,3 @@
+def any_processes_alive(self):...
+"""docstring"""
+return any(self.live_processes())

@@ -1,0 +1,3 @@
+def close(self):...
+if not self.campaign_data['use_simics']:
+self.debugger.close()

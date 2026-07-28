@@ -1,0 +1,3 @@
+def route_add(self, net, mask, gateway):...
+cmd = 'route add {0} {1} {2}'.format(net, gateway, mask)
+return shellutil.run(cmd, chk_err=False)

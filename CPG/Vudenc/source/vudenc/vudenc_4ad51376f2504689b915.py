@@ -1,0 +1,3 @@
+def spawn_wipethreads(self):...
+return self.spawn_nworkers(0, WipeThread, self.c.tcount, (self.pc, self.
+    spawnqueue))

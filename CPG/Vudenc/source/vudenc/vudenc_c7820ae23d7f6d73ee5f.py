@@ -1,0 +1,3 @@
+@staticmethod...
+"""docstring"""
+return sum(map(len, wildcards.values()))

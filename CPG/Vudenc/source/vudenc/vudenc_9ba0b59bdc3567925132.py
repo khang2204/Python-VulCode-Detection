@@ -1,0 +1,3 @@
+def build_backward_node_tree(self, oldest_node, parent=None):...
+self.backward_tree = Node(oldest_node)
+self.add_backward_children(self.backward_tree)

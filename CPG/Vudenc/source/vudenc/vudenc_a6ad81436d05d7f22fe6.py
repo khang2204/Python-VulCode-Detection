@@ -1,0 +1,3 @@
+def get_qa_status(self):...
+"""docstring"""
+return self.get_pct_checked_numeric() >= self.QA_COMPLETE_PERCENTAGE * 100

@@ -1,0 +1,3 @@
+def deleteMatches():...
+"""docstring"""
+_commit('DELETE FROM matches')

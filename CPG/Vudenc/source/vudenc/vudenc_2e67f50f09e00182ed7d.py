@@ -1,0 +1,3 @@
+def test_hermetic_environment(self):...
+self.assertIn('USER', os.environ)
+self.assertNotIn('USER', os.environ)

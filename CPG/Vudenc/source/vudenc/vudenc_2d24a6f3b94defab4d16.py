@@ -1,0 +1,3 @@
+def inquire_data_async():...
+_tf_data = db.Filesystem.get_content(file_path)
+future.set_result(_tf_data)

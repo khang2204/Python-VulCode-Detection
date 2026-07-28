@@ -1,0 +1,6 @@
+def get_invalid_links(self, is_submittable=False):...
+"""docstring"""
+def get_msg(df, docname):...
+if self.parentfield:
+return '{} #{}: {}: {}'.format(_('Row'), self.idx, _(df.label), docname)
+return '{}: {}'.format(_(df.label), docname)

@@ -1,0 +1,3 @@
+def _os_walk(path):...
+assert path == mock_path
+return MOCK_PATHS

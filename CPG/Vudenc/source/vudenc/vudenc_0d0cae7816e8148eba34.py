@@ -1,0 +1,3 @@
+async def finish(self):...
+if self._loaded:
+await self._runon('finish')

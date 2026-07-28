@@ -1,0 +1,3 @@
+def add_handler(self, handler, **kwargs):...
+if self.closed:
+self._add_handler(handler, **kwargs)

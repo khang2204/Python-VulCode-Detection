@@ -1,0 +1,3 @@
+def select_core(self, core):...
+self.command('select ' + str(core), ['Core number', 'Core state',
+    'Debug entry cause', 'Current PC', 'Current CPSR'], 'Error selecting core')

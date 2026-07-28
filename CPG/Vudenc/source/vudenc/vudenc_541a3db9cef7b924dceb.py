@@ -1,0 +1,3 @@
+def add_user(domain, login, passwd):...
+uq = wm.get_userqueue(domain)
+uq.put({'login': login, 'passwd': passwd}, False)

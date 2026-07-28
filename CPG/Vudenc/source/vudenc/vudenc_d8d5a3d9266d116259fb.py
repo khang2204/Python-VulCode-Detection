@@ -1,0 +1,3 @@
+def get(self):...
+func = getattr(self, self.object)
+return func()

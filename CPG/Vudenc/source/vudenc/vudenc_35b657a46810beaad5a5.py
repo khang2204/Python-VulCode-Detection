@@ -1,0 +1,3 @@
+@property...
+for home in self._homes:
+yield self.Location.from_home(home)

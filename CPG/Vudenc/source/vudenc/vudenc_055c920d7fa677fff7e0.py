@@ -1,0 +1,13 @@
+def GetLogger():...
+if INTERNAL_URLS:
+logger('internal-links', INTERNAL_URLS)
+if SCAN_ERRORS:
+logger('errored', SCAN_ERRORS)
+if FILES_EXEC:
+logger('files-found', FILES_EXEC)
+if REQUEST_TOKENS:
+logger('anti-csrf-tokens', REQUEST_TOKENS)
+if FORMS_TESTED:
+logger('forms-tested', FORMS_TESTED)
+if VULN_LIST:
+logger('vulnerabilities', VULN_LIST)

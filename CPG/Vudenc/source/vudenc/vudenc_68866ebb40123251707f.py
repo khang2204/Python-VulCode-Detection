@@ -1,0 +1,3 @@
+def set_current_user(self, email, first_name=None, last_name=None):...
+session['user'] = {'email': email, 'first_name': first_name, 'last_name':
+    last_name}

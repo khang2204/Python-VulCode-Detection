@@ -1,0 +1,6 @@
+def reformat(score):...
+score = score.replace('[', '')
+score = score.replace(']', '')
+win, loss = score.split(',')
+score = '{} - {}'.format(win, loss)
+return score

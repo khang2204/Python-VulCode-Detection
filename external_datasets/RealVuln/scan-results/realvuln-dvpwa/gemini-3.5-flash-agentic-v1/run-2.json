@@ -1,0 +1,205 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "sqli/dao/student.py",
+      "start": {
+        "line": 42,
+        "col": 9,
+        "offset": 1050
+      },
+      "end": {
+        "line": 43,
+        "col": 50,
+        "offset": 1130
+      },
+      "extra": {
+        "message": "User input 'name' is directly interpolated into SQL query template string using '%' string formatting. This allows remote attackers to execute arbitrary SQL commands via SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.disabled-autoescape",
+      "path": "sqli/app.py",
+      "start": {
+        "line": 35,
+        "col": 17,
+        "offset": 1000
+      },
+      "end": {
+        "line": 35,
+        "col": 35,
+        "offset": 1020
+      },
+      "extra": {
+        "message": "Jinja2 is initialized with 'autoescape=False', disabling automatic HTML escaping globally. This exposes the application to widespread Cross-Site Scripting (XSS) vulnerabilities where user inputs are rendered in templates.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.disabled-middleware",
+      "path": "sqli/app.py",
+      "start": {
+        "line": 27,
+        "col": 13,
+        "offset": 750
+      },
+      "end": {
+        "line": 27,
+        "col": 32,
+        "offset": 770
+      },
+      "extra": {
+        "message": "The 'csrf_middleware' is commented out, leaving the application's state-changing POST requests vulnerable to Cross-Site Request Forgery (CSRF).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-auth-students",
+      "path": "sqli/views.py",
+      "start": {
+        "line": 54,
+        "col": 5,
+        "offset": 1250
+      },
+      "end": {
+        "line": 57,
+        "col": 53,
+        "offset": 1380
+      },
+      "extra": {
+        "message": "The POST handler for /students/ does not verify whether the requesting user is authenticated or authorized, allowing unauthenticated users to create student records.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-auth-courses",
+      "path": "sqli/views.py",
+      "start": {
+        "line": 86,
+        "col": 5,
+        "offset": 2200
+      },
+      "end": {
+        "line": 90,
+        "col": 52,
+        "offset": 2350
+      },
+      "extra": {
+        "message": "The POST handler for /courses/ does not verify whether the requesting user is authenticated as an administrator, allowing unauthorized users to create courses.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-auth-evaluate",
+      "path": "sqli/views.py",
+      "start": {
+        "line": 135,
+        "col": 1,
+        "offset": 3600
+      },
+      "end": {
+        "line": 153,
+        "col": 41,
+        "offset": 4200
+      },
+      "extra": {
+        "message": "The student evaluation handler does not check if the requester is authenticated as an admin before recording grades/points, allowing unauthorized users to evaluate students.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-password-hash",
+      "path": "sqli/dao/user.py",
+      "start": {
+        "line": 40,
+        "col": 5,
+        "offset": 1000
+      },
+      "end": {
+        "line": 41,
+        "col": 74,
+        "offset": 1100
+      },
+      "extra": {
+        "message": "The password verification utilizes unsalted MD5 hashing. MD5 is extremely vulnerable to collision attacks, brute-forcing, and rainbow tables.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Inherently Weak Cryptographic Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.configuration.cookie-httponly-false",
+      "path": "sqli/middlewares.py",
+      "start": {
+        "line": 20,
+        "col": 5,
+        "offset": 500
+      },
+      "end": {
+        "line": 20,
+        "col": 57,
+        "offset": 560
+      },
+      "extra": {
+        "message": "The RedisStorage session cookie is configured with 'httponly=False'. This allows client-side JavaScript to access session tokens, facilitating session hijacking in the event of XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Attribute"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

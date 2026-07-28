@@ -1,0 +1,3 @@
+def setup_bot(_bot):...
+setup_bots.append(1)
+return False

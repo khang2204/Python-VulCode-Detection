@@ -1,0 +1,15 @@
+def __init__(self, meta):...
+self.meta = meta
+self.parents = []
+self.fields = []
+self.virtual_fields = []
+self.name = None
+self.class_name = None
+self.name_space = NOT_PROVIDED
+self.verbose_name = None
+self.verbose_name_plural = None
+self.abstract = False
+self.doc_group = None
+self.type_field = DEFAULT_TYPE_FIELD
+self.key_field = None
+self._cache = {}

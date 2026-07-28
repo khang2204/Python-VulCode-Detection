@@ -1,0 +1,3 @@
+def load_app(self, config):...
+"""docstring"""
+return authn_init_app('test.localhost', config)

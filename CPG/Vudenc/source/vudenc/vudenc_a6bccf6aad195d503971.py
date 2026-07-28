@@ -1,0 +1,3 @@
+def reset_dut(self, attempts=10):...
+super().reset_dut(['JTAG tap: zynq.dap tap/device found: 0x4ba00477'], attempts
+    )

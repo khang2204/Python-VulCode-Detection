@@ -1,0 +1,3 @@
+def __init__(self, param, error, *a, **kw):...
+Validator.__init__(self, param, *a, **kw)
+self._error = error

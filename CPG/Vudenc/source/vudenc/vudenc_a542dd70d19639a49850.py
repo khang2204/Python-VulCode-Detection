@@ -1,0 +1,3 @@
+def __call__(self, msg, arguments, errorSink=None):...
+self.reply(msg, "I don't know that. Did you mean: {} {}".format(self.
+    _new_name, arguments))

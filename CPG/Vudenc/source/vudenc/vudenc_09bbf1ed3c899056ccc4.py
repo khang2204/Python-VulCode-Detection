@@ -1,0 +1,3 @@
+def new_object(*args, **kwargs):...
+"""docstring"""
+return cls(name, *args, **kwargs)

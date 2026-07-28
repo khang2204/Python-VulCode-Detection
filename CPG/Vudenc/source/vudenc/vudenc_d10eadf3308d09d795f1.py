@@ -1,0 +1,3 @@
+def check_user_privs(self):...
+if not self['ssh_user'] == 'root':
+self['need_sudo'] = True

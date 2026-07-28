@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self.format_wildcards(self.rule.message) if self.rule.message else None

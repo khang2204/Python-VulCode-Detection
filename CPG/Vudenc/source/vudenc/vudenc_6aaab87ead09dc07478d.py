@@ -1,0 +1,3 @@
+def get_qa_complete_extractedtext_count(self):...
+return DataDocument.objects.filter(extractedtext__qa_checked=True,
+    extractedtext__extraction_script=self.pk).count()

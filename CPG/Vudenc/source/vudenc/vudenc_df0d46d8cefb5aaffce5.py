@@ -1,0 +1,3 @@
+def __init__(self, factory=None):...
+self._factory = factory or default_context_factory()
+self._contexts = self._factory()

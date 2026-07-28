@@ -1,0 +1,3 @@
+def get_datadocument_count(self):...
+return DataDocument.objects.filter(extractedtext__extraction_script=self.pk
+    ).count()

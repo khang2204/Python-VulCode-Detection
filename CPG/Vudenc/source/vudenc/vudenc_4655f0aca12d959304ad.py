@@ -1,0 +1,3 @@
+def test_no_player_id(self):...
+"""docstring"""
+self.parser.parse_args(['--edit-player'])

@@ -1,0 +1,3 @@
+def set_pending(self, cr, uid, ids, context={}):...
+self.write(cr, uid, ids, {'state': 'pending'}, context=context)
+return True

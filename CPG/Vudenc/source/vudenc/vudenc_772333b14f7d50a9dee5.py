@@ -1,0 +1,3 @@
+def items(self):...
+for name in self._names:
+yield name, getattr(self, name)

@@ -1,0 +1,3 @@
+def __missing__(self, key):...
+ret = self[key] = f(*key)
+return ret

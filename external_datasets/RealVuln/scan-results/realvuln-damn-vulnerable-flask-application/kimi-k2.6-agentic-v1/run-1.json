@@ -1,0 +1,205 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.code-eval",
+      "path": "app.py",
+      "start": {
+        "line": 120,
+        "col": 1,
+        "offset": 3806
+      },
+      "end": {
+        "line": 120,
+        "col": 109,
+        "offset": 3914
+      },
+      "extra": {
+        "message": "User input from request.form['expression'] is passed directly to eval() and the result is rendered into HTML. This allows arbitrary Python code execution (code injection).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command",
+      "path": "app.py",
+      "start": {
+        "line": 140,
+        "col": 1,
+        "offset": 4643
+      },
+      "end": {
+        "line": 140,
+        "col": 117,
+        "offset": 4759
+      },
+      "extra": {
+        "message": "User input from request.form['address'] is concatenated directly into a shell command string passed to a command execution function. This allows OS command injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xxe",
+      "path": "app.py",
+      "start": {
+        "line": 157,
+        "col": 1,
+        "offset": 5325
+      },
+      "end": {
+        "line": 159,
+        "col": 53,
+        "offset": 5462
+      },
+      "extra": {
+        "message": "XML parser is configured with no_network=False and dtd_validation=True, and user-supplied XML from request.form['xml'] is parsed with etree.fromstring(). This allows XML External Entity (XXE) attacks, potentially leading to file disclosure and SSRF.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "app.py",
+      "start": {
+        "line": 189,
+        "col": 1,
+        "offset": 6531
+      },
+      "end": {
+        "line": 205,
+        "col": 43,
+        "offset": 7112
+      },
+      "extra": {
+        "message": "User input from request.form['name'] is interpolated into a template string that is then passed to render_template_string(). This allows Server-Side Template Injection (SSTI), which can lead to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "app.py",
+      "start": {
+        "line": 189,
+        "col": 1,
+        "offset": 6531
+      },
+      "end": {
+        "line": 189,
+        "col": 61,
+        "offset": 6591
+      },
+      "extra": {
+        "message": "User input from request.form['name'] is embedded directly into an HTML response without escaping via Python string formatting. This allows reflected Cross-Site Scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret-key",
+      "path": "app.py",
+      "start": {
+        "line": 15,
+        "col": 1,
+        "offset": 429
+      },
+      "end": {
+        "line": 15,
+        "col": 56,
+        "offset": 484
+      },
+      "extra": {
+        "message": "Flask secret key is hardcoded in source code. An attacker who obtains the source code can forge session cookies and impersonate users.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-enabled",
+      "path": "app.py",
+      "start": {
+        "line": 208,
+        "col": 1,
+        "offset": 7141
+      },
+      "end": {
+        "line": 208,
+        "col": 21,
+        "offset": 7161
+      },
+      "extra": {
+        "message": "Flask debug mode is enabled (app.debug = True). This exposes the Werkzeug interactive debugger, which can allow remote code execution and leaks sensitive application details.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.storage.plaintext-passwords",
+      "path": "app.py",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 786
+      },
+      "end": {
+        "line": 26,
+        "col": 40,
+        "offset": 825
+      },
+      "extra": {
+        "message": "User passwords are stored in plaintext in the database without any hashing. If the database is compromised, attacker obtains all user credentials directly.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-256: Plaintext Storage of a Password"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

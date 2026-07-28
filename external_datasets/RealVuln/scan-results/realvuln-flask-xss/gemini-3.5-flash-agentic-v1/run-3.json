@@ -1,0 +1,155 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.xss.reflected-xss-unsafe-params",
+      "path": "app/blueprints/sandboxes/templates/sandboxes/unsafe_params.html",
+      "start": {
+        "line": 6,
+        "col": 9,
+        "offset": 110
+      },
+      "end": {
+        "line": 6,
+        "col": 41,
+        "offset": 142
+      },
+      "extra": {
+        "message": "The template renders user-controlled input 'name' using the '| safe' filter, leading to Reflected Cross-Site Scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-Site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss-unsafe-cookies",
+      "path": "app/blueprints/sandboxes/templates/sandboxes/unsafe_cookies.html",
+      "start": {
+        "line": 6,
+        "col": 9,
+        "offset": 125
+      },
+      "end": {
+        "line": 6,
+        "col": 41,
+        "offset": 157
+      },
+      "extra": {
+        "message": "The template renders user-controlled input from form or cookie using the '| safe' filter, leading to Cross-Site Scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-Site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss-messages",
+      "path": "app/templates/admin/message.html",
+      "start": {
+        "line": 29,
+        "col": 21,
+        "offset": 860
+      },
+      "end": {
+        "line": 30,
+        "col": 54,
+        "offset": 951
+      },
+      "extra": {
+        "message": "The admin template renders message content and user-submitted usernames using the '| safe' filter. Since these messages can be submitted by unauthenticated users via the API, this leads to Stored Cross-Site Scripting (Stored XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-Site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.open-redirect.xss-protection",
+      "path": "app/blueprints/xss_protection/views.py",
+      "start": {
+        "line": 11,
+        "col": 5,
+        "offset": 230
+      },
+      "end": {
+        "line": 12,
+        "col": 26,
+        "offset": 304
+      },
+      "extra": {
+        "message": "The 'next' parameter from the query string is not validated before being passed to redirect(), allowing for Open Redirect vulnerabilities.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-auth-messages-post",
+      "path": "app/blueprints/api/views.py",
+      "start": {
+        "line": 43,
+        "col": 5,
+        "offset": 920
+      },
+      "end": {
+        "line": 56,
+        "col": 43,
+        "offset": 1335
+      },
+      "extra": {
+        "message": "The 'post' method of MessagesView allows unauthenticated users to submit messages to the database, which are later viewed by administrators, exposing them to Stored XSS or database spam.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.missing-csrf-protection",
+      "path": "app/blueprints/account_area/views.py",
+      "start": {
+        "line": 15,
+        "col": 1,
+        "offset": 331
+      },
+      "end": {
+        "line": 58,
+        "col": 64,
+        "offset": 1600
+      },
+      "extra": {
+        "message": "Sensitive account modification endpoints (/change_password and /change_email) lack CSRF protection, enabling attackers to perform unauthorized actions on behalf of logged-in users.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+def add_edges(self, edgelist):...
+for edge_pair in edgelist:
+self.add_edge(edge_pair[0], edge_pair[1], edge_pair[2])

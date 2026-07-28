@@ -1,0 +1,3 @@
+def assert_called_once(self, verb, **kwargs):...
+mock_call = getattr(self._record, verb.lower())
+mock_call.assert_called_once_with(**kwargs)

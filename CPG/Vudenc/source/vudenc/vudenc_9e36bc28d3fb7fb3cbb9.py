@@ -1,0 +1,3 @@
+def resolve(self, spec):...
+"""docstring"""
+return self.build_graph.resolve(spec)

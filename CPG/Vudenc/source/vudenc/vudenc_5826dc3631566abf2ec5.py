@@ -1,0 +1,3 @@
+def then_response_should_be_json(self, json_string):...
+assert json.loads(self.response.content) == json.loads(json_string)
+return self

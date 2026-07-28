@@ -1,0 +1,3 @@
+def given_a_public_domain(self, public_domain):...
+settings.PUBLIC_DOMAIN = public_domain
+return self

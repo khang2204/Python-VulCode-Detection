@@ -1,0 +1,3 @@
+def new_host(self):...
+return dict({'host': '', 'hostname': '', 'port': 22, 'username': '',
+    'password': '', 'type': 'system'})

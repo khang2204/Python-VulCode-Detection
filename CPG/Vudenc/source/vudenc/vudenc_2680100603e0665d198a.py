@@ -1,0 +1,3 @@
+def assert_json_call(verb, client_or_resource, url, verify=nsxlib_testcase....
+return assert_call(verb, client_or_resource, url, verify=verify, data=data,
+    headers=headers, single_call=single_call)

@@ -1,0 +1,154 @@
+{
+  "architecture": "QDENN",
+  "protocol": "ten_percent",
+  "source": "benchmarkpython",
+  "target": "benchmarkpython",
+  "training_seed": 101,
+  "split_seed": 101,
+  "sampling_seed": 101,
+  "evaluation_scope": "fixed_test_split_101",
+  "train_samples": 87,
+  "validation_samples": 185,
+  "test_samples": 185,
+  "source_manifest_sha256": "2575e05c194b3f10addea9b16f7274a3e2caa58db9c6b61f40de29ed4fc478c0",
+  "configuration": {
+    "vocabulary": 128,
+    "qubits": 7,
+    "max_length": 100,
+    "epochs": 10,
+    "batch_size": 32,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "fidelity_note": "Learning rate is not reported by the source paper; 0.01 is the declared reproduction choice."
+  },
+  "metrics": {
+    "accuracy": 0.5081081081081081,
+    "balanced_accuracy": 0.4663775766716943,
+    "precision": 0.3230769230769231,
+    "recall": 0.3088235294117647,
+    "f1": 0.31578947368421056,
+    "vulnerable_recall": 0.3088235294117647
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6882986412164884,
+      "validation": {
+        "accuracy": 0.5027027027027027,
+        "balanced_accuracy": 0.46210407239819007,
+        "precision": 0.3181818181818182,
+        "recall": 0.3088235294117647,
+        "f1": 0.31343283582089554,
+        "vulnerable_recall": 0.3088235294117647
+      }
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.6561622066161178,
+      "validation": {
+        "accuracy": 0.5513513513513514,
+        "balanced_accuracy": 0.47900955253896427,
+        "precision": 0.32558139534883723,
+        "recall": 0.20588235294117646,
+        "f1": 0.25225225225225223,
+        "vulnerable_recall": 0.20588235294117646
+      }
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.637359517973265,
+      "validation": {
+        "accuracy": 0.5675675675675675,
+        "balanced_accuracy": 0.49490950226244346,
+        "precision": 0.35714285714285715,
+        "recall": 0.22058823529411764,
+        "f1": 0.27272727272727276,
+        "vulnerable_recall": 0.22058823529411764
+      }
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.6259874147665151,
+      "validation": {
+        "accuracy": 0.5891891891891892,
+        "balanced_accuracy": 0.49044746103569636,
+        "precision": 0.3333333333333333,
+        "recall": 0.11764705882352941,
+        "f1": 0.1739130434782609,
+        "vulnerable_recall": 0.11764705882352941
+      }
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.6159130738440621,
+      "validation": {
+        "accuracy": 0.6108108108108108,
+        "balanced_accuracy": 0.5106209150326797,
+        "precision": 0.4090909090909091,
+        "recall": 0.1323529411764706,
+        "f1": 0.19999999999999998,
+        "vulnerable_recall": 0.1323529411764706
+      }
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.5997093250248583,
+      "validation": {
+        "accuracy": 0.5837837837837838,
+        "balanced_accuracy": 0.48617395676219205,
+        "precision": 0.32,
+        "recall": 0.11764705882352941,
+        "f1": 0.17204301075268819,
+        "vulnerable_recall": 0.11764705882352941
+      }
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.5857463544778095,
+      "validation": {
+        "accuracy": 0.5945945945945946,
+        "balanced_accuracy": 0.5101181498240321,
+        "precision": 0.3939393939393939,
+        "recall": 0.19117647058823528,
+        "f1": 0.25742574257425743,
+        "vulnerable_recall": 0.19117647058823528
+      }
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.576852441241513,
+      "validation": {
+        "accuracy": 0.5783783783783784,
+        "balanced_accuracy": 0.49421820010055306,
+        "precision": 0.35294117647058826,
+        "recall": 0.17647058823529413,
+        "f1": 0.23529411764705885,
+        "vulnerable_recall": 0.17647058823529413
+      }
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.563573368244461,
+      "validation": {
+        "accuracy": 0.5513513513513514,
+        "balanced_accuracy": 0.4944067370537959,
+        "precision": 0.3584905660377358,
+        "recall": 0.27941176470588236,
+        "f1": 0.31404958677685946,
+        "vulnerable_recall": 0.27941176470588236
+      }
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.5568447546393372,
+      "validation": {
+        "accuracy": 0.5621621621621622,
+        "balanced_accuracy": 0.4937154348919055,
+        "precision": 0.35555555555555557,
+        "recall": 0.23529411764705882,
+        "f1": 0.2831858407079646,
+        "vulnerable_recall": 0.23529411764705882
+      }
+    }
+  ]
+}

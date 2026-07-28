@@ -1,0 +1,3 @@
+def test_prepare_string_argument_unsupported(self):...
+for string in self.test_strings:
+self.assertEqual(prepare_string_argument(string, 'WeIrD_O/S'), string)

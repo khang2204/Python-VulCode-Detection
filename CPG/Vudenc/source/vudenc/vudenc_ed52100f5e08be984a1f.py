@@ -1,0 +1,3 @@
+def show_ip(stdout):...
+for line in stdout:
+print(line)

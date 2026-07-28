@@ -1,0 +1,3 @@
+@app.route('/api/events')...
+return Response(controller.sse.subscribe().feed(), mimetype='text/event-stream'
+    )

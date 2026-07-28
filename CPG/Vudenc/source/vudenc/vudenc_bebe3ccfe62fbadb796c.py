@@ -1,0 +1,3 @@
+def extract_composite_keywords(ckw_db, fulltext, skw_spans):...
+"""docstring"""
+return keyworder.get_composite_keywords(ckw_db, fulltext, skw_spans) or {}

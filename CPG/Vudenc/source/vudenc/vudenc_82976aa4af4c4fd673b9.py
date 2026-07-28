@@ -1,0 +1,3 @@
+def parse_input(self, report, name, value, request, attribute):...
+"""docstring"""
+setattr(report, name, value)

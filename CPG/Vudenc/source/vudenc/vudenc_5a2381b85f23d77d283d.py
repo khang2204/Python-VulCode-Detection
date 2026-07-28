@@ -1,0 +1,3 @@
+@classmethod...
+"""docstring"""
+return cls._capabilities

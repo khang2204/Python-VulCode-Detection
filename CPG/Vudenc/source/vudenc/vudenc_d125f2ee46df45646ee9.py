@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self.config.get(self.section, 'sso_session_mongo_uri')

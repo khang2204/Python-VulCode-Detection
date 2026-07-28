@@ -1,0 +1,3 @@
+def __init__(self, has_a_single_h1):...
+super(_AdjustTOC, self).__init__()
+self.has_a_single_h1 = has_a_single_h1

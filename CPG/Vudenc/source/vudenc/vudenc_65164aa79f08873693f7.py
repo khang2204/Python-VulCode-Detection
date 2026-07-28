@@ -1,0 +1,3 @@
+def filter(self, value, op=None):...
+self.filter_string = '{0} = {1}'.format(self.name, value)
+return self.filter_string

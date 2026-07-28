@@ -1,0 +1,3 @@
+def post(self):...
+auth_header = request.headers.get('Authorization')
+return auth_header

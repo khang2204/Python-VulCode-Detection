@@ -1,0 +1,3 @@
+def string_to_date(date_string):...
+import datetime
+return datetime.datetime.strptime(date_string, DATE_FORMAT)

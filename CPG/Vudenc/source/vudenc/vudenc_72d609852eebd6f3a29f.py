@@ -1,0 +1,3 @@
+def calcAllWLPVM(self, l):...
+for edge in self.G.edges():
+self.calcWLPVM(edge, l)

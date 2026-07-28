@@ -1,0 +1,3 @@
+def start_clone_session(self, comp_name, session_name):...
+cmd = "%s '%s' '%s'" % (SCRIPT_CLONE_PATH, session_name, comp_name)
+send_main_session_command(self.session, cmd)

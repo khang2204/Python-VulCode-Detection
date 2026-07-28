@@ -1,0 +1,405 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "app/app.py",
+      "start": {
+        "line": 103,
+        "col": 1,
+        "offset": 4326
+      },
+      "end": {
+        "line": 114,
+        "col": 60,
+        "offset": 4838
+      },
+      "extra": {
+        "message": "The 404 error handler constructs an HTML template string with user-controlled request.url directly interpolated via Python string formatting, then renders it with render_template_string while exposing locals(), dir(), and help(). This allows server-side template injection (SSTI) leading to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "app/app.py",
+      "start": {
+        "line": 271,
+        "col": 1,
+        "offset": 11382
+      },
+      "end": {
+        "line": 281,
+        "col": 60,
+        "offset": 11852
+      },
+      "extra": {
+        "message": "In the exception handler of search_customer(), str(e) is directly interpolated into an HTML template via Python string formatting and rendered with render_template_string. The SQL error message can contain attacker-controlled input, leading to reflected cross-site scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/app.py",
+      "start": {
+        "line": 261,
+        "col": 1,
+        "offset": 10962
+      },
+      "end": {
+        "line": 265,
+        "col": 60,
+        "offset": 11180
+      },
+      "extra": {
+        "message": "User input from content['search'] is directly concatenated into a SQL query using Python string formatting and executed with db.engine.execute(). This allows arbitrary SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml-load",
+      "path": "app/app.py",
+      "start": {
+        "line": 329,
+        "col": 1,
+        "offset": 13818
+      },
+      "end": {
+        "line": 329,
+        "col": 60,
+        "offset": 13878
+      },
+      "extra": {
+        "message": "yaml.load() is called on attacker-controlled file content without specifying a safe Loader. This allows deserialization of arbitrary Python objects leading to remote code execution.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "app/app.py",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 1092
+      },
+      "end": {
+        "line": 28,
+        "col": 60,
+        "offset": 1236
+      },
+      "extra": {
+        "message": "Multiple secret keys (SECRET_KEY_HMAC, SECRET_KEY_HMAC_2, and Flask secret_key) are hardcoded in the application source code, allowing attackers to forge sessions and JWT tokens.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "app/app.py",
+      "start": {
+        "line": 63,
+        "col": 1,
+        "offset": 2646
+      },
+      "end": {
+        "line": 63,
+        "col": 60,
+        "offset": 2706
+      },
+      "extra": {
+        "message": "The default admin account password 'admin123' is hardcoded in the application setup code, allowing trivial authentication bypass.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.jwt-verify-disabled",
+      "path": "app/app.py",
+      "start": {
+        "line": 97,
+        "col": 1,
+        "offset": 4074
+      },
+      "end": {
+        "line": 97,
+        "col": 60,
+        "offset": 4134
+      },
+      "extra": {
+        "message": "The insecure_verify() function calls jwt.decode() with verify=False, completely disabling JWT signature verification. This allows attackers to forge valid JWT tokens and bypass authentication.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.exposure.sensitive-data",
+      "path": "app/app.py",
+      "start": {
+        "line": 209,
+        "col": 1,
+        "offset": 8736
+      },
+      "end": {
+        "line": 212,
+        "col": 60,
+        "offset": 8964
+      },
+      "extra": {
+        "message": "The API response for /fetch/customer includes the customer's credit card number (ccn) without any masking or encryption, exposing sensitive payment card data.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.exposure.sensitive-data",
+      "path": "app/app.py",
+      "start": {
+        "line": 233,
+        "col": 1,
+        "offset": 9702
+      },
+      "end": {
+        "line": 236,
+        "col": 60,
+        "offset": 9972
+      },
+      "extra": {
+        "message": "The API response for /get/<cust_id> includes the customer's credit card number (ccn) without any masking or encryption, exposing sensitive payment card data.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.idor",
+      "path": "app/app.py",
+      "start": {
+        "line": 208,
+        "col": 1,
+        "offset": 8736
+      },
+      "end": {
+        "line": 208,
+        "col": 60,
+        "offset": 8796
+      },
+      "extra": {
+        "message": "Any authenticated user can fetch any customer's record by ID without authorization checks, leading to insecure direct object reference (IDOR) and unauthorized data access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.idor",
+      "path": "app/app.py",
+      "start": {
+        "line": 231,
+        "col": 1,
+        "offset": 9702
+      },
+      "end": {
+        "line": 231,
+        "col": 60,
+        "offset": 9762
+      },
+      "extra": {
+        "message": "Any authenticated user can fetch any customer's record by ID without authorization checks, leading to insecure direct object reference (IDOR) and unauthorized data access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "app/app.py",
+      "start": {
+        "line": 141,
+        "col": 1,
+        "offset": 5922
+      },
+      "end": {
+        "line": 141,
+        "col": 60,
+        "offset": 5982
+      },
+      "extra": {
+        "message": "User passwords are hashed using MD5 without salting during registration. MD5 is cryptographically broken and unsuitable for password storage, enabling offline brute-force attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.plaintext-password",
+      "path": "app/app.py",
+      "start": {
+        "line": 182,
+        "col": 1,
+        "offset": 7644
+      },
+      "end": {
+        "line": 182,
+        "col": 80,
+        "offset": 7724
+      },
+      "extra": {
+        "message": "The login function compares the submitted password directly against the database in plaintext without any hashing. The default admin password is also stored in plaintext, making credential theft trivial if the database is compromised.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "app/app.py",
+      "start": {
+        "line": 290,
+        "col": 1,
+        "offset": 12180
+      },
+      "end": {
+        "line": 308,
+        "col": 60,
+        "offset": 12986
+      },
+      "extra": {
+        "message": "The /xxe_uploader route processes file uploads without requiring any authentication, allowing unauthenticated attackers to upload and process DOCX files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "app/app.py",
+      "start": {
+        "line": 315,
+        "col": 1,
+        "offset": 13230
+      },
+      "end": {
+        "line": 331,
+        "col": 60,
+        "offset": 13952
+      },
+      "extra": {
+        "message": "The /yaml_hammer route processes YAML file uploads without requiring any authentication, allowing unauthenticated attackers to upload and deserialize arbitrary YAML objects.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xxe",
+      "path": "app/app.py",
+      "start": {
+        "line": 303,
+        "col": 1,
+        "offset": 12726
+      },
+      "end": {
+        "line": 303,
+        "col": 60,
+        "offset": 12786
+      },
+      "extra": {
+        "message": "Uploaded DOCX files are processed with Document() from python-docx without disabling XML external entity resolution. An attacker can upload a crafted DOCX file to perform server-side request forgery or read local files via XML External Entity (XXE) injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

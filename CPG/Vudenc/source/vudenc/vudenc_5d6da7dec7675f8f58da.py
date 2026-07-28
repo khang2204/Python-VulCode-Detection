@@ -1,0 +1,3 @@
+@acs_action('change-password-action')...
+"""docstring"""
+return _reauthn('reauthn-for-chpass', session_info, user)

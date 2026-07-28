@@ -1,0 +1,3 @@
+def __init__(self, *args, **kwargs):...
+super(HpSanISCSIDriver, self).__init__(*args, **kwargs)
+self.cluster_vip = None

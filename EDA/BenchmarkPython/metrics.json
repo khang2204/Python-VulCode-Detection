@@ -1,0 +1,82 @@
+{
+  "summary": {
+    "Benign": {
+      "samples": 778,
+      "parse_ok": 778,
+      "loc": {
+        "mean": 63.87,
+        "median": 64.0
+      },
+      "depth": {
+        "mean": 3.57,
+        "median": 4.0
+      },
+      "branches": {
+        "mean": 2.72,
+        "median": 3.0
+      },
+      "loops": {
+        "mean": 0.32,
+        "median": 0.0
+      },
+      "tries": {
+        "mean": 0.48,
+        "median": 0.0
+      },
+      "functions": {
+        "mean": 3.0,
+        "median": 3.0
+      }
+    },
+    "Vulnerable": {
+      "samples": 452,
+      "parse_ok": 452,
+      "loc": {
+        "mean": 62.98,
+        "median": 64.0
+      },
+      "depth": {
+        "mean": 3.56,
+        "median": 4.0
+      },
+      "branches": {
+        "mean": 2.76,
+        "median": 3.0
+      },
+      "loops": {
+        "mean": 0.29,
+        "median": 0.0
+      },
+      "tries": {
+        "mean": 0.42,
+        "median": 0.0
+      },
+      "functions": {
+        "mean": 3.0,
+        "median": 3.0
+      }
+    }
+  },
+  "raw_labelled_samples": 1230,
+  "exported_graphs": 1230,
+  "binary_counts": {
+    "benign": 778,
+    "vulnerable": 452
+  },
+  "vulnerable_cwe_counts": {
+    "22": 65,
+    "328": 71,
+    "330": 99,
+    "501": 18,
+    "502": 18,
+    "601": 13,
+    "611": 8,
+    "614": 24,
+    "643": 51,
+    "78": 13,
+    "79": 31,
+    "89": 5,
+    "90": 16,
+    "94": 20
+  }
+}

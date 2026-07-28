@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return os.path.realpath(self.home)

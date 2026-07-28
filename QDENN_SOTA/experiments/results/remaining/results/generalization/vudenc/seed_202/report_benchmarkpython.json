@@ -1,0 +1,31 @@
+{
+  "architecture": "QDENN",
+  "protocol": "generalization",
+  "source": "vudenc",
+  "target": "benchmarkpython",
+  "training_seed": 202,
+  "split_seed": 101,
+  "evaluation_scope": "full_target_dataset",
+  "train_samples": 11088,
+  "validation_samples": 2376,
+  "test_samples": 1230,
+  "source_manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+  "configuration": {
+    "vocabulary": 128,
+    "qubits": 7,
+    "max_length": 100,
+    "epochs": 10,
+    "batch_size": 32,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "fidelity_note": "Learning rate is not reported by the source paper; 0.01 is the declared reproduction choice."
+  },
+  "metrics": {
+    "accuracy": 0.5504065040650407,
+    "balanced_accuracy": 0.48283265463976155,
+    "precision": 0.3355048859934853,
+    "recall": 0.22787610619469026,
+    "f1": 0.2714097496706192,
+    "vulnerable_recall": 0.22787610619469026
+  }
+}

@@ -1,0 +1,3 @@
+def test_getinfo_bool(self):...
+value = self.cnxn.getinfo(pyodbc.SQL_ACCESSIBLE_TABLES)
+self.assertTrue(isinstance(value, bool))

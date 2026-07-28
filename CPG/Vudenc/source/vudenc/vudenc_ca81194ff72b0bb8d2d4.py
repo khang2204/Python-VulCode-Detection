@@ -1,0 +1,3 @@
+def test_name_contains_symbols(self):...
+"""docstring"""
+tournament.registerPlayer(player_name='J!mes Dean')

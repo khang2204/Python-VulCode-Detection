@@ -1,0 +1,3 @@
+def get_all(self):...
+"""docstring"""
+return self.__entities

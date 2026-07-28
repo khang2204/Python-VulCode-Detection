@@ -1,0 +1,3 @@
+def html_escape(input_string):...
+"""docstring"""
+return html.escape(str(input_string))

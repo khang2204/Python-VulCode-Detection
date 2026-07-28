@@ -1,0 +1,3 @@
+def test_course_hook_unicode_string(self):...
+self.assertEquals('123456 test course: Fall 2011 day 1 -> test_hook_url',
+    str(self.course_hook))

@@ -1,0 +1,3 @@
+def to_shard_index(id_bin):...
+return binary_to_object_id(id_bin).redis_shard_hash() % len(self.state.
+    redis_clients)

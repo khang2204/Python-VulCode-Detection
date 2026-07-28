@@ -1,0 +1,3 @@
+def kill_window(window):...
+window.cmd('send-keys', '', 'C-c')
+window.kill_window()

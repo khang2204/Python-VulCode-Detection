@@ -1,0 +1,3 @@
+def assert_any_call(self, verb, **kwargs):...
+mock_call = getattr(self._record, verb.lower())
+mock_call.assert_any_call(**kwargs)

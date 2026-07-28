@@ -1,0 +1,3 @@
+@property...
+ps1 = '%s@%s:%s%s ' % ('user', 'oms', self._cwd(), '#')
+return [ps1, '... ']

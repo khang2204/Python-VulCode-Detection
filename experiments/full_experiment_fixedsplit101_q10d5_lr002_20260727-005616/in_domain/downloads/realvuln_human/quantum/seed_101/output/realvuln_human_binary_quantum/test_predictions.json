@@ -1,0 +1,386 @@
+[
+  {
+    "sample_file": "realvuln_human/realvuln_human_e3790ff939ac611ed74e.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.2828119099140167
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_fad9c5315ee98dd2ba2c.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.2643817067146301
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_d06de6b0fb237cfffefa.py",
+    "true_label": 0,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6157395839691162
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_49b4c2bad779ae785e5f.py",
+    "true_label": 0,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.688126266002655
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_2a3908a77905abdc02cb.py",
+    "true_label": 0,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5719943046569824
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_2ae29c3ad05bb44dc8e3.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.4533483684062958
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_d9fa9ccdfe2c5783b1fb.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.425808310508728
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_30119c6a9c06d11670d3.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.36893871426582336
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_ff5d407f3b77289e56d9.py",
+    "true_label": 0,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.677272617816925
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_9684b8a3bab56c43230e.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.4050463140010834
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_77bda3027dd091298876.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6330753564834595
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_abe7fbcd7f89cdcbe896.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6783261895179749
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_95c87436b452a2f9842a.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6370294094085693
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_ce025ea18d63748f64c5.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.7102129459381104
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_031e3acbd825ab3c0982.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6698973774909973
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_656c08b61acb60e4c116.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6059660315513611
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_387ce4786b4e0fec3e02.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5867162346839905
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_641b66f7fcb886e6b4dd.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.613985002040863
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_78de430d166916036aff.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5566746592521667
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_3a67af17493a2b66469d.py",
+    "true_label": 1,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.3733724057674408
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_42adefb3a926b13431fa.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6345109343528748
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_51a53e961f613238847b.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.7176100611686707
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_7d3484853a67902053fd.py",
+    "true_label": 1,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.37876248359680176
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_c365cb2514c9bf0f895d.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5956417322158813
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_216828d69dbe5175eac0.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.7846749424934387
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_7643cb6386b0d44f6920.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6692942976951599
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_532bdfc427e5707684ae.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6301042437553406
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_b73584f81ea680d0a934.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5039924383163452
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_25e1b8bdc17775a90c23.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.7189866900444031
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_910cae0395141af43144.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.622142493724823
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_f4ae9fc5bdd4e726d807.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.7669573426246643
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_6e8e847575bd7efe2841.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.663642168045044
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_95baa59d1545e01ea561.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6997652649879456
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_e38f37c76dfff8754421.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5526217222213745
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_228b5a5e3eb7e926c6bf.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5384457111358643
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_2bed7a0960931c877922.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6938502192497253
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_9c2efd09009caa4216fa.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.7235256433486938
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_b9e8af602cc196c73fc6.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6048561930656433
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_315c48f0dd7b9e53ad9c.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6587154269218445
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_28d9715084ea60dc13e9.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.7297520041465759
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_310c7aeaff2f36de42e1.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6244430541992188
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_30b80042f54379f5b789.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.7639814615249634
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_eac061251dfc9edcde5d.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5680733919143677
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_03e1a3cc4f0b6b83c187.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6885678172111511
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_99c1a83f435f85889e89.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.7178214192390442
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_973eec4810fc15ac3c04.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5813934206962585
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_640c924008a1f5c5f46f.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6150895953178406
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_1b689602c5d0e7993cb7.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.8459944128990173
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_d023e61b3dfedc4ec172.py",
+    "true_label": 1,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.45016318559646606
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_d66df7221db61f7f0b02.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6117177605628967
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_808002a5ffa25309a921.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5183488726615906
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_ca2a01d1bb3b20274bb7.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5450547337532043
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_14aaf7cf86dd9a9bb980.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6425718069076538
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_f8e0aab89e1bc2b5b227.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6348649859428406
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_f5afe0441f49322a4939.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5383709669113159
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_98dc71a1d1e82a43a636.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6149856448173523
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_5cd754ef1804cb8dcbd3.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6643343567848206
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_08ad901bd6ec324b9262.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.7163400053977966
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_11ea1c5dd89da42bc29a.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.749534547328949
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_bc6519192510aa519371.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5764422416687012
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_5ebd190c3fcd5f8a3519.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6697417497634888
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_51d4c5118087b0b2f02c.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6536659598350525
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_390f9b2808fca0a6d6c8.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6565749645233154
+  },
+  {
+    "sample_file": "realvuln_human/realvuln_human_f400aca2a191c94ec498.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6535552740097046
+  }
+]

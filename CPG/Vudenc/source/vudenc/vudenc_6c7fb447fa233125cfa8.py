@@ -1,0 +1,3 @@
+def add_virtual_field(self, field):...
+self.virtual_fields.append(field)
+cached_property.clear_caches(self)

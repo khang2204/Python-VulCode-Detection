@@ -1,0 +1,3 @@
+def create_field(self, name):...
+field_string = '%s timestamp' % str(name)
+return field_string

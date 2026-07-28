@@ -1,0 +1,3 @@
+def get_discount_line_acl(self):...
+"""docstring"""
+return self.task.__acl__()

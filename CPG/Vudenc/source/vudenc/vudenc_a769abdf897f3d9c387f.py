@@ -1,0 +1,3 @@
+def check_sos_version(self, ver):...
+"""docstring"""
+return LooseVersion(self.sos_info['version']) >= ver

@@ -1,0 +1,3 @@
+def innerFunc():...
+super(Box, self).__init__(slideParser.parse(txt, slideLexer), self.begin %
+    (kind, head), self.end % kind)

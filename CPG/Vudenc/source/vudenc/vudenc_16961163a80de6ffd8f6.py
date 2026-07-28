@@ -1,0 +1,3 @@
+def __init__(self, url, *args, **kwargs):...
+super(AbstractRedirect, self).__init__(*args, **kwargs)
+self.url = url

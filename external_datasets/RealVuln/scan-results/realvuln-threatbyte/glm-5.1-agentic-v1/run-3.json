@@ -1,0 +1,482 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "server/routes.py",
+      "start": {
+        "line": 137,
+        "col": 13,
+        "offset": 4300
+      },
+      "end": {
+        "line": 137,
+        "col": 97,
+        "offset": 4384
+      },
+      "extra": {
+        "message": "User input from request.args.get('search') is interpolated directly into an SQL query via f-string. An attacker can inject SQL through the search parameter, e.g., ' OR 1=1 -- to extract all filenames for any user_id.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "server/routes.py",
+      "start": {
+        "line": 138,
+        "col": 13,
+        "offset": 4398
+      },
+      "end": {
+        "line": 138,
+        "col": 33,
+        "offset": 4418
+      },
+      "extra": {
+        "message": "The cursor.execute() call on line 138 executes the f-string-interpolated SQL query from line 137 without parameterized bindings, allowing SQL injection via the search_query parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.file-upload",
+      "path": "server/routes.py",
+      "start": {
+        "line": 262,
+        "col": 13,
+        "offset": 8300
+      },
+      "end": {
+        "line": 264,
+        "col": 30,
+        "offset": 8410
+      },
+      "extra": {
+        "message": "The uploaded file's original filename (file.filename) is used directly in os.path.join and file.save() without sanitization. An attacker can upload a file with a path traversal filename (e.g., '../../etc/cron.d/backdoor') to write files outside the intended upload directory.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 254,
+        "col": 24,
+        "offset": 9200
+      },
+      "end": {
+        "line": 254,
+        "col": 45,
+        "offset": 9221
+      },
+      "extra": {
+        "message": "The server fetches a URL provided by the user via requests.get(picture_url) without any validation or restriction. An attacker can supply an arbitrary URL including internal network addresses (e.g., http://169.254.169.254/latest/meta-data/ for cloud metadata, or http://localhost:PORT for internal services), enabling Server-Side Request Forgery.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.missing-delete-user",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 223,
+        "col": 9,
+        "offset": 8100
+      },
+      "end": {
+        "line": 223,
+        "col": 28,
+        "offset": 8119
+      },
+      "extra": {
+        "message": "The @token_required decorator is commented out on the delete() method, allowing any unauthenticated user to delete any user account by sending a DELETE request to /api/v1/delete-user/<user_id>. This is a critical authentication bypass.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.missing-profile-api",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 154,
+        "col": 9,
+        "offset": 5800
+      },
+      "end": {
+        "line": 154,
+        "col": 17,
+        "offset": 5808
+      },
+      "extra": {
+        "message": "The @token_required decorator is commented out on the get() method, allowing any unauthenticated user to retrieve any user's profile information (username, email, role, permissions, team) by providing a user_id query parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.missing-update-picture",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 243,
+        "col": 10,
+        "offset": 8900
+      },
+      "end": {
+        "line": 243,
+        "col": 19,
+        "offset": 8909
+      },
+      "extra": {
+        "message": "The POST /api/v1/update_picture endpoint has no authentication decorator at all. Any unauthenticated user can trigger server-side URL fetches and potentially modify other users' profile pictures.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authorization.idor-profile-api",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 158,
+        "col": 9,
+        "offset": 5950
+      },
+      "end": {
+        "line": 165,
+        "col": 42,
+        "offset": 6200
+      },
+      "extra": {
+        "message": "The /api/v1/profile endpoint accepts an arbitrary user_id parameter and returns that user's profile data without verifying the requesting user is authorized to view it. Even if authentication were enforced, any authenticated user could view any other user's profile by changing the user_id parameter, constituting an IDOR vulnerability.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authorization.mass-assignment-role",
+      "path": "server/routes.py",
+      "start": {
+        "line": 187,
+        "col": 5,
+        "offset": 6600
+      },
+      "end": {
+        "line": 196,
+        "col": 42,
+        "offset": 7000
+      },
+      "extra": {
+        "message": "The update_profile route allows users to set their own 'role' and 'permissions' fields via POST form data. While the HTML form comments out these fields, the server-side code processes them if present: if 'role' in request.form, it uses the attacker-provided value. A user can submit role=admin&permissions=all to escalate their own privileges.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-284: Improper Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash-md5",
+      "path": "server/routes.py",
+      "start": {
+        "line": 393,
+        "col": 1,
+        "offset": 13000
+      },
+      "end": {
+        "line": 403,
+        "col": 40,
+        "offset": 13400
+      },
+      "extra": {
+        "message": "The custom_hash function uses MD5 (hashlib.md5) to hash passwords without any salt. MD5 is cryptographically broken and unsuitable for password hashing; it can be brute-forced rapidly. A proper key derivation function like bcrypt, scrypt, or argon2 should be used instead.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash",
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials.secret-key",
+      "path": "server/config.py",
+      "start": {
+        "line": 7,
+        "col": 5,
+        "offset": 120
+      },
+      "end": {
+        "line": 7,
+        "col": 44,
+        "offset": 159
+      },
+      "extra": {
+        "message": "The Flask SECRET_KEY is hardcoded as 'just_another_secret'. This key is used for session signing and JWT token generation. An attacker who obtains this key can forge session cookies and JWT tokens, gaining unauthorized access to any account.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.template-safe-filter",
+      "path": "client/templates/dashboard.html",
+      "start": {
+        "line": 64,
+        "col": 87,
+        "offset": 2800
+      },
+      "end": {
+        "line": 64,
+        "col": 111,
+        "offset": 2824
+      },
+      "extra": {
+        "message": "The search_query value is rendered with the | safe filter, which disables Jinja2's HTML auto-escaping. Since search_query comes from request.args.get('search'), an attacker can inject arbitrary HTML/JavaScript via the search parameter (e.g., '\"><script>alert(1)</script>), leading to reflected XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.dom-based",
+      "path": "client/templates/dashboard.html",
+      "start": {
+        "line": 123,
+        "col": 25,
+        "offset": 5600
+      },
+      "end": {
+        "line": 123,
+        "col": 59,
+        "offset": 5634
+      },
+      "extra": {
+        "message": "User-provided comment text is directly inserted into the DOM via jQuery's .append() method without sanitization: $commentList.append('<li>' + comment + '</li>'). An attacker can inject HTML/JavaScript by entering a comment like <img src=x onerror=alert(1)>, leading to stored DOM-based XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.template-safe-filter-country",
+      "path": "client/templates/profile.html",
+      "start": {
+        "line": 41,
+        "col": 47,
+        "offset": 1800
+      },
+      "end": {
+        "line": 41,
+        "col": 66,
+        "offset": 1819
+      },
+      "extra": {
+        "message": "The user.country value is rendered with the | safe filter, which disables HTML auto-escaping. Since the country field is user-controlled (set during signup and profile editing), an attacker can inject malicious HTML/JavaScript via their country value, leading to stored XSS when any user views their profile.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-mode",
+      "path": "server/config.py",
+      "start": {
+        "line": 5,
+        "col": 5,
+        "offset": 80
+      },
+      "end": {
+        "line": 5,
+        "col": 16,
+        "offset": 91
+      },
+      "extra": {
+        "message": "DEBUG mode is set to True, which enables the Flask interactive debugger in production. This exposes sensitive application internals, allows arbitrary code execution through the debugger console, and provides detailed error tracebacks to attackers.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag",
+            "CWE-614: Sensitive Cookie Without 'Secure' Flag"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.httponly-cookie",
+      "path": "server/config.py",
+      "start": {
+        "line": 6,
+        "col": 5,
+        "offset": 97
+      },
+      "end": {
+        "line": 6,
+        "col": 35,
+        "offset": 127
+      },
+      "extra": {
+        "message": "SESSION_COOKIE_HTTPONLY is set to False, which makes the session cookie accessible to JavaScript. If an XSS vulnerability exists (and several do in this application), an attacker can steal session cookies via document.cookie and hijack user sessions.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.missing-profile-pictures",
+      "path": "server/routes.py",
+      "start": {
+        "line": 307,
+        "col": 1,
+        "offset": 10100
+      },
+      "end": {
+        "line": 309,
+        "col": 58,
+        "offset": 10250
+      },
+      "extra": {
+        "message": "The /uploads/profile_pictures/<filename> endpoint has no authentication or authorization check. Any unauthenticated user can access any profile picture by guessing the filename (simple incremental integer IDs like 1.png, 2.png).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.upload.unrestricted-file-type",
+      "path": "server/routes.py",
+      "start": {
+        "line": 261,
+        "col": 12,
+        "offset": 8250
+      },
+      "end": {
+        "line": 264,
+        "col": 30,
+        "offset": 8410
+      },
+      "extra": {
+        "message": "The file upload endpoint does not validate file types or extensions. An attacker can upload executable files (e.g., .py, .php, .sh, .html, .js) which could be served back to other users or exploited depending on server configuration.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-434: Unrestricted Upload of File with Dangerous Type"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure.error-message",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 298,
+        "col": 36,
+        "offset": 10500
+      },
+      "end": {
+        "line": 298,
+        "col": 42,
+        "offset": 10506
+      },
+      "extra": {
+        "message": "Exception details are returned to the client as str(e) in the error response. This could expose internal system information such as file paths, database connection strings, or stack trace details to attackers.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

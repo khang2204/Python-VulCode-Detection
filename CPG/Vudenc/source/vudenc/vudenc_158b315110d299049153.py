@@ -1,0 +1,3 @@
+def combine_coverage():...
+logger.info('Combining coverage results.')
+sh([sys.executable, '-m', 'coverage', 'combine'])

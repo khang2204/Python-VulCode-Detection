@@ -1,0 +1,480 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 320,
+        "col": 7,
+        "offset": 0
+      },
+      "end": {
+        "line": 320,
+        "col": 85,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SQL Injection: User-controlled 'filter' parameter is directly interpolated into a SQL query using Python string formatting. The filter value is inserted into a raw SQL text() expression without parameterization, allowing attackers to inject arbitrary SQL commands.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 211,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 211,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "OS Command Injection: User-controlled URL parameters (host, port, path, scheme) are passed through weak sanitization (strip_dangerous_characters only removes ';' and '&' in hard mode) and then executed via os.popen() through helpers.run_cmd(). An attacker can inject arbitrary shell commands via the path parameter using backticks, $(), or other shell metacharacters.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 345,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 345,
+        "col": 35,
+        "offset": 0
+      },
+      "extra": {
+        "message": "OS Command Injection: User-controlled 'cmd' parameter is passed to helpers.run_cmd() after a weak whitelist check in allowed_cmds(). The allowed_cmds function has a critical syntax error (missing comma between 'ps' and 'whoami') and the whitelist is easily bypassed. An authenticated attacker can execute arbitrary system commands.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 352,
+        "col": 7,
+        "offset": 0
+      },
+      "end": {
+        "line": 352,
+        "col": 48,
+        "offset": 0
+      },
+      "extra": {
+        "message": "OS Command Injection: User-controlled 'arg' parameter is directly interpolated into a command string and passed to helpers.run_cmd(). No authentication or authorization is required. An attacker can inject arbitrary shell commands by providing malicious input in the arg parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command-injection",
+      "path": "core/helpers.py",
+      "start": {
+        "line": 9,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 9,
+        "col": 35,
+        "offset": 0
+      },
+      "extra": {
+        "message": "OS Command Injection: The run_cmd function directly passes user input to os.popen() without any sanitization or validation. This is a command injection sink used by multiple resolvers including ImportPaste, system_diagnostics, and system_debug.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "core/helpers.py",
+      "start": {
+        "line": 25,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 25,
+        "col": 42,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Path Traversal: User-controlled 'filename' parameter is directly concatenated with WEB_UPLOADDIR without sanitization. An attacker can use path traversal sequences (../) to write files to arbitrary locations on the filesystem, potentially overwriting system files or achieving remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.insecure-jwt-verification",
+      "path": "core/helpers.py",
+      "start": {
+        "line": 21,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 21,
+        "col": 85,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure JWT Verification: JWT tokens are decoded with verify_signature=False and verify_exp=False. This allows attackers to forge arbitrary tokens by modifying the payload without needing the secret key, leading to authentication bypass.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.hardcoded-credentials",
+      "path": "app.py",
+      "start": {
+        "line": 14,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 15,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded Credentials: SECRET_KEY and JWT_SECRET_KEY are hardcoded as 'dvga' in the application configuration. This makes it trivial for attackers to forge session cookies and JWT tokens, leading to complete authentication bypass.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authorization",
+      "path": "core/views.py",
+      "start": {
+        "line": 140,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 155,
+        "col": 30,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Missing Authorization: The EditPaste mutation allows any user to edit any paste by ID without verifying ownership or authentication. An attacker can modify pastes belonging to other users.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authorization",
+      "path": "core/views.py",
+      "start": {
+        "line": 164,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 173,
+        "col": 30,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Missing Authorization: The DeletePaste mutation allows any user to delete any paste by ID without verifying ownership or authentication. An attacker can delete pastes belonging to other users.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authorization",
+      "path": "core/views.py",
+      "start": {
+        "line": 357,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 362,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Missing Authorization: The resolve_read_and_burn resolver allows any user to read and delete 'burn' pastes by ID without verifying ownership. An attacker can access and destroy sensitive self-destructing pastes belonging to other users.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authorization",
+      "path": "core/views.py",
+      "start": {
+        "line": 385,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 389,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Missing Authorization: The resolve_delete_all_pastes resolver allows any user to delete all pastes in the system without any authentication or authorization check. This is a critical access control vulnerability.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure.debug-info",
+      "path": "core/view_override.py",
+      "start": {
+        "line": 48,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 55,
+        "col": 75,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Debug Information Disclosure: The format_custom_error function exposes sensitive information including full stack traces, file system paths, and exception details in error responses. This information can be used by attackers to map the application structure and plan further attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Information Exposure Through an Error Message"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf.server-side-request-forgery",
+      "path": "core/views.py",
+      "start": {
+        "line": 210,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 211,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Server-Side Request Forgery (SSRF): The ImportPaste mutation fetches content from user-controlled URLs via curl without validation. An attacker can make requests to internal services, cloud metadata endpoints (169.254.169.254), or other restricted resources.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure.sensitive-data",
+      "path": "core/views.py",
+      "start": {
+        "line": 380,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 383,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Sensitive Information Disclosure: The resolve_audits resolver exposes all audit log entries including GraphQL queries, operations, and timestamps without authentication. This leaks sensitive information about user activities and system operations.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure.sensitive-data",
+      "path": "core/views.py",
+      "start": {
+        "line": 364,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 368,
+        "col": 6,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Sensitive Information Disclosure: The resolve_system_health resolver exposes system load information via the 'uptime' command without authentication. This information can be used by attackers to understand server capacity and plan DoS attacks.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.plaintext-passwords",
+      "path": "setup.py",
+      "start": {
+        "line": 63,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 64,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Plaintext Password Storage: User passwords are stored in plaintext in the database (e.g., 'changeme', 'password123'). This is a severe security risk as attackers who gain database access obtain all user credentials directly.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-256: Unprotected Storage of Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "core/views.py",
+      "start": {
+        "line": 125,
+        "col": 7,
+        "offset": 0
+      },
+      "end": {
+        "line": 125,
+        "col": 65,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Stored XSS Potential: User-Agent header is stored in the database without sanitization and returned in Paste objects. While this is stored XSS, the impact depends on how the data is rendered in the frontend.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.idor",
+      "path": "core/views.py",
+      "start": {
+        "line": 324,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 330,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure Direct Object Reference (IDOR): The resolve_paste resolver returns any paste by ID or title without checking if the requesting user has permission to view it. Private pastes can be accessed by any user.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "server.py",
+      "start": {
+        "line": 106,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 107,
+        "col": 57,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User inputs 'username' and 'password' are concatenated directly into a SQL query string passed to cursor.execute(). This allows SQL injection and authentication bypass.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "server.py",
+      "start": {
+        "line": 125,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 125,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from 'server' parameter is concatenated directly into a shell command passed to os.popen(). This allows arbitrary command execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "server.py",
+      "start": {
+        "line": 46,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 46,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled path from URL is concatenated into a file path and opened without sanitization. An attacker can use '../' sequences to read arbitrary files outside the static directory.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory (Path Traversal)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "server.py",
+      "start": {
+        "line": 77,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 77,
+        "col": 45,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from 'file' parameter is concatenated directly into a file path and opened without sanitization. An attacker can use '../' sequences to read arbitrary files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory (Path Traversal)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "templates/search.html",
+      "start": {
+        "line": 70,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 71,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'query' and 'link' variables are rendered with {% raw %} directive, disabling Tornado's auto-escaping. This allows reflected cross-site scripting.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation (Cross-site Scripting)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure",
+      "path": "server.py",
+      "start": {
+        "line": 99,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 99,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The entire HTTP request body is printed to stdout, which may contain sensitive information such as passwords from the login form.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-532: Insertion of Sensitive Information into Log File"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure",
+      "path": "server.py",
+      "start": {
+        "line": 123,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 123,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The entire HTTP request body is printed to stdout, which may contain sensitive information submitted by users.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-532: Insertion of Sensitive Information into Log File"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "server.py",
+      "start": {
+        "line": 140,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 147,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded user credentials are inserted into the database during initialization. These default passwords can be used to gain unauthorized access.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration",
+      "path": "server.py",
+      "start": {
+        "line": 31,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 31,
+        "col": 24,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Tornado debug mode is enabled, which may expose stack traces and sensitive application information in error responses.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+def decorate(ruleinfo):...
+ruleinfo.params = params, kwparams
+return ruleinfo

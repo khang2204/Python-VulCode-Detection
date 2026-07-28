@@ -1,0 +1,3 @@
+def test_command_completion(self):...
+self._tab_after('s')
+eq_(self.terminal.method_calls, [('write', ('et ',), {})])

@@ -1,0 +1,3 @@
+@classmethod...
+"""docstring"""
+return create_resource_from_dict(d, cls, full_clean)

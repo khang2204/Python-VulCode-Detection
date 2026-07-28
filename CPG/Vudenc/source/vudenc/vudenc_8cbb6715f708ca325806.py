@@ -1,0 +1,3 @@
+def get_matching_role(self, role_name):...
+all_roles = self.guilds[0].roles
+return [x for x in all_roles if x.name == role_name][0]

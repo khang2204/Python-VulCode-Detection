@@ -1,0 +1,3 @@
+def _constructRequestURL(django_url_pattern):...
+"""docstring"""
+return '/' + django_url_pattern[0][1:-1]

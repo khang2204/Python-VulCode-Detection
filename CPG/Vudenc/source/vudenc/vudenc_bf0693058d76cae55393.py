@@ -1,0 +1,3 @@
+def run(self):...
+if not c.user_is_sponsor:
+abort(403, 'forbidden')

@@ -1,0 +1,230 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection.select-endpoint",
+      "path": "main.py",
+      "start": {
+        "line": 182,
+        "col": 5,
+        "offset": 5400
+      },
+      "end": {
+        "line": 182,
+        "col": 80,
+        "offset": 5475
+      },
+      "extra": {
+        "message": "User input from the 'username' query parameter is interpolated directly into a SQL SELECT statement via f-string: f'SELECT * FROM users WHERE username = \"{username}\";'. An attacker can inject SQL by passing a username like \" OR 1=1; -- to extract all user records.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.insert-endpoint",
+      "path": "main.py",
+      "start": {
+        "line": 188,
+        "col": 5,
+        "offset": 5510
+      },
+      "end": {
+        "line": 203,
+        "col": 30,
+        "offset": 5820
+      },
+      "extra": {
+        "message": "All fields of the User model (name, username, password, address, email, contact) are interpolated directly into a SQL INSERT statement via f-string (lines 197-202). An attacker can inject arbitrary SQL through any of these fields, enabling data exfiltration, data modification, or schema manipulation.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.delete-username",
+      "path": "main.py",
+      "start": {
+        "line": 231,
+        "col": 9,
+        "offset": 6780
+      },
+      "end": {
+        "line": 231,
+        "col": 85,
+        "offset": 6856
+      },
+      "extra": {
+        "message": "User input from the 'username' query parameter is interpolated directly into a SQL DELETE statement via f-string: f'DELETE FROM users WHERE username = \"{username}\";'. An attacker can inject SQL to delete all records or execute arbitrary SQL.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.delete-address",
+      "path": "main.py",
+      "start": {
+        "line": 235,
+        "col": 9,
+        "offset": 6920
+      },
+      "end": {
+        "line": 235,
+        "col": 85,
+        "offset": 6996
+      },
+      "extra": {
+        "message": "User input from user.address is interpolated directly into a SQL DELETE statement via f-string: f'DELETE FROM users WHERE address = {user.address};'. Unlike the username variant, this injection does not even use quotes around the value, making exploitation even easier. An attacker can inject arbitrary SQL to delete all records or execute any SQL command.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.nosql-injection.find-post",
+      "path": "main.py",
+      "start": {
+        "line": 224,
+        "col": 5,
+        "offset": 6540
+      },
+      "end": {
+        "line": 225,
+        "col": 35,
+        "offset": 6570
+      },
+      "extra": {
+        "message": "The raw JSON request body from request.json() is passed directly as a MongoDB query object to get_nosql_users(query), which calls users.find(query). An attacker can send NoSQL query operators like {\"$or\": [{}]}, {\"username\": {\"$ne\": \"\"}}, or {\"id\": {\"$in\": [1,2]}} to bypass filters and retrieve arbitrary records.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-943: NoSQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.missing-auth.reset-endpoint",
+      "path": "main.py",
+      "start": {
+        "line": 243,
+        "col": 1,
+        "offset": 7100
+      },
+      "end": {
+        "line": 247,
+        "col": 32,
+        "offset": 7280
+      },
+      "extra": {
+        "message": "The POST /reset endpoint allows any unauthenticated user to delete the entire SQL and NoSQL databases and reinitialize them. No authentication or authorization is enforced on any endpoint, including this destructive one. An attacker can issue a POST to /reset to cause complete data loss (denial of service) and data destruction.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.missing-auth.delete-endpoint",
+      "path": "main.py",
+      "start": {
+        "line": 227,
+        "col": 1,
+        "offset": 6370
+      },
+      "end": {
+        "line": 236,
+        "col": 32,
+        "offset": 7000
+      },
+      "extra": {
+        "message": "The DELETE /user endpoint allows any unauthenticated user to delete arbitrary user records from both SQL and NoSQL databases. No authentication or authorization check is performed, meaning any client can delete any user by username or address.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.data-exposure.password-hash-multi-row",
+      "path": "main.py",
+      "start": {
+        "line": 162,
+        "col": 9,
+        "offset": 4780
+      },
+      "end": {
+        "line": 162,
+        "col": 32,
+        "offset": 4803
+      },
+      "extra": {
+        "message": "When run_sql_query returns multiple rows, it returns {'users': _data} with raw tuples that include the password hash at index 3. While single-row results construct a dict that excludes the password (skipping _data[3]), multi-row results expose password hashes directly. Combined with SQL injection (e.g., OR 1=1), an attacker can retrieve all password hashes.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-password-hashing-md5",
+      "path": "main.py",
+      "start": {
+        "line": 187,
+        "col": 5,
+        "offset": 5460
+      },
+      "end": {
+        "line": 187,
+        "col": 55,
+        "offset": 5510
+      },
+      "extra": {
+        "message": "Passwords are hashed using MD5 (md5(user.password.encode()).hexdigest()) without a salt. MD5 is cryptographically broken and unsuitable for password hashing. An attacker who obtains password hashes can easily crack them using rainbow tables or brute force. A proper key derivation function like bcrypt, scrypt, or argon2 should be used instead.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

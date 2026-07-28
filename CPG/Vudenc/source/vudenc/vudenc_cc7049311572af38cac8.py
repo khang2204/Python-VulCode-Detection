@@ -1,0 +1,3 @@
+def __init__(self):...
+super(FreeBSDOSUtil, self).__init__()
+self._scsi_disks_timeout_set = False

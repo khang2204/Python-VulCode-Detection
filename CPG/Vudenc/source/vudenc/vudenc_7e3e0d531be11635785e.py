@@ -1,0 +1,3 @@
+def _match_any_filters(element_year, filters):...
+return any(element_year[col_name] in values_list for col_name, values_list in
+    filters.items())

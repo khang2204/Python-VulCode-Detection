@@ -1,0 +1,3 @@
+@app.errorhandler(404)...
+cache_id = uuid4()
+return render_template('404.html', cache_id=cache_id), 404

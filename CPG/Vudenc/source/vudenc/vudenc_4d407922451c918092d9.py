@@ -1,0 +1,3 @@
+@staticmethod...
+return os.path.join(lore.env.root, lore.env.project, 'extracts', filename +
+    extension)

@@ -1,0 +1,3 @@
+def tcp_forward(self, host_port, device_port):...
+"""docstring"""
+self.forward('tcp:%d tcp:%d' % (host_port, device_port))

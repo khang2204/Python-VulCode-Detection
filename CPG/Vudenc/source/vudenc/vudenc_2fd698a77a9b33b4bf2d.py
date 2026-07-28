@@ -1,0 +1,3 @@
+def _cmd_terminate(self, task_id):...
+out = {'cmd': 'terminate', 'task_id': task_id}
+self.send_response(out)

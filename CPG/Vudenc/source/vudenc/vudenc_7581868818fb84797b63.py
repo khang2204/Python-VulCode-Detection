@@ -1,0 +1,3 @@
+def lstat(self, path):...
+"""docstring"""
+return self.stat(path, follow_symlinks=False)

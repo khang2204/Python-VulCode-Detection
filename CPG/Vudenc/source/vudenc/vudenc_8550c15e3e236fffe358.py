@@ -1,0 +1,3 @@
+@app.route('/models')...
+models = load_json('models.json')
+return render_template('models.html', models=models)

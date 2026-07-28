@@ -1,0 +1,3 @@
+def fatal(*args):...
+logging.error(*args)
+sys.exit(1)

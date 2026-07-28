@@ -1,0 +1,3 @@
+def register_style_tool(version):...
+cls.register_jvm_tool(register, cls._key_for_tool_version('scalastyle',
+    version), classpath=[scala_style_jar])

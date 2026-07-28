@@ -1,0 +1,3 @@
+@data((' ', ''), (...
+output_string = clean_city(input_string)
+self.assertEqual(desired_string, output_string)

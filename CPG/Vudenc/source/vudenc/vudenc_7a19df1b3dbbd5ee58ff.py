@@ -1,0 +1,3 @@
+def __init__(self, interval, *args, **kvargs):...
+self.interval = interval
+super().__init__(*args, **kvargs)

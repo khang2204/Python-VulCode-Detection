@@ -1,0 +1,3 @@
+def send_prompt(self, *args, **kwargs):...
+kwargs['options'].update({'send_prompt': True})
+self.send_text(*args, **kwargs)

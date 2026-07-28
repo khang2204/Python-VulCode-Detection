@@ -1,0 +1,3 @@
+def __init__(self):...
+self.db_name = db_name
+self.connection = sqlite3.connect(self.db_name)

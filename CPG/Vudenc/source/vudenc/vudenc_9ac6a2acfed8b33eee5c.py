@@ -1,0 +1,3 @@
+@authn_views.route('/login')...
+"""docstring"""
+return _authn('login-action')

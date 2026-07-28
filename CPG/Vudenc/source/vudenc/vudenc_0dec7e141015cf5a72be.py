@@ -1,0 +1,11 @@
+def validateCredentials(username, password, sqlInstance):...
+conn = sqlInstance.connect()
+cursor = conn.cursor()
+getUsernameAndPassword = (
+    "SELECT userEmail, password FROM Users WHERE userEmail = '{0}'".format(
+    username))
+cursor.execute(getUsernameAndPassword)
+result = cursor.fetchone()
+if result is not None:
+return check_password_hash(result[1], password)
+return False

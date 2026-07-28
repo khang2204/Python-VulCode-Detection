@@ -1,0 +1,155 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "server.py",
+      "start": {
+        "line": 125,
+        "col": 9,
+        "offset": 2855
+      },
+      "end": {
+        "line": 125,
+        "col": 50,
+        "offset": 2896
+      },
+      "extra": {
+        "message": "User input from the 'server' parameter is directly concatenated into a system command and executed via 'os.popen', leading to OS Command Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "server.py",
+      "start": {
+        "line": 106,
+        "col": 13,
+        "offset": 2350
+      },
+      "end": {
+        "line": 107,
+        "col": 64,
+        "offset": 2480
+      },
+      "extra": {
+        "message": "User inputs 'username' and 'password' are directly concatenated into a SQL query string and executed via SQLite cursor.execute(), leading to SQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.traversal.path-traversal",
+      "path": "server.py",
+      "start": {
+        "line": 77,
+        "col": 9,
+        "offset": 1720
+      },
+      "end": {
+        "line": 77,
+        "col": 54,
+        "offset": 1765
+      },
+      "extra": {
+        "message": "The 'file' parameter from user input is concatenated into a file path and opened directly using 'io.open', leading to Path Traversal.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.traversal.static-path-traversal",
+      "path": "server.py",
+      "start": {
+        "line": 42,
+        "col": 9,
+        "offset": 950
+      },
+      "end": {
+        "line": 47,
+        "col": 34,
+        "offset": 1150
+      },
+      "extra": {
+        "message": "The 'path' parameter is concatenated into a path and read directly without validation in StaticHandler, enabling directory traversal via '../' to read arbitrary files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.reflected-xss",
+      "path": "server.py",
+      "start": {
+        "line": 88,
+        "col": 9,
+        "offset": 1980
+      },
+      "end": {
+        "line": 89,
+        "col": 60,
+        "offset": 2090
+      },
+      "extra": {
+        "message": "The query argument is rendered into the template with raw unescaped values via '{% raw %}', while 'X-XSS-Protection' is set to '0', facilitating reflected Cross-Site Scripting.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-Site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-enabled",
+      "path": "server.py",
+      "start": {
+        "line": 31,
+        "col": 13,
+        "offset": 755
+      },
+      "end": {
+        "line": 31,
+        "col": 25,
+        "offset": 768
+      },
+      "extra": {
+        "message": "Tornado is configured with 'debug=True', which can expose detailed traceback/error pages containing sensitive environment details to end users.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

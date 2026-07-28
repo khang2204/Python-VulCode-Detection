@@ -1,0 +1,3 @@
+def get_by_id(self, entity_class, entity_id):...
+cache = self.__cache_map[entity_class]
+return cache.get_by_id(entity_id)

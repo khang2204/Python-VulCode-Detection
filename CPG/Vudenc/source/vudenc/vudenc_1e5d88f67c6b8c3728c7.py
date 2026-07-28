@@ -1,0 +1,3 @@
+def test_arg_new_player(self):...
+"""docstring"""
+self.parser.parse_args(['--new-player'])

@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "main.py",
+      "start": {
+        "line": 14,
+        "col": 14,
+        "offset": 0
+      },
+      "end": {
+        "line": 14,
+        "col": 69,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from the 'username' query parameter is concatenated directly into a Jinja2 template string via Jinja2.from_string('Welcome ' + username + '!').render(). This allows Server-Side Template Injection (SSTI). An attacker can inject Jinja2 template expressions (e.g., {{ 7*7 }}, {{ config }}, {{ ''.__class__.__mro__[1].__subclasses__() }}) to achieve remote code execution, access application secrets, or exfiltrate data. The commented-out safe implementation on line 17 shows the correct approach: using template placeholders and passing user input via render() parameters.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

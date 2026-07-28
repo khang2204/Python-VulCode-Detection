@@ -1,0 +1,3 @@
+@staticmethod...
+return JsonFromFuture(BaseRequest._TalkToHandlerAsync('', handler, 'GET',
+    timeout))

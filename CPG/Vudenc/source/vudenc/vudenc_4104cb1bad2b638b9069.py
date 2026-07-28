@@ -1,0 +1,3 @@
+def setUp(self):...
+TestBase.setUp(self)
+self.app = webtest.TestApp(app)

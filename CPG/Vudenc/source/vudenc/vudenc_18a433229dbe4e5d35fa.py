@@ -1,0 +1,3 @@
+def __delitem__(self, path):...
+node, key = traverse(self, path, sep=self._sep, on_missing=raise_on_missing)
+if node is self:

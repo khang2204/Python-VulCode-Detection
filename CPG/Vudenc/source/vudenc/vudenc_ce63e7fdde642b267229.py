@@ -1,0 +1,3 @@
+@messages_module.route('/messages')...
+if request.method == 'GET':
+return db_getMessage(dialog_id)

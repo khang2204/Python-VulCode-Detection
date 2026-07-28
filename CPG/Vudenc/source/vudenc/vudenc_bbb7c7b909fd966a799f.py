@@ -1,0 +1,3 @@
+def SendCommandRequest(self, arguments, completer):...
+if self._IsServerAlive():
+return SendCommandRequest(arguments, completer)

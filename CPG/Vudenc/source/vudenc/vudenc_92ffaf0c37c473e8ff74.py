@@ -1,0 +1,3 @@
+def composed_decorator(func):...
+return Task('nfs/{}'.format(name), metadata, wait_for, partial(
+    serialize_dashboard_exception, include_http_status=True))(func)

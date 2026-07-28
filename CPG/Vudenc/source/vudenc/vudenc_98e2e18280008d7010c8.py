@@ -1,0 +1,3 @@
+def _modify_3par_iscsi_host(self, hostname, iscsi_iqn):...
+self.common._cli_run('createhost -iscsi -add %s %s' % (hostname, iscsi_iqn),
+    None)

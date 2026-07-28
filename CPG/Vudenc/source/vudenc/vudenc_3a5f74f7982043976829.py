@@ -1,0 +1,3 @@
+@handled_slot(bool)...
+print('Starting thin etalon scan...')
+self.matisse.thin_etalon_scan()

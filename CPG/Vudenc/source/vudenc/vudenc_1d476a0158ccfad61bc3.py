@@ -1,0 +1,3 @@
+@classmethod...
+return super(Zinc.Factory, cls).subsystem_dependencies() + (DependencyContext,
+    Java, ScalaPlatform)

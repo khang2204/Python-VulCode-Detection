@@ -1,0 +1,3 @@
+def __lt__(self, rule):...
+comp = self.workflow._ruleorder.compare(self, rule)
+return comp < 0

@@ -1,0 +1,3 @@
+def get_meta_used(self):...
+"""docstring"""
+return self.meta.iptc_keys

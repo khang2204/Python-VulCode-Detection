@@ -1,0 +1,3 @@
+def _parse_and(self, data):...
+"""docstring"""
+return self._parse_conditions(self.AND_CONDITION, data)

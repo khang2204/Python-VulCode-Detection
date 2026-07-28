@@ -1,0 +1,3 @@
+def fileExists(self, pth):...
+"""docstring"""
+return bool(self.getIDbyPath(pth))

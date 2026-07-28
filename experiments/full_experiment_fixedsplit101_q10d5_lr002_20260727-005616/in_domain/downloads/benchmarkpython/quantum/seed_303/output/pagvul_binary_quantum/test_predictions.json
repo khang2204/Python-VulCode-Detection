@@ -1,0 +1,1112 @@
+[
+  {
+    "sample_file": "testcode/BenchmarkTest01121.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 7.270276825011024e-09
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00913.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 6.920783198438585e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00685.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.786232577520423e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01211.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.17693178355693817
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00584.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.0172518614126602e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00940.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.0340894767156836e-12
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00181.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.835097454109928e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00790.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.535044692805968e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00963.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 6.589164977532924e-13
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00884.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0003217462217435241
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00519.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.0406744170031743e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00095.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0058700027875602245
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00233.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.00018583428754936904
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00763.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.4312367966340389e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00941.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.503781874693914e-10
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01144.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.2741317334530322e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00020.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.907067190946691e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00062.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.0234162434462633e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00776.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.7047541405190714e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01150.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.4744336307437322e-10
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01092.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.690319449058734e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00133.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 6.230676081031561e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00786.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 3.219663824438612e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00897.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.26696568727493286
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00678.py",
+    "true_label": 0,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.612737238407135
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01058.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.8210423604614334e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00436.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0047837779857218266
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01224.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0016985929105430841
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00407.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.0467401554924436e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00958.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.6762398136194179e-09
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01069.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 7.001847734500188e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00032.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 6.227068860553686e-10
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00697.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.00011135049135191366
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00800.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.213772055867594e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00051.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 3.979763278039172e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01109.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.00026101956609636545
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00781.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 6.43266539555043e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00864.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 9.624164522392675e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01137.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 3.816997207195527e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00845.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.289373439154588e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00127.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.00011286645894870162
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00782.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.000250131415668875
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00199.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 3.7352830986492336e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00964.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 3.912441925990606e-09
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00262.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0044050975702703
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00491.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 3.2442724062775596e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00252.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 3.0540370232756686e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00477.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 7.196267688414082e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00565.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.97279587155208e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00146.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.0078537943390984e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00509.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0019113710150122643
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01055.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 8.026944851735607e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00972.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.28375920794133e-09
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01093.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0022241719998419285
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01174.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.442194833449321e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00081.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.9120712952135364e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00124.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 9.917760326061398e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01100.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.7332436982542276e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00214.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.003655431093648076
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00968.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 9.303832371188037e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01229.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.905385943246074e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00991.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.004957579076290131
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01078.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.7286998260933615e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00799.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.3104413382243365e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00676.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 3.747939263121225e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00356.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0011157166445627809
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00550.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0001097944550565444
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00040.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0002712096902541816
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00514.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.9087323127896525e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00748.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0017476893262937665
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00459.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0030489000491797924
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00843.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.21293465793132782
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01020.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0015860474668443203
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00354.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.003816438838839531
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00671.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 3.891504093189724e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00162.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 8.806911466763268e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01096.py",
+    "true_label": 0,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.8925701379776001
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00253.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.393969004785504e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00493.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 6.40631842543371e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00630.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.0459125153138302e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00108.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 4.167651468378608e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00566.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 7.561865459138062e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00730.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.9775431780999497e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01091.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.8439783861244905e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00405.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 9.792976015887689e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00286.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.00011821203224826604
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00967.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 7.225502258734195e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00995.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 8.144031016854569e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00569.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 6.677310011582449e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01016.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.000364023435395211
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00837.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.00405347952619195
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00387.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0001599373936187476
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01142.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 7.098126530991067e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00091.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.873346253792988e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01021.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0026356156449764967
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00881.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.304234871213339e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01171.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.7443420574636548e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00803.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.3002402826932666e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00136.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.6299295465578325e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00911.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.011761237867176533
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00151.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.6565527403145097e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00807.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.9560481234748295e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01122.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 6.821309216320515e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01061.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.0313417533325264e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00548.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0007446659728884697
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01136.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.7924624390607278e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01075.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.827741525379679e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00530.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.04066655412316322
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00815.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 5.157643911957166e-08
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00264.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.02778131701052189
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00633.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 8.083192142294138e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00469.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 4.77652292829589e-07
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00414.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0007240159902721643
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00397.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 2.2867020561534446e-06
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00917.py",
+    "true_label": 0,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.5532158017158508
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00135.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 1.22322499009897e-05
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01112.py",
+    "true_label": 0,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.00029035902116447687
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00503.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9963531494140625
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00581.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00835.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9935957789421082
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00248.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00728.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9665613174438477
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00563.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00104.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9711920022964478
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00737.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9684002995491028
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00607.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9848328232765198
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00450.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9995971322059631
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00825.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9999898672103882
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00709.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00533.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9945672750473022
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00177.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9860262870788574
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00505.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.992290198802948
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00269.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.8676812052726746
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00210.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9899941086769104
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00606.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9895182251930237
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00947.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00742.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9841518402099609
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01042.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00160.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9647901058197021
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00931.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.6915135979652405
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00219.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00975.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00827.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.8586124181747437
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00948.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01227.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00153.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9429643750190735
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00474.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00841.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9719769358634949
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00529.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9923720359802246
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00097.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9162631630897522
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00824.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9945980310440063
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00381.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00483.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00497.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9776551723480225
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00422.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9909378290176392
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00268.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9771791100502014
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00655.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9966151118278503
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00915.py",
+    "true_label": 1,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.0036100309807807207
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00374.py",
+    "true_label": 1,
+    "predicted_label": 0,
+    "vulnerable_probability": 0.00021449715131893754
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00489.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00305.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00167.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9607080817222595
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00708.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01129.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00814.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9738001823425293
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00817.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.606143593788147
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00580.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00673.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9549350738525391
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00842.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9861031770706177
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00657.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9990917444229126
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00205.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.8211333751678467
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00506.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9788443446159363
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00473.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00096.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9700753092765808
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01088.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9210633039474487
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00485.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00166.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9479533433914185
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00727.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9828544855117798
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00212.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9954120516777039
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest01126.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00008.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.8492409586906433
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00087.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.9509987831115723
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00089.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 0.7972634434700012
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00860.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  },
+  {
+    "sample_file": "testcode/BenchmarkTest00030.py",
+    "true_label": 1,
+    "predicted_label": 1,
+    "vulnerable_probability": 1.0
+  }
+]

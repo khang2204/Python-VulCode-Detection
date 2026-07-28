@@ -1,0 +1,3 @@
+def make_input(self, version, name, value, attribute):...
+return '<textarea name="%s" rows=5 cols=40>%s</textarea>' % (html_escape(
+    name), html_escape(value or ''))

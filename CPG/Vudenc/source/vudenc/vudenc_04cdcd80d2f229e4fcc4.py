@@ -1,0 +1,3 @@
+def test_same_python_version(self):...
+"""docstring"""
+self.assertEqual(tournament.check_version((2, 7)), 0)

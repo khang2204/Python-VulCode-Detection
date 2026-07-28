@@ -1,0 +1,1357 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "src/vulnpy/trigger/sqli.py",
+      "start": {
+        "line": 34,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 39,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SQL injection vulnerability: user input is formatted directly into SQL query string using EXECUTE_QUERY_FMT.format(user_input) and passed to cursor.execute(). An attacker can inject malicious SQL via the user_input parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "src/vulnpy/trigger/sqli.py",
+      "start": {
+        "line": 45,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 50,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SQL injection vulnerability: user input is formatted directly into SQL query string using EXECUTEMANY_QUERY_FMT.format(user_input) and passed to cursor.executemany(). An attacker can inject malicious SQL via the user_input parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "src/vulnpy/trigger/sqli.py",
+      "start": {
+        "line": 56,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 61,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SQL injection vulnerability: user input is formatted directly into SQL query string using EXECUTESCRIPT_QUERY_FMT.format(user_input) and passed to cursor.executescript(). An attacker can inject malicious SQL via the user_input parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "src/vulnpy/trigger/cmdi.py",
+      "start": {
+        "line": 5,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 6,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Command injection vulnerability: user input is passed directly to os.system() without sanitization, allowing arbitrary command execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "src/vulnpy/trigger/cmdi.py",
+      "start": {
+        "line": 9,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 14,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Command injection vulnerability: user input is passed to subprocess.Popen() with shell=True, allowing arbitrary command execution via shell metacharacters.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 11,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Path traversal vulnerability: user input is passed directly to tarfile.TarFile.open() without validation, allowing file system access outside intended directories.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 14,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 19,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Path traversal vulnerability: user input is passed directly to tarfile.TarFile() constructor without validation, allowing file system access outside intended directories.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 22,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 27,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Path traversal vulnerability: user input is passed directly to tarfile.open() without validation, allowing file system access outside intended directories.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 30,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 35,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Path traversal vulnerability: user input is passed directly to bz2.BZ2File() without validation, allowing arbitrary file read access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 38,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 43,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Path traversal vulnerability: user input is passed directly to bz2.open() without validation, allowing arbitrary file read access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 46,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 51,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Path traversal vulnerability: user input is passed directly to io.open() without validation, allowing arbitrary file read access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 54,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 60,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Path traversal vulnerability: user input is passed directly to open() without validation, allowing arbitrary file read access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 63,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 68,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Path traversal vulnerability: user input is passed directly to execfile() without validation, allowing execution of arbitrary Python files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "src/vulnpy/trigger/ssrf.py",
+      "start": {
+        "line": 56,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 61,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SSRF vulnerability: user input is passed directly to urlopen() without validation, allowing server-side requests to arbitrary URLs including internal services.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "src/vulnpy/trigger/ssrf.py",
+      "start": {
+        "line": 64,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 69,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SSRF vulnerability: user input is passed directly to urlopen() without validation, allowing server-side requests to arbitrary URLs including internal services.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "src/vulnpy/trigger/ssrf.py",
+      "start": {
+        "line": 72,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 80,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SSRF vulnerability: user input is passed directly to Request() and urlopen() without validation, allowing server-side requests to arbitrary URLs.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "src/vulnpy/trigger/ssrf.py",
+      "start": {
+        "line": 101,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 130,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SSRF vulnerability: user input is passed directly to HTTPConnection.request() and HTTPConnection.putrequest() methods without validation, allowing server-side requests to arbitrary URLs.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "src/vulnpy/trigger/ssrf.py",
+      "start": {
+        "line": 117,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 130,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SSRF vulnerability: user input is passed directly to HTTPSConnection.request() and HTTPSConnection.putrequest() methods without validation, allowing server-side requests to arbitrary URLs.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "src/vulnpy/trigger/ssrf.py",
+      "start": {
+        "line": 133,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 148,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SSRF vulnerability: user input is passed directly to HTTPConnection() and HTTPSConnection() constructors without validation, allowing connections to arbitrary hosts.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.code-injection",
+      "path": "src/vulnpy/trigger/unsafe_code_exec.py",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 3,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Code injection vulnerability: user input is passed directly to exec() without sanitization, allowing arbitrary Python code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.code-injection",
+      "path": "src/vulnpy/trigger/unsafe_code_exec.py",
+      "start": {
+        "line": 5,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 7,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Code injection vulnerability: user input is passed directly to eval() without sanitization, allowing arbitrary Python code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.code-injection",
+      "path": "src/vulnpy/trigger/unsafe_code_exec.py",
+      "start": {
+        "line": 9,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 11,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Code injection vulnerability: user input is passed directly to compile() without sanitization, allowing arbitrary Python code compilation and execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle",
+      "path": "src/vulnpy/trigger/deserialization.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 9,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure deserialization vulnerability: user input is passed directly to pickle.load() without validation. An attacker can craft malicious pickle data to execute arbitrary code during deserialization.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle",
+      "path": "src/vulnpy/trigger/deserialization.py",
+      "start": {
+        "line": 11,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 13,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure deserialization vulnerability: user input is passed directly to pickle.loads() without validation. An attacker can craft malicious pickle data to execute arbitrary code during deserialization.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml",
+      "path": "src/vulnpy/trigger/deserialization.py",
+      "start": {
+        "line": 15,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 20,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure deserialization vulnerability: yaml.load() is called with yaml.UnsafeLoader which allows arbitrary object instantiation and code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml",
+      "path": "src/vulnpy/trigger/deserialization.py",
+      "start": {
+        "line": 22,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 28,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure deserialization vulnerability: yaml.load_all() is called with yaml.UnsafeLoader which allows arbitrary object instantiation and code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xpath-injection",
+      "path": "src/vulnpy/trigger/xpath.py",
+      "start": {
+        "line": 24,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 26,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "XPath injection vulnerability: user input is passed directly to lxml.etree.findall() without sanitization, allowing XPath query manipulation.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-643: XPath Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xpath-injection",
+      "path": "src/vulnpy/trigger/xpath.py",
+      "start": {
+        "line": 28,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 30,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "XPath injection vulnerability: user input is passed directly to lxml.etree.findtext() without sanitization, allowing XPath query manipulation.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-643: XPath Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xpath-injection",
+      "path": "src/vulnpy/trigger/xpath.py",
+      "start": {
+        "line": 32,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 34,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "XPath injection vulnerability: user input is passed directly to xml.etree.ElementTree.findall() without sanitization, allowing XPath query manipulation.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-643: XPath Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xxe",
+      "path": "src/vulnpy/trigger/xxe.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 9,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "XXE vulnerability: lxml.etree.fromstring() is called without disabling external entity resolution, allowing attackers to read arbitrary files or perform SSRF attacks via malicious XML.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xxe",
+      "path": "src/vulnpy/trigger/xxe.py",
+      "start": {
+        "line": 11,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 13,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "XXE vulnerability: xml.dom.pulldom.parseString() is called without disabling external entity resolution, allowing attackers to read arbitrary files or perform SSRF attacks via malicious XML.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xxe",
+      "path": "src/vulnpy/trigger/xxe.py",
+      "start": {
+        "line": 15,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 16,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "XXE vulnerability: xml.sax.parseString() is called without disabling external entity resolution, allowing attackers to read arbitrary files or perform SSRF attacks via malicious XML.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.weak-cryptography",
+      "path": "src/vulnpy/trigger/hash.py",
+      "start": {
+        "line": 18,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 21,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Weak cryptographic algorithm: MD5 is used for hashing, which is vulnerable to collision attacks and should not be used for security purposes.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.weak-cryptography",
+      "path": "src/vulnpy/trigger/hash.py",
+      "start": {
+        "line": 23,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 26,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Weak cryptographic algorithm: SHA1 is used for hashing, which is vulnerable to collision attacks and should not be used for security purposes.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.weak-cryptography",
+      "path": "src/vulnpy/trigger/hash.py",
+      "start": {
+        "line": 28,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 30,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Weak cryptographic algorithm: SHA1 is used via hashlib.new() for hashing, which is vulnerable to collision attacks and should not be used for security purposes.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-randomness",
+      "path": "src/vulnpy/trigger/rand.py",
+      "start": {
+        "line": 18,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 21,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure random number generation: random.random() uses Mersenne Twister which is not cryptographically secure and should not be used for security-sensitive operations.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-338: Use of Cryptographically Weak PRNG"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-randomness",
+      "path": "src/vulnpy/trigger/rand.py",
+      "start": {
+        "line": 23,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 26,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure random number generation: random.randint() uses Mersenne Twister which is not cryptographically secure and should not be used for security-sensitive operations.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-338: Use of Cryptographically Weak PRNG"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-randomness",
+      "path": "src/vulnpy/trigger/rand.py",
+      "start": {
+        "line": 28,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 31,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure random number generation: random.randrange() uses Mersenne Twister which is not cryptographically secure and should not be used for security-sensitive operations.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-338: Use of Cryptographically Weak PRNG"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-randomness",
+      "path": "src/vulnpy/trigger/rand.py",
+      "start": {
+        "line": 33,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 36,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure random number generation: random.uniform() uses Mersenne Twister which is not cryptographically secure and should not be used for security-sensitive operations.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-338: Use of Cryptographically Weak PRNG"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redos",
+      "path": "src/vulnpy/trigger/redos.py",
+      "start": {
+        "line": 3,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 89,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "ReDoS vulnerability: The regex pattern '((a)+)+' is vulnerable to catastrophic backtracking. Multiple functions use this pattern with user-controlled input, causing potential denial of service via CPU exhaustion.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-1333: Inefficient Regular Expression Complexity"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "src/vulnpy/flask/blueprint.py",
+      "start": {
+        "line": 54,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 55,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Cross-site scripting (XSS) vulnerability: user input is concatenated directly into HTML template without sanitization: template += '<p>XSS: ' + user_input + '</p>'. This allows JavaScript injection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "src/vulnpy/django/vulnerable.py",
+      "start": {
+        "line": 35,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 36,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Cross-site scripting (XSS) vulnerability: user input is concatenated directly into HTML template without sanitization: template += '<p>XSS: ' + user_input + '</p>'. This allows JavaScript injection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "src/vulnpy/django/vulnerable_asgi.py",
+      "start": {
+        "line": 54,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 55,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Cross-site scripting (XSS) vulnerability: user input is concatenated directly into HTML template without sanitization: template += '<p>XSS: ' + user_input + '</p>'. This allows JavaScript injection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "src/vulnpy/fastapi/vulnerable.py",
+      "start": {
+        "line": 41,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 42,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Cross-site scripting (XSS) vulnerability: user input is concatenated directly into HTML template without sanitization: template += '<p>XSS: ' + user_input + '</p>'. This allows JavaScript injection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "src/vulnpy/bottle/vulnerable_routes.py",
+      "start": {
+        "line": 38,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 39,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Cross-site scripting (XSS) vulnerability: user input is concatenated directly into HTML template without sanitization: template += '<p>XSS: ' + user_input + '</p>'. This allows JavaScript injection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "src/vulnpy/pyramid/vulnerable_routes.py",
+      "start": {
+        "line": 50,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 51,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Cross-site scripting (XSS) vulnerability: user input is concatenated directly into HTML template without sanitization: template += '<p>XSS: ' + user_input + '</p>'. This allows JavaScript injection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "src/vulnpy/falcon/vulnerable.py",
+      "start": {
+        "line": 42,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 43,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Cross-site scripting (XSS) vulnerability: user input is concatenated directly into HTML response without sanitization in _set_xss_response function. This allows JavaScript injection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "src/vulnpy/falcon/vulnerable_asgi.py",
+      "start": {
+        "line": 42,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 43,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Cross-site scripting (XSS) vulnerability: user input is concatenated directly into HTML response without sanitization in _set_xss_response function. This allows JavaScript injection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "src/vulnpy/quart/blueprint.py",
+      "start": {
+        "line": 52,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 53,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Cross-site scripting (XSS) vulnerability: user input is concatenated directly into HTML template without sanitization: template += '<p>XSS: ' + user_input + '</p>'. This allows JavaScript injection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "src/vulnpy/aiohttp/vulnerable_routes.py",
+      "start": {
+        "line": 28,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 29,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Cross-site scripting (XSS) vulnerability: user input is concatenated directly into HTML template without sanitization: template += '<p>XSS: ' + user_input + '</p>'. This allows JavaScript injection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "src/vulnpy/wsgi/app.py",
+      "start": {
+        "line": 25,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 26,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Cross-site scripting (XSS) vulnerability: user input is formatted directly into HTML response without sanitization using format(): '<p>XSS: {}</p>'.format(user_input). This allows JavaScript injection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration",
+      "path": "src/vulnpy/wsgi/app.py",
+      "start": {
+        "line": 33,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 36,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Security misconfiguration: Insecure HTTP headers are set. Cache-Control is set to 'public' (should include no-cache, no-store), X-XSS-Protection is set to '0' (disabled), and Strict-Transport-Security has max-age=0 (disabled).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration",
+            "CWE-693: Protection Mechanism Failure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.cookies",
+      "path": "apps/flask_app.py",
+      "start": {
+        "line": 29,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 30,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Security misconfiguration: Session cookies are configured insecurely. SESSION_COOKIE_SECURE is False (allows transmission over HTTP) and SESSION_COOKIE_HTTPONLY is False (allows JavaScript access to cookies).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute",
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "src/vulnpy/common/templating.py",
+      "start": {
+        "line": 20,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 27,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Path traversal vulnerability: The get_template() function joins user-controlled path with TEMPLATES_LOCATION using os.path.join() and opens the resulting path without validation. While there's a comment acknowledging this is vulnerable, an attacker can traverse outside the templates directory using ../ sequences.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/app.py",
+      "start": {
+        "line": 261,
+        "col": 21,
+        "offset": 0
+      },
+      "end": {
+        "line": 265,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from request.json['search'] is directly concatenated into SQL query string using string formatting (% operator) and executed via db.engine.execute(). This allows an attacker to inject arbitrary SQL commands.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "app/app.py",
+      "start": {
+        "line": 141,
+        "col": 24,
+        "offset": 0
+      },
+      "end": {
+        "line": 141,
+        "col": 57,
+        "offset": 0
+      },
+      "extra": {
+        "message": "MD5 hash algorithm is used for password hashing. MD5 is cryptographically broken and unsuitable for password storage. Passwords should be hashed using a slow hashing algorithm like bcrypt, scrypt, or Argon2.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash",
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.jwt-no-verify",
+      "path": "app/app.py",
+      "start": {
+        "line": 97,
+        "col": 18,
+        "offset": 0
+      },
+      "end": {
+        "line": 97,
+        "col": 42,
+        "offset": 0
+      },
+      "extra": {
+        "message": "JWT token is decoded with verify=False, which disables signature verification. This allows an attacker to forge tokens by modifying the payload without needing the secret key. This insecure verification is used in the /get/<cust_id> endpoint at line 227.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication",
+            "CWE-345: Insufficient Verification of Data Authenticity"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-deserialization.yaml",
+      "path": "app/app.py",
+      "start": {
+        "line": 329,
+        "col": 18,
+        "offset": 0
+      },
+      "end": {
+        "line": 329,
+        "col": 30,
+        "offset": 0
+      },
+      "extra": {
+        "message": "yaml.load() is used without specifying a safe loader, which allows arbitrary Python object deserialization. This can lead to remote code execution if an attacker can control the YAML content. Use yaml.safe_load() instead.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "app/app.py",
+      "start": {
+        "line": 112,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 114,
+        "col": 76,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled input from request.url is directly interpolated into HTML template using % string formatting, and then rendered via render_template_string(). This allows Cross-Site Scripting (XSS) attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "app/app.py",
+      "start": {
+        "line": 280,
+        "col": 25,
+        "offset": 0
+      },
+      "end": {
+        "line": 281,
+        "col": 78,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Exception message str(e) is directly interpolated into HTML template. Since the exception can contain SQL error messages that include user input, this allows XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded",
+      "path": "app/app.py",
+      "start": {
+        "line": 26,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 28,
+        "col": 53,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded secret keys are used in the application configuration: SECRET_KEY_HMAC='secret', SECRET_KEY_HMAC_2='am0r3C0mpl3xK3y', and app.secret_key. These should be loaded from environment variables or a secure secrets manager.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded",
+      "path": "app/app.py",
+      "start": {
+        "line": 62,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 63,
+        "col": 37,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded admin credentials: username='admin' and password='admin123' are stored in source code and used to create the default admin user.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authorization.idor",
+      "path": "app/app.py",
+      "start": {
+        "line": 208,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 208,
+        "col": 48,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Customer record is fetched by ID (customer_id from request.json) without checking if the authenticated user has permission to access that record. Any authenticated user can access any customer's data by changing the ID parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key",
+            "CWE-284: Improper Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authorization.idor",
+      "path": "app/app.py",
+      "start": {
+        "line": 231,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 231,
+        "col": 45,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Customer record is fetched by cust_id from URL parameter without authorization check. Any authenticated user can access any customer's data by changing the cust_id in the URL.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key",
+            "CWE-284: Improper Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.sensitive-data",
+      "path": "app/app.py",
+      "start": {
+        "line": 182,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 182,
+        "col": 79,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Password is compared in plaintext in the database query. The stored password should be hashed, and the comparison should use a constant-time comparison function on hashed values.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+            "CWE-256: Unprotected Storage of Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.sensitive-data",
+      "path": "app/app.py",
+      "start": {
+        "line": 209,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 212,
+        "col": 18,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Credit card number (ccn) is exposed in the API response. Sensitive payment information should be redacted or tokenized before being returned to the client.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.sensitive-data",
+      "path": "app/app.py",
+      "start": {
+        "line": 233,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 236,
+        "col": 18,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Credit card number (ccn) is exposed in the API response for the /get/<cust_id> endpoint. Sensitive payment information should be redacted or tokenized.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.error-message",
+      "path": "app/app.py",
+      "start": {
+        "line": 280,
+        "col": 25,
+        "offset": 0
+      },
+      "end": {
+        "line": 280,
+        "col": 29,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Exception details (str(e)) are displayed to users in the error response. This could leak sensitive information about the application's internal state, database structure, or configuration. SQL exceptions could reveal database schema details.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

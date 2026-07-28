@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self.config.getboolean(self.section, 'debug')

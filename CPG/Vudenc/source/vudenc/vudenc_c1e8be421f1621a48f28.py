@@ -1,0 +1,3 @@
+def create_login_url(self, dest_url):...
+"""docstring"""
+return self._get_users_api().create_login_url(self.request, dest_url)

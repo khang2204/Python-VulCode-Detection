@@ -1,0 +1,3 @@
+def on_new_version_available(self, subject, changetype, objectID, *args):...
+self.write_data({'type': 'new_version_available', 'event': {'version': args
+    [0]}})

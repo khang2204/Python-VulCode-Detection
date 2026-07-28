@@ -1,0 +1,3 @@
+def get(self):...
+allPosts = ContentConverter.getAllPostsList()
+self.render('templates/Home.html', allPosts=allPosts)

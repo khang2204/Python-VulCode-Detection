@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return {'name': self.name, 'id': self.id}

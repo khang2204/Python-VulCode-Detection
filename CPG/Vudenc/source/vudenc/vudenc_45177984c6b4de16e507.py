@@ -1,0 +1,3 @@
+def send_wz_error(self, reqid, data, seqid=0):...
+msg = self.wz.make_dealer_rep_msg(reqid, seqid, wzrpc.status.error, data)
+self.wz_sock.send_multipart(msg)

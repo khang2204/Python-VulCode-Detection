@@ -1,0 +1,3 @@
+def test_list_win_ranking(self):...
+"""docstring"""
+self.assertTrue(tournament.playerStandings())

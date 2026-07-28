@@ -1,0 +1,3 @@
+def connect(self, database='crimemap'):...
+return pymysql.connect(host='localhost', user=db_config.db_user, password=
+    db_config.db_password, db=database)

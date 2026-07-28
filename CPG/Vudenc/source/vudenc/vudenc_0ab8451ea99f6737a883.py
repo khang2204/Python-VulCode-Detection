@@ -1,0 +1,3 @@
+def _extract_common_academic_year(objects):...
+if len(set(getattr(obj, 'academic_year_id') for obj in objects)) > 1:
+return objects[0].academic_year

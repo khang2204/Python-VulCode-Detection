@@ -1,0 +1,3 @@
+def get_file_size(path):...
+"""docstring"""
+return os.path.getsize(path)

@@ -1,0 +1,3 @@
+def is_windows():...
+"""docstring"""
+return os.__file__[0] != '/'

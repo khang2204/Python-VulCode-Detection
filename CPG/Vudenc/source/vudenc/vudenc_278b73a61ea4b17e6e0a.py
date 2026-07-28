@@ -1,0 +1,3 @@
+def __init__(self, param, num=20, **kw):...
+self.num = num
+Validator.__init__(self, param=param, **kw)

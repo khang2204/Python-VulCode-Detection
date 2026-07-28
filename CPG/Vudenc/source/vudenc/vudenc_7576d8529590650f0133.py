@@ -1,0 +1,3 @@
+def test_mandatory_positional(self):...
+self._tab_after('cat ')
+eq_(len(self.terminal.method_calls), 4)

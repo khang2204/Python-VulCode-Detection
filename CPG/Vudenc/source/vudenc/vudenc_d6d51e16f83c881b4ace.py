@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self.config.getint(self.section, 'sso_session_lifetime')

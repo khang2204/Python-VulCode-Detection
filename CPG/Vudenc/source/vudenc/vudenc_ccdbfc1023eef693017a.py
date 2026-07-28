@@ -1,0 +1,3 @@
+def decorate(ruleinfo):...
+ruleinfo.input = paths, kwpaths
+return ruleinfo

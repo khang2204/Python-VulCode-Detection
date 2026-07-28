@@ -1,0 +1,3 @@
+def is_cron(self):...
+"""docstring"""
+return bool(self.request.headers.get('X-Appengine-Cron'))

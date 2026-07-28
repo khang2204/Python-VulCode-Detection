@@ -1,0 +1,3 @@
+def __init__(self, channel_pk='', **kwargs):...
+TriblerContentModel.__init__(self, **kwargs)
+self.channel_pk = channel_pk

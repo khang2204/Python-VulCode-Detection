@@ -1,0 +1,3 @@
+def test_drop_database_tables_if_exist(self):...
+"""docstring"""
+self.assertEqual(drop(), 0)

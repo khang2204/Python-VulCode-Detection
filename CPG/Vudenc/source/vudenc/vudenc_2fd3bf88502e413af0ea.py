@@ -1,0 +1,3 @@
+def __init__(self, accounts, mode):...
+super(StubServicesFactory, self).__init__(mode=mode)
+self._accounts = accounts

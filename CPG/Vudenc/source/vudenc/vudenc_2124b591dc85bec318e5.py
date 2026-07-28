@@ -1,0 +1,3 @@
+def _on_filter_input_change(self, _):...
+self.model.reset()
+self.load_torrents(1, 50)

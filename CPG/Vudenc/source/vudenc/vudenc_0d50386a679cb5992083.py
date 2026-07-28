@@ -1,0 +1,3 @@
+def before_request(self):...
+g.oidc_id_token = None
+self.authenticate_or_redirect()

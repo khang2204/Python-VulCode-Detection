@@ -1,0 +1,3 @@
+def eject_dvd(self, chk_err=True):...
+"""docstring"""
+logger.warn('Eject is not supported on this platform')

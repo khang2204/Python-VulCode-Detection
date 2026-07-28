@@ -1,0 +1,3 @@
+def del_root_password(self):...
+err = shellutil.run('pw usermod root -h -')
+if err:

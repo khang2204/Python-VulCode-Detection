@@ -1,0 +1,3 @@
+@staticmethod...
+"""docstring"""
+User.upsert_mapped_projects(user_id, project_id)

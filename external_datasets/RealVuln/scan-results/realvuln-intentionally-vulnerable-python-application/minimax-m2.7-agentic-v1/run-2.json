@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 11,
+        "col": 5,
+        "offset": 285
+      },
+      "end": {
+        "line": 12,
+        "col": 56,
+        "offset": 341
+      },
+      "extra": {
+        "message": "User input from request.args.get('ip') is passed directly to subprocess.check_output(). An attacker can inject shell commands via the 'ip' parameter (e.g., '127.0.0.1; ls' or '127.0.0.1 && rm -rf /').",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 391
+      },
+      "end": {
+        "line": 17,
+        "col": 25,
+        "offset": 436
+      },
+      "extra": {
+        "message": "Hardcoded credentials found: USERNAME='admin' and PASSWORD='password123' stored in plaintext at module level. These credentials are used in the /login endpoint.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-deserialization",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 33,
+        "col": 9,
+        "offset": 786
+      },
+      "end": {
+        "line": 33,
+        "col": 28,
+        "offset": 805
+      },
+      "extra": {
+        "message": "pickle.loads(request.data) deserializes user-controlled data without validation. Malicious pickle payloads can execute arbitrary code on the server.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 46,
+        "col": 10,
+        "offset": 1065
+      },
+      "end": {
+        "line": 46,
+        "col": 60,
+        "offset": 1115
+      },
+      "extra": {
+        "message": "User input from request.args.get('id') is concatenated directly into SQL query string. The 'id' parameter is inserted without sanitization or parameterization, allowing SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

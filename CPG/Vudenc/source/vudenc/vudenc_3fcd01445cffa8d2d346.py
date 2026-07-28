@@ -1,0 +1,3 @@
+def decorate(ruleinfo):...
+ruleinfo.log = logs, kwlogs
+return ruleinfo

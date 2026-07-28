@@ -1,0 +1,3 @@
+def deletePlayers():...
+"""docstring"""
+execute('delete from Player')

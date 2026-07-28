@@ -1,0 +1,3 @@
+@app.route('/level-1/index')...
+socketIO.emit('level-progress-update', {'level_progress': 'test'})
+return render_template('level-1/index.html')

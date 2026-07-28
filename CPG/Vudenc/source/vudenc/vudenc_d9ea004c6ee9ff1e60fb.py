@@ -1,0 +1,3 @@
+def __init__(self, context, contexts):...
+self.contexts = contexts
+self.context = context

@@ -1,0 +1,3 @@
+def check_authorization(self):...
+"""docstring"""
+return True

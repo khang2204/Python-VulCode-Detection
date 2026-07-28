@@ -1,0 +1,13 @@
+import re
+
+PATTERN = r"((a)+)+"
+
+
+def do_re_match(user_input):
+    match = re.match(PATTERN, user_input)
+    if match:
+        return match.group(0)
+
+
+def do_re_match_compiled(user_input):
+    pattern = re.compile(PATTERN)

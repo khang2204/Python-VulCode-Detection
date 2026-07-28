@@ -1,0 +1,3 @@
+@classmethod...
+return super(PythonNativeCode, cls).subsystem_dependencies() + (NativeToolchain
+    .scoped(cls), PythonSetup)

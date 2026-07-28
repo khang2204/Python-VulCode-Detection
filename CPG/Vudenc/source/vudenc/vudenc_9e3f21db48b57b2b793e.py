@@ -1,0 +1,3 @@
+def getChild(self, name, request):...
+"""docstring"""
+return self

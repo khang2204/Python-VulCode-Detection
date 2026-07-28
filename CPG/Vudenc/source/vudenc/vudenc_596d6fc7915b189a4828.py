@@ -1,0 +1,3 @@
+def run(self):...
+if not (c.user_is_loggedin and c.site.is_moderator(c.user) or c.user_is_admin):
+abort(403, 'forbidden')

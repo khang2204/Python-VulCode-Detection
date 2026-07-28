@@ -1,0 +1,3 @@
+def increment_achievement(achievement_id, player_id, steps):...
+steps_function = lambda current_steps, new_steps: current_steps + new_steps
+return update_steps(achievement_id, player_id, steps, steps_function)

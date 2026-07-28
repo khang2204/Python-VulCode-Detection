@@ -1,0 +1,22 @@
+{
+  "model": "deepseek-v4-pro",
+  "repo": "realvuln-dvblab",
+  "run_id": 2,
+  "input_tokens": 19798,
+  "output_tokens": 12175,
+  "total_tokens": 102885,
+  "cost_usd": 0.11538868,
+  "wall_clock_seconds": 454.3874020576477,
+  "start_time": "",
+  "end_time": "",
+  "agent_steps": 0,
+  "tool_calls": 0,
+  "tool_calls_by_type": {},
+  "files_read": [],
+  "exit_status": "success",
+  "error_message": "",
+  "llm_json_repair": false,
+  "prompt_version": "sha256:3481f1432c23",
+  "prompt_label": "",
+  "ground_truth_content_hash": "sha256:825203c8de80bb0eeffc031a69137119d7b70fda3ade5104d3d55ff65b72b2cb"
+}

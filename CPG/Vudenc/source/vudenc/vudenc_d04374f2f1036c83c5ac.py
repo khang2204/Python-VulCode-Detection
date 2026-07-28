@@ -1,0 +1,3 @@
+def __init__(self, variableTo=False, **kwargs):...
+super().__init__(**kwargs)
+self.variableTo = variableTo

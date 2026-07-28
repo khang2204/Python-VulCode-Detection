@@ -1,0 +1,3 @@
+@data((' ', []), ('Ron Eastern Construction Ltd. (RECL)', ['RECL']), (...
+output_string = get_acronyms(input_string)
+self.assertEqual(desired_string, output_string)

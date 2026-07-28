@@ -1,0 +1,3 @@
+def runall(self, checks, *args, **kwargs):...
+cases = executors.generate_testcases(checks, *args, **kwargs)
+self.runner.runall(cases)

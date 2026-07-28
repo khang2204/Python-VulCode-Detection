@@ -1,0 +1,3 @@
+def getWrittenData(self):...
+if len(self.written):
+return self.written[0]

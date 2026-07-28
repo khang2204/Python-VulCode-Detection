@@ -1,0 +1,3 @@
+def fr3(a, b, c):...
+"""docstring"""
+return frz(c) @ (fry(b) @ frz(a))

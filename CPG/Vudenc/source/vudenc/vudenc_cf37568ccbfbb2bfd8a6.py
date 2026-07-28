@@ -1,0 +1,3 @@
+def __str__(self):...
+string = 'OpenOCD at localhost port ' + str(self.port)
+return string

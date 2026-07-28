@@ -1,0 +1,3 @@
+def _print_errors(self, errors):...
+for line in filter(lambda error: bool(error.strip()), errors):
+self.warn(line)

@@ -1,0 +1,3 @@
+def decorate(ruleinfo):...
+ruleinfo.priority = priority
+return ruleinfo

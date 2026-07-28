@@ -1,0 +1,3 @@
+def coordToID(self, x, y):...
+return str(x) + '-' * (len(str(self.mapWidth)) - len(str(x))) + str(y
+    ) + '-' * (len(str(self.mapHeight)) - len(str(y)))

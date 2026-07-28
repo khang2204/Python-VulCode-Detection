@@ -1,0 +1,3 @@
+def validate(self, value, model_instance):...
+super().validate(value, model_instance)
+json_encode(value, cls=self.encoder)

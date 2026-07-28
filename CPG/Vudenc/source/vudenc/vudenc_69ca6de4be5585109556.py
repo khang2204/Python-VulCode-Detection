@@ -1,0 +1,3 @@
+def start_window(window, cmd, log_file, comp_name):...
+setup_log(window, log_file, comp_name)
+window.cmd('send-keys', cmd, 'Enter')

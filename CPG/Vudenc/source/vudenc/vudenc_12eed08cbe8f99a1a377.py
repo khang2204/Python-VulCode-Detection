@@ -1,0 +1,3 @@
+def __init__(self, resource):...
+super(TestResourceTraversalIterator, self).__init__(resource)
+self.events = []

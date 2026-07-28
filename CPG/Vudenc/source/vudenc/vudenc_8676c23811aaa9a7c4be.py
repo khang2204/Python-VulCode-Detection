@@ -1,0 +1,3 @@
+def get_redirect_url(self):...
+"""docstring"""
+return find_nextlocation(self.request, self.request.user)

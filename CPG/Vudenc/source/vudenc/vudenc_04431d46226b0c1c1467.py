@@ -1,0 +1,3 @@
+@property...
+if not self.current_user or not self.current_user.has_key('role'):
+return self.current_user['role'] == 'receiver'

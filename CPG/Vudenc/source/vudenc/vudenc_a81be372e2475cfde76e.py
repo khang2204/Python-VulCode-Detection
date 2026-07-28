@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return dict(self._get_system_properties(self.java))

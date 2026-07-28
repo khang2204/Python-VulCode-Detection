@@ -1,0 +1,3 @@
+def __init__(self, subscribed=False, **kwargs):...
+TriblerContentModel.__init__(self, **kwargs)
+self.subscribed = subscribed

@@ -1,0 +1,3 @@
+def get_queryset(self, request, pk):...
+query = tweet.objects.filter(hunt_id=Hunt(id=pk)).order_by('-datetime')
+return query

@@ -1,0 +1,3 @@
+@staticmethod...
+"""docstring"""
+return User.get_all_users(query)

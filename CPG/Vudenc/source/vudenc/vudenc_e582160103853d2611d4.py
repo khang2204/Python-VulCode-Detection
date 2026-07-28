@@ -1,0 +1,3 @@
+def to_json(self):...
+"""docstring"""
+return self.to_str()

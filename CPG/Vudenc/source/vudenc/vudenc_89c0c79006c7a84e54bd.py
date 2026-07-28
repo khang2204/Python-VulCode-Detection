@@ -1,0 +1,3 @@
+def subscribe(self, channel):...
+"""docstring"""
+self.primary_subscribe_client.subscribe(channel)

@@ -1,0 +1,3 @@
+@login_required...
+return HttpResponseRedirect(reverse('review_candidates', kwargs={'status':
+    'all'}))

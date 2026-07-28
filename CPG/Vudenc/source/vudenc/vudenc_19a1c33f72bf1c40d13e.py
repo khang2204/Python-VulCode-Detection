@@ -1,0 +1,3 @@
+def takeJumpPath(self, pair, symbols):...
+self.instrPtr = pair[1][0]
+return ophandlers.makeJump(pair[0], symbols, self.symId)

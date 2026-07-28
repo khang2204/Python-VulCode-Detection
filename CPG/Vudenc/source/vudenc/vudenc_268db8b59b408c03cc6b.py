@@ -1,0 +1,3 @@
+def _check():...
+eppn = 'hubba-bubba'
+self.assertEquals(session['eduPersonPrincipalName'], eppn)

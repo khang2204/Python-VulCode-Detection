@@ -1,0 +1,12 @@
+{
+  "cpg": "/mnt/c/users/gulli/downloads/pipeline/CPG/BenchmarkPython/cpg.bin",
+  "cpg_bytes": 11180420,
+  "dataset": "OWASP-Benchmark/BenchmarkPython",
+  "log": "/mnt/c/users/gulli/downloads/pipeline/CPG/BenchmarkPython/joern-parse.log",
+  "metadata": "/mnt/c/users/gulli/downloads/pipeline/CPG/BenchmarkPython/metadata.jsonl",
+  "metadata_with_expected_result": 1230,
+  "parse_fail": 0,
+  "parse_ok": 1236,
+  "python_files": 1236,
+  "testcode_files": 1230
+}

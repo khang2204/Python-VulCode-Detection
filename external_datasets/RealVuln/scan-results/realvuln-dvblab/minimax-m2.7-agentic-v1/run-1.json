@@ -1,0 +1,309 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 93,
+        "col": 11,
+        "offset": 2150
+      },
+      "end": {
+        "line": 93,
+        "col": 135,
+        "offset": 2274
+      },
+      "extra": {
+        "message": "User input from request.args.get('description') is concatenated directly into SQL string in query. This allows SQL injection via crafted description parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 49,
+        "col": 11,
+        "offset": 1130
+      },
+      "end": {
+        "line": 49,
+        "col": 85,
+        "offset": 1204
+      },
+      "extra": {
+        "message": "User input from request.args.get('user_id') is directly interpolated into SQL query. Although user_id defaults to current_user.id, the parameter can be manipulated to query other users' transactions.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 22,
+        "col": 20,
+        "offset": 490
+      },
+      "end": {
+        "line": 22,
+        "col": 95,
+        "offset": 565
+      },
+      "extra": {
+        "message": "User-controlled 'username' parameter is directly concatenated into INSERT SQL query without parameterization. This allows SQL injection during user registration.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 36,
+        "col": 11,
+        "offset": 800
+      },
+      "end": {
+        "line": 36,
+        "col": 60,
+        "offset": 849
+      },
+      "extra": {
+        "message": "User-controlled 'username' parameter is directly concatenated into SELECT SQL query without parameterization. This allows SQL injection during login.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-injection",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 157,
+        "col": 28,
+        "offset": 3650
+      },
+      "end": {
+        "line": 157,
+        "col": 62,
+        "offset": 3684
+      },
+      "extra": {
+        "message": "User input from request.get_json().get('profile_yaml') is passed directly to yaml.load() with yaml.Loader. This allows arbitrary Python code execution via YAML payload (e.g., !!python/object/apply:os.system 'command').",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.broken-access-control",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 137,
+        "col": 0,
+        "offset": 3100
+      },
+      "end": {
+        "line": 149,
+        "col": 41,
+        "offset": 3277
+      },
+      "extra": {
+        "message": "The update-password endpoint accepts user_id parameter and updates password for ANY user, regardless of who is authenticated. An authenticated user can change any other user's password (including admin).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key",
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cors.misconfiguration",
+      "path": "backend/app.py",
+      "start": {
+        "line": 47,
+        "col": 0,
+        "offset": 1080
+      },
+      "end": {
+        "line": 56,
+        "col": 12,
+        "offset": 1235
+      },
+      "extra": {
+        "message": "CORS configuration reflects any Origin from the request headers without validation. This allows cross-origin requests from any malicious website, enabling CSRF attacks and data exfiltration.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Security Misconfiguration",
+            "CWE-346: Origin Validation Error"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hashing",
+      "path": "backend/models.py",
+      "start": {
+        "line": 24,
+        "col": 35,
+        "offset": 560
+      },
+      "end": {
+        "line": 24,
+        "col": 74,
+        "offset": 599
+      },
+      "extra": {
+        "message": "Password hashing uses MD5 which is cryptographically broken and vulnerable to collision attacks. MD5 should never be used for password hashing.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-327: Use of Weak Cryptographic Algorithm"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded",
+      "path": "backend/app.py",
+      "start": {
+        "line": 16,
+        "col": 21,
+        "offset": 420
+      },
+      "end": {
+        "line": 16,
+        "col": 42,
+        "offset": 441
+      },
+      "extra": {
+        "message": "SECRET_KEY is hardcoded as 'supersecret'. This key is used for JWT token signing. Hardcoded secrets can be discovered and allow attackers to forge valid tokens.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded",
+      "path": "backend/auth.py",
+      "start": {
+        "line": 23,
+        "col": 29,
+        "offset": 580
+      },
+      "end": {
+        "line": 23,
+        "col": 46,
+        "offset": 597
+      },
+      "extra": {
+        "message": "JWT secret key is hardcoded as 'secret'. This allows attackers to forge valid JWT tokens if they can discover this value.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.sensitive-data-exposure",
+      "path": "backend/app.py",
+      "start": {
+        "line": 93,
+        "col": 13,
+        "offset": 2100
+      },
+      "end": {
+        "line": 93,
+        "col": 30,
+        "offset": 2117
+      },
+      "extra": {
+        "message": "Test user data includes SSN (Social Security Numbers) stored in plain text in the database. This is sensitive personal data that should not be stored or exposed.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+            "CWE-532: Information Exposure Through Log File"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.sensitive-data-exposure",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 91,
+        "col": 12,
+        "offset": 2050
+      },
+      "end": {
+        "line": 96,
+        "col": 25,
+        "offset": 2175
+      },
+      "extra": {
+        "message": "User profile endpoint returns sensitive fields including phone, address, and potentially SSN. No authorization check is performed to verify the requester has permission to view this profile data.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+@products.route('/<id>', methods=['GET'])...
+product = ProductsRepository.get_product(id)
+return jsonify(product=product)

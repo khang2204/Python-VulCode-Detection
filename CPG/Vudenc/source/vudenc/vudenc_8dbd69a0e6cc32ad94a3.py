@@ -1,0 +1,3 @@
+def targets(self, dag):...
+return [f for job in dag.jobs for f in job.subworkflow_input if job.
+    subworkflow_input[f] is self]

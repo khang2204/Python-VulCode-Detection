@@ -1,0 +1,305 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 182,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 182,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-supplied 'username' parameter is directly concatenated into an SQL query using f-string formatting. This allows SQL injection attacks where an attacker can manipulate the query structure.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 188,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 204,
+        "col": 15,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Multiple user-controlled fields (name, username, password, address, email, contact) from the User model are directly interpolated into an SQL INSERT statement using f-string formatting. This allows SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 231,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 231,
+        "col": 85,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-supplied 'username' parameter is directly concatenated into an SQL DELETE query using f-string formatting. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 235,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 235,
+        "col": 84,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'user.address' field is directly interpolated into an SQL DELETE query using f-string formatting. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.nosql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 224,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 225,
+        "col": 30,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-supplied JSON body from request is passed directly to get_nosql_users() which forwards it to MontyDB's find() method without validation. This allows NoSQL injection attacks where attackers can pass arbitrary query objects.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-943: Improper Neutralization of Special Elements in Data Query Logic"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "main.py",
+      "start": {
+        "line": 113,
+        "col": 18,
+        "offset": 0
+      },
+      "end": {
+        "line": 113,
+        "col": 58,
+        "offset": 0
+      },
+      "extra": {
+        "message": "MD5 is used for password hashing. MD5 is cryptographically broken and should not be used for password storage. Use bcrypt, scrypt, or Argon2 instead.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "main.py",
+      "start": {
+        "line": 187,
+        "col": 16,
+        "offset": 0
+      },
+      "end": {
+        "line": 187,
+        "col": 56,
+        "offset": 0
+      },
+      "extra": {
+        "message": "MD5 is used for password hashing in the put_user endpoint. MD5 is cryptographically broken and vulnerable to collision attacks and rainbow table attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "main.py",
+      "start": {
+        "line": 242,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 247,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The /reset endpoint allows anyone to delete and reinitialize the entire database without any authentication or authorization checks. This is a critical security vulnerability.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.dos.uncontrolled-recursion",
+      "path": "main.py",
+      "start": {
+        "line": 163,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 167,
+        "col": 35,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The exception handler catches KeyboardInterrupt and recursively calls run_sql_query() without any recursion depth limiting. An attacker could potentially trigger infinite recursion causing stack overflow and denial of service.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-674: Uncontrolled Recursion"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "main.py",
+      "start": {
+        "line": 180,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 183,
+        "col": 16,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The /select endpoint exposes user data including password hashes without any authentication. Combined with SQL injection vulnerability, this allows complete user database extraction.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "main.py",
+      "start": {
+        "line": 227,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 236,
+        "col": 22,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The /user DELETE endpoint allows unauthenticated deletion of users by username or address. Combined with SQL injection, this allows arbitrary data deletion.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 102,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 118,
+        "col": 15,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SQL query construction using f-strings with fake data for database initialization. While this uses Faker-generated data, the pattern itself is vulnerable and should use parameterized queries.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "LOW",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+@classmethod...
+return JarDependency(org='org.scala-lang', name=name, rev=scala_build_info[
+    version].full_version)

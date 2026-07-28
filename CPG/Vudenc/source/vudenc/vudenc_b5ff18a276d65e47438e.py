@@ -1,0 +1,3 @@
+def __init__(self, **kwargs):...
+self._autocommit = kwargs.pop('autocommit', False)
+SQLObjectStore.__init__(self, **kwargs)

@@ -1,0 +1,3 @@
+def _modify_3par_fibrechan_host(self, hostname, wwn):...
+out = self.common._cli_run('createhost -add %s %s' % (hostname, ' '.join(
+    wwn)), None)

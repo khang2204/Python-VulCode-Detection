@@ -1,0 +1,3 @@
+def DiagnosticsForCurrentFileReady(self):...
+return bool(self._latest_file_parse_request and self.
+    _latest_file_parse_request.Done())

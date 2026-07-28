@@ -1,0 +1,3 @@
+def make_token_getter(remote):...
+"""docstring"""
+return partial(token_getter, remote)

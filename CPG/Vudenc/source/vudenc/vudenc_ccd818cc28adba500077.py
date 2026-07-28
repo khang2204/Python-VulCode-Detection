@@ -1,0 +1,3 @@
+def __setattr__(self, name, value):...
+if self.__dict__.get(name):
+self.__dict__[name] = value

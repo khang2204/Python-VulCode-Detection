@@ -1,0 +1,3 @@
+async def processItem(self, item):...
+for h in self.handler:
+await h.push(item)

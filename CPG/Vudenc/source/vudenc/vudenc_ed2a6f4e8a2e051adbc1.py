@@ -1,0 +1,3 @@
+def __init__(self, txt):...
+debug('Comment ', txt)
+super(Comment, self).__init__('% ' + txt)

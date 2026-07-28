@@ -1,0 +1,3 @@
+def on_tribler_exception(self, exception_text):...
+self.write_data({'type': 'tribler_exception', 'event': {'text':
+    exception_text}})

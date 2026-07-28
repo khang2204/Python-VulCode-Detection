@@ -1,0 +1,3 @@
+def calcAllTPVM(self, gamma):...
+for edge in self.G.edges():
+self.calcTPVM(edge, gamma)

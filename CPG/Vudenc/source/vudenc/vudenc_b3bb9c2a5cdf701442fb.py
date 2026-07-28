@@ -1,0 +1,3 @@
+@handled_slot(bool)...
+print('Starting BiFi scan...')
+self.matisse.birefringent_filter_scan()

@@ -1,0 +1,3 @@
+def VulnLogger(url, vuln):...
+tent = '[!] ' + url + ' -> ' + vuln
+VULN_LIST.append(tent)

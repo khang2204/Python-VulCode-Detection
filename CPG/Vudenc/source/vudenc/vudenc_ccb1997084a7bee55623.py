@@ -1,0 +1,3 @@
+def get_last_n_tournaments(db, n, scene):...
+today = datetime.datetime.today().strftime('%Y-%m-%d')
+return get_n_tournaments_before_date(db, scene, today, n)

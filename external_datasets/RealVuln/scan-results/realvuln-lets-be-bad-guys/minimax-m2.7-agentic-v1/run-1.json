@@ -1,0 +1,355 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 39,
+        "col": 19,
+        "offset": 1058
+      },
+      "end": {
+        "line": 42,
+        "col": 65,
+        "offset": 1185
+      },
+      "extra": {
+        "message": "User input from request.GET.get('p') is concatenated directly into file path at line 42 without sanitization, allowing path traversal attacks like ../../../etc/passwd",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-execution",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 72,
+        "col": 13,
+        "offset": 1954
+      },
+      "end": {
+        "line": 76,
+        "col": 40,
+        "offset": 2066
+      },
+      "extra": {
+        "message": "User input from request.POST['first_name'] is passed to exec(base64.decodestring()) at lines 72 and 76, allowing arbitrary code execution",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 98,
+        "col": 23,
+        "offset": 2663
+      },
+      "end": {
+        "line": 98,
+        "col": 52,
+        "offset": 2692
+      },
+      "extra": {
+        "message": "User input from request.GET.get('qs') is rendered in template without escaping at line 98, causing XSS",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 105,
+        "col": 18,
+        "offset": 2857
+      },
+      "end": {
+        "line": 106,
+        "col": 40,
+        "offset": 2908
+      },
+      "extra": {
+        "message": "User input from URL path parameter 'path' is rendered in template without escaping at line 105, causing XSS",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 110,
+        "col": 23,
+        "offset": 2987
+      },
+      "end": {
+        "line": 110,
+        "col": 52,
+        "offset": 3016
+      },
+      "extra": {
+        "message": "User input from request.GET.get('qs') is rendered in template without escaping at line 110, causing XSS",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.idor",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 128,
+        "col": 20,
+        "offset": 3487
+      },
+      "end": {
+        "line": 139,
+        "col": 67,
+        "offset": 3745
+      },
+      "extra": {
+        "message": "User profile endpoint at line 128 directly uses userid from URL parameter without authorization check, allowing access to any user profile (IDOR)",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Insecure Direct Object Reference"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.missing-authorization",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 155,
+        "col": 18,
+        "offset": 4172
+      },
+      "end": {
+        "line": 159,
+        "col": 65,
+        "offset": 4322
+      },
+      "extra": {
+        "message": "Function at line 155 only checks request.GET.get('action') == 'admin' but does not verify the user is actually an admin, allowing unauthorized access",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 164,
+        "col": 1,
+        "offset": 4345
+      },
+      "end": {
+        "line": 167,
+        "col": 67,
+        "offset": 4476
+      },
+      "extra": {
+        "message": "View function at line 164 is decorated with @csrf_exempt, disabling CSRF protection for this endpoint",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.open-redirect",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 177,
+        "col": 11,
+        "offset": 4624
+      },
+      "end": {
+        "line": 178,
+        "col": 30,
+        "offset": 4655
+      },
+      "extra": {
+        "message": "User input from request.GET.get('url') is used directly in redirect() at line 177, allowing open redirect attacks",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: Open Redirect"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-execution",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 183,
+        "col": 18,
+        "offset": 4700
+      },
+      "end": {
+        "line": 186,
+        "col": 31,
+        "offset": 4773
+      },
+      "extra": {
+        "message": "User input from request.GET.get('fwd') is used in globals().get(forward) at line 183 to dynamically call functions, allowing arbitrary function execution",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-secret",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 90,
+        "col": 11,
+        "offset": 2478
+      },
+      "end": {
+        "line": 90,
+        "col": 67,
+        "offset": 2534
+      },
+      "extra": {
+        "message": "Hardcoded SECRET_KEY at line 90 exposes cryptographic secret. This key should never be hardcoded in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.security-misconfiguration",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 10,
+        "col": 1,
+        "offset": 287
+      },
+      "end": {
+        "line": 11,
+        "col": 23,
+        "offset": 324
+      },
+      "extra": {
+        "message": "DEBUG=True at line 10 exposes sensitive information and should never be True in production",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Security Misconfiguration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.security-misconfiguration",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 102,
+        "col": 1,
+        "offset": 2794
+      },
+      "end": {
+        "line": 102,
+        "col": 39,
+        "offset": 2833
+      },
+      "extra": {
+        "message": "CSRF middleware is commented out at line 102, disabling CSRF protection globally",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Security Misconfiguration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.security-misconfiguration",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 106,
+        "col": 1,
+        "offset": 2887
+      },
+      "end": {
+        "line": 106,
+        "col": 48,
+        "offset": 2934
+      },
+      "extra": {
+        "message": "XFrameOptionsMiddleware is commented out at line 106, disabling clickjacking protection",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Security Misconfiguration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

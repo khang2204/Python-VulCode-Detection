@@ -1,0 +1,3 @@
+def setUp(self):...
+section = Section('some_name')
+self.uut = Lint(section, None)

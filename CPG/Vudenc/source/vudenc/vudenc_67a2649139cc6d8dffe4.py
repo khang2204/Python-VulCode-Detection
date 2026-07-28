@@ -1,0 +1,3 @@
+def __init__(self, *args, **kwargs):...
+self.protocol_key = 'webclient/ajax'
+super(AjaxWebClientSession, self).__init__(*args, **kwargs)

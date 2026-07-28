@@ -1,0 +1,3 @@
+def validate_cross_domain_policy(page):...
+return validate_security_header(page, 'X-Permitted-Cross-Domain-Policies',
+    'master-only')

@@ -1,0 +1,655 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/views/users/views.py",
+      "start": {
+        "line": 74,
+        "col": 9,
+        "offset": 2500
+      },
+      "end": {
+        "line": 76,
+        "col": 52,
+        "offset": 2680
+      },
+      "extra": {
+        "message": "User input from request.POST['user_id'] is directly interpolated into a raw SQL query using string formatting. The form['user_id'] value is used in User.objects.raw() without sanitization, allowing SQL injection. An attacker can manipulate the SQL query to access or modify unauthorized data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/models/Analytics/analytics.py",
+      "start": {
+        "line": 57,
+        "col": 9,
+        "offset": 1900
+      },
+      "end": {
+        "line": 60,
+        "col": 30,
+        "offset": 2100
+      },
+      "extra": {
+        "message": "User-controlled parameters 'ip' and 'col' from request.GET are directly interpolated into SQL query without sanitization. The hits_by_ip method builds SQL using string formatting with user input, allowing SQL injection. The 'col' parameter comes from request.GET keys in admin_analytics view.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-injection",
+      "path": "app/views/api/mobile/views.py",
+      "start": {
+        "line": 16,
+        "col": 16,
+        "offset": 450
+      },
+      "end": {
+        "line": 16,
+        "col": 29,
+        "offset": 463
+      },
+      "extra": {
+        "message": "User input from request.GET.get('class') is passed directly to eval(). The classname parameter is not validated or sanitized, allowing arbitrary code execution. An attacker can execute any Python code by passing a malicious class name.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-injection",
+      "path": "app/views/api/mobile/views.py",
+      "start": {
+        "line": 27,
+        "col": 16,
+        "offset": 780
+      },
+      "end": {
+        "line": 27,
+        "col": 29,
+        "offset": 793
+      },
+      "extra": {
+        "message": "User input from request.GET.get('class') is passed directly to eval(). The classname parameter is not validated or sanitized, allowing arbitrary code execution. This is a second instance of the same vulnerability in api_id function.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "app/models/Benefits/benefits.py",
+      "start": {
+        "line": 73,
+        "col": 13,
+        "offset": 2500
+      },
+      "end": {
+        "line": 73,
+        "col": 58,
+        "offset": 2545
+      },
+      "extra": {
+        "message": "User-controlled filename from uploaded_file.name is used in os.system() command without escaping. The backup file path includes orig_file.name which comes from the uploaded file's name. An attacker can inject shell commands by using a malicious filename containing shell metacharacters like ';', '|', or backticks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.insecure-deserialization",
+      "path": "app/views/password_resets/views.py",
+      "start": {
+        "line": 84,
+        "col": 16,
+        "offset": 2800
+      },
+      "end": {
+        "line": 84,
+        "col": 57,
+        "offset": 2841
+      },
+      "extra": {
+        "message": "User-controlled base64-encoded pickle data from request.POST['user'] is deserialized using pickle.loads(). Pickle is inherently unsafe as it can execute arbitrary code during deserialization. An attacker can craft a malicious pickled object that executes arbitrary code when deserialized.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "app/views/users/benefit_forms/views.py",
+      "start": {
+        "line": 25,
+        "col": 19,
+        "offset": 700
+      },
+      "end": {
+        "line": 25,
+        "col": 52,
+        "offset": 733
+      },
+      "extra": {
+        "message": "User input from request.GET.get('name') is directly concatenated to BASE_DIR to construct a file path. The path is then used with FileWrapper to read and serve files. An attacker can use '../' sequences to read arbitrary files on the server, such as /etc/passwd or application source code.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.open-redirect",
+      "path": "app/views/sessions/views.py",
+      "start": {
+        "line": 43,
+        "col": 44,
+        "offset": 1400
+      },
+      "end": {
+        "line": 43,
+        "col": 48,
+        "offset": 1404
+      },
+      "extra": {
+        "message": "User input from request.POST['path'] is used directly in HttpResponseRedirect() without validation. This allows an attacker to redirect users to arbitrary external URLs, enabling phishing attacks. The path parameter can be set to any URL, including malicious external sites.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored",
+      "path": "app/models/User/user.py",
+      "start": {
+        "line": 156,
+        "col": 15,
+        "offset": 5100
+      },
+      "end": {
+        "line": 156,
+        "col": 41,
+        "offset": 5126
+      },
+      "extra": {
+        "message": "User-controlled first_name is marked as safe HTML using mark_safe(), bypassing Django's automatic HTML escaping. This allows stored XSS. When user.first_name is rendered in templates using {{ current_user.safe_name }} (nav_loggedin.html:23), malicious HTML/JavaScript is executed.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "app/views/admin/views.py",
+      "start": {
+        "line": 14,
+        "col": 1,
+        "offset": 400
+      },
+      "end": {
+        "line": 16,
+        "col": 60,
+        "offset": 520
+      },
+      "extra": {
+        "message": "Admin dashboard function is decorated with @user_is_authenticated but does not verify the user is an admin. The decorator only checks authentication, not admin role. Any authenticated user can access admin functionality including viewing, updating, and deleting other users.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "app/views/admin/views.py",
+      "start": {
+        "line": 21,
+        "col": 1,
+        "offset": 560
+      },
+      "end": {
+        "line": 34,
+        "col": 60,
+        "offset": 1100
+      },
+      "extra": {
+        "message": "Admin function admin_get_user is decorated with @user_is_authenticated but does not verify the user is an admin. Any authenticated non-admin user can view details of any user in the system.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "app/views/admin/views.py",
+      "start": {
+        "line": 39,
+        "col": 1,
+        "offset": 1150
+      },
+      "end": {
+        "line": 48,
+        "col": 40,
+        "offset": 1500
+      },
+      "extra": {
+        "message": "Admin function admin_delete_user is decorated with @user_is_authenticated but does not verify the user is an admin. Any authenticated user can delete any other user from the system.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "app/views/admin/views.py",
+      "start": {
+        "line": 53,
+        "col": 1,
+        "offset": 1550
+      },
+      "end": {
+        "line": 71,
+        "col": 40,
+        "offset": 2100
+      },
+      "extra": {
+        "message": "Admin function admin_update_user is decorated with @user_is_authenticated but does not verify the user is an admin. Any authenticated user can update details of any other user including their password.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "app/views/admin/views.py",
+      "start": {
+        "line": 76,
+        "col": 1,
+        "offset": 2150
+      },
+      "end": {
+        "line": 81,
+        "col": 40,
+        "offset": 2400
+      },
+      "extra": {
+        "message": "Admin function admin_get_all_users is decorated with @user_is_authenticated but does not verify the user is an admin. Any authenticated user can list all users in the system.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "app/views/admin/views.py",
+      "start": {
+        "line": 86,
+        "col": 1,
+        "offset": 2450
+      },
+      "end": {
+        "line": 108,
+        "col": 60,
+        "offset": 3100
+      },
+      "extra": {
+        "message": "Admin function admin_analytics is decorated with @user_is_authenticated but does not verify the user is an admin. Any authenticated user can view analytics data and potentially inject SQL through the col parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor",
+      "path": "app/views/users/work_info/views.py",
+      "start": {
+        "line": 12,
+        "col": 5,
+        "offset": 350
+      },
+      "end": {
+        "line": 12,
+        "col": 38,
+        "offset": 383
+      },
+      "extra": {
+        "message": "User ID from URL parameter (user_id) is used to fetch user data without verifying ownership. The authenticated user can view any user's work_info by changing the user_id in the URL. The function uses User.objects.get(id=user_id) directly without checking if user_id matches the authenticated user.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor",
+      "path": "app/views/users/messages/views.py",
+      "start": {
+        "line": 51,
+        "col": 16,
+        "offset": 1700
+      },
+      "end": {
+        "line": 51,
+        "col": 47,
+        "offset": 1731
+      },
+      "extra": {
+        "message": "Message ID from URL parameter is used to fetch message without verifying ownership. Message.objects.get(pk=message_id) fetches any message by ID without checking if the current user is the creator or receiver. Any authenticated user can read or delete any message in the system.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor",
+      "path": "app/views/users/pay/views.py",
+      "start": {
+        "line": 72,
+        "col": 5,
+        "offset": 2400
+      },
+      "end": {
+        "line": 72,
+        "col": 29,
+        "offset": 2424
+      },
+      "extra": {
+        "message": "Pay ID from URL parameter is used to delete Pay record without verifying ownership. Pay.objects.get(id=pay_id).delete() deletes any Pay record by ID without checking if it belongs to the authenticated user. Any authenticated user can delete any Pay record.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.credential-enumeration",
+      "path": "app/views/sessions/views.py",
+      "start": {
+        "line": 53,
+        "col": 14,
+        "offset": 1750
+      },
+      "end": {
+        "line": 56,
+        "col": 34,
+        "offset": 1900
+      },
+      "extra": {
+        "message": "Different error messages are returned for invalid email vs invalid password. 'Email incorrect!' is shown when the email doesn't exist, and 'Password incorrect!' when the email exists but password is wrong. This allows attackers to enumerate valid email addresses/accounts in the system.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-204: Observable Response Discrepancy"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "app/models/User/user.py",
+      "start": {
+        "line": 107,
+        "col": 24,
+        "offset": 3500
+      },
+      "end": {
+        "line": 107,
+        "col": 62,
+        "offset": 3538
+      },
+      "extra": {
+        "message": "MD5 is used for password hashing in the authenticate method. MD5 is cryptographically broken and unsuitable for password storage. It is vulnerable to collision attacks and can be brute-forced efficiently. Passwords should be hashed using a strong algorithm like bcrypt, scrypt, or Argon2.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "app/models/User/user.py",
+      "start": {
+        "line": 133,
+        "col": 26,
+        "offset": 4400
+      },
+      "end": {
+        "line": 134,
+        "col": 32,
+        "offset": 4450
+      },
+      "extra": {
+        "message": "MD5 is used for password hashing in the hash_password method. MD5 is cryptographically broken and unsuitable for password storage. It is vulnerable to collision attacks and can be brute-forced efficiently.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret",
+      "path": "pygoat/settings.py",
+      "start": {
+        "line": 22,
+        "col": 1,
+        "offset": 750
+      },
+      "end": {
+        "line": 22,
+        "col": 64,
+        "offset": 814
+      },
+      "extra": {
+        "message": "Django SECRET_KEY is hardcoded in the source code. The secret key is used for cryptographic signing and must be kept confidential. Hardcoding it in source code exposes it to anyone with access to the repository, enabling session forgery and other attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret",
+      "path": "pygoat/settings.py",
+      "start": {
+        "line": 125,
+        "col": 1,
+        "offset": 4200
+      },
+      "end": {
+        "line": 125,
+        "col": 48,
+        "offset": 4248
+      },
+      "extra": {
+        "message": "Encryption key (KEY) is hardcoded in the source code. This key is used for AES encryption of sensitive data like bank account numbers. Hardcoding encryption keys in source code exposes them to anyone with repository access.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-enabled",
+      "path": "pygoat/settings.py",
+      "start": {
+        "line": 25,
+        "col": 1,
+        "offset": 820
+      },
+      "end": {
+        "line": 25,
+        "col": 14,
+        "offset": 833
+      },
+      "extra": {
+        "message": "DEBUG mode is enabled (DEBUG = True). In production, debug mode should never be enabled as it exposes detailed error pages with stack traces, environment variables, and sensitive configuration data to users.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure.password-in-response",
+      "path": "app/views/api/users/views.py",
+      "start": {
+        "line": 19,
+        "col": 13,
+        "offset": 600
+      },
+      "end": {
+        "line": 19,
+        "col": 64,
+        "offset": 651
+      },
+      "extra": {
+        "message": "API endpoint serializes and returns User objects including the password field. Django serializers include all model fields by default, exposing hashed passwords in API responses. This allows attackers to potentially crack passwords offline or identify reused passwords.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure.sensitive-data",
+      "path": "app/views/users/work_info/views.py",
+      "start": {
+        "line": 13,
+        "col": 5,
+        "offset": 400
+      },
+      "end": {
+        "line": 15,
+        "col": 45,
+        "offset": 520
+      },
+      "extra": {
+        "message": "Sensitive data (SSN, DoB) is retrieved and passed to template without encryption. The work_info.SSN field contains unencrypted Social Security Numbers that are displayed to users. While JavaScript masks some digits client-side, the full SSN is in the HTML source.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

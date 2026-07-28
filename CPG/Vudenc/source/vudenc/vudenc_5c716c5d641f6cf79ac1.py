@@ -1,0 +1,3 @@
+def tearDown(self):...
+settings.SCHEDULER_MODULE = 'mock'
+settings.SSH_PRIVATE_KEY = ''

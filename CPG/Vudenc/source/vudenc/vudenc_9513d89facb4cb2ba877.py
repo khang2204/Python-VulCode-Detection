@@ -1,0 +1,3 @@
+@defer.inlineCallbacks...
+mail = yield self.mail_store.add_mail('INBOX', input_mail.raw)
+defer.returnValue(mail)

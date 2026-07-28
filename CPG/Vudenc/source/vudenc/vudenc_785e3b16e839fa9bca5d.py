@@ -1,0 +1,3 @@
+def deletePlayers():...
+"""docstring"""
+_commit('DELETE FROM players')

@@ -1,0 +1,3 @@
+@memoized_method...
+return _parse_java_version('java.version', self._get_system_properties(java
+    )['java.version'])

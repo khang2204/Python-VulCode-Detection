@@ -1,0 +1,81 @@
+{
+  "model": "qdenn",
+  "dataset": "realvuln_human",
+  "training_seed": 202,
+  "split_seed": 101,
+  "epochs": 10,
+  "batch_size": 32,
+  "train_samples": 303,
+  "validation_samples": 64,
+  "test_samples": 64,
+  "split_manifest_sha256": "4ca4484834b2a0a45b26f67e0795158b246c98c2f6a973e7259f6e3c87eac14f",
+  "vocab_size": 128,
+  "max_len": 100,
+  "optimizer": "SGD",
+  "learning_rate": 0.01,
+  "fidelity_note": "QDENN learning rate is not reported by the source paper; 0.01 is a declared reproduction choice.",
+  "test_loss": 0.496589398483977,
+  "vulnerable_recall": 0.9074074029922485,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.585691039376718,
+      "validation_loss": 0.5398728595738377,
+      "validation_vulnerable_recall": 0.9444444179534912
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.4775044067050066,
+      "validation_loss": 0.531155611518075,
+      "validation_vulnerable_recall": 0.9444444179534912
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.43103536962495714,
+      "validation_loss": 0.5262299979637594,
+      "validation_vulnerable_recall": 0.9444444179534912
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.41243537532652064,
+      "validation_loss": 0.5274281330609185,
+      "validation_vulnerable_recall": 0.9259259104728699
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.4007566058326009,
+      "validation_loss": 0.5282979592960277,
+      "validation_vulnerable_recall": 0.9259259104728699
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.3886103278920331,
+      "validation_loss": 0.5307391174886962,
+      "validation_vulnerable_recall": 0.9444444179534912
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.3843967174785707,
+      "validation_loss": 0.533235918308599,
+      "validation_vulnerable_recall": 0.9444444179534912
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.37435037822938794,
+      "validation_loss": 0.5335007408900388,
+      "validation_vulnerable_recall": 0.9259259104728699
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.36697107185383165,
+      "validation_loss": 0.5400831259940385,
+      "validation_vulnerable_recall": 0.9074074029922485
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.3606870737067224,
+      "validation_loss": 0.5488514042540343,
+      "validation_vulnerable_recall": 0.9074074029922485
+    }
+  ]
+}

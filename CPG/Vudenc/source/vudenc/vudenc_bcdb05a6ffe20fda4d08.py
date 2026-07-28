@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self.get_options().incremental_caching

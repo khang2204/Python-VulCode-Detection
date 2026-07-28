@@ -1,0 +1,3 @@
+def __init__(self, cache_prefix, param, *a, **kw):...
+self.cache_prefix = cache_prefix
+Validator.__init__(self, param, *a, **kw)

@@ -1,0 +1,306 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/app.py",
+      "start": {
+        "line": 261,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 265,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from content['search'] is concatenated directly into SQL query using Python string formatting (%). The query is then executed with db.engine.execute(). This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection-error",
+      "path": "app/app.py",
+      "start": {
+        "line": 271,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 281,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Error message from SQL exception is formatted directly into HTML template without sanitization and rendered with render_template_string. This exposes SQL error details and could lead to XSS.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection",
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "app/app.py",
+      "start": {
+        "line": 103,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 114,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The 404 error handler uses render_template_string with request.url directly embedded in the template via string formatting (%s). This is a Server-Side Template Injection (SSTI) vulnerability that allows execution of arbitrary Python code.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml-insecure-load",
+      "path": "app/app.py",
+      "start": {
+        "line": 329,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 329,
+        "col": 30,
+        "offset": 0
+      },
+      "extra": {
+        "message": "yaml.load() is called without specifying a safe Loader (like yaml.SafeLoader). This allows deserialization of arbitrary Python objects leading to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.jwt-verify-disabled",
+      "path": "app/app.py",
+      "start": {
+        "line": 97,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 99,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The insecure_verify() function calls jwt.decode() with verify=False, completely disabling JWT signature verification. This allows attackers to forge tokens and bypass authentication.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash-md5",
+      "path": "app/app.py",
+      "start": {
+        "line": 141,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 141,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "MD5 is used for password hashing. MD5 is cryptographically broken, vulnerable to collision attacks, and too fast for password hashing. Use bcrypt, scrypt, or Argon2 instead.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Broken or Risky Cryptographic Algorithm"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret",
+      "path": "app/app.py",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 28,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded secret keys found in application configuration (SECRET_KEY_HMAC, SECRET_KEY_HMAC_2, secret_key). These secrets are committed to source code and pose a security risk if the code is exposed.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.render-template-unescaped",
+      "path": "app/app.py",
+      "start": {
+        "line": 308,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 308,
+        "col": 55,
+        "offset": 0
+      },
+      "extra": {
+        "message": "para.text from user-uploaded document is passed to render_template. If the template uses {{ name | safe }} or autoescape is disabled, this could lead to XSS. The para.text content comes from an uploaded file and is not sanitized.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.infoleak.error-message",
+      "path": "app/app.py",
+      "start": {
+        "line": 148,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 148,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Exception error message (e.message) is returned directly to the user in JSON response. This can leak sensitive information about the application's internal state or structure.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Information Exposure Through an Error Message"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.infoleak.error-message",
+      "path": "app/app.py",
+      "start": {
+        "line": 167,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 167,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Exception error message (e.message) is returned directly to the user in JSON response. This can leak sensitive information about the application's internal state.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Information Exposure Through an Error Message"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.infoleak.sensitive-data-exposure",
+      "path": "app/app.py",
+      "start": {
+        "line": 209,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 212,
+        "col": 33,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Credit card number (ccn) is returned in API response along with other sensitive customer data without any access control checks. This exposes sensitive financial data.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.infoleak.sensitive-data-exposure",
+      "path": "app/app.py",
+      "start": {
+        "line": 233,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 236,
+        "col": 33,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Credit card number (ccn) is returned in API response along with other sensitive customer data. This exposes sensitive financial data.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

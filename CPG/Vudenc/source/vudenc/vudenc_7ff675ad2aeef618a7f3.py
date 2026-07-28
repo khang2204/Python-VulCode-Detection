@@ -1,0 +1,15 @@
+def __init__(self, func):...
+self.func = func
+self.shellcmd = None
+self.norun = False
+self.input = None
+self.output = None
+self.params = None
+self.message = None
+self.benchmark = None
+self.threads = None
+self.resources = None
+self.priority = None
+self.version = None
+self.log = None
+self.docstring = None

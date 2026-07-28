@@ -1,0 +1,3 @@
+def find_brand_by_id(self, brand_id):...
+self.cursor.execute('SELECT * FROM brand WHERE id = %s;', (brand_id,))
+return self.cursor.fetchall()

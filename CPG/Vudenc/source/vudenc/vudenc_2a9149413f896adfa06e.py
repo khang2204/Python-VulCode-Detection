@@ -1,0 +1,3 @@
+def __init__(self, **kwargs):...
+TriblerContentModel.__init__(self, **kwargs)
+self.type_filter = None

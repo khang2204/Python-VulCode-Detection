@@ -1,0 +1,3 @@
+def p_elem(t):...
+"""docstring"""
+t[0] = t[1]

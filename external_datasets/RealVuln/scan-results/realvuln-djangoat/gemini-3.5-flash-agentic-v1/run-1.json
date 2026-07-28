@@ -1,0 +1,255 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection-views",
+      "path": "app/views/users/views.py",
+      "start": {
+        "line": 74,
+        "col": 9,
+        "offset": 2100
+      },
+      "end": {
+        "line": 76,
+        "col": 57,
+        "offset": 2220
+      },
+      "extra": {
+        "message": "Raw SQL query is constructed using string formatting with user-supplied input form['user_id']. This leads to SQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection-analytics",
+      "path": "app/models/Analytics/analytics.py",
+      "start": {
+        "line": 57,
+        "col": 9,
+        "offset": 1600
+      },
+      "end": {
+        "line": 61,
+        "col": 31,
+        "offset": 1780
+      },
+      "extra": {
+        "message": "Raw SQL query in hits_by_ip is constructed using string formatting with user-supplied ip and col inputs, leading to SQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "app/models/Benefits/benefits.py",
+      "start": {
+        "line": 73,
+        "col": 13,
+        "offset": 2300
+      },
+      "end": {
+        "line": 73,
+        "col": 67,
+        "offset": 2354
+      },
+      "extra": {
+        "message": "User-controlled file name is passed to os.system() during backup generation, allowing arbitrary command execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure-deserialization",
+      "path": "app/views/password_resets/views.py",
+      "start": {
+        "line": 84,
+        "col": 16,
+        "offset": 2100
+      },
+      "end": {
+        "line": 84,
+        "col": 60,
+        "offset": 2144
+      },
+      "extra": {
+        "message": "User-controlled base64-encoded cookie or POST parameter is passed directly to pickle.loads(), leading to Remote Code Execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Insecure Deserialization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-injection",
+      "path": "app/views/api/mobile/views.py",
+      "start": {
+        "line": 16,
+        "col": 17,
+        "offset": 400
+      },
+      "end": {
+        "line": 16,
+        "col": 32,
+        "offset": 415
+      },
+      "extra": {
+        "message": "Class name passed from query parameter is directly executed in eval(), leading to arbitrary Python code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-95: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.traversal.path-traversal",
+      "path": "app/views/users/benefit_forms/views.py",
+      "start": {
+        "line": 25,
+        "col": 12,
+        "offset": 700
+      },
+      "end": {
+        "line": 27,
+        "col": 37,
+        "offset": 780
+      },
+      "extra": {
+        "message": "The filename parameter from GET request is directly concatenated to the directory path and opened, leading to path traversal and arbitrary file read.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "app/models/User/user.py",
+      "start": {
+        "line": 156,
+        "col": 16,
+        "offset": 4300
+      },
+      "end": {
+        "line": 156,
+        "col": 41,
+        "offset": 4325
+      },
+      "extra": {
+        "message": "The first_name field of the user is wrapped in mark_safe(), bypassing Django's built-in XSS protection and rendering unescaped HTML/JavaScript in templates.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor-work-info",
+      "path": "app/views/users/work_info/views.py",
+      "start": {
+        "line": 12,
+        "col": 12,
+        "offset": 300
+      },
+      "end": {
+        "line": 13,
+        "col": 38,
+        "offset": 360
+      },
+      "extra": {
+        "message": "User work info is retrieved using the user_id path parameter without checking if the authenticated user owns this resource or has authorization.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: IDOR"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-auth-admin",
+      "path": "app/views/admin/views.py",
+      "start": {
+        "line": 14,
+        "col": 1,
+        "offset": 400
+      },
+      "end": {
+        "line": 16,
+        "col": 82,
+        "offset": 520
+      },
+      "extra": {
+        "message": "The admin views are only protected by user_is_authenticated but do not verify that the logged-in user has admin privileges (is_admin), allowing any user to access admin functionalities.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.broken-regex-auth",
+      "path": "app/views/api/users/views.py",
+      "start": {
+        "line": 47,
+        "col": 9,
+        "offset": 1300
+      },
+      "end": {
+        "line": 57,
+        "col": 24,
+        "offset": 1600
+      },
+      "extra": {
+        "message": "The token validation regex pattern does not account for newline characters (re.DOTALL is not specified), allowing token format manipulation to authenticate as arbitrary users.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Broken Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

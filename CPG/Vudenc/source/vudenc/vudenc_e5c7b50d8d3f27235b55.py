@@ -1,0 +1,3 @@
+@commands.command()...
+"""docstring"""
+await self.bot.say('https://www.youtube.com/watch?v=miVDKgInzyg')

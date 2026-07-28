@@ -1,0 +1,3 @@
+def add_menu(name, href):...
+"""docstring"""
+_MENU_ITEMS.append(_MenuItem(name, href))

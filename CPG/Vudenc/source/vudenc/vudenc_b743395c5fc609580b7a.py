@@ -1,0 +1,3 @@
+@classmethod...
+non_applicable = lambda _request: None
+return [non_applicable, non_applicable]

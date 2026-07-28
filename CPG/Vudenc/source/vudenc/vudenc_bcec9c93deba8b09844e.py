@@ -1,0 +1,3 @@
+def delete_mail(self, mail_ident):...
+res, req = self.delete('/mail/%s' % mail_ident)
+return res

@@ -1,0 +1,75 @@
+{
+  "summary": {
+    "Benign": {
+      "samples": 13036,
+      "parse_ok": 6322,
+      "loc": {
+        "mean": 8.6,
+        "median": 5.0
+      },
+      "depth": {
+        "mean": 0.48,
+        "median": 0.0
+      },
+      "branches": {
+        "mean": 0.01,
+        "median": 0.0
+      },
+      "loops": {
+        "mean": 0.0,
+        "median": 0.0
+      },
+      "tries": {
+        "mean": 0.0,
+        "median": 0.0
+      },
+      "functions": {
+        "mean": 0.51,
+        "median": 0.0
+      }
+    },
+    "Vulnerable": {
+      "samples": 2805,
+      "parse_ok": 1041,
+      "loc": {
+        "mean": 25.63,
+        "median": 14
+      },
+      "depth": {
+        "mean": 0.35,
+        "median": 0
+      },
+      "branches": {
+        "mean": 0.01,
+        "median": 0
+      },
+      "loops": {
+        "mean": 0.0,
+        "median": 0
+      },
+      "tries": {
+        "mean": 0.0,
+        "median": 0
+      },
+      "functions": {
+        "mean": 0.41,
+        "median": 0
+      }
+    }
+  },
+  "raw_labelled_samples": 15841,
+  "exported_graphs": 15840,
+  "binary_counts": {
+    "benign": 13035,
+    "vulnerable": 2805
+  },
+  "vulnerable_cwe_counts": {
+    "VUDENC-TYPE-1": 314,
+    "VUDENC-TYPE-2": 315,
+    "VUDENC-TYPE-3": 56,
+    "VUDENC-TYPE-4": 1128,
+    "VUDENC-TYPE-5": 531,
+    "VUDENC-TYPE-6": 248,
+    "VUDENC-TYPE-7": 213
+  }
+}

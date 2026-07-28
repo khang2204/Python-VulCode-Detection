@@ -1,0 +1,3 @@
+def __init__(self, bot: neko.NekoBot):...
+self.bot = bot
+self.running_lock = asyncio.Lock()

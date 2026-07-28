@@ -1,0 +1,3 @@
+@authn_views.route('/terminate')...
+"""docstring"""
+return _authn('terminate-account-action', force_authn=True)

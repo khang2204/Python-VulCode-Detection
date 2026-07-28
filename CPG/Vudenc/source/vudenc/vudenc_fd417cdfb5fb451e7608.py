@@ -1,0 +1,3 @@
+def __init__(self, body=None, *args, **kwargs):...
+super(HttpStatus, self).__init__(*args, **kwargs)
+self.body = body

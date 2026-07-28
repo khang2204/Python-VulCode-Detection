@@ -1,0 +1,3 @@
+def test_getinfo_smallint(self):...
+value = self.cnxn.getinfo(pyodbc.SQL_CONCAT_NULL_BEHAVIOR)
+self.assertTrue(isinstance(value, int))

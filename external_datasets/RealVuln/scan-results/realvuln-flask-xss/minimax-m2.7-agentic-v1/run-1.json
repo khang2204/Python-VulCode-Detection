@@ -1,0 +1,281 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "app/blueprints/sandboxes/views.py",
+      "start": {
+        "line": 13,
+        "col": 16,
+        "offset": 320
+      },
+      "end": {
+        "line": 13,
+        "col": 46,
+        "offset": 350
+      },
+      "extra": {
+        "message": "User input from request.args.get('name') is passed to template and rendered with | safe filter in unsafe_params.html line 6, disabling HTML escaping and allowing XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored",
+      "path": "app/templates/admin/message.html",
+      "start": {
+        "line": 29,
+        "col": 24,
+        "offset": 680
+      },
+      "end": {
+        "line": 31,
+        "col": 40,
+        "offset": 780
+      },
+      "extra": {
+        "message": "User-supplied message content (from_user, message, date) is rendered with | safe filter, allowing stored XSS. Messages are submitted via /account_area/send_feedback and displayed without sanitization in the admin panel.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.cookie",
+      "path": "app/blueprints/sandboxes/views.py",
+      "start": {
+        "line": 27,
+        "col": 27,
+        "offset": 630
+      },
+      "end": {
+        "line": 27,
+        "col": 54,
+        "offset": 657
+      },
+      "extra": {
+        "message": "Cookie value 'name' is retrieved and rendered with | safe filter in unsafe_cookies.html line 6, allowing XSS via malicious cookie values.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.plaintext-password",
+      "path": "app/blueprints/login/views.py",
+      "start": {
+        "line": 17,
+        "col": 13,
+        "offset": 420
+      },
+      "end": {
+        "line": 17,
+        "col": 40,
+        "offset": 447
+      },
+      "extra": {
+        "message": "Password comparison uses plain text comparison (user.password == password). Passwords are stored in plain text in the database (models.py line 11) with no hashing.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-259: Hard-coded Password",
+            "CWE-312: Cleartext Storage of Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.sensitive-data-exposure",
+      "path": "app/models/models.py",
+      "start": {
+        "line": 24,
+        "col": 5,
+        "offset": 560
+      },
+      "end": {
+        "line": 29,
+        "col": 10,
+        "offset": 680
+      },
+      "extra": {
+        "message": "The serialize property exposes the user password in API responses. Password is included in the serialized output at line 27, allowing sensitive data exposure.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.open-redirect",
+      "path": "app/blueprints/xss_protection/views.py",
+      "start": {
+        "line": 11,
+        "col": 10,
+        "offset": 250
+      },
+      "end": {
+        "line": 11,
+        "col": 47,
+        "offset": 287
+      },
+      "extra": {
+        "message": "Open redirect vulnerability. The 'next' parameter from request args is used directly in redirect() without validation against a whitelist, allowing attackers to redirect users to malicious sites.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: Open Redirect"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.broken-access-control",
+      "path": "app/blueprints/api/views.py",
+      "start": {
+        "line": 77,
+        "col": 9,
+        "offset": 1700
+      },
+      "end": {
+        "line": 86,
+        "col": 24,
+        "offset": 1900
+      },
+      "extra": {
+        "message": "Insecure Direct Object Reference (IDOR). The UsersView.get() method only checks if the user is admin or the owner of the requested resource, but does not properly enforce this authorization. Any authenticated user can access any other user's data by changing the ID parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded",
+      "path": "app/models/models.py",
+      "start": {
+        "line": 20,
+        "col": 5,
+        "offset": 500
+      },
+      "end": {
+        "line": 21,
+        "col": 30,
+        "offset": 540
+      },
+      "extra": {
+        "message": "Hardcoded admin check: is_admin property returns True if username equals 'admin'. This is a hardcoded credential check that can be bypassed by registering a user with username 'admin'.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug",
+      "path": "app/flask_xss.py",
+      "start": {
+        "line": 26,
+        "col": 5,
+        "offset": 680
+      },
+      "end": {
+        "line": 26,
+        "col": 18,
+        "offset": 693
+      },
+      "extra": {
+        "message": "DEBUG mode is set to True. Running Flask with debug mode enabled exposes sensitive information and allows code execution through the debugger.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Debug Build"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.secret-key",
+      "path": "app/flask_xss.py",
+      "start": {
+        "line": 23,
+        "col": 5,
+        "offset": 590
+      },
+      "end": {
+        "line": 23,
+        "col": 45,
+        "offset": 630
+      },
+      "extra": {
+        "message": "SECRET_KEY is hardcoded to 'Keep it secret, keep it safe'. This value is checked into source control and is not suitable for production use as it allows session hijacking.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.header.xss-protection-disabled",
+      "path": "app/flask_xss.py",
+      "start": {
+        "line": 74,
+        "col": 5,
+        "offset": 1850
+      },
+      "end": {
+        "line": 75,
+        "col": 35,
+        "offset": 1895
+      },
+      "extra": {
+        "message": "When xss_protection_enabled is False, the application sets X-XSS-Protection: 0 header, which disables browser XSS filters and makes users more vulnerable to XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

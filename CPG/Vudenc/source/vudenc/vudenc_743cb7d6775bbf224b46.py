@@ -1,0 +1,3 @@
+def get_redirect_path(self, path, language=None, version_slug=None):...
+method = getattr(self, 'redirect_{type}'.format(type=self.redirect_type))
+return method(path, language=language, version_slug=version_slug)

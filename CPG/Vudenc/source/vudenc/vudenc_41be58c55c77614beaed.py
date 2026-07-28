@@ -1,0 +1,3 @@
+def test_rsa_key_fingerprint(self):...
+fp = fingerprint(RSA_PUBKEY)
+self.assertEquals(fp, '54:6d:da:1f:91:b5:2b:6f:a2:83:90:c4:f9:73:76:f5')

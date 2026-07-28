@@ -1,0 +1,3 @@
+def _load_rsa_for_saml(self, path, password=None):...
+"""docstring"""
+return cryptolib.load_private_key_pem_as_bare_base64(path, password=password)

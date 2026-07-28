@@ -1,0 +1,565 @@
+{
+  "protocol": {
+    "scenario": "long_tail_cwe_recall",
+    "split_seed": 101,
+    "model_source": "fixed-split In-domain checkpoints/predictions",
+    "retraining": false,
+    "decision_threshold": 0.5,
+    "rare_definition": "training CWE frequency <= lower median training CWE frequency",
+    "manifest_sha256": {
+      "benchmarkpython": "2575e05c194b3f10addea9b16f7274a3e2caa58db9c6b61f40de29ed4fc478c0",
+      "vudenc": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+      "realvuln_human": "4ca4484834b2a0a45b26f67e0795158b246c98c2f6a973e7259f6e3c87eac14f"
+    }
+  },
+  "runs": [
+    {
+      "dataset": "benchmarkpython",
+      "method": "classical",
+      "training_seed": 101,
+      "split_seed": 101,
+      "manifest_sha256": "2575e05c194b3f10addea9b16f7274a3e2caa58db9c6b61f40de29ed4fc478c0",
+      "rare_cwes": [
+        "501",
+        "502",
+        "601",
+        "611",
+        "78",
+        "89",
+        "90"
+      ],
+      "rare_test_samples": 20,
+      "common_test_samples": 48,
+      "rare_cwe_vulnerable_recall": 0.85,
+      "common_cwe_vulnerable_recall": 0.875,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/benchmarkpython/classical/seed_101/test_predictions.json"
+    },
+    {
+      "dataset": "benchmarkpython",
+      "method": "classical",
+      "training_seed": 202,
+      "split_seed": 101,
+      "manifest_sha256": "2575e05c194b3f10addea9b16f7274a3e2caa58db9c6b61f40de29ed4fc478c0",
+      "rare_cwes": [
+        "501",
+        "502",
+        "601",
+        "611",
+        "78",
+        "89",
+        "90"
+      ],
+      "rare_test_samples": 20,
+      "common_test_samples": 48,
+      "rare_cwe_vulnerable_recall": 0.8,
+      "common_cwe_vulnerable_recall": 0.9375,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/benchmarkpython/classical/seed_202/test_predictions.json"
+    },
+    {
+      "dataset": "benchmarkpython",
+      "method": "classical",
+      "training_seed": 303,
+      "split_seed": 101,
+      "manifest_sha256": "2575e05c194b3f10addea9b16f7274a3e2caa58db9c6b61f40de29ed4fc478c0",
+      "rare_cwes": [
+        "501",
+        "502",
+        "601",
+        "611",
+        "78",
+        "89",
+        "90"
+      ],
+      "rare_test_samples": 20,
+      "common_test_samples": 48,
+      "rare_cwe_vulnerable_recall": 0.75,
+      "common_cwe_vulnerable_recall": 0.9166666666666666,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/benchmarkpython/classical/seed_303/test_predictions.json"
+    },
+    {
+      "dataset": "benchmarkpython",
+      "method": "quantum",
+      "training_seed": 101,
+      "split_seed": 101,
+      "manifest_sha256": "2575e05c194b3f10addea9b16f7274a3e2caa58db9c6b61f40de29ed4fc478c0",
+      "rare_cwes": [
+        "501",
+        "502",
+        "601",
+        "611",
+        "78",
+        "89",
+        "90"
+      ],
+      "rare_test_samples": 20,
+      "common_test_samples": 48,
+      "rare_cwe_vulnerable_recall": 0.9,
+      "common_cwe_vulnerable_recall": 0.9791666666666666,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/benchmarkpython/quantum/seed_101/test_predictions.json"
+    },
+    {
+      "dataset": "benchmarkpython",
+      "method": "quantum",
+      "training_seed": 202,
+      "split_seed": 101,
+      "manifest_sha256": "2575e05c194b3f10addea9b16f7274a3e2caa58db9c6b61f40de29ed4fc478c0",
+      "rare_cwes": [
+        "501",
+        "502",
+        "601",
+        "611",
+        "78",
+        "89",
+        "90"
+      ],
+      "rare_test_samples": 20,
+      "common_test_samples": 48,
+      "rare_cwe_vulnerable_recall": 0.9,
+      "common_cwe_vulnerable_recall": 1,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/benchmarkpython/quantum/seed_202/test_predictions.json"
+    },
+    {
+      "dataset": "benchmarkpython",
+      "method": "quantum",
+      "training_seed": 303,
+      "split_seed": 101,
+      "manifest_sha256": "2575e05c194b3f10addea9b16f7274a3e2caa58db9c6b61f40de29ed4fc478c0",
+      "rare_cwes": [
+        "501",
+        "502",
+        "601",
+        "611",
+        "78",
+        "89",
+        "90"
+      ],
+      "rare_test_samples": 20,
+      "common_test_samples": 48,
+      "rare_cwe_vulnerable_recall": 1,
+      "common_cwe_vulnerable_recall": 0.9583333333333334,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/benchmarkpython/quantum/seed_303/test_predictions.json"
+    },
+    {
+      "dataset": "vudenc",
+      "method": "classical",
+      "training_seed": 101,
+      "split_seed": 101,
+      "manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+      "rare_cwes": [
+        "VUDENC-TYPE-2",
+        "VUDENC-TYPE-3",
+        "VUDENC-TYPE-6",
+        "VUDENC-TYPE-7"
+      ],
+      "rare_test_samples": 131,
+      "common_test_samples": 290,
+      "rare_cwe_vulnerable_recall": 0.6793893129770993,
+      "common_cwe_vulnerable_recall": 0.696551724137931,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/vudenc/classical/seed_101/test_predictions.json"
+    },
+    {
+      "dataset": "vudenc",
+      "method": "classical",
+      "training_seed": 202,
+      "split_seed": 101,
+      "manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+      "rare_cwes": [
+        "VUDENC-TYPE-2",
+        "VUDENC-TYPE-3",
+        "VUDENC-TYPE-6",
+        "VUDENC-TYPE-7"
+      ],
+      "rare_test_samples": 131,
+      "common_test_samples": 290,
+      "rare_cwe_vulnerable_recall": 0.6946564885496184,
+      "common_cwe_vulnerable_recall": 0.6758620689655173,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/vudenc/classical/seed_202/test_predictions.json"
+    },
+    {
+      "dataset": "vudenc",
+      "method": "classical",
+      "training_seed": 303,
+      "split_seed": 101,
+      "manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+      "rare_cwes": [
+        "VUDENC-TYPE-2",
+        "VUDENC-TYPE-3",
+        "VUDENC-TYPE-6",
+        "VUDENC-TYPE-7"
+      ],
+      "rare_test_samples": 131,
+      "common_test_samples": 290,
+      "rare_cwe_vulnerable_recall": 0.6259541984732825,
+      "common_cwe_vulnerable_recall": 0.7137931034482758,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/vudenc/classical/seed_303/test_predictions.json"
+    },
+    {
+      "dataset": "vudenc",
+      "method": "quantum",
+      "training_seed": 101,
+      "split_seed": 101,
+      "manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+      "rare_cwes": [
+        "VUDENC-TYPE-2",
+        "VUDENC-TYPE-3",
+        "VUDENC-TYPE-6",
+        "VUDENC-TYPE-7"
+      ],
+      "rare_test_samples": 131,
+      "common_test_samples": 290,
+      "rare_cwe_vulnerable_recall": 0.6412213740458015,
+      "common_cwe_vulnerable_recall": 0.7068965517241379,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/vudenc/quantum/seed_101/test_predictions.json"
+    },
+    {
+      "dataset": "vudenc",
+      "method": "quantum",
+      "training_seed": 202,
+      "split_seed": 101,
+      "manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+      "rare_cwes": [
+        "VUDENC-TYPE-2",
+        "VUDENC-TYPE-3",
+        "VUDENC-TYPE-6",
+        "VUDENC-TYPE-7"
+      ],
+      "rare_test_samples": 131,
+      "common_test_samples": 290,
+      "rare_cwe_vulnerable_recall": 0.7175572519083969,
+      "common_cwe_vulnerable_recall": 0.7241379310344828,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/vudenc/quantum/seed_202/test_predictions.json"
+    },
+    {
+      "dataset": "vudenc",
+      "method": "quantum",
+      "training_seed": 303,
+      "split_seed": 101,
+      "manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+      "rare_cwes": [
+        "VUDENC-TYPE-2",
+        "VUDENC-TYPE-3",
+        "VUDENC-TYPE-6",
+        "VUDENC-TYPE-7"
+      ],
+      "rare_test_samples": 131,
+      "common_test_samples": 290,
+      "rare_cwe_vulnerable_recall": 0.7099236641221374,
+      "common_cwe_vulnerable_recall": 0.7241379310344828,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/vudenc/quantum/seed_303/test_predictions.json"
+    },
+    {
+      "dataset": "realvuln_human",
+      "method": "classical",
+      "training_seed": 101,
+      "split_seed": 101,
+      "manifest_sha256": "4ca4484834b2a0a45b26f67e0795158b246c98c2f6a973e7259f6e3c87eac14f",
+      "rare_cwes": [
+        "CWE-1004",
+        "CWE-1021",
+        "CWE-113",
+        "CWE-1333",
+        "CWE-204",
+        "CWE-209",
+        "CWE-215",
+        "CWE-287",
+        "CWE-307",
+        "CWE-321",
+        "CWE-326",
+        "CWE-345",
+        "CWE-384",
+        "CWE-521",
+        "CWE-522",
+        "CWE-525",
+        "CWE-532",
+        "CWE-565",
+        "CWE-601",
+        "CWE-611",
+        "CWE-614",
+        "CWE-643",
+        "CWE-693",
+        "CWE-916",
+        "CWE-943"
+      ],
+      "rare_test_samples": 9,
+      "common_test_samples": 45,
+      "rare_cwe_vulnerable_recall": 0.8888888888888888,
+      "common_cwe_vulnerable_recall": 0.9111111111111111,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/realvuln_human/classical/seed_101/test_predictions.json"
+    },
+    {
+      "dataset": "realvuln_human",
+      "method": "classical",
+      "training_seed": 202,
+      "split_seed": 101,
+      "manifest_sha256": "4ca4484834b2a0a45b26f67e0795158b246c98c2f6a973e7259f6e3c87eac14f",
+      "rare_cwes": [
+        "CWE-1004",
+        "CWE-1021",
+        "CWE-113",
+        "CWE-1333",
+        "CWE-204",
+        "CWE-209",
+        "CWE-215",
+        "CWE-287",
+        "CWE-307",
+        "CWE-321",
+        "CWE-326",
+        "CWE-345",
+        "CWE-384",
+        "CWE-521",
+        "CWE-522",
+        "CWE-525",
+        "CWE-532",
+        "CWE-565",
+        "CWE-601",
+        "CWE-611",
+        "CWE-614",
+        "CWE-643",
+        "CWE-693",
+        "CWE-916",
+        "CWE-943"
+      ],
+      "rare_test_samples": 9,
+      "common_test_samples": 45,
+      "rare_cwe_vulnerable_recall": 1,
+      "common_cwe_vulnerable_recall": 0.8888888888888888,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/realvuln_human/classical/seed_202/test_predictions.json"
+    },
+    {
+      "dataset": "realvuln_human",
+      "method": "classical",
+      "training_seed": 303,
+      "split_seed": 101,
+      "manifest_sha256": "4ca4484834b2a0a45b26f67e0795158b246c98c2f6a973e7259f6e3c87eac14f",
+      "rare_cwes": [
+        "CWE-1004",
+        "CWE-1021",
+        "CWE-113",
+        "CWE-1333",
+        "CWE-204",
+        "CWE-209",
+        "CWE-215",
+        "CWE-287",
+        "CWE-307",
+        "CWE-321",
+        "CWE-326",
+        "CWE-345",
+        "CWE-384",
+        "CWE-521",
+        "CWE-522",
+        "CWE-525",
+        "CWE-532",
+        "CWE-565",
+        "CWE-601",
+        "CWE-611",
+        "CWE-614",
+        "CWE-643",
+        "CWE-693",
+        "CWE-916",
+        "CWE-943"
+      ],
+      "rare_test_samples": 9,
+      "common_test_samples": 45,
+      "rare_cwe_vulnerable_recall": 0.8888888888888888,
+      "common_cwe_vulnerable_recall": 0.8222222222222222,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/realvuln_human/classical/seed_303/test_predictions.json"
+    },
+    {
+      "dataset": "realvuln_human",
+      "method": "quantum",
+      "training_seed": 101,
+      "split_seed": 101,
+      "manifest_sha256": "4ca4484834b2a0a45b26f67e0795158b246c98c2f6a973e7259f6e3c87eac14f",
+      "rare_cwes": [
+        "CWE-1004",
+        "CWE-1021",
+        "CWE-113",
+        "CWE-1333",
+        "CWE-204",
+        "CWE-209",
+        "CWE-215",
+        "CWE-287",
+        "CWE-307",
+        "CWE-321",
+        "CWE-326",
+        "CWE-345",
+        "CWE-384",
+        "CWE-521",
+        "CWE-522",
+        "CWE-525",
+        "CWE-532",
+        "CWE-565",
+        "CWE-601",
+        "CWE-611",
+        "CWE-614",
+        "CWE-643",
+        "CWE-693",
+        "CWE-916",
+        "CWE-943"
+      ],
+      "rare_test_samples": 9,
+      "common_test_samples": 45,
+      "rare_cwe_vulnerable_recall": 1,
+      "common_cwe_vulnerable_recall": 0.9333333333333333,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/realvuln_human/quantum/seed_101/test_predictions.json"
+    },
+    {
+      "dataset": "realvuln_human",
+      "method": "quantum",
+      "training_seed": 202,
+      "split_seed": 101,
+      "manifest_sha256": "4ca4484834b2a0a45b26f67e0795158b246c98c2f6a973e7259f6e3c87eac14f",
+      "rare_cwes": [
+        "CWE-1004",
+        "CWE-1021",
+        "CWE-113",
+        "CWE-1333",
+        "CWE-204",
+        "CWE-209",
+        "CWE-215",
+        "CWE-287",
+        "CWE-307",
+        "CWE-321",
+        "CWE-326",
+        "CWE-345",
+        "CWE-384",
+        "CWE-521",
+        "CWE-522",
+        "CWE-525",
+        "CWE-532",
+        "CWE-565",
+        "CWE-601",
+        "CWE-611",
+        "CWE-614",
+        "CWE-643",
+        "CWE-693",
+        "CWE-916",
+        "CWE-943"
+      ],
+      "rare_test_samples": 9,
+      "common_test_samples": 45,
+      "rare_cwe_vulnerable_recall": 1,
+      "common_cwe_vulnerable_recall": 0.8666666666666667,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/realvuln_human/quantum/seed_202/test_predictions.json"
+    },
+    {
+      "dataset": "realvuln_human",
+      "method": "quantum",
+      "training_seed": 303,
+      "split_seed": 101,
+      "manifest_sha256": "4ca4484834b2a0a45b26f67e0795158b246c98c2f6a973e7259f6e3c87eac14f",
+      "rare_cwes": [
+        "CWE-1004",
+        "CWE-1021",
+        "CWE-113",
+        "CWE-1333",
+        "CWE-204",
+        "CWE-209",
+        "CWE-215",
+        "CWE-287",
+        "CWE-307",
+        "CWE-321",
+        "CWE-326",
+        "CWE-345",
+        "CWE-384",
+        "CWE-521",
+        "CWE-522",
+        "CWE-525",
+        "CWE-532",
+        "CWE-565",
+        "CWE-601",
+        "CWE-611",
+        "CWE-614",
+        "CWE-643",
+        "CWE-693",
+        "CWE-916",
+        "CWE-943"
+      ],
+      "rare_test_samples": 9,
+      "common_test_samples": 45,
+      "rare_cwe_vulnerable_recall": 1,
+      "common_cwe_vulnerable_recall": 0.9333333333333333,
+      "source_predictions": "experiments/full_experiment_fixedsplit101_q10d5_lr002_20260727-005616/in_domain/runs/realvuln_human/quantum/seed_303/test_predictions.json"
+    }
+  ],
+  "summary": {
+    "benchmarkpython": {
+      "classical": {
+        "rare_cwe_vulnerable_recall": {
+          "mean": 0.8,
+          "sample_std": 0.04999999999999999
+        },
+        "common_cwe_vulnerable_recall": {
+          "mean": 0.9097222222222222,
+          "sample_std": 0.03182344232608222
+        },
+        "rare_test_samples": 20,
+        "common_test_samples": 48
+      },
+      "quantum": {
+        "rare_cwe_vulnerable_recall": {
+          "mean": 0.9333333333333333,
+          "sample_std": 0.05773502691896256
+        },
+        "common_cwe_vulnerable_recall": {
+          "mean": 0.9791666666666666,
+          "sample_std": 0.020833333333333315
+        },
+        "rare_test_samples": 20,
+        "common_test_samples": 48
+      }
+    },
+    "vudenc": {
+      "classical": {
+        "rare_cwe_vulnerable_recall": {
+          "mean": 0.6666666666666667,
+          "sample_std": 0.0360749284446764
+        },
+        "common_cwe_vulnerable_recall": {
+          "mean": 0.6954022988505747,
+          "sample_std": 0.01899162257684861
+        },
+        "rare_test_samples": 131,
+        "common_test_samples": 290
+      },
+      "quantum": {
+        "rare_cwe_vulnerable_recall": {
+          "mean": 0.6895674300254453,
+          "sample_std": 0.04204252326172597
+        },
+        "common_cwe_vulnerable_recall": {
+          "mean": 0.7183908045977011,
+          "sample_std": 0.00995431498602805
+        },
+        "rare_test_samples": 131,
+        "common_test_samples": 290
+      }
+    },
+    "realvuln_human": {
+      "classical": {
+        "rare_cwe_vulnerable_recall": {
+          "mean": 0.9259259259259259,
+          "sample_std": 0.06415002990995845
+        },
+        "common_cwe_vulnerable_recall": {
+          "mean": 0.874074074074074,
+          "sample_std": 0.04625924443258073
+        },
+        "rare_test_samples": 9,
+        "common_test_samples": 45
+      },
+      "quantum": {
+        "rare_cwe_vulnerable_recall": {
+          "mean": 1,
+          "sample_std": 0.0
+        },
+        "common_cwe_vulnerable_recall": {
+          "mean": 0.9111111111111111,
+          "sample_std": 0.03849001794597504
+        },
+        "rare_test_samples": 9,
+        "common_test_samples": 45
+      }
+    }
+  }
+}

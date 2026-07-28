@@ -1,0 +1,3 @@
+def env_values(self):...
+return EnvValue.objects.filter(property__id=self.request.GET.get(
+    'env_property_id'))

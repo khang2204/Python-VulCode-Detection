@@ -1,0 +1,3 @@
+def delete_mails(self, idents):...
+res, req = self.post('/mails/delete', json.dumps({'idents': idents}))
+return res

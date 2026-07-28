@@ -1,0 +1,3 @@
+def get_collection(self, collectionname):...
+return self._doc['collections'][collectionname] if collectionname in self._doc[
+    'collections'] else None

@@ -1,0 +1,3 @@
+def saveScope(self):...
+file_name = 'result/' + self.cate_str + '_scope.json'
+json.dump(self.scope, f)

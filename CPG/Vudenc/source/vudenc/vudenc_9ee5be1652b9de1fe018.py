@@ -1,0 +1,3 @@
+def set_template(self, cr, uid, ids, context={}):...
+res = self.setActive(cr, uid, ids, value=False, context=context)
+return res

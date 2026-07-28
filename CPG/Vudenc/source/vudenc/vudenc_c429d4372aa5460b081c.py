@@ -1,0 +1,3 @@
+def on_task_exit(self, task):...
+last = self.num_tasks[-1]
+self.num_tasks.append(last - 1)

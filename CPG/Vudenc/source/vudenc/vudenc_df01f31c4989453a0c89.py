@@ -1,0 +1,3 @@
+def ErrorLogger(url, error):...
+con = '(i) ' + url + ' -> ' + error.__str__()
+SCAN_ERRORS.append(con)

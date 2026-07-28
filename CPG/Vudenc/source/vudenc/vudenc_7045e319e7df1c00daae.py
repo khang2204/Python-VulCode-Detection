@@ -1,0 +1,3 @@
+def __init__(self, item, *a, **kw):...
+self.item = item
+Validator.__init__(self, item, *a, **kw)

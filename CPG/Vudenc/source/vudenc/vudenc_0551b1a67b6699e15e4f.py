@@ -1,0 +1,6 @@
+@neko.command(name='def', aliases=['define', 'def', 'dfn'], brief=...
+"""docstring"""
+def _define():...
+api = wordapi.WordApi(self.client)
+return api.getDefinitions(word, sourceDictionaries=_dictionaries,
+    includeRelated=True)

@@ -1,0 +1,3 @@
+def scalac_classpath(self):...
+return ScalaPlatform.global_instance().compiler_classpath(self.context.products
+    )

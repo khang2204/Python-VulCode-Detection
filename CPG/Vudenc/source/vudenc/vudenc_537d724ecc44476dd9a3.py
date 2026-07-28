@@ -1,0 +1,3 @@
+def get_contacts(self, query):...
+res, req = self.get('/contacts', get_args={'q': query})
+return res

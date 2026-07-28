@@ -1,0 +1,3 @@
+@gen.coroutine...
+doc = yield self.collection.find_one({'slug': slug})
+self.render('post.html', title=options.title, item=doc)

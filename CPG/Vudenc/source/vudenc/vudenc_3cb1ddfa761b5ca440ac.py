@@ -1,0 +1,3 @@
+def __init__(self):...
+self.current_x = 0
+self.current_y = 0

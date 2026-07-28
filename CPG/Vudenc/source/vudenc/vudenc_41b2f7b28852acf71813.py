@@ -1,0 +1,3 @@
+@data(*address_test_data)...
+output_string = get_street_name(input_string)
+self.assertEqual(desired_string2, output_string)

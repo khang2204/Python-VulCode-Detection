@@ -1,0 +1,3 @@
+def update_dimensions(self, new_dimensions):...
+"""docstring"""
+self._attributes['dimensions'] = new_dimensions

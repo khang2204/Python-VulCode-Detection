@@ -1,0 +1,3 @@
+def all_jdk_paths(self):...
+"""docstring"""
+return self._normalized_jdk_paths

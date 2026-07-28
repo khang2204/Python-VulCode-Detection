@@ -1,0 +1,3 @@
+def _get_test_db_name():...
+config = cfg.get_config()
+return urlparse.urlparse(config.dsn).path.lstrip('/')

@@ -1,0 +1,3 @@
+def _DoNotFound(self):...
+self._WriteHeader('text/html', status_code=404)
+self.wfile.write('<html><body>%s not found</body></html>' % self.path)

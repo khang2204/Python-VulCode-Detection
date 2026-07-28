@@ -1,0 +1,155 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/app.py",
+      "start": {
+        "line": 33,
+        "col": 5,
+        "offset": 1
+      },
+      "end": {
+        "line": 34,
+        "col": 40,
+        "offset": 1
+      },
+      "extra": {
+        "message": "User input from request.form.get() is concatenated directly into SQL query using f-string formatting. This allows SQL injection attacks where an attacker can bypass authentication or extract database data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "app/app.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 8,
+        "col": 20,
+        "offset": 1
+      },
+      "extra": {
+        "message": "Hardcoded credentials (USERNAME='admin', PASSWORD='password123') detected in source code. Hardcoded credentials can be easily discovered and should never be stored in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss",
+      "path": "app/app.py",
+      "start": {
+        "line": 47,
+        "col": 12,
+        "offset": 1
+      },
+      "end": {
+        "line": 47,
+        "col": 80,
+        "offset": 1
+      },
+      "extra": {
+        "message": "User-controlled cookie value 'session' is rendered directly into HTML response without escaping. This allows reflected XSS attacks where an attacker can inject malicious JavaScript by setting the cookie value.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss",
+      "path": "app/app.py",
+      "start": {
+        "line": 53,
+        "col": 12,
+        "offset": 1
+      },
+      "end": {
+        "line": 53,
+        "col": 50,
+        "offset": 1
+      },
+      "extra": {
+        "message": "User input from request.args.get('q') is rendered directly into HTML response without escaping. This allows reflected XSS attacks where an attacker can inject malicious JavaScript via the 'q' query parameter.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "app/app.py",
+      "start": {
+        "line": 43,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 47,
+        "col": 80,
+        "offset": 1
+      },
+      "extra": {
+        "message": "The /dashboard route does not perform any authentication check. Any unauthenticated user can access this page by navigating directly to it, bypassing the login mechanism.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.session.insecure-session-management",
+      "path": "app/app.py",
+      "start": {
+        "line": 38,
+        "col": 9,
+        "offset": 1
+      },
+      "end": {
+        "line": 38,
+        "col": 50,
+        "offset": 1
+      },
+      "extra": {
+        "message": "Insecure session management: session cookie is set to the raw username value without using a secure, random session token. This makes session hijacking and fixation attacks trivial.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

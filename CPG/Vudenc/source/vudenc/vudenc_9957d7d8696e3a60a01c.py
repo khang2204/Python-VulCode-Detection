@@ -1,0 +1,3 @@
+def get_by_slug(self, entity_slug):...
+"""docstring"""
+return self.__slug_map.get(entity_slug)

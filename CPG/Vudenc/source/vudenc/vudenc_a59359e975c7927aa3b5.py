@@ -1,0 +1,3 @@
+@api.model...
+"""docstring"""
+return list(ADDRESS_FIELDS)

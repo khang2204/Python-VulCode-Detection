@@ -1,0 +1,3 @@
+def get_datetime(self, date):...
+s = date.split('-')
+return datetime(int(s[0]), int(s[1]), int(s[2]), 0, 0, 0)

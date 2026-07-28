@@ -1,0 +1,3 @@
+def get(self, request, *args, **kwargs):...
+form = ManyURLSForm()
+return render(request, 'short-many-urls.html', {'form': form})

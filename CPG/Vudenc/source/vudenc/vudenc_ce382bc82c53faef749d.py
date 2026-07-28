@@ -1,0 +1,3 @@
+def __init__(self, host, user, password, db, charset):...
+self.connection = pymysql.connect(host=host, user=user, password=password,
+    db=db, charset=charset, cursorclass=pymysql.cursors.DictCursor)

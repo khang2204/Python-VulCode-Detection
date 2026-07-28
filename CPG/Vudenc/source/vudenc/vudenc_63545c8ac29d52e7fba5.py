@@ -1,0 +1,3 @@
+def add_post(content):...
+"""docstring"""
+POSTS.append((content, datetime.datetime.now()))

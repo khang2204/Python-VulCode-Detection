@@ -1,0 +1,6 @@
+def spawn_evaluators(self):...
+self.log.info('Initializing Evaluator')
+from evproxy import EvaluatorProxy
+def ev_init():...
+from lib.evaluators.PyQt4Evaluator import Evaluator
+return Evaluator()

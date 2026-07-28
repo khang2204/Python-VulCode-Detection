@@ -1,0 +1,1231 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by scala.runtime.LazyVals$ (file:/home/khang/bin/joern/joern-cli/lib/org.scala-lang.scala3-library_3-3.7.4.jar)
+WARNING: Please consider reporting this to the maintainers of class scala.runtime.LazyVals$
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+Parsing code at: CPG/Vudenc/source - language: `PYTHONSRC`
+[+] Running language frontend
+=======================================================================================================
+Invoking CPG generator in a separate process. Note that the new process will consume additional memory.
+If you are importing a large codebase (and/or running into memory issues), please try the following:
+1) exit joern
+2) invoke the frontend: /home/khang/bin/joern/joern-cli/pysrc2cpg -J-Xmx1954m CPG/Vudenc/source -o CPG/Vudenc/cpg_rebuilt.bin
+3) start joern, import the cpg: `importCpg("path/to/cpg")`
+=======================================================================================================
+
+[+] Applying default overlays
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by com.github.luben.zstd.util.Native$2 in an unnamed module (file:/home/khang/bin/joern/joern-cli/lib/com.github.luben.zstd-jni-1.5.7-2.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-07-15 14:07:40.971 WARN  CfgCreator$               Using order fallback for continue statement jump argument
+2026-07-15 14:08:11.343 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_08316412ca74863361b2.py#L3
+2026-07-15 14:08:11.351 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_08316412ca74863361b2.py#L3
+2026-07-15 14:08:11.703 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp13 = QAGroup.objects
+QAGroup.objects.get(extraction_script_id = pk)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L28
+2026-07-15 14:08:11.711 WARN  RecoverForPythonFile      Unable to assign identifier 'group_pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L28
+2026-07-15 14:08:11.713 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp25 = tmp26 = tmp27 = tmp28 = ExtractedText.objects
+ExtractedText.objects.filter(qa_group = None)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO')
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO').first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L44
+2026-07-15 14:08:11.710 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = api.nova
+api.nova.aggregate_get(request, aggregate_id)),(FIELD_IDENTIFIER,metadata) @ vudenc/vudenc_18e873697fcfe82a8bdc.py#L3
+2026-07-15 14:08:11.718 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L44
+2026-07-15 14:08:11.726 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp30 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L47
+2026-07-15 14:08:11.729 WARN  RecoverForPythonFile      Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L47
+2026-07-15 14:08:11.736 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp40 = tmp41 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script = scr)
+ExtractedText.objects.filter(extraction_script = scr).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L59
+2026-07-15 14:08:11.742 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L59
+2026-07-15 14:08:11.745 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp43 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L61
+2026-07-15 14:08:11.746 WARN  RecoverForPythonFile      Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L61
+2026-07-15 14:08:11.747 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp47 = tmp48 = tmp49 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script_id = scr.id)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L65
+2026-07-15 14:08:11.748 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L65
+2026-07-15 14:08:12.014 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = tmp5 = tmp6 = tmp7 = ExtractedText.objects
+ExtractedText.objects.filter(qa_group = None)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO')
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO').first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L4
+2026-07-15 14:08:12.019 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L4
+2026-07-15 14:08:12.020 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp9 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L7
+2026-07-15 14:08:12.027 WARN  RecoverForPythonFile      Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L7
+2026-07-15 14:08:12.029 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp19 = tmp20 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script = scr)
+ExtractedText.objects.filter(extraction_script = scr).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L19
+2026-07-15 14:08:12.037 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L19
+2026-07-15 14:08:12.038 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp22 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L21
+2026-07-15 14:08:12.039 WARN  RecoverForPythonFile      Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L21
+2026-07-15 14:08:12.042 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp26 = tmp27 = tmp28 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script_id = scr.id)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L25
+2026-07-15 14:08:12.044 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L25
+2026-07-15 14:08:12.123 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+2026-07-15 14:08:12.130 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+2026-07-15 14:08:12.136 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+2026-07-15 14:08:12.139 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+2026-07-15 14:08:12.305 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_2d6d0f88561188d64fa4.py#L3
+2026-07-15 14:08:12.307 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_2d6d0f88561188d64fa4.py#L3
+2026-07-15 14:08:12.354 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_aa4003e9c1b77b491a35.py#L8
+2026-07-15 14:08:12.363 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_aa4003e9c1b77b491a35.py#L8
+2026-07-15 14:08:12.373 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_aa465386dd32c28cd84c.py#L5
+2026-07-15 14:08:12.381 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_aa465386dd32c28cd84c.py#L5
+2026-07-15 14:08:12.397 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_538d386f7bb9b4ce3516.py#L10
+2026-07-15 14:08:12.408 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_538d386f7bb9b4ce3516.py#L10
+2026-07-15 14:08:12.877 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_962954cb6ff09673e0b3.py#L10
+2026-07-15 14:08:12.878 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_962954cb6ff09673e0b3.py#L10
+2026-07-15 14:08:12.890 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ef67aed20ba95f790f84.py#L3
+2026-07-15 14:08:12.904 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ef67aed20ba95f790f84.py#L3
+2026-07-15 14:08:12.911 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ac2f3d27d7b3c35a37cd.py#L3
+2026-07-15 14:08:12.912 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ac2f3d27d7b3c35a37cd.py#L3
+2026-07-15 14:08:12.944 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_170a238f158350791f5e.py#L5
+2026-07-15 14:08:12.931 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = tmp3 = self.pool
+self.pool.get('res.partner')
+self.pool.get('res.partner').browse(cr, uid, part)),(FIELD_IDENTIFIER,property_product_pricelist) @ vudenc/vudenc_ac721ff23386b399aa95.py#L5
+2026-07-15 14:08:12.951 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_170a238f158350791f5e.py#L5
+2026-07-15 14:08:12.952 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = tmp3 = self.pool
+self.pool.get('res.partner')
+self.pool.get('res.partner').browse(cr, uid, part)),(FIELD_IDENTIFIER,property_product_pricelist) @ vudenc/vudenc_ac721ff23386b399aa95.py#L5
+2026-07-15 14:08:12.969 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+2026-07-15 14:08:12.974 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+2026-07-15 14:08:12.975 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp6 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+2026-07-15 14:08:12.991 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+2026-07-15 14:08:12.992 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+2026-07-15 14:08:12.999 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+2026-07-15 14:08:13.004 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp6 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+2026-07-15 14:08:13.006 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+2026-07-15 14:08:13.045 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp9 = QAGroup.objects
+QAGroup.objects.get(extraction_script_id = pk)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_0c5e000b2532b74ed1b7.py#L12
+2026-07-15 14:08:13.048 WARN  RecoverForPythonFile      Unable to assign identifier 'group_pk' to field load '<unknown>' @ vudenc/vudenc_0c5e000b2532b74ed1b7.py#L12
+2026-07-15 14:08:13.045 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get('Iptc.Application2.Headline')),(FIELD_IDENTIFIER,value) @ vudenc/vudenc_96ee146e4cd4b02c4f01.py#L2
+2026-07-15 14:08:13.095 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = selected_indices[0]
+selected_indices[0].model()),(FIELD_IDENTIFIER,data_items) @ vudenc/vudenc_e00a51a23f5a90e2008c.py#L5
+2026-07-15 14:08:13.106 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_974ddeff5a9960a07bc2.py#L6
+2026-07-15 14:08:13.125 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_5808d434e771907c6e05.py#L7
+2026-07-15 14:08:13.129 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_5808d434e771907c6e05.py#L7
+2026-07-15 14:08:13.140 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0cf2374844c7156af860.py#L3
+2026-07-15 14:08:13.147 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0cf2374844c7156af860.py#L3
+2026-07-15 14:08:13.157 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_585fb32841aa3f5aca91.py#L7
+2026-07-15 14:08:13.162 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_585fb32841aa3f5aca91.py#L7
+2026-07-15 14:08:13.166 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+2026-07-15 14:08:13.189 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+2026-07-15 14:08:13.195 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+2026-07-15 14:08:13.196 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+2026-07-15 14:08:13.202 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp32 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+2026-07-15 14:08:13.208 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp31' to field load '<unknown>' @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+2026-07-15 14:08:13.209 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp32 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+2026-07-15 14:08:13.210 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp31' to field load '<unknown>' @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+2026-07-15 14:08:13.223 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L10
+2026-07-15 14:08:13.231 WARN  RecoverForPythonFile      Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L10
+2026-07-15 14:08:13.232 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = module.project.testcaseresults_set
+module.project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L16
+2026-07-15 14:08:13.226 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.table_view
+self.table_view.window()),(FIELD_IDENTIFIER,edit_channel_page) @ vudenc/vudenc_e092b1e57509acb36420.py#L4
+2026-07-15 14:08:13.238 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp_tcs' to field load '<unknown>' @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L16
+2026-07-15 14:08:13.239 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_e092b1e57509acb36420.py#L4
+2026-07-15 14:08:13.244 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_ade1555910f73a4c625b.py#L5
+2026-07-15 14:08:13.275 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_38c48d83e6995d2d2fd4.py#L5
+2026-07-15 14:08:13.276 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_38c48d83e6995d2d2fd4.py#L5
+2026-07-15 14:08:13.323 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get_field(fieldname)),(FIELD_IDENTIFIER,options) @ vudenc/vudenc_e137560ed50cd1d18629.py#L2
+2026-07-15 14:08:13.356 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get_field(fieldname)),(FIELD_IDENTIFIER,options) @ vudenc/vudenc_e181dcd155c25bcc0c24.py#L2
+2026-07-15 14:08:13.418 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0ef13bbc94a850dc938d.py#L10
+2026-07-15 14:08:13.422 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0ef13bbc94a850dc938d.py#L10
+2026-07-15 14:08:13.507 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.session
+self.session.get('https://www.kijiji.ca/m-my-ads.html/')),(FIELD_IDENTIFIER,text) @ vudenc/vudenc_5a7aa5c69d9b4488a4e8.py#L3
+2026-07-15 14:08:13.508 WARN  RecoverForPythonFile      Unable to assign identifier 'index_page_text' to field load '<unknown>' @ vudenc/vudenc_5a7aa5c69d9b4488a4e8.py#L3
+2026-07-15 14:08:13.594 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b080e645263b60f37bf3.py#L3
+2026-07-15 14:08:13.598 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b080e645263b60f37bf3.py#L3
+2026-07-15 14:08:13.749 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_33e776499459278e64f7.py#L10
+2026-07-15 14:08:13.754 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_33e776499459278e64f7.py#L10
+2026-07-15 14:08:13.755 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_9abf664616aa92cd0125.py#L3
+2026-07-15 14:08:13.756 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_9abf664616aa92cd0125.py#L3
+2026-07-15 14:08:13.780 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp6 = dd.products
+dd.products.first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_3bc8d60bfe1ad34197fe.py#L16
+2026-07-15 14:08:13.786 WARN  RecoverForPythonFile      Unable to assign identifier 'pid' to field load '<unknown>' @ vudenc/vudenc_3bc8d60bfe1ad34197fe.py#L16
+2026-07-15 14:08:13.980 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_a1fe184ab466819b7d33.py#L8
+2026-07-15 14:08:13.983 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_a1fe184ab466819b7d33.py#L8
+2026-07-15 14:08:14.124 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a2dbff5aaafe138be883.py#L5
+2026-07-15 14:08:14.126 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a2dbff5aaafe138be883.py#L5
+2026-07-15 14:08:14.248 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a371a4a96fecb9a27bc2.py#L3
+2026-07-15 14:08:14.252 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a371a4a96fecb9a27bc2.py#L3
+2026-07-15 14:08:14.252 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp3 = tmp4 = article.changeset_set
+article.changeset_set.filter(revision = revision + 1)
+article.changeset_set.filter(revision = revision + 1).get()),(FIELD_IDENTIFIER,old_title) @ vudenc/vudenc_70a9f7e8c96115a7869f.py#L16
+2026-07-15 14:08:14.266 WARN  RecoverForPythonFile      Unable to assign identifier 'old_title' to field load '<unknown>' @ vudenc/vudenc_70a9f7e8c96115a7869f.py#L16
+2026-07-15 14:08:14.352 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_8800417057e67c623202.py#L20
+2026-07-15 14:08:14.354 WARN  RecoverForPythonFile      Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_8800417057e67c623202.py#L20
+2026-07-15 14:08:14.493 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_69727ee9b4774f86e56a.py#L5
+2026-07-15 14:08:14.499 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_69727ee9b4774f86e56a.py#L5
+2026-07-15 14:08:14.569 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp59 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_e527237af47a5fe1070d.py#L153
+2026-07-15 14:08:14.575 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp64 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_e527237af47a5fe1070d.py#L161
+2026-07-15 14:08:14.620 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+2026-07-15 14:08:14.627 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+2026-07-15 14:08:14.631 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+2026-07-15 14:08:14.639 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+2026-07-15 14:08:14.641 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+2026-07-15 14:08:14.641 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+2026-07-15 14:08:14.644 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+2026-07-15 14:08:14.645 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+2026-07-15 14:08:14.655 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_6a6a68008a6c2867ffb2.py#L5
+2026-07-15 14:08:14.663 WARN  RecoverForPythonFile      Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_6a6a68008a6c2867ffb2.py#L5
+2026-07-15 14:08:14.720 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+2026-07-15 14:08:14.721 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+2026-07-15 14:08:14.722 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+2026-07-15 14:08:14.724 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+2026-07-15 14:08:14.735 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a4a4a6900d283802d2f9.py#L7
+2026-07-15 14:08:14.749 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a4a4a6900d283802d2f9.py#L7
+2026-07-15 14:08:14.764 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+2026-07-15 14:08:14.767 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp3 = self.table_view
+self.table_view.verticalScrollBar()),(FIELD_IDENTIFIER,valueChanged) @ vudenc/vudenc_e62f39f788234941915e.py#L6
+2026-07-15 14:08:14.771 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+2026-07-15 14:08:14.779 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp2' to field load '<unknown>' @ vudenc/vudenc_e62f39f788234941915e.py#L6
+2026-07-15 14:08:14.780 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+2026-07-15 14:08:14.780 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+2026-07-15 14:08:14.919 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_6cbb021d11e09c93e0f5.py#L3
+2026-07-15 14:08:14.927 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_6cbb021d11e09c93e0f5.py#L3
+2026-07-15 14:08:14.983 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_e6e2a655c29588775a56.py#L7
+2026-07-15 14:08:14.985 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_e6e2a655c29588775a56.py#L7
+2026-07-15 14:08:15.089 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_60652bcbfcd7c351fa8c.py#L10
+2026-07-15 14:08:15.095 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_60652bcbfcd7c351fa8c.py#L10
+2026-07-15 14:08:15.118 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_a5d262c15fce8b53cc2e.py#L8
+2026-07-15 14:08:15.124 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_a5d262c15fce8b53cc2e.py#L8
+2026-07-15 14:08:15.262 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp6 = dd.products
+dd.products.first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_f7c4f223293588c32799.py#L30
+2026-07-15 14:08:15.264 WARN  RecoverForPythonFile      Unable to assign identifier 'pid' to field load '<unknown>' @ vudenc/vudenc_f7c4f223293588c32799.py#L30
+2026-07-15 14:08:15.305 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = ContentType.objects
+ContentType.objects.get_for_model(Article)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_75567d6c9c94ca6cebda.py#L25
+2026-07-15 14:08:15.311 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = ContentType.objects
+ContentType.objects.get_for_model(Article)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_75567d6c9c94ca6cebda.py#L25
+2026-07-15 14:08:15.662 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_76692ae93e9cab87faf5.py#L10
+2026-07-15 14:08:15.667 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_76692ae93e9cab87faf5.py#L10
+2026-07-15 14:08:15.671 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_bd9d847cf7acbf10a09a.py#L8
+2026-07-15 14:08:15.672 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_bd9d847cf7acbf10a09a.py#L8
+2026-07-15 14:08:15.735 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+2026-07-15 14:08:15.737 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+2026-07-15 14:08:15.738 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+2026-07-15 14:08:15.744 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+2026-07-15 14:08:16.256 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fb81afb368c958d27a48.py#L7
+2026-07-15 14:08:16.263 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fb81afb368c958d27a48.py#L7
+2026-07-15 14:08:16.279 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get_field(fieldname)),(FIELD_IDENTIFIER,options) @ vudenc/vudenc_81d9a6e60f0b2d13156c.py#L2
+2026-07-15 14:08:16.342 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp33 = ProductDocument.objects
+ProductDocument.objects.get(document = doc)),(FIELD_IDENTIFIER,product) @ vudenc/vudenc_82378de1e98bca80624c.py#L108
+2026-07-15 14:08:16.346 WARN  RecoverForPythonFile      Unable to assign identifier 'product' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L108
+2026-07-15 14:08:16.344 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b0f6d0ee1898fdb88a60.py#L5
+2026-07-15 14:08:16.347 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp36 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+2026-07-15 14:08:16.348 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b0f6d0ee1898fdb88a60.py#L5
+2026-07-15 14:08:16.348 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp34' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+2026-07-15 14:08:16.349 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp39 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+2026-07-15 14:08:16.350 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp37' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+2026-07-15 14:08:16.350 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp43 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+2026-07-15 14:08:16.353 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp41' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+2026-07-15 14:08:16.359 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp46 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+2026-07-15 14:08:16.359 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp45' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+2026-07-15 14:08:16.361 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp49 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+2026-07-15 14:08:16.362 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp48' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+2026-07-15 14:08:16.364 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp51 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+2026-07-15 14:08:16.365 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp50' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+2026-07-15 14:08:16.365 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp55 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+2026-07-15 14:08:16.366 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp54' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+2026-07-15 14:08:16.372 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp36 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+2026-07-15 14:08:16.378 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp34' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+2026-07-15 14:08:16.383 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp39 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+2026-07-15 14:08:16.391 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp37' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+2026-07-15 14:08:16.397 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp43 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+2026-07-15 14:08:16.384 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fbffba32b3cde0706f2f.py#L10
+2026-07-15 14:08:16.402 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fbffba32b3cde0706f2f.py#L10
+2026-07-15 14:08:16.401 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp41' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+2026-07-15 14:08:16.407 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp46 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+2026-07-15 14:08:16.411 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp45' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+2026-07-15 14:08:16.412 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp49 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+2026-07-15 14:08:16.416 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp48' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+2026-07-15 14:08:16.417 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp51 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+2026-07-15 14:08:16.417 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp50' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+2026-07-15 14:08:16.418 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp55 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+2026-07-15 14:08:16.418 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp54' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+2026-07-15 14:08:16.433 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_3ff1907b881ecc1d8658.py#L7
+2026-07-15 14:08:16.433 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_63dd45ee8208d0932834.py#L3
+2026-07-15 14:08:16.447 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_3ff1907b881ecc1d8658.py#L7
+2026-07-15 14:08:16.450 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_63dd45ee8208d0932834.py#L3
+2026-07-15 14:08:16.467 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+2026-07-15 14:08:16.468 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+2026-07-15 14:08:16.474 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+2026-07-15 14:08:16.475 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+2026-07-15 14:08:16.476 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_400f16b04baa4ba8d702.py#L10
+2026-07-15 14:08:16.482 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_400f16b04baa4ba8d702.py#L10
+2026-07-15 14:08:16.659 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_65854c545d71adb4b55c.py#L3
+2026-07-15 14:08:16.660 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_65854c545d71adb4b55c.py#L3
+2026-07-15 14:08:16.683 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+2026-07-15 14:08:16.690 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_661726265930bf267b5a.py#L14
+2026-07-15 14:08:16.691 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+2026-07-15 14:08:16.691 WARN  RecoverForPythonFile      Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_661726265930bf267b5a.py#L14
+2026-07-15 14:08:16.692 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+2026-07-15 14:08:16.695 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+2026-07-15 14:08:16.699 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b3b77d03ca78a02feee4.py#L5
+2026-07-15 14:08:16.700 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b3b77d03ca78a02feee4.py#L5
+2026-07-15 14:08:16.699 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_4f1ee3d2b63e17f4eebc.py#L8
+2026-07-15 14:08:16.707 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_4f1ee3d2b63e17f4eebc.py#L8
+2026-07-15 14:08:16.713 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d14c4a4e7e4b5a693719.py#L7
+2026-07-15 14:08:16.718 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d14c4a4e7e4b5a693719.py#L7
+2026-07-15 14:08:16.733 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = motor.motor_tornado
+motor.motor_tornado.MotorClient()),(FIELD_IDENTIFIER,news) @ vudenc/vudenc_fd9ed3eff806b6338d97.py#L3
+2026-07-15 14:08:16.738 WARN  RecoverForPythonFile      Unable to assign identifier 'db' to field load '<unknown>' @ vudenc/vudenc_fd9ed3eff806b6338d97.py#L3
+2026-07-15 14:08:16.749 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = apps.get_model('dashboard.ExtractedChemical').objects
+apps.get_model('dashboard.ExtractedChemical').objects.get(rawchem_ptr = id)),(FIELD_IDENTIFIER,data_document) @ vudenc/vudenc_4195b8442f82cf865f36.py#L4
+2026-07-15 14:08:16.754 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = apps.get_model('dashboard.ExtractedFunctionalUse').objects
+apps.get_model('dashboard.ExtractedFunctionalUse').objects.get(rawchem_ptr = id)),(FIELD_IDENTIFIER,data_document) @ vudenc/vudenc_4195b8442f82cf865f36.py#L6
+2026-07-15 14:08:16.755 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = apps.get_model('dashboard.ExtractedListPresence').objects
+apps.get_model('dashboard.ExtractedListPresence').objects.get(rawchem_ptr = id)),(FIELD_IDENTIFIER,data_document) @ vudenc/vudenc_4195b8442f82cf865f36.py#L8
+2026-07-15 14:08:16.771 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_4fd2b8ee782f13a4b76e.py#L5
+2026-07-15 14:08:16.774 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_4fd2b8ee782f13a4b76e.py#L5
+2026-07-15 14:08:16.774 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = datetime.now(tz = pytz.utc)
+datetime.now(tz = pytz.utc).astimezone()),(FIELD_IDENTIFIER,tzinfo) @ vudenc/vudenc_420c102b3cb094f59057.py#L2
+2026-07-15 14:08:16.795 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d1d324ae7f80b17f2519.py#L10
+2026-07-15 14:08:16.798 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d1d324ae7f80b17f2519.py#L10
+2026-07-15 14:08:16.890 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8675bcdc0de0ca7af5ef.py#L7
+2026-07-15 14:08:16.894 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8675bcdc0de0ca7af5ef.py#L7
+2026-07-15 14:08:16.927 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ff3cb17a95a1bfe5d8dd.py#L7
+2026-07-15 14:08:16.932 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ff3cb17a95a1bfe5d8dd.py#L7
+2026-07-15 14:08:17.007 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_43f00d2fec2fdbb0a0cb.py#L10
+2026-07-15 14:08:17.008 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_43f00d2fec2fdbb0a0cb.py#L10
+2026-07-15 14:08:17.015 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = ImportLog.objects
+ImportLog.objects.latest_in_category('prescribing')),(FIELD_IDENTIFIER,current_at) @ vudenc/vudenc_c93a32e1788db04b4c64.py#L4
+2026-07-15 14:08:17.018 WARN  RecoverForPythonFile      Unable to assign identifier 'this_month' to field load '<unknown>' @ vudenc/vudenc_c93a32e1788db04b4c64.py#L4
+2026-07-15 14:08:17.031 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8734e2c3079091bc2690.py#L5
+2026-07-15 14:08:17.031 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_44504ce4a4e127a9aa43.py#L3
+2026-07-15 14:08:17.032 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8734e2c3079091bc2690.py#L5
+2026-07-15 14:08:17.033 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_44504ce4a4e127a9aa43.py#L3
+2026-07-15 14:08:17.038 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_8738474ebdfec02b1373.py#L8
+2026-07-15 14:08:17.042 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_8738474ebdfec02b1373.py#L8
+2026-07-15 14:08:17.064 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self._zinc_factory
+self._zinc_factory.get_options()),(FIELD_IDENTIFIER,pants_workdir) @ vudenc/vudenc_f08427113537efcf2899.py#L4
+2026-07-15 14:08:17.066 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp6 = ProductDocument.objects
+ProductDocument.objects.get(document = doc)),(FIELD_IDENTIFIER,product) @ vudenc/vudenc_d3a9beb2fe1ec102c3a4.py#L11
+2026-07-15 14:08:17.071 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self._zinc_factory
+self._zinc_factory.get_options()),(FIELD_IDENTIFIER,pants_workdir) @ vudenc/vudenc_f08427113537efcf2899.py#L4
+2026-07-15 14:08:17.075 WARN  RecoverForPythonFile      Unable to assign identifier 'product' to field load '<unknown>' @ vudenc/vudenc_d3a9beb2fe1ec102c3a4.py#L11
+2026-07-15 14:08:17.127 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7d31d748e544a66e80dc.py#L7
+2026-07-15 14:08:17.129 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7d31d748e544a66e80dc.py#L7
+2026-07-15 14:08:17.241 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = names_combinations_similarity.groupby(['left_team1', 'left_team2'])[0]
+names_combinations_similarity.groupby(['left_team1', 'left_team2'])[0].idxmax()),(FIELD_IDENTIFIER,values) @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L17
+2026-07-15 14:08:17.242 WARN  RecoverForPythonFile      Unable to assign identifier 'indices' to field load '<unknown>' @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L17
+2026-07-15 14:08:17.243 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp13 = matching.groupby('left_team')[0]
+matching.groupby('left_team')[0].idxmax()),(FIELD_IDENTIFIER,values) @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L26
+2026-07-15 14:08:17.243 WARN  RecoverForPythonFile      Unable to assign identifier 'indices' to field load '<unknown>' @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L26
+2026-07-15 14:08:17.302 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f25af410139f026f37f5.py#L5
+2026-07-15 14:08:17.318 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f25af410139f026f37f5.py#L5
+2026-07-15 14:08:17.318 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8be8416532519b4219d.py#L3
+2026-07-15 14:08:17.324 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8be8416532519b4219d.py#L3
+2026-07-15 14:08:17.327 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c4c8007ce21bf5bf7a5d.py#L7
+2026-07-15 14:08:17.327 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c4c8007ce21bf5bf7a5d.py#L7
+2026-07-15 14:08:17.340 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7fc622400ddba22673c2.py#L10
+2026-07-15 14:08:17.341 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7fc622400ddba22673c2.py#L10
+2026-07-15 14:08:17.418 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8f32895368e87055162.py#L10
+2026-07-15 14:08:17.426 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8f32895368e87055162.py#L10
+2026-07-15 14:08:17.489 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = LogoutPayload()
+LogoutPayload().dump({'location':location})),(FIELD_IDENTIFIER,data) @ vudenc/vudenc_d723dc655194ef2f68f7.py#L9
+2026-07-15 14:08:17.490 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp14 = LogoutPayload()
+LogoutPayload().dump({'location':location})),(FIELD_IDENTIFIER,data) @ vudenc/vudenc_d723dc655194ef2f68f7.py#L35
+2026-07-15 14:08:17.502 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c69f9992e6364b5ae9f2.py#L5
+2026-07-15 14:08:17.503 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c69f9992e6364b5ae9f2.py#L5
+2026-07-15 14:08:17.510 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = selected_indices[0]
+selected_indices[0].model()),(FIELD_IDENTIFIER,data_items) @ vudenc/vudenc_c6c2f1fa25bdf8034726.py#L6
+2026-07-15 14:08:17.541 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get('Iptc.Application2.Keywords')),(FIELD_IDENTIFIER,value) @ vudenc/vudenc_c7140fabe0c6b0239621.py#L2
+2026-07-15 14:08:17.591 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+2026-07-15 14:08:17.592 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+2026-07-15 14:08:17.593 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+2026-07-15 14:08:17.593 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+2026-07-15 14:08:17.594 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+2026-07-15 14:08:17.595 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+2026-07-15 14:08:17.595 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+2026-07-15 14:08:17.596 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+2026-07-15 14:08:17.597 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ceae6baa7196e7cc3eb8.py#L7
+2026-07-15 14:08:17.598 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ceae6baa7196e7cc3eb8.py#L7
+2026-07-15 14:08:17.638 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c80903ceabe2226bf23f.py#L5
+2026-07-15 14:08:17.639 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c80903ceabe2226bf23f.py#L5
+2026-07-15 14:08:17.688 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d068249503d275016330.py#L5
+2026-07-15 14:08:17.689 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d068249503d275016330.py#L5
+2026-07-15 14:08:17.773 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_dbac7f49390acef6b3d0.py#L10
+2026-07-15 14:08:17.774 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_dbac7f49390acef6b3d0.py#L10
+2026-07-15 14:08:17.870 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f5c23a20e00b350a022e.py#L7
+2026-07-15 14:08:17.871 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f5c23a20e00b350a022e.py#L7
+2026-07-15 14:08:18.388 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp6 = dd.products
+dd.products.first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_f7c4f223293588c32799.py#L30
+2026-07-15 14:08:18.394 WARN  RecoverForPythonFile      Unable to assign identifier 'pid' to field load '<unknown>' @ vudenc/vudenc_f7c4f223293588c32799.py#L30
+2026-07-15 14:08:18.454 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d14c4a4e7e4b5a693719.py#L7
+2026-07-15 14:08:18.462 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d14c4a4e7e4b5a693719.py#L7
+2026-07-15 14:08:18.675 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d1d324ae7f80b17f2519.py#L10
+2026-07-15 14:08:18.680 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d1d324ae7f80b17f2519.py#L10
+2026-07-15 14:08:18.723 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp13 = QAGroup.objects
+QAGroup.objects.get(extraction_script_id = pk)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L28
+2026-07-15 14:08:18.728 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = ImportLog.objects
+ImportLog.objects.latest_in_category('prescribing')),(FIELD_IDENTIFIER,current_at) @ vudenc/vudenc_c93a32e1788db04b4c64.py#L4
+2026-07-15 14:08:18.731 WARN  RecoverForPythonFile      Unable to assign identifier 'this_month' to field load '<unknown>' @ vudenc/vudenc_c93a32e1788db04b4c64.py#L4
+2026-07-15 14:08:18.734 WARN  RecoverForPythonFile      Unable to assign identifier 'group_pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L28
+2026-07-15 14:08:18.739 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp25 = tmp26 = tmp27 = tmp28 = ExtractedText.objects
+ExtractedText.objects.filter(qa_group = None)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO')
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO').first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L44
+2026-07-15 14:08:18.740 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L44
+2026-07-15 14:08:18.740 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp30 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L47
+2026-07-15 14:08:18.741 WARN  RecoverForPythonFile      Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L47
+2026-07-15 14:08:18.741 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp40 = tmp41 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script = scr)
+ExtractedText.objects.filter(extraction_script = scr).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L59
+2026-07-15 14:08:18.742 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L59
+2026-07-15 14:08:18.747 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp43 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L61
+2026-07-15 14:08:18.748 WARN  RecoverForPythonFile      Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L61
+2026-07-15 14:08:18.748 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp47 = tmp48 = tmp49 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script_id = scr.id)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L65
+2026-07-15 14:08:18.749 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L65
+2026-07-15 14:08:19.088 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = tmp5 = tmp6 = tmp7 = ExtractedText.objects
+ExtractedText.objects.filter(qa_group = None)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO')
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO').first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L4
+2026-07-15 14:08:19.094 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L4
+2026-07-15 14:08:19.095 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp9 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L7
+2026-07-15 14:08:19.096 WARN  RecoverForPythonFile      Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L7
+2026-07-15 14:08:19.097 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp19 = tmp20 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script = scr)
+ExtractedText.objects.filter(extraction_script = scr).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L19
+2026-07-15 14:08:19.097 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L19
+2026-07-15 14:08:19.098 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp22 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L21
+2026-07-15 14:08:19.098 WARN  RecoverForPythonFile      Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L21
+2026-07-15 14:08:19.099 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp26 = tmp27 = tmp28 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script_id = scr.id)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L25
+2026-07-15 14:08:19.102 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L25
+2026-07-15 14:08:19.209 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp6 = ProductDocument.objects
+ProductDocument.objects.get(document = doc)),(FIELD_IDENTIFIER,product) @ vudenc/vudenc_d3a9beb2fe1ec102c3a4.py#L11
+2026-07-15 14:08:19.218 WARN  RecoverForPythonFile      Unable to assign identifier 'product' to field load '<unknown>' @ vudenc/vudenc_d3a9beb2fe1ec102c3a4.py#L11
+2026-07-15 14:08:19.307 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fb81afb368c958d27a48.py#L7
+2026-07-15 14:08:19.315 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fb81afb368c958d27a48.py#L7
+2026-07-15 14:08:19.395 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_962954cb6ff09673e0b3.py#L10
+2026-07-15 14:08:19.396 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_962954cb6ff09673e0b3.py#L10
+2026-07-15 14:08:19.445 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fbffba32b3cde0706f2f.py#L10
+2026-07-15 14:08:19.451 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fbffba32b3cde0706f2f.py#L10
+2026-07-15 14:08:19.456 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_538d386f7bb9b4ce3516.py#L10
+2026-07-15 14:08:19.470 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_538d386f7bb9b4ce3516.py#L10
+2026-07-15 14:08:19.561 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get('Iptc.Application2.Headline')),(FIELD_IDENTIFIER,value) @ vudenc/vudenc_96ee146e4cd4b02c4f01.py#L2
+2026-07-15 14:08:19.579 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_2d6d0f88561188d64fa4.py#L3
+2026-07-15 14:08:19.580 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_2d6d0f88561188d64fa4.py#L3
+2026-07-15 14:08:19.643 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_aa4003e9c1b77b491a35.py#L8
+2026-07-15 14:08:19.650 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_aa4003e9c1b77b491a35.py#L8
+2026-07-15 14:08:19.654 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_974ddeff5a9960a07bc2.py#L6
+2026-07-15 14:08:19.654 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_aa465386dd32c28cd84c.py#L5
+2026-07-15 14:08:19.660 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_aa465386dd32c28cd84c.py#L5
+2026-07-15 14:08:19.676 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+2026-07-15 14:08:19.676 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+2026-07-15 14:08:19.679 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+2026-07-15 14:08:19.679 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+2026-07-15 14:08:19.720 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = LogoutPayload()
+LogoutPayload().dump({'location':location})),(FIELD_IDENTIFIER,data) @ vudenc/vudenc_d723dc655194ef2f68f7.py#L9
+2026-07-15 14:08:19.728 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp14 = LogoutPayload()
+LogoutPayload().dump({'location':location})),(FIELD_IDENTIFIER,data) @ vudenc/vudenc_d723dc655194ef2f68f7.py#L35
+2026-07-15 14:08:19.859 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = motor.motor_tornado
+motor.motor_tornado.MotorClient()),(FIELD_IDENTIFIER,news) @ vudenc/vudenc_fd9ed3eff806b6338d97.py#L3
+2026-07-15 14:08:19.870 WARN  RecoverForPythonFile      Unable to assign identifier 'db' to field load '<unknown>' @ vudenc/vudenc_fd9ed3eff806b6338d97.py#L3
+2026-07-15 14:08:19.898 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ef67aed20ba95f790f84.py#L3
+2026-07-15 14:08:19.900 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ef67aed20ba95f790f84.py#L3
+2026-07-15 14:08:19.940 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_5808d434e771907c6e05.py#L7
+2026-07-15 14:08:19.944 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_5808d434e771907c6e05.py#L7
+2026-07-15 14:08:20.015 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ac2f3d27d7b3c35a37cd.py#L3
+2026-07-15 14:08:20.016 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ac2f3d27d7b3c35a37cd.py#L3
+2026-07-15 14:08:20.016 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_585fb32841aa3f5aca91.py#L7
+2026-07-15 14:08:20.017 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_585fb32841aa3f5aca91.py#L7
+2026-07-15 14:08:20.025 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = tmp3 = self.pool
+self.pool.get('res.partner')
+self.pool.get('res.partner').browse(cr, uid, part)),(FIELD_IDENTIFIER,property_product_pricelist) @ vudenc/vudenc_ac721ff23386b399aa95.py#L5
+2026-07-15 14:08:20.025 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = tmp3 = self.pool
+self.pool.get('res.partner')
+self.pool.get('res.partner').browse(cr, uid, part)),(FIELD_IDENTIFIER,property_product_pricelist) @ vudenc/vudenc_ac721ff23386b399aa95.py#L5
+2026-07-15 14:08:20.026 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = selected_indices[0]
+selected_indices[0].model()),(FIELD_IDENTIFIER,data_items) @ vudenc/vudenc_e00a51a23f5a90e2008c.py#L5
+2026-07-15 14:08:20.131 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8be8416532519b4219d.py#L3
+2026-07-15 14:08:20.133 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8be8416532519b4219d.py#L3
+2026-07-15 14:08:20.151 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.table_view
+self.table_view.window()),(FIELD_IDENTIFIER,edit_channel_page) @ vudenc/vudenc_e092b1e57509acb36420.py#L4
+2026-07-15 14:08:20.153 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_e092b1e57509acb36420.py#L4
+2026-07-15 14:08:20.193 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_ade1555910f73a4c625b.py#L5
+2026-07-15 14:08:20.208 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8f32895368e87055162.py#L10
+2026-07-15 14:08:20.210 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8f32895368e87055162.py#L10
+2026-07-15 14:08:20.215 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get_field(fieldname)),(FIELD_IDENTIFIER,options) @ vudenc/vudenc_e137560ed50cd1d18629.py#L2
+2026-07-15 14:08:20.275 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get_field(fieldname)),(FIELD_IDENTIFIER,options) @ vudenc/vudenc_e181dcd155c25bcc0c24.py#L2
+2026-07-15 14:08:20.283 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+2026-07-15 14:08:20.284 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+2026-07-15 14:08:20.284 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp6 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+2026-07-15 14:08:20.285 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+2026-07-15 14:08:20.286 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+2026-07-15 14:08:20.286 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+2026-07-15 14:08:20.287 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp6 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+2026-07-15 14:08:20.291 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+2026-07-15 14:08:20.313 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ff3cb17a95a1bfe5d8dd.py#L7
+2026-07-15 14:08:20.319 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ff3cb17a95a1bfe5d8dd.py#L7
+2026-07-15 14:08:20.528 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_9abf664616aa92cd0125.py#L3
+2026-07-15 14:08:20.530 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_9abf664616aa92cd0125.py#L3
+2026-07-15 14:08:20.590 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp32 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+2026-07-15 14:08:20.598 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp31' to field load '<unknown>' @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+2026-07-15 14:08:20.602 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp32 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+2026-07-15 14:08:20.610 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp31' to field load '<unknown>' @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+2026-07-15 14:08:20.621 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.session
+self.session.get('https://www.kijiji.ca/m-my-ads.html/')),(FIELD_IDENTIFIER,text) @ vudenc/vudenc_5a7aa5c69d9b4488a4e8.py#L3
+2026-07-15 14:08:20.631 WARN  RecoverForPythonFile      Unable to assign identifier 'index_page_text' to field load '<unknown>' @ vudenc/vudenc_5a7aa5c69d9b4488a4e8.py#L3
+2026-07-15 14:08:20.729 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b080e645263b60f37bf3.py#L3
+2026-07-15 14:08:20.733 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b080e645263b60f37bf3.py#L3
+2026-07-15 14:08:20.867 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+2026-07-15 14:08:20.878 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+2026-07-15 14:08:20.880 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+2026-07-15 14:08:20.881 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+2026-07-15 14:08:20.882 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+2026-07-15 14:08:20.882 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+2026-07-15 14:08:20.883 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+2026-07-15 14:08:20.883 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+2026-07-15 14:08:20.902 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = names_combinations_similarity.groupby(['left_team1', 'left_team2'])[0]
+names_combinations_similarity.groupby(['left_team1', 'left_team2'])[0].idxmax()),(FIELD_IDENTIFIER,values) @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L17
+2026-07-15 14:08:20.910 WARN  RecoverForPythonFile      Unable to assign identifier 'indices' to field load '<unknown>' @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L17
+2026-07-15 14:08:20.911 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp13 = matching.groupby('left_team')[0]
+matching.groupby('left_team')[0].idxmax()),(FIELD_IDENTIFIER,values) @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L26
+2026-07-15 14:08:20.912 WARN  RecoverForPythonFile      Unable to assign identifier 'indices' to field load '<unknown>' @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L26
+2026-07-15 14:08:20.990 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f25af410139f026f37f5.py#L5
+2026-07-15 14:08:20.991 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f25af410139f026f37f5.py#L5
+2026-07-15 14:08:21.016 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ceae6baa7196e7cc3eb8.py#L7
+2026-07-15 14:08:21.017 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ceae6baa7196e7cc3eb8.py#L7
+2026-07-15 14:08:21.139 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_a1fe184ab466819b7d33.py#L8
+2026-07-15 14:08:21.140 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_a1fe184ab466819b7d33.py#L8
+2026-07-15 14:08:21.170 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d068249503d275016330.py#L5
+2026-07-15 14:08:21.178 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d068249503d275016330.py#L5
+2026-07-15 14:08:21.224 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp59 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_e527237af47a5fe1070d.py#L153
+2026-07-15 14:08:21.230 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp64 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_e527237af47a5fe1070d.py#L161
+2026-07-15 14:08:21.233 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a2dbff5aaafe138be883.py#L5
+2026-07-15 14:08:21.234 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a2dbff5aaafe138be883.py#L5
+2026-07-15 14:08:21.341 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a371a4a96fecb9a27bc2.py#L3
+2026-07-15 14:08:21.346 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a371a4a96fecb9a27bc2.py#L3
+2026-07-15 14:08:21.363 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_dbac7f49390acef6b3d0.py#L10
+2026-07-15 14:08:21.364 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_dbac7f49390acef6b3d0.py#L10
+2026-07-15 14:08:21.419 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp3 = self.table_view
+self.table_view.verticalScrollBar()),(FIELD_IDENTIFIER,valueChanged) @ vudenc/vudenc_e62f39f788234941915e.py#L6
+2026-07-15 14:08:21.421 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp2' to field load '<unknown>' @ vudenc/vudenc_e62f39f788234941915e.py#L6
+2026-07-15 14:08:21.422 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_8800417057e67c623202.py#L20
+2026-07-15 14:08:21.427 WARN  RecoverForPythonFile      Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_8800417057e67c623202.py#L20
+2026-07-15 14:08:21.584 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_e6e2a655c29588775a56.py#L7
+2026-07-15 14:08:21.586 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_e6e2a655c29588775a56.py#L7
+2026-07-15 14:08:21.625 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+2026-07-15 14:08:21.630 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+2026-07-15 14:08:21.631 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+2026-07-15 14:08:21.635 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+2026-07-15 14:08:21.635 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+2026-07-15 14:08:21.636 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+2026-07-15 14:08:21.636 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+2026-07-15 14:08:21.637 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+2026-07-15 14:08:21.646 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c4c8007ce21bf5bf7a5d.py#L7
+2026-07-15 14:08:21.647 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c4c8007ce21bf5bf7a5d.py#L7
+2026-07-15 14:08:21.676 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+2026-07-15 14:08:21.690 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+2026-07-15 14:08:21.694 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+2026-07-15 14:08:21.695 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+2026-07-15 14:08:21.700 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+2026-07-15 14:08:21.702 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+2026-07-15 14:08:21.703 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+2026-07-15 14:08:21.704 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+2026-07-15 14:08:21.709 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a4a4a6900d283802d2f9.py#L7
+2026-07-15 14:08:21.709 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a4a4a6900d283802d2f9.py#L7
+2026-07-15 14:08:21.810 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_a5d262c15fce8b53cc2e.py#L8
+2026-07-15 14:08:21.815 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_a5d262c15fce8b53cc2e.py#L8
+2026-07-15 14:08:21.817 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c69f9992e6364b5ae9f2.py#L5
+2026-07-15 14:08:21.817 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c69f9992e6364b5ae9f2.py#L5
+2026-07-15 14:08:21.824 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = selected_indices[0]
+selected_indices[0].model()),(FIELD_IDENTIFIER,data_items) @ vudenc/vudenc_c6c2f1fa25bdf8034726.py#L6
+2026-07-15 14:08:21.866 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_38c48d83e6995d2d2fd4.py#L5
+2026-07-15 14:08:21.868 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_38c48d83e6995d2d2fd4.py#L5
+2026-07-15 14:08:21.987 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get('Iptc.Application2.Keywords')),(FIELD_IDENTIFIER,value) @ vudenc/vudenc_c7140fabe0c6b0239621.py#L2
+2026-07-15 14:08:22.045 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+2026-07-15 14:08:22.046 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+2026-07-15 14:08:22.050 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+2026-07-15 14:08:22.051 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+2026-07-15 14:08:22.108 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f5c23a20e00b350a022e.py#L7
+2026-07-15 14:08:22.109 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f5c23a20e00b350a022e.py#L7
+2026-07-15 14:08:22.139 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b0f6d0ee1898fdb88a60.py#L5
+2026-07-15 14:08:22.140 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b0f6d0ee1898fdb88a60.py#L5
+2026-07-15 14:08:22.165 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c80903ceabe2226bf23f.py#L5
+2026-07-15 14:08:22.166 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c80903ceabe2226bf23f.py#L5
+2026-07-15 14:08:22.358 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_4f1ee3d2b63e17f4eebc.py#L8
+2026-07-15 14:08:22.358 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_4f1ee3d2b63e17f4eebc.py#L8
+2026-07-15 14:08:22.401 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get_field(fieldname)),(FIELD_IDENTIFIER,options) @ vudenc/vudenc_81d9a6e60f0b2d13156c.py#L2
+2026-07-15 14:08:22.419 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_4fd2b8ee782f13a4b76e.py#L5
+2026-07-15 14:08:22.420 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_4fd2b8ee782f13a4b76e.py#L5
+2026-07-15 14:08:22.425 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp33 = ProductDocument.objects
+ProductDocument.objects.get(document = doc)),(FIELD_IDENTIFIER,product) @ vudenc/vudenc_82378de1e98bca80624c.py#L108
+2026-07-15 14:08:22.426 WARN  RecoverForPythonFile      Unable to assign identifier 'product' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L108
+2026-07-15 14:08:22.427 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp36 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+2026-07-15 14:08:22.427 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp34' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+2026-07-15 14:08:22.428 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp39 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+2026-07-15 14:08:22.428 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp37' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+2026-07-15 14:08:22.429 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp43 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+2026-07-15 14:08:22.429 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp41' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+2026-07-15 14:08:22.430 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp46 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+2026-07-15 14:08:22.430 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp45' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+2026-07-15 14:08:22.431 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp49 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+2026-07-15 14:08:22.431 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp48' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+2026-07-15 14:08:22.432 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp51 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+2026-07-15 14:08:22.432 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp50' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+2026-07-15 14:08:22.433 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp55 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+2026-07-15 14:08:22.433 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp54' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+2026-07-15 14:08:22.429 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp6 = dd.products
+dd.products.first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_3bc8d60bfe1ad34197fe.py#L16
+2026-07-15 14:08:22.435 WARN  RecoverForPythonFile      Unable to assign identifier 'pid' to field load '<unknown>' @ vudenc/vudenc_3bc8d60bfe1ad34197fe.py#L16
+2026-07-15 14:08:22.435 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp36 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+2026-07-15 14:08:22.435 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp34' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+2026-07-15 14:08:22.436 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp39 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+2026-07-15 14:08:22.436 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp37' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+2026-07-15 14:08:22.437 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp43 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+2026-07-15 14:08:22.437 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp41' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+2026-07-15 14:08:22.438 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp46 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+2026-07-15 14:08:22.438 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp45' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+2026-07-15 14:08:22.439 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp49 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+2026-07-15 14:08:22.439 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp48' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+2026-07-15 14:08:22.440 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp51 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+2026-07-15 14:08:22.440 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp50' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+2026-07-15 14:08:22.440 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp55 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+2026-07-15 14:08:22.441 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp54' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+2026-07-15 14:08:22.477 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b3b77d03ca78a02feee4.py#L5
+2026-07-15 14:08:22.478 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b3b77d03ca78a02feee4.py#L5
+2026-07-15 14:08:22.602 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_bd9d847cf7acbf10a09a.py#L8
+2026-07-15 14:08:22.606 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_bd9d847cf7acbf10a09a.py#L8
+2026-07-15 14:08:22.656 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_3ff1907b881ecc1d8658.py#L7
+2026-07-15 14:08:22.663 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_3ff1907b881ecc1d8658.py#L7
+2026-07-15 14:08:22.687 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_400f16b04baa4ba8d702.py#L10
+2026-07-15 14:08:22.688 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_400f16b04baa4ba8d702.py#L10
+2026-07-15 14:08:22.712 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_08316412ca74863361b2.py#L3
+2026-07-15 14:08:22.713 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_08316412ca74863361b2.py#L3
+2026-07-15 14:08:22.941 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = apps.get_model('dashboard.ExtractedChemical').objects
+apps.get_model('dashboard.ExtractedChemical').objects.get(rawchem_ptr = id)),(FIELD_IDENTIFIER,data_document) @ vudenc/vudenc_4195b8442f82cf865f36.py#L4
+2026-07-15 14:08:22.942 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = apps.get_model('dashboard.ExtractedFunctionalUse').objects
+apps.get_model('dashboard.ExtractedFunctionalUse').objects.get(rawchem_ptr = id)),(FIELD_IDENTIFIER,data_document) @ vudenc/vudenc_4195b8442f82cf865f36.py#L6
+2026-07-15 14:08:22.943 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = apps.get_model('dashboard.ExtractedListPresence').objects
+apps.get_model('dashboard.ExtractedListPresence').objects.get(rawchem_ptr = id)),(FIELD_IDENTIFIER,data_document) @ vudenc/vudenc_4195b8442f82cf865f36.py#L8
+2026-07-15 14:08:22.970 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = datetime.now(tz = pytz.utc)
+datetime.now(tz = pytz.utc).astimezone()),(FIELD_IDENTIFIER,tzinfo) @ vudenc/vudenc_420c102b3cb094f59057.py#L2
+2026-07-15 14:08:23.083 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp3 = tmp4 = article.changeset_set
+article.changeset_set.filter(revision = revision + 1)
+article.changeset_set.filter(revision = revision + 1).get()),(FIELD_IDENTIFIER,old_title) @ vudenc/vudenc_70a9f7e8c96115a7869f.py#L16
+2026-07-15 14:08:23.084 WARN  RecoverForPythonFile      Unable to assign identifier 'old_title' to field load '<unknown>' @ vudenc/vudenc_70a9f7e8c96115a7869f.py#L16
+2026-07-15 14:08:23.113 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8675bcdc0de0ca7af5ef.py#L7
+2026-07-15 14:08:23.114 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8675bcdc0de0ca7af5ef.py#L7
+2026-07-15 14:08:23.147 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_170a238f158350791f5e.py#L5
+2026-07-15 14:08:23.149 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_170a238f158350791f5e.py#L5
+2026-07-15 14:08:23.185 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = api.nova
+api.nova.aggregate_get(request, aggregate_id)),(FIELD_IDENTIFIER,metadata) @ vudenc/vudenc_18e873697fcfe82a8bdc.py#L3
+2026-07-15 14:08:23.193 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8734e2c3079091bc2690.py#L5
+2026-07-15 14:08:23.194 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8734e2c3079091bc2690.py#L5
+2026-07-15 14:08:23.202 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_8738474ebdfec02b1373.py#L8
+2026-07-15 14:08:23.207 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_8738474ebdfec02b1373.py#L8
+2026-07-15 14:08:23.323 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp9 = QAGroup.objects
+QAGroup.objects.get(extraction_script_id = pk)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_0c5e000b2532b74ed1b7.py#L12
+2026-07-15 14:08:23.324 WARN  RecoverForPythonFile      Unable to assign identifier 'group_pk' to field load '<unknown>' @ vudenc/vudenc_0c5e000b2532b74ed1b7.py#L12
+2026-07-15 14:08:23.344 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_69727ee9b4774f86e56a.py#L5
+2026-07-15 14:08:23.345 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_69727ee9b4774f86e56a.py#L5
+2026-07-15 14:08:23.361 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0cf2374844c7156af860.py#L3
+2026-07-15 14:08:23.362 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0cf2374844c7156af860.py#L3
+2026-07-15 14:08:23.380 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L10
+2026-07-15 14:08:23.380 WARN  RecoverForPythonFile      Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L10
+2026-07-15 14:08:23.381 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = module.project.testcaseresults_set
+module.project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L16
+2026-07-15 14:08:23.382 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp_tcs' to field load '<unknown>' @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L16
+2026-07-15 14:08:23.396 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_43f00d2fec2fdbb0a0cb.py#L10
+2026-07-15 14:08:23.398 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_43f00d2fec2fdbb0a0cb.py#L10
+2026-07-15 14:08:23.425 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = ContentType.objects
+ContentType.objects.get_for_model(Article)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_75567d6c9c94ca6cebda.py#L25
+2026-07-15 14:08:23.426 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp5 = ContentType.objects
+ContentType.objects.get_for_model(Article)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_75567d6c9c94ca6cebda.py#L25
+2026-07-15 14:08:23.429 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_44504ce4a4e127a9aa43.py#L3
+2026-07-15 14:08:23.429 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_44504ce4a4e127a9aa43.py#L3
+2026-07-15 14:08:23.471 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0ef13bbc94a850dc938d.py#L10
+2026-07-15 14:08:23.473 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0ef13bbc94a850dc938d.py#L10
+2026-07-15 14:08:23.503 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+2026-07-15 14:08:23.505 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+2026-07-15 14:08:23.506 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+2026-07-15 14:08:23.506 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+2026-07-15 14:08:23.511 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_6a6a68008a6c2867ffb2.py#L5
+2026-07-15 14:08:23.512 WARN  RecoverForPythonFile      Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_6a6a68008a6c2867ffb2.py#L5
+2026-07-15 14:08:23.635 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_33e776499459278e64f7.py#L10
+2026-07-15 14:08:23.636 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_33e776499459278e64f7.py#L10
+2026-07-15 14:08:23.704 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_76692ae93e9cab87faf5.py#L10
+2026-07-15 14:08:23.705 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_76692ae93e9cab87faf5.py#L10
+2026-07-15 14:08:23.725 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_60652bcbfcd7c351fa8c.py#L10
+2026-07-15 14:08:23.726 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_60652bcbfcd7c351fa8c.py#L10
+2026-07-15 14:08:23.729 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_6cbb021d11e09c93e0f5.py#L3
+2026-07-15 14:08:23.734 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_6cbb021d11e09c93e0f5.py#L3
+2026-07-15 14:08:23.755 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+2026-07-15 14:08:23.755 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+2026-07-15 14:08:23.757 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+2026-07-15 14:08:23.761 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+2026-07-15 14:08:24.349 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_63dd45ee8208d0932834.py#L3
+2026-07-15 14:08:24.350 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_63dd45ee8208d0932834.py#L3
+2026-07-15 14:08:24.354 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+2026-07-15 14:08:24.354 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+2026-07-15 14:08:24.355 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+2026-07-15 14:08:24.355 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+2026-07-15 14:08:24.399 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_65854c545d71adb4b55c.py#L3
+2026-07-15 14:08:24.400 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_65854c545d71adb4b55c.py#L3
+2026-07-15 14:08:24.411 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_661726265930bf267b5a.py#L14
+2026-07-15 14:08:24.411 WARN  RecoverForPythonFile      Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_661726265930bf267b5a.py#L14
+2026-07-15 14:08:24.618 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7d31d748e544a66e80dc.py#L7
+2026-07-15 14:08:24.619 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7d31d748e544a66e80dc.py#L7
+2026-07-15 14:08:24.761 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7fc622400ddba22673c2.py#L10
+2026-07-15 14:08:24.761 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7fc622400ddba22673c2.py#L10
+Successfully wrote graph to: /mnt/c/users/gulli/downloads/python-vulcode-detection/CPG/Vudenc/cpg_rebuilt.bin
+To load the graph, type `joern /mnt/c/users/gulli/downloads/python-vulcode-detection/CPG/Vudenc/cpg_rebuilt.bin`

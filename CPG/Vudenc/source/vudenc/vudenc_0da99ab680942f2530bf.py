@@ -1,0 +1,3 @@
+@messages_module.route('/message/send')...
+if request.method == 'PUT':
+return db_sendMessage(request.get_json())

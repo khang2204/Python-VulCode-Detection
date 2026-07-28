@@ -1,0 +1,3 @@
+@app.route('/logout')...
+logout_user()
+return redirect(url_for('view_home'))

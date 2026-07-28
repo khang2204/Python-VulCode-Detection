@@ -1,0 +1,3 @@
+def utf8_escape(input_string):...
+"""docstring"""
+return bytes(input_string, 'iso-8859-1').decode('utf-8')

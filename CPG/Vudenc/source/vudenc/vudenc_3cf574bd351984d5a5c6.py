@@ -1,0 +1,3 @@
+@property...
+return itertools.chain(*(pe.jvm_locations for pe in self.
+    _possible_environments))

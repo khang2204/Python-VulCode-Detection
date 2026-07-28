@@ -1,0 +1,180 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "sqli.py",
+      "start": {
+        "line": 16,
+        "col": 13,
+        "offset": 345
+      },
+      "end": {
+        "line": 16,
+        "col": 76,
+        "offset": 408
+      },
+      "extra": {
+        "message": "User input from 'username' is directly concatenated into a SQL statement via f-string formatting, leading to SQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "ssti.py",
+      "start": {
+        "line": 10,
+        "col": 12,
+        "offset": 176
+      },
+      "end": {
+        "line": 10,
+        "col": 46,
+        "offset": 210
+      },
+      "extra": {
+        "message": "User input from 'mathexp' is concatenated directly into a Jinja2 template and compiled using jinja2.Template. This enables Server-Side Template Injection (SSTI).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "lfi.py",
+      "start": {
+        "line": 3,
+        "col": 9,
+        "offset": 38
+      },
+      "end": {
+        "line": 3,
+        "col": 33,
+        "offset": 62
+      },
+      "extra": {
+        "message": "The application passes user-supplied input 'filename' directly to open() without sanitization, allowing arbitrary local file read (Path Traversal / Local File Inclusion).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssrf",
+      "path": "rfi.py",
+      "start": {
+        "line": 5,
+        "col": 9,
+        "offset": 56
+      },
+      "end": {
+        "line": 5,
+        "col": 68,
+        "offset": 115
+      },
+      "extra": {
+        "message": "The application issues HTTP requests to user-supplied URLs from the 'imagelink' parameter with SSL verification disabled, enabling Remote File Inclusion (RFI) / Server-Side Request Forgery (SSRF).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.reflected-xss",
+      "path": "xss.py",
+      "start": {
+        "line": 10,
+        "col": 9,
+        "offset": 156
+      },
+      "end": {
+        "line": 10,
+        "col": 50,
+        "offset": 197
+      },
+      "extra": {
+        "message": "The 'username' from the request payload is formatted directly into a response message without sanitization or HTML encoding, leading to Reflected Cross-Site Scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.host-header-injection",
+      "path": "hhi.py",
+      "start": {
+        "line": 18,
+        "col": 9,
+        "offset": 313
+      },
+      "end": {
+        "line": 18,
+        "col": 59,
+        "offset": 363
+      },
+      "extra": {
+        "message": "The application reads the HTTP 'Host' header and injects it directly into an HTML link tag in the response, enabling Host Header Injection and potential open redirect / credential leakage.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-113: HTTP Header Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded-credentials",
+      "path": "custom_db.py",
+      "start": {
+        "line": 28,
+        "col": 5,
+        "offset": 615
+      },
+      "end": {
+        "line": 28,
+        "col": 52,
+        "offset": 662
+      },
+      "extra": {
+        "message": "Hardcoded default administrator credentials 'admin' / 'admin' are inserted into the USERS database table on initialization.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

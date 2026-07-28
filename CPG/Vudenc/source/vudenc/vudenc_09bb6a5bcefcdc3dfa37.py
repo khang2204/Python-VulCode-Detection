@@ -1,0 +1,3 @@
+@app.route('/demo1', methods=['GET', 'POST'])...
+z = demo(6)
+return render_template('demo1.html', query=query1, rows=z)

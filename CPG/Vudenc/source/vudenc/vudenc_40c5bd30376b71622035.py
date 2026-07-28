@@ -1,0 +1,3 @@
+def is_admin():...
+"""docstring"""
+return os.getlogin() in grp.getgrnam('admin').gr_mem

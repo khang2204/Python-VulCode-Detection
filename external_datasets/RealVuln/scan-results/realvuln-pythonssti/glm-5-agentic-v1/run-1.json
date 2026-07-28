@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "main.py",
+      "start": {
+        "line": 14,
+        "col": 14,
+        "offset": 220
+      },
+      "end": {
+        "line": 14,
+        "col": 66,
+        "offset": 272
+      },
+      "extra": {
+        "message": "Server-Side Template Injection (SSTI): User input 'username' from query parameter is concatenated directly into a Jinja2 template string and rendered without sanitization. Jinja2 templates can execute arbitrary Python code, allowing attackers to read files, execute commands, and achieve Remote Code Execution. Attack payload example: /?username={{7*7}} will execute arithmetic. More severe payloads can access Python's __builtins__ for RCE.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

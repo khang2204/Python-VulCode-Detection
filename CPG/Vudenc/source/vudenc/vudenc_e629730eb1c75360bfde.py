@@ -1,0 +1,3 @@
+def __init__(self, host, port, database, username, password):...
+self.connection = psycopg2.connect(dbname=database, host=host, port=port,
+    user=username, password=password)

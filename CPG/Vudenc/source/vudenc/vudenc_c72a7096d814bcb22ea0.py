@@ -1,0 +1,3 @@
+def node_command(self, args=None):...
+"""docstring"""
+return self._create_command('node', args)

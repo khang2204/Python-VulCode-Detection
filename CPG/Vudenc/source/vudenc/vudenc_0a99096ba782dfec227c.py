@@ -1,0 +1,3 @@
+@app.route('/logout')...
+logout_user()
+return Response('<p>Logged out</p>')

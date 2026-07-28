@@ -1,0 +1,3 @@
+def startProgramFreezing(program_entity):...
+"""docstring"""
+return _processProgramFreezing(program_entity, 'freeze')

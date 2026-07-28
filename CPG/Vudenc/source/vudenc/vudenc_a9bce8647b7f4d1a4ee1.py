@@ -1,0 +1,3 @@
+def test_basic(self):...
+self.assertTrue({'name': 'DocType'} in DatabaseQuery('DocType').execute(
+    limit_page_length=None))

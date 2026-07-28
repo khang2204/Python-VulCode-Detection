@@ -1,0 +1,3 @@
+def frx(theta):...
+"""docstring"""
+return expm(-1.0j * theta / 2 * X)

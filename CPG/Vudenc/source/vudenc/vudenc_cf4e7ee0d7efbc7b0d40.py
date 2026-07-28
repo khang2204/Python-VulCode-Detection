@@ -1,0 +1,3 @@
+def main():...
+return st.ScenarioTestRunner.main(GoogleKatoTestScenario, test_case_list=[
+    GoogleKatoIntegrationTest])

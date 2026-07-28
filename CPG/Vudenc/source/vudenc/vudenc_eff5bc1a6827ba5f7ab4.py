@@ -1,0 +1,3 @@
+async def fetch_user_info(self, member_id: int, column: str):...
+query = f'SELECT {column} FROM user_info WHERE member_id = {member_id};'
+return await self.db_conn.fetchval(query)

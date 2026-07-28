@@ -1,0 +1,130 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 12,
+        "col": 5,
+        "offset": 252
+      },
+      "end": {
+        "line": 12,
+        "col": 62,
+        "offset": 313
+      },
+      "extra": {
+        "message": "User-controlled input 'ip' from request.args is passed directly to subprocess.check_output(). In platforms or environments where shell=True is active or if the argument parsing of ping can be abused, this could lead to command injection or command execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 17,
+        "col": 1,
+        "offset": 393
+      },
+      "end": {
+        "line": 17,
+        "col": 25,
+        "offset": 417
+      },
+      "extra": {
+        "message": "Hardcoded secret password 'password123' is defined in the source code, which can expose the application to unauthorized access.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 33,
+        "col": 5,
+        "offset": 835
+      },
+      "end": {
+        "line": 33,
+        "col": 29,
+        "offset": 863
+      },
+      "extra": {
+        "message": "Insecure deserialization using pickle.loads on untrusted raw request data can lead to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 46,
+        "col": 5,
+        "offset": 1235
+      },
+      "end": {
+        "line": 46,
+        "col": 63,
+        "offset": 1297
+      },
+      "extra": {
+        "message": "User input 'user_id' from request.args is concatenated directly into SQL string, which can lead to SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-mode",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 55,
+        "col": 5,
+        "offset": 1588
+      },
+      "end": {
+        "line": 55,
+        "col": 24,
+        "offset": 1611
+      },
+      "extra": {
+        "message": "Running Flask application with debug=True enabled in code can expose detailed error traces and an interactive debugger to users, potentially allowing arbitrary code execution.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

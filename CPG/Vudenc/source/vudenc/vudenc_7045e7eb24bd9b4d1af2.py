@@ -1,0 +1,3 @@
+def test_less_than_two_players(self):...
+"""docstring"""
+tournament.reportMatch(p1=9, p2='')

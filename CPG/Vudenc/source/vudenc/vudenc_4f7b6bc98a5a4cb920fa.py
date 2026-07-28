@@ -1,0 +1,3 @@
+def get(self, build_id):...
+api_path = '/_ah/api/buildbucket/v1/builds/%s' % build_id
+return self.redirect(api_path)

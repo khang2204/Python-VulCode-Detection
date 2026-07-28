@@ -1,0 +1,3 @@
+def add_existing_user(user_id, **kwargs):...
+"""docstring"""
+created_users[user_id] = kwargs

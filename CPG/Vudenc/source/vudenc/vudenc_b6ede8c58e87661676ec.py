@@ -1,0 +1,3 @@
+@app.route('/api/indi_service/stop', methods=['POST'])...
+controller.indi_service.stop()
+return {'indi_service': 'stopping'}

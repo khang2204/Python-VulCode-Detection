@@ -1,0 +1,3 @@
+@classmethod...
+"""docstring"""
+return kato.new_agent(bindings)

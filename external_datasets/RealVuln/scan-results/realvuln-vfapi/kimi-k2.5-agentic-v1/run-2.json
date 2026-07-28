@@ -1,0 +1,256 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 182,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 182,
+        "col": 75,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SQL Injection in /select endpoint: User-supplied 'username' parameter is directly concatenated into SQL query using f-string. An attacker can inject SQL payloads like '\" OR \"1\"=\"1\" to bypass authentication or extract data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 188,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 205,
+        "col": 13,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SQL Injection in /user PUT endpoint: All user-supplied fields (name, username, password, address, email, contact) are directly interpolated into SQL INSERT query using f-strings without parameterization. Attackers can inject SQL code through any of these fields.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 231,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 231,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SQL Injection in /user DELETE endpoint (username path): User-supplied 'username' parameter is directly concatenated into SQL DELETE query using f-string. Allows arbitrary SQL execution and data deletion.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 235,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 235,
+        "col": 78,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SQL Injection in /user DELETE endpoint (user address path): User-supplied 'user.address' is directly interpolated into SQL DELETE without quotes or parameterization. Also missing quotes around the value.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.nosql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 220,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 220,
+        "col": 54,
+        "offset": 0
+      },
+      "extra": {
+        "message": "NoSQL Injection in /find GET endpoint: User-supplied 'username' parameter is passed directly to MongoDB-style find() query. Attackers can use NoSQL operators like {'username': {'$ne': null}} to bypass authentication.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-943: Improper Neutralization of Special Elements in Data Query Logic"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.nosql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 224,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 225,
+        "col": 32,
+        "offset": 0
+      },
+      "extra": {
+        "message": "NoSQL Injection in /find POST endpoint: The entire JSON request body is passed directly to NoSQL find() without validation. Attackers can send arbitrary MongoDB operators like {'$where': '...'} to execute JavaScript or extract all data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-943: Improper Neutralization of Special Elements in Data Query Logic"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "main.py",
+      "start": {
+        "line": 242,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 247,
+        "col": 19,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Missing Authentication on critical /reset POST endpoint: Anyone can reset the entire database without authentication. Lines 244-245 delete database files (remove and rmtree operations). No auth checks present.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authorization",
+      "path": "main.py",
+      "start": {
+        "line": 227,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 236,
+        "col": 21,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Broken Access Control / IDOR in /user DELETE endpoint: No authentication or authorization checks. Any user can delete any other user by username. Allows mass deletion of user accounts without verification.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization",
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "main.py",
+      "start": {
+        "line": 113,
+        "col": 18,
+        "offset": 0
+      },
+      "end": {
+        "line": 113,
+        "col": 55,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure Password Hashing: MD5 algorithm is used for password hashing at line 113. MD5 is cryptographically broken and vulnerable to rainbow table attacks. Should use bcrypt, Argon2, or PBKDF2.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "main.py",
+      "start": {
+        "line": 187,
+        "col": 16,
+        "offset": 0
+      },
+      "end": {
+        "line": 187,
+        "col": 52,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure Password Hashing: MD5 algorithm is used for password hashing at line 187. MD5 is not suitable for password storage as it's fast and vulnerable to brute force attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self._node_ip_address

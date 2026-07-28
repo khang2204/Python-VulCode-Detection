@@ -1,0 +1,3 @@
+def build_node_tree(self, oldest_node, parent=None):...
+self.tree = Node(oldest_node)
+self.add_children(self.tree)

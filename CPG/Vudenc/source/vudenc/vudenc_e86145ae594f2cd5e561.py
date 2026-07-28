@@ -1,0 +1,3 @@
+def _get_table_name(self, field):...
+"""docstring"""
+return self.field_mapping[field][self.TABLE_NAME]

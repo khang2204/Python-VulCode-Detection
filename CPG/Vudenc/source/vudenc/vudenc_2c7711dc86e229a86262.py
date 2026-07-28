@@ -1,0 +1,6 @@
+@inlineCallbacks...
+from txpostgres import txpostgres, reconnection
+from txpostgres.reconnection import DeadConnectionDetector
+def startReconnecting(self, f):...
+print('ERROR: database connection is down (error: {0})'.format(f.value))
+return DeadConnectionDetector.startReconnecting(self, f)

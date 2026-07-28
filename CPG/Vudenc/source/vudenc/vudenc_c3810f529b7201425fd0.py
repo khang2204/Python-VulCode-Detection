@@ -1,0 +1,3 @@
+def get_by_id(self, user_id: int):...
+"""docstring"""
+return User.query.get(user_id)

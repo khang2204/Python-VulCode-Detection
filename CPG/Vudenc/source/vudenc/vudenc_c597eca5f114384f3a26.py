@@ -1,0 +1,3 @@
+def __init__(self, item, length=200, **kw):...
+VLength.__init__(self, item, length=length, empty_error=errors.NO_TITLE,
+    length_error=errors.TITLE_TOO_LONG, **kw)

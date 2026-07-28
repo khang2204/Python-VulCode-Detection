@@ -1,0 +1,3 @@
+def connect_to_database():...
+db = MySQLdb.connect('localhost', 'root', os.environ['PASSWORD'], 'test')
+return db

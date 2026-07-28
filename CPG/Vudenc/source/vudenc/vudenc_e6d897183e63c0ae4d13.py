@@ -1,0 +1,3 @@
+def get(self, request, *args, **kwargs):...
+form = JustURLForm()
+return render(request, 'custom-short-url.html', {'form': form})

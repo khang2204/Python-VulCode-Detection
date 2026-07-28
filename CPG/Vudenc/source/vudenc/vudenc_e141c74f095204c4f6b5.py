@@ -1,0 +1,3 @@
+def decorate(ruleinfo):...
+ruleinfo.threads = threads
+return ruleinfo

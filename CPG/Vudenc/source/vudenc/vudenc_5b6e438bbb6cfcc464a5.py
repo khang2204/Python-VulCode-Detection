@@ -1,0 +1,10 @@
+def test_without_email(self):...
+meta = DEF_SHIBD_META.copy()
+response = self._get(meta)
+self.assertEqual(response.status_code, 302)
+self.assertEqual(User.objects.count(), 2)
+user = User.objects.get(username='teekkarit@aalto.fi')
+self.assertEqual(user.email, '{:d}@localhost'.format(user.id))
+self.assertEqual(user.first_name, '')
+self.assertEqual(user.last_name, 'Teekkari')
+self.assertEqual(user.userprofile.student_id, '123453')

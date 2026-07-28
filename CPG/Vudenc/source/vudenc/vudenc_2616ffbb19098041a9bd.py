@@ -1,0 +1,3 @@
+def ecount(self):...
+"""docstring"""
+return len(self.edges)

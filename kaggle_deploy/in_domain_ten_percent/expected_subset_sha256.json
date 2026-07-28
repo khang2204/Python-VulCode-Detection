@@ -1,0 +1,19 @@
+{
+  "split_seed": 101,
+  "sampling_seed": 101,
+  "fraction": 0.1,
+  "datasets": {
+    "benchmarkpython": {
+      "samples": 87,
+      "sha256": "e09e8385686a0a25edfe9fa98ea85ff65c4b6cb1afb422a6684930e00fbd05ac"
+    },
+    "vudenc": {
+      "samples": 1108,
+      "sha256": "f4c32c14be7027653f36b0169cad215b1eb1be212e6ae971516df7ba7e8f79d4"
+    },
+    "realvuln_human": {
+      "samples": 56,
+      "sha256": "7afa86fdb8a6bd02c28f84824fb9c18f801ee82af8319eca0251cbcd3b922d89"
+    }
+  }
+}

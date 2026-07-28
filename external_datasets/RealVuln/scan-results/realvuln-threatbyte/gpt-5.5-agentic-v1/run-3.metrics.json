@@ -1,0 +1,22 @@
+{
+  "model": "gpt-5.5",
+  "repo": "realvuln-threatbyte",
+  "run_id": 3,
+  "input_tokens": 175349,
+  "output_tokens": 9010,
+  "total_tokens": 237095,
+  "cost_usd": 1.326683,
+  "wall_clock_seconds": 139.68673729896545,
+  "start_time": "",
+  "end_time": "",
+  "agent_steps": 0,
+  "tool_calls": 0,
+  "tool_calls_by_type": {},
+  "files_read": [],
+  "exit_status": "success",
+  "error_message": "",
+  "llm_json_repair": false,
+  "prompt_version": "sha256:3481f1432c23",
+  "prompt_label": "",
+  "ground_truth_content_hash": "sha256:825203c8de80bb0eeffc031a69137119d7b70fda3ade5104d3d55ff65b72b2cb"
+}

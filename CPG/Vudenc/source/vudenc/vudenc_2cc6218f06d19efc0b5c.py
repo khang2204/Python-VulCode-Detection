@@ -1,0 +1,3 @@
+def select_source(self, source_file_path):...
+return source_file_path.endswith('.java') or source_file_path.endswith('.scala'
+    )

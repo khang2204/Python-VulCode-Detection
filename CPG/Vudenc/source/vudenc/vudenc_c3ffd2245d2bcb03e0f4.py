@@ -1,0 +1,3 @@
+def _current_saml_session_id(self):...
+if 'saml_data' in session:
+return session['saml_data']['session_index']

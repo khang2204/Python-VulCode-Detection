@@ -1,0 +1,380 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection.user-id",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 39,
+        "col": 13,
+        "offset": 935
+      },
+      "end": {
+        "line": 39,
+        "col": 113,
+        "offset": 1035
+      },
+      "extra": {
+        "message": "User input from the 'id' parameter is concatenated directly into a SQL query string without sanitization or parameterization, resulting in SQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.auth-bypass",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 289,
+        "col": 21,
+        "offset": 8829
+      },
+      "end": {
+        "line": 289,
+        "col": 125,
+        "offset": 8933
+      },
+      "extra": {
+        "message": "User-supplied password parameter is directly concatenated into a SQL string. Although username is filtered, the password field is fully vulnerable to SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 71,
+        "col": 9,
+        "offset": 1963
+      },
+      "end": {
+        "line": 71,
+        "col": 40,
+        "offset": 1994
+      },
+      "extra": {
+        "message": "User input from 'msg' parameter is returned directly to the client without encoding or escaping, causing reflected Cross-Site Scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Reflected XSS"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 47,
+        "col": 17,
+        "offset": 1232
+      },
+      "end": {
+        "line": 47,
+        "col": 92,
+        "offset": 1307
+      },
+      "extra": {
+        "message": "User records from database columns (e.g. injected SQLi data or comments) are dynamically joined into a raw HTML table with no HTML escaping, leading to stored Cross-Site Scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Stored XSS"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirection.open-redirect",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 122,
+        "col": 21,
+        "offset": 3621
+      },
+      "end": {
+        "line": 122,
+        "col": 55,
+        "offset": 3655
+      },
+      "extra": {
+        "message": "User input from 'path' parameter is directly written into an inline script block executing window.location.replace, enabling Open Redirect and JavaScript injection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: Open Redirect"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.execution-after-redirect",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 142,
+        "col": 13,
+        "offset": 4081
+      },
+      "end": {
+        "line": 142,
+        "col": 70,
+        "offset": 4138
+      },
+      "extra": {
+        "message": "Execution continues to build and serve the sensitive content block even if the user cookie is absent. The JS redirect block only runs on the client-side, allowing unauthorized clients to view sensitive content if JavaScript is disabled.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection.nslookup",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 165,
+        "col": 17,
+        "offset": 4956
+      },
+      "end": {
+        "line": 165,
+        "col": 50,
+        "offset": 4989
+      },
+      "extra": {
+        "message": "User input from 'domain' is executed directly inside a system shell (shell=True), allowing arbitrary command injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 199,
+        "col": 13,
+        "offset": 6165
+      },
+      "end": {
+        "line": 199,
+        "col": 74,
+        "offset": 6226
+      },
+      "extra": {
+        "message": "Unsafe deserialization of user-supplied base64 string using pickle.loads allows arbitrary remote code execution (RCE).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Insecure Deserialization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.traversal.local-file-inclusion",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 211,
+        "col": 17,
+        "offset": 6468
+      },
+      "end": {
+        "line": 211,
+        "col": 57,
+        "offset": 6508
+      },
+      "extra": {
+        "message": "User-supplied 'path' parameter is passed to the open() function without sanitization, leading to local file inclusion (LFI) / Path Traversal.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf.url-open",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 213,
+        "col": 17,
+        "offset": 6496
+      },
+      "end": {
+        "line": 213,
+        "col": 52,
+        "offset": 6578
+      },
+      "extra": {
+        "message": "User-supplied 'path' parameter containing a protocol scheme is requested via urllib.request.urlopen(), enabling Server-Side Request Forgery (SSRF).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.session.session-fixation",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 231,
+        "col": 13,
+        "offset": 6998
+      },
+      "end": {
+        "line": 231,
+        "col": 42,
+        "offset": 7027
+      },
+      "extra": {
+        "message": "Directly assigning a user-supplied 'session' parameter to the SESSIONID cookie results in Session Fixation.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-384: Session Fixation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.missing-token",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 324,
+        "col": 21,
+        "offset": 10166
+      },
+      "end": {
+        "line": 324,
+        "col": 96,
+        "offset": 10241
+      },
+      "extra": {
+        "message": "Sensitive settings (user e-mail) can be updated via a simple GET request without anti-CSRF token verification, causing Cross-Site Request Forgery (CSRF).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.hardcoded-credentials",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 285,
+        "col": 13,
+        "offset": 8654
+      },
+      "end": {
+        "line": 285,
+        "col": 62,
+        "offset": 8703
+      },
+      "extra": {
+        "message": "Hardcoded default administrator username and password credentials are checked inline, leading to easily bypassable authentication.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection.bdr",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 183,
+        "col": 13,
+        "offset": 5590
+      },
+      "end": {
+        "line": 183,
+        "col": 47,
+        "offset": 5624
+      },
+      "extra": {
+        "message": "The custom do_BDR request handler extracts arbitrary shell commands from the HTTP request path and executes them with shell=True via subprocess.check_output.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssl.weak-configuration",
+      "path": "dsvpwa.py",
+      "start": {
+        "line": 37,
+        "col": 13,
+        "offset": 1386
+      },
+      "end": {
+        "line": 37,
+        "col": 44,
+        "offset": 1417
+      },
+      "extra": {
+        "message": "Enabling SSL v3 by reversing the OP_NO_SSLv3 restriction exposes the server to protocol degradation attacks (e.g. POODLE).",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-326: Inadequate Encryption Strength"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

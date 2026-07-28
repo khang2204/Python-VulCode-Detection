@@ -1,0 +1,3 @@
+def path_leaf(path):...
+head, tail = os.path.split(path)
+return tail or os.path.basename(head)

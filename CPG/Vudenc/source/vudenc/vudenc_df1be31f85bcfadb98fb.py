@@ -1,0 +1,20 @@
+def __init__(self, notRegex, trueRegex, session, size, postData,...
+self.logger = logging.getLogger('fuxploider')
+self.postData = postData
+self.formUrl = formUrl
+url = urlparse(self.formUrl)
+self.schema = url.scheme
+self.host = url.netloc
+self.uploadUrl = urljoin(formUrl, formAction)
+self.session = session
+self.trueRegex = trueRegex
+self.notRegex = notRegex
+self.inputName = inputName
+self.uploadsFolder = uploadsFolder
+self.size = size
+self.validExtensions = []
+self.httpRequests = 0
+self.codeExecUrlPattern = None
+self.logLock = Lock()
+self.stopThreads = False
+self.shouldLog = True

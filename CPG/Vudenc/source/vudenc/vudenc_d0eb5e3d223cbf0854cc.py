@@ -1,0 +1,3 @@
+@authn_views.route('/chpass')...
+"""docstring"""
+return _authn('change-password-action', force_authn=True)

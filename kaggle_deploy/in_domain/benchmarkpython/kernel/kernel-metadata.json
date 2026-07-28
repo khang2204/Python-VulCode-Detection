@@ -1,0 +1,16 @@
+{
+  "id": "khangtrn2/benchmarkpython-pag-vul-binary-training",
+  "title": "BenchmarkPython PAG-Vul Binary Training",
+  "code_file": "run_pagvul_binary.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "",
+  "dataset_sources": ["khangtrn2/benchmarkpython-pagvul-binary-assets"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

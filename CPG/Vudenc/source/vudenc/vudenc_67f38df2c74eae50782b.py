@@ -1,0 +1,3 @@
+def has_id(self, entity_id):...
+"""docstring"""
+return entity_id in self.__id_map

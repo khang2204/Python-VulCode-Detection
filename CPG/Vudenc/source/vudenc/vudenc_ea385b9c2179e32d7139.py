@@ -1,0 +1,3 @@
+def __init__(self, name, result_getter, event=None):...
+super(AwaitableEvent, self).__init__(name, event)
+self._result_getter = result_getter

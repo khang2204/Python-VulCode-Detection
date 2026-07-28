@@ -1,0 +1,3 @@
+@classmethod...
+return super(BaseZincCompile, cls).subsystem_dependencies() + (Zinc.Factory,
+    JvmPlatform)

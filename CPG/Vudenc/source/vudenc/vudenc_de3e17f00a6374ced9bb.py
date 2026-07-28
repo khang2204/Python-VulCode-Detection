@@ -1,0 +1,3 @@
+def get_all_stores(self):...
+"""docstring"""
+return self.cursor.execute('select storeid, storename from store')

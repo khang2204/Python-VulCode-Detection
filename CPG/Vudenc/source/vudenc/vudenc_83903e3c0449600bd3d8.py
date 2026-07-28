@@ -1,0 +1,3 @@
+def getDMs():...
+lastRepliedDmId = getLastReplied('DM')
+return api.direct_messages(full_text=True, since_id=lastRepliedDmId)

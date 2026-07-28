@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return os.path.join(os.path.dirname(THIS_FILE), 'swarming_bot.zip')

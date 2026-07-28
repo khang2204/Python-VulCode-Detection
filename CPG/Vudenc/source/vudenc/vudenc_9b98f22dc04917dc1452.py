@@ -1,0 +1,3 @@
+@app.route('/api/images/<type>/<image>/ready', methods=['GET'])...
+if get_image_database(type).lookup(image, file_required=False).is_ready():
+return {'ready': True}

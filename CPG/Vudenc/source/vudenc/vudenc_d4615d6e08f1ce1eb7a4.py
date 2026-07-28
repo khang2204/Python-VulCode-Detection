@@ -1,0 +1,3 @@
+def __iter__(self):...
+for item in self.sequence:
+yield item

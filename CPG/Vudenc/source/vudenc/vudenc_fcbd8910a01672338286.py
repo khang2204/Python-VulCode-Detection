@@ -1,0 +1,3 @@
+@classmethod...
+"""docstring"""
+return cls(home_path=None, bin_path=bin_path)

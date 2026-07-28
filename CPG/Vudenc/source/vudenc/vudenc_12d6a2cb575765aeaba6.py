@@ -1,0 +1,3 @@
+def get_related_obj(self, col_name, value):...
+rel_model = self.get_related_model(col_name)
+return self.session.query(rel_model).get(value)

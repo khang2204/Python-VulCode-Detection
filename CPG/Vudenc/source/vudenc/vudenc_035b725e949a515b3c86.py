@@ -1,0 +1,3 @@
+def BuildExtraConfData(extra_conf_vim_data):...
+return dict((expr, vimsupport.VimExpressionToPythonType(expr)) for expr in
+    extra_conf_vim_data)

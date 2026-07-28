@@ -1,0 +1,3 @@
+def create(self, products):...
+"""docstring"""
+return Zinc(self, products)

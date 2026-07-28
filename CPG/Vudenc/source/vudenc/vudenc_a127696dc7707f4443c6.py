@@ -1,0 +1,3 @@
+def formatOutput(p):...
+return p.format(host=url.host, date=datetime.utcnow().isoformat(), seqnum=
+    seqnum)

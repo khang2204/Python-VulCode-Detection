@@ -1,0 +1,205 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "models/user_model.py",
+      "start": {
+        "line": 72,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 73,
+        "col": 56,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-supplied username is directly formatted into a SQL query string and executed without parameterization or escaping. This allows SQL Injection (SQLi) when the 'vulnerable' flag is set to True.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.broken-object-level-authorization",
+      "path": "api_views/books.py",
+      "start": {
+        "line": 51,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 58,
+        "col": 82,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Broken Object Level Authorization (IDOR) allows any authenticated user to retrieve the secret content and ownership details of books belonging to other users via the book_title endpoint.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.unauthorized-password-update",
+      "path": "api_views/users.py",
+      "start": {
+        "line": 186,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 192,
+        "col": 110,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Broken Object Level Authorization (IDOR) allows any authenticated user to reset the password of any other user in the system by specifying their username in the path parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "config.py",
+      "start": {
+        "line": 13,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 13,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "A hardcoded secret key 'random' is used to sign JWT authentication tokens. This enables attackers to craft and sign arbitrary JWT tokens, allowing full authentication bypass.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.privilege-escalation",
+      "path": "api_views/users.py",
+      "start": {
+        "line": 60,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 66,
+        "col": 75,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The user registration endpoint allows a Mass Assignment / Privilege Escalation vulnerability where registering users can grant themselves administrator permissions by passing 'admin': true in the request body.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "api_views/users.py",
+      "start": {
+        "line": 24,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 26,
+        "col": 23,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The '/users/v1/_debug' endpoint does not perform any JWT token validation or authentication checks. This allows anonymous users to retrieve all registered users, including their usernames, emails, and plaintext passwords.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redos.catastrophic-backtracking",
+      "path": "api_views/users.py",
+      "start": {
+        "line": 143,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 146,
+        "col": 48,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The email validation regular expression contains overlapping nested groups and repetition leading to potential Regular Expression Denial of Service (ReDoS) when processed with specifically crafted long input strings.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-1333: Inefficient Regular Expression Complexity"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.disclosure.credential-enumeration",
+      "path": "api_views/users.py",
+      "start": {
+        "line": 101,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 106,
+        "col": 114,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The login endpoint returns distinct, specific error messages when a username does not exist versus when only the password is incorrect, allowing attackers to enumerate valid usernames on the platform.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

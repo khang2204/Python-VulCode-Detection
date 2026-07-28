@@ -1,0 +1,3 @@
+def record(request_handler, method):...
+is_valid = request_handler.xsrf_token_data == {'some': 'data'}
+calls.append((method, is_valid))

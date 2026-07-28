@@ -1,0 +1,3 @@
+from peewee import Database, SqliteDatabase
+def can_import_apsw():...
+return False

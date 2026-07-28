@@ -1,0 +1,3 @@
+def execute(self):...
+if JvmPlatform.global_instance().get_options().compiler == 'javac':
+return super(JavacCompile, self).execute()

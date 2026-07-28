@@ -1,0 +1,3 @@
+def get_task_line_group_acl(self):...
+"""docstring"""
+return self.task.__acl__()

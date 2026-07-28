@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return app.config['USER_EMAIL_SUFFIX']

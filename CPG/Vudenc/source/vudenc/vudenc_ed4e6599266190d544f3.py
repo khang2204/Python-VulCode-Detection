@@ -1,0 +1,3 @@
+def isValidJumpTarget(loc, items):...
+return loc not in invalidTargets and helpers.convert(items[loc][0])[0
+    ] == 'JUMPDEST'

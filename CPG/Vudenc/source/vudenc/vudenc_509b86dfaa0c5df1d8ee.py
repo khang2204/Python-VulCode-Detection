@@ -1,0 +1,6 @@
+def __init__(self, flag, txt=''):...
+self.flag = flag
+def innerFunc():...
+super(Stretch, self).__init__(slideParser.parse(txt, slideLexer) if txt else []
+    )
+Slide.parsingQ.insert(0, innerFunc)

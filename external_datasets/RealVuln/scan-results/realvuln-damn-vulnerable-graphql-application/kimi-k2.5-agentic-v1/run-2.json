@@ -1,0 +1,434 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 320,
+        "col": 7,
+        "offset": 0
+      },
+      "end": {
+        "line": 320,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'filter' parameter is directly interpolated into a raw SQL query using string formatting in SQLAlchemy's text() function. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "core/helpers.py",
+      "start": {
+        "line": 8,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 9,
+        "col": 30,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The run_cmd function executes arbitrary shell commands using os.popen() without any sanitization. User-controlled input flows to this function from multiple locations including ImportPaste mutation, system_diagnostics query, and system_debug query.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 210,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 211,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled URL parameters (host, port, path, scheme) are passed to helpers.run_cmd() which executes curl with the constructed URL. The strip_dangerous_characters function only removes semicolons and ampersands in hard mode, allowing command injection in easy mode.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 337,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 346,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'cmd' parameter is passed to helpers.run_cmd() after a weak allowlist check. The allowed_cmds function only checks if the command starts with certain strings, which can be bypassed using spaces or shell metacharacters.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 349,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 355,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'arg' parameter is directly concatenated into a shell command 'ps {}'.format(arg) and executed via helpers.run_cmd(). No input validation is performed.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "core/helpers.py",
+      "start": {
+        "line": 23,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 30,
+        "col": 15,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'filename' parameter is directly concatenated with WEB_UPLOADDIR path without sanitization. This allows path traversal attacks to write files to arbitrary locations on the filesystem.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.insecure-jwt-verification",
+      "path": "core/helpers.py",
+      "start": {
+        "line": 20,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 21,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "JWT tokens are decoded with verify_signature=False and verify_exp=False, completely disabling signature and expiration verification. This allows attackers to forge tokens.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.hardcoded-credentials",
+      "path": "app.py",
+      "start": {
+        "line": 14,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 15,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded SECRET_KEY and JWT_SECRET_KEY values ('dvga') are used in the application. These should be randomly generated and loaded from environment variables.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure.stack-trace",
+      "path": "core/view_override.py",
+      "start": {
+        "line": 47,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 55,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Detailed stack traces, debug information, and file paths are exposed in GraphQL error responses. This information can be used by attackers to understand the application structure and plan further attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Information Exposure Through an Error Message"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf.server-side-request-forgery",
+      "path": "core/views.py",
+      "start": {
+        "line": 209,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 211,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The ImportPaste mutation allows attackers to make the server fetch arbitrary URLs via curl. Even with strip_dangerous_characters, SSRF is possible to internal services and external systems.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "core/views.py",
+      "start": {
+        "line": 132,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 155,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The EditPaste mutation allows any user to edit any paste without verifying ownership or requiring authentication. An attacker can modify any paste by specifying its ID.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization",
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "core/views.py",
+      "start": {
+        "line": 157,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 173,
+        "col": 35,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The DeletePaste mutation allows any user to delete any paste without verifying ownership or requiring authentication. An attacker can delete arbitrary pastes by ID.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization",
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "core/views.py",
+      "start": {
+        "line": 385,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 389,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The delete_all_pastes query allows any user to delete all pastes without requiring admin privileges or authentication. This is a mass deletion vulnerability.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.dos.resource-exhaustion",
+      "path": "core/security.py",
+      "start": {
+        "line": 8,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 16,
+        "col": 15,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The simulate_load function runs a CPU-intensive loop with sleep that can be exploited for denial of service. This is called from resolve_system_update without rate limiting.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.insecure-direct-object-reference",
+      "path": "core/views.py",
+      "start": {
+        "line": 324,
+        "col": 3,
+        "offset": 0
+      },
+      "end": {
+        "line": 330,
+        "col": 55,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The resolve_paste query returns pastes by ID or title without verifying if the paste is public or if the requesting user owns it. Private pastes can be accessed by ID.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key",
+            "CWE-285: Improper Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.plaintext-passwords",
+      "path": "core/security.py",
+      "start": {
+        "line": 48,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 55,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Passwords are compared in plaintext without using secure hashing. The check_creds function directly compares password strings, indicating passwords are stored unhashed.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-256: Unprotected Storage of Credentials",
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "setup.py",
+      "start": {
+        "line": 63,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 64,
+        "col": 85,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded weak passwords ('changeme', 'password123') are used for default admin and operator accounts. These can be easily guessed by attackers.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

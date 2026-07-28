@@ -1,0 +1,3 @@
+def decorate(ruleinfo):...
+ruleinfo.message = message
+return ruleinfo

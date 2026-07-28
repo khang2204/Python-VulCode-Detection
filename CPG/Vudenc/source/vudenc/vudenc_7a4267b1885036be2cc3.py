@@ -1,0 +1,3 @@
+@staticmethod...
+"""docstring"""
+return User.filter_users(username, project_id, page)

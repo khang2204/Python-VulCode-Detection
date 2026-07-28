@@ -1,0 +1,3 @@
+def get_round_or_404(tournament, round_num):...
+"""docstring"""
+return tournament.round_numbered(round_num)

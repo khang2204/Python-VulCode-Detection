@@ -1,0 +1,3 @@
+def __init__(self, txt):...
+warn('Plus integration not yet implemented')
+super(PlusEnv, self).__init__('Plus: ' + txt)

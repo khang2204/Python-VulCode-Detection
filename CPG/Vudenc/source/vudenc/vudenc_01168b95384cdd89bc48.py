@@ -1,0 +1,3 @@
+@commands.command()...
+"""docstring"""
+await self.bot.say('https://www.nintendo.co.jp/netinfo/en_US/index.html')

@@ -1,0 +1,3 @@
+def execute(self):...
+"""docstring"""
+self._out = self.execute_queued()

@@ -1,0 +1,3 @@
+def kill_remote_session_by_name(self, name, host):...
+cmd = "ssh -t %s 'tmux kill-session -t %s'" % (host, name)
+send_main_session_command(self.session, cmd)

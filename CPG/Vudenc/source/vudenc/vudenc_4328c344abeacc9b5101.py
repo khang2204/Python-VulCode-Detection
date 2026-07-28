@@ -1,0 +1,13 @@
+def __init__(self, step=None):...
+self.step = step
+self.body = []
+self.css = []
+self.data = SharedCache()
+self.files = SharedCache()
+self.title = self.definition.get('title')
+self.subtitle = self.definition.get('subtitle')
+self.summary = self.definition.get('summary')
+self.library_includes = []
+self.stdout_interceptor = None
+self.stderr_interceptor = None
+self._last_update_time = 0

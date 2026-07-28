@@ -1,0 +1,331 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/app.py",
+      "start": {
+        "line": 261,
+        "col": 28,
+        "offset": 7050
+      },
+      "end": {
+        "line": 261,
+        "col": 88,
+        "offset": 7110
+      },
+      "extra": {
+        "message": "User input from request.json['search'] is directly concatenated into SQL query string passed to db.engine.execute(). This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-deserialization.yaml",
+      "path": "app/app.py",
+      "start": {
+        "line": 329,
+        "col": 14,
+        "offset": 8934
+      },
+      "end": {
+        "line": 329,
+        "col": 27,
+        "offset": 8947
+      },
+      "extra": {
+        "message": "yaml.load() is called with user-controlled file content without a safe Loader. This allows arbitrary code execution via malicious YAML payloads.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Insecure Deserialization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.jwt-bypass",
+      "path": "app/app.py",
+      "start": {
+        "line": 96,
+        "col": 5,
+        "offset": 2660
+      },
+      "end": {
+        "line": 99,
+        "col": 16,
+        "offset": 2745
+      },
+      "extra": {
+        "message": "insecure_verify() calls jwt.decode() with verify=False, completely bypassing JWT signature verification. Attackers can forge arbitrary JWT tokens.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-347: Missing JWT Signature Verification"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.broken-access-control.idor",
+      "path": "app/app.py",
+      "start": {
+        "line": 207,
+        "col": 22,
+        "offset": 5675
+      },
+      "end": {
+        "line": 208,
+        "col": 48,
+        "offset": 5701
+      },
+      "extra": {
+        "message": "The /fetch/customer endpoint allows any authenticated user to fetch any customer's information by providing their ID. No authorization check verifies the requesting user owns or has permission to access the target customer record.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key",
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss.stored",
+      "path": "app/app.py",
+      "start": {
+        "line": 103,
+        "col": 5,
+        "offset": 2800
+      },
+      "end": {
+        "line": 114,
+        "col": 75,
+        "offset": 3050
+      },
+      "extra": {
+        "message": "The 404 error handler reflects request.url directly into HTML template without sanitization. An attacker could craft a malicious URL containing XSS payload.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "app/app.py",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 680
+      },
+      "end": {
+        "line": 28,
+        "col": 60,
+        "offset": 815
+      },
+      "extra": {
+        "message": "Hardcoded SECRET_KEY_HMAC, SECRET_KEY_HMAC_2, and secret_key values are present in source code. These should be environment variables.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials.default-account",
+      "path": "app/app.py",
+      "start": {
+        "line": 62,
+        "col": 5,
+        "offset": 1630
+      },
+      "end": {
+        "line": 65,
+        "col": 30,
+        "offset": 1720
+      },
+      "extra": {
+        "message": "Default admin user with username='admin' and password='admin123' is created during setup_users(). This hardcoded credential poses significant risk if deployed with default configuration.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-deserialization.xxe",
+      "path": "app/app.py",
+      "start": {
+        "line": 303,
+        "col": 20,
+        "offset": 8185
+      },
+      "end": {
+        "line": 303,
+        "col": 38,
+        "offset": 8203
+      },
+      "extra": {
+        "message": "The /xxe_uploader endpoint processes DOCX files using python-docx Document() which may parse XML with XXE enabled by default. Malicious DOCX files with external entity references could lead to XXE attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-611: XML External Entity Reference"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "app/app.py",
+      "start": {
+        "line": 299,
+        "col": 18,
+        "offset": 8110
+      },
+      "end": {
+        "line": 300,
+        "col": 19,
+        "offset": 8145
+      },
+      "extra": {
+        "message": "File path is constructed using user-supplied filename with only partial sanitization via secure_filename(). The random prefix and concatenation logic may allow path traversal if attacker provides specially crafted filename.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.missing-authentication",
+      "path": "app/app.py",
+      "start": {
+        "line": 290,
+        "col": 5,
+        "offset": 7870
+      },
+      "end": {
+        "line": 308,
+        "col": 45,
+        "offset": 8365
+      },
+      "extra": {
+        "message": "The /xxe_uploader endpoint has no authentication check. Any unauthenticated user can upload files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.missing-authentication",
+      "path": "app/app.py",
+      "start": {
+        "line": 310,
+        "col": 5,
+        "offset": 8390
+      },
+      "end": {
+        "line": 313,
+        "col": 30,
+        "offset": 8470
+      },
+      "extra": {
+        "message": "The /yaml endpoint has no authentication check. Any unauthenticated user can access this functionality.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.missing-authentication",
+      "path": "app/app.py",
+      "start": {
+        "line": 315,
+        "col": 5,
+        "offset": 8495
+      },
+      "end": {
+        "line": 331,
+        "col": 55,
+        "offset": 9045
+      },
+      "extra": {
+        "message": "The /yaml_hammer endpoint has no authentication check. Any unauthenticated user can upload and process YAML files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss.stored",
+      "path": "app/app.py",
+      "start": {
+        "line": 271,
+        "col": 9,
+        "offset": 7360
+      },
+      "end": {
+        "line": 281,
+        "col": 75,
+        "offset": 7630
+      },
+      "extra": {
+        "message": "The error handler in search_customer reflects exception message directly into HTML template via render_template_string() without sanitization, potentially allowing XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

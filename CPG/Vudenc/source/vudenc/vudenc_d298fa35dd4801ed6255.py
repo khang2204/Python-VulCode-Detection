@@ -1,0 +1,6 @@
+from saker.fuzzers.fuzzer import Fuzzer
+"""CmdInjection"""
+def __init__(self):...
+super(CmdInjection, self).__init__()
+@staticmethod...
+return ['|id', "=cmd|'cmd'!''", ';id', '\n\rid', '`id`', '${id}', '\x00`id`']

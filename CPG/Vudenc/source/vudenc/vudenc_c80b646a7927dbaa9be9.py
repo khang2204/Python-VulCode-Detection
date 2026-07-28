@@ -1,0 +1,3 @@
+@app.route('/entry_type')...
+methods = ['Metals', 'Organics']
+return render_template('entry.html', methods=methods)

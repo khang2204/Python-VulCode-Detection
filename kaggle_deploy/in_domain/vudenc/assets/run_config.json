@@ -1,0 +1,16 @@
+{
+  "attention": "quantum",
+  "representation": "vudenc_raw_statement_context_blocks_joern_only",
+  "corpus_selection": "all_labelled_blocks; Joern graph construction is the only parser gate",
+  "split_mode": "standard",
+  "output_prefix": "vudenc_binary",
+  "trainer_args": {
+    "seed": 303,
+    "split_seed": 101,
+    "attention_dim": 64,
+    "value_dim": 64,
+    "head_learning_rate": 0.002,
+    "n_qubits": 10,
+    "quantum_depth": 5
+  }
+}

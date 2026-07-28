@@ -1,0 +1,3 @@
+def __iter__(self: T) ->Iterator[T]:...
+self.is_subquery = True
+yield self

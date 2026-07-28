@@ -1,0 +1,55 @@
+{
+  "architecture": "QDENN",
+  "protocol": "long_tail",
+  "source": "benchmarkpython",
+  "target": "benchmarkpython",
+  "training_seed": 101,
+  "split_seed": 101,
+  "evaluation_scope": "fixed_test_split_101",
+  "train_samples": 860,
+  "validation_samples": 185,
+  "test_samples": 185,
+  "source_manifest_sha256": "2575e05c194b3f10addea9b16f7274a3e2caa58db9c6b61f40de29ed4fc478c0",
+  "configuration": {
+    "vocabulary": 128,
+    "qubits": 7,
+    "max_length": 100,
+    "epochs": 10,
+    "batch_size": 32,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "fidelity_note": "Learning rate is not reported by the source paper; 0.01 is the declared reproduction choice."
+  },
+  "metrics": {
+    "accuracy": 0.5567567567567567,
+    "balanced_accuracy": 0.5048391151332328,
+    "precision": 0.375,
+    "recall": 0.3088235294117647,
+    "f1": 0.33870967741935487,
+    "vulnerable_recall": 0.3088235294117647
+  },
+  "long_tail": {
+    "rare_cwes": [
+      "501",
+      "502",
+      "601",
+      "611",
+      "78",
+      "89",
+      "90"
+    ],
+    "rare_test_samples": 20,
+    "rare_cwe_vulnerable_recall": 0.44999998807907104,
+    "common_cwes": [
+      "22",
+      "328",
+      "330",
+      "614",
+      "643",
+      "79",
+      "94"
+    ],
+    "common_test_samples": 48,
+    "common_cwe_vulnerable_recall": 0.25
+  }
+}

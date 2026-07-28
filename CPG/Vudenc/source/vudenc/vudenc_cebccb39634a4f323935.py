@@ -1,0 +1,3 @@
+def env_home(home_env_var):...
+home = os.environ.get(home_env_var)
+return self.Location.from_home(home) if home else None

@@ -1,0 +1,3 @@
+def __init__(self, list=None, size=5):...
+self.size = size
+self.data = list or []

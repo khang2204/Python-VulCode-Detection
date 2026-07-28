@@ -1,0 +1,3 @@
+def wrap_diff(x):...
+"""docstring"""
+return diff(*x)

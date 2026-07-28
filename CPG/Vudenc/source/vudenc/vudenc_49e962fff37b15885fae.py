@@ -1,0 +1,3 @@
+def __repr__(self):...
+"""docstring"""
+return self.__module__ + '.' + self.__class__.__name__ + '\nInstance: ' + self.name

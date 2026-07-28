@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self.config.get(self.section, 'default_eppn_scope')

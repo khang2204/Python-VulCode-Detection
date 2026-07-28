@@ -1,0 +1,3 @@
+def halt_dut(self, halt_command, expected_output):...
+self.command(halt_command, expected_output, 'Error halting DUT', False)
+db.log_event('Information', 'Debugger', 'Halt DUT')

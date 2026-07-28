@@ -1,0 +1,3 @@
+def countPlayers():...
+"""docstring"""
+return fetchone('select count(*) from Player')

@@ -1,0 +1,3 @@
+def test_complete_not_found(self):...
+self._tab_after('t')
+eq_(len(self.terminal.method_calls), 0)

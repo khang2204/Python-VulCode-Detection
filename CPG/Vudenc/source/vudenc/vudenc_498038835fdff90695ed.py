@@ -1,0 +1,3 @@
+def make_login_url(dest_url):...
+"""docstring"""
+return '/login?' + urllib.parse.urlencode({'dest': dest_url})

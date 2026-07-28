@@ -1,0 +1,3 @@
+def __init__(self, comp_name):...
+"""docstring"""
+self.comp_name = comp_name

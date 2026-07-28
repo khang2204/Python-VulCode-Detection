@@ -1,0 +1,3 @@
+def log(self):...
+for entry in self.entries:
+entry.log()

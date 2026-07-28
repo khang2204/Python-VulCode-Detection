@@ -1,0 +1,3 @@
+def __init__(self, default_tag):...
+"""docstring"""
+self.default_tag = default_tag

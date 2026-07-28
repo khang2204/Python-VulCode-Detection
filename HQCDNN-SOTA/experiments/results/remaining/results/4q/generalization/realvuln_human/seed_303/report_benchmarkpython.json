@@ -1,0 +1,34 @@
+{
+  "architecture": "HQCDNN",
+  "protocol": "generalization",
+  "source": "realvuln_human",
+  "target": "benchmarkpython",
+  "training_seed": 303,
+  "split_seed": 101,
+  "evaluation_scope": "full_target_dataset",
+  "train_samples": 303,
+  "validation_samples": 64,
+  "test_samples": 1230,
+  "source_manifest_sha256": "4ca4484834b2a0a45b26f67e0795158b246c98c2f6a973e7259f6e3c87eac14f",
+  "configuration": {
+    "qubits": 4,
+    "quantum_layers": 1,
+    "tfidf": "normalized Python token bigrams",
+    "tfidf_max_features": 512,
+    "epochs": 50,
+    "batch_size": 64,
+    "optimizer": "Adam",
+    "learning_rate": 0.005,
+    "adaptation_note": "The paper uses EVM opcode bigrams. Python lexical-token bigrams are the declared cross-language adaptation.",
+    "reused_fixed_split_in_domain_model": true
+  },
+  "metrics": {
+    "accuracy": 0.367479674796748,
+    "balanced_accuracy": 0.5,
+    "precision": 0.367479674796748,
+    "recall": 1.0,
+    "f1": 0.5374554102259216,
+    "vulnerable_recall": 1.0
+  },
+  "history": []
+}

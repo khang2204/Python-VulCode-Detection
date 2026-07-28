@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return self.config.get(self.section, 'pysaml2_config')

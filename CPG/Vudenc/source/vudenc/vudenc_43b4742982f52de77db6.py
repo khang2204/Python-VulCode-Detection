@@ -1,0 +1,3 @@
+def test_reinitialize_cluster(self):...
+api = self.mock_nsx_clustered_api()
+api._reinit_cluster()

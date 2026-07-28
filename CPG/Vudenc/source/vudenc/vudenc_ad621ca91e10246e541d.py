@@ -1,0 +1,3 @@
+def run(self, name):...
+if name and self.r_css_name.match(name):
+return name

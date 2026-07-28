@@ -1,0 +1,3 @@
+def get_current_user(self):...
+"""docstring"""
+return self._get_users_api().get_current_user(self.request)

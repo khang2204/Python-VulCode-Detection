@@ -1,0 +1,3 @@
+def post(self):...
+self.set_secure_cookie('username', self.get_argument('username'))
+self.redirect('/', permanent=True)

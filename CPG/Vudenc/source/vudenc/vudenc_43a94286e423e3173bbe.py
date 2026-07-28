@@ -1,0 +1,3 @@
+def headerData(self, num, orientation, role=None):...
+if orientation == Qt.Horizontal and role == Qt.DisplayRole:
+return self.column_headers[num]

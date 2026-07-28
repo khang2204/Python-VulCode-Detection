@@ -1,0 +1,3 @@
+def test_arg_delete_match(self):...
+"""docstring"""
+self.parser.parse_args(['--delete-match'])

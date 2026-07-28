@@ -1,0 +1,3 @@
+def __init__(self, degree_limit=1024, **kwargs):...
+super().__init__(**kwargs)
+self.degree_limit = degree_limit

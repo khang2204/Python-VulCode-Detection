@@ -1,0 +1,3 @@
+def toDict(self):...
+return dict(idleTimeout=self.idleTimeout, timeout=self.timeout, insecure=
+    self.insecure)

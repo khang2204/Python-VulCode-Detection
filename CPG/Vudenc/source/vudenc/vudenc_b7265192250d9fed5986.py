@@ -1,0 +1,3 @@
+@integration_synonym_api...
+verify_results(client, jwt, query='TESTING* @WILDCARDS', expected=[{'name':
+    '----TESTING WILDCARDS'}, {'name': '----TESTING'}])

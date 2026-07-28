@@ -1,0 +1,3 @@
+def innerFunc():...
+super(Footnote, self).__init__(slideParser.parse(txt, slideLexer),
+    '\\footnote[frame]{', '}')

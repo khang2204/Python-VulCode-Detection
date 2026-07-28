@@ -1,0 +1,3 @@
+@addObs.route('/')...
+return flask.render_template('addObsIndex.html', configuration=config,
+    page_title=u'Interface de saisie des données')

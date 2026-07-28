@@ -1,0 +1,3 @@
+def close(self):...
+"""docstring"""
+self.__connection.close()

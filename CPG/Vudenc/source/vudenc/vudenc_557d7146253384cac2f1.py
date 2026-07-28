@@ -1,0 +1,3 @@
+@functools.lru_cache(None)...
+"""docstring"""
+return self._get_model_field(CustomerResponse, name)

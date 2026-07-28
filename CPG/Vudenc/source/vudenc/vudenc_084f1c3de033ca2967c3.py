@@ -1,0 +1,3 @@
+def has_permission(self, request, view):...
+obj = getattr(view, self.obj_var, None)
+return obj is None or self.has_object_permission(request, view, obj)

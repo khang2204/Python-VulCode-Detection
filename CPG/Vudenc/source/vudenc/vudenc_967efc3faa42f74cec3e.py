@@ -1,0 +1,3 @@
+def clone(self):...
+"""docstring"""
+return TraversalPath(self.nodes[:])

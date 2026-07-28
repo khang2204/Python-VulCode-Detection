@@ -1,0 +1,3 @@
+def _hydrate_tags(tag_ids):...
+return [{'id': tag_id, 'name': MEASURE_TAGS[tag_id]['name']} for tag_id in
+    tag_ids]

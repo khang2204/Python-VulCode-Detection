@@ -1,0 +1,3 @@
+def __init__(self, leap_provider, credentials={}):...
+self._leap_provider = leap_provider
+self._credentials = credentials.copy()

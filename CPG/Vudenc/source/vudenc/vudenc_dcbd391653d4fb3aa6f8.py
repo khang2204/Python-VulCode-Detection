@@ -1,0 +1,3 @@
+@redirect_ui_on_replica...
+assert _ui_navbar_tabs
+self.redirect(_ui_navbar_tabs[0].navbar_tab_url)

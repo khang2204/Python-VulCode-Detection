@@ -1,0 +1,3 @@
+def set_done(self, cr, uid, ids, context={}):...
+self.write(cr, uid, ids, {'state': 'done'}, context=context)
+return True

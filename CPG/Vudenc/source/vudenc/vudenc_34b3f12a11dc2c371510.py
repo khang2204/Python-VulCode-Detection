@@ -1,0 +1,3 @@
+def _on_list_scroll(self, event):...
+if self.table_view.verticalScrollBar().value(
+self.load_torrents()

@@ -1,0 +1,334 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 182,
+        "col": 18,
+        "offset": 5600
+      },
+      "end": {
+        "line": 182,
+        "col": 85,
+        "offset": 5667
+      },
+      "extra": {
+        "message": "User-controlled input 'username' from query parameter is directly interpolated into SQL SELECT statement without parameterization. Attacker can inject malicious SQL like ' OR \"1\"=\"1' to dump all user data or ' UNION SELECT' to extract arbitrary data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 188,
+        "col": 5,
+        "offset": 5780
+      },
+      "end": {
+        "line": 204,
+        "col": 30,
+        "offset": 6100
+      },
+      "extra": {
+        "message": "User-controlled data from User model (name, username, password, address, email, contact) is directly interpolated into SQL INSERT statement without parameterization. Attacker can inject malicious SQL through any of these fields to manipulate the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 231,
+        "col": 15,
+        "offset": 7100
+      },
+      "end": {
+        "line": 231,
+        "col": 86,
+        "offset": 7171
+      },
+      "extra": {
+        "message": "User-controlled input 'username' from query parameter is directly interpolated into SQL DELETE statement without parameterization. Attacker can inject malicious SQL to delete arbitrary records or corrupt the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 235,
+        "col": 15,
+        "offset": 7260
+      },
+      "end": {
+        "line": 235,
+        "col": 88,
+        "offset": 7333
+      },
+      "extra": {
+        "message": "User-controlled input 'user.address' from request body is directly interpolated into SQL DELETE statement without parameterization or even quotes. This allows arbitrary SQL injection. Attacker can inject '1=1; DROP TABLE users;--' to delete entire table.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.nosql-injection",
+      "path": "main.py",
+      "start": {
+        "line": 223,
+        "col": 5,
+        "offset": 6960
+      },
+      "end": {
+        "line": 225,
+        "col": 31,
+        "offset": 7030
+      },
+      "extra": {
+        "message": "Raw JSON body from request is passed directly to MongoDB-style find() query without validation. Attacker can inject NoSQL operators like {\"username\": {\"$ne\": \"\"}} to bypass authentication or {\"$where\": \"this.password == '...'\"} to extract data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-943: Improper Neutralization of Special Elements in Data Query Logic"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-password-hashing",
+      "path": "main.py",
+      "start": {
+        "line": 113,
+        "col": 18,
+        "offset": 3400
+      },
+      "end": {
+        "line": 113,
+        "col": 56,
+        "offset": 3438
+      },
+      "extra": {
+        "message": "MD5 hash is used for password hashing. MD5 is cryptographically broken, vulnerable to collision attacks, and fast to compute making it susceptible to brute force and rainbow table attacks. Should use bcrypt, scrypt, or argon2 instead.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash",
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-password-hashing",
+      "path": "main.py",
+      "start": {
+        "line": 187,
+        "col": 5,
+        "offset": 5720
+      },
+      "end": {
+        "line": 187,
+        "col": 50,
+        "offset": 5765
+      },
+      "extra": {
+        "message": "MD5 hash is used for password hashing. MD5 is cryptographically broken, vulnerable to collision attacks, and fast to compute making it susceptible to brute force and rainbow table attacks. Should use bcrypt, scrypt, or argon2 instead.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash",
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "main.py",
+      "start": {
+        "line": 180,
+        "col": 1,
+        "offset": 5500
+      },
+      "end": {
+        "line": 183,
+        "col": 15,
+        "offset": 5600
+      },
+      "extra": {
+        "message": "The /select endpoint exposes user data (including sensitive information) without any authentication or authorization checks. Any unauthenticated user can query and retrieve all user records from the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "main.py",
+      "start": {
+        "line": 218,
+        "col": 1,
+        "offset": 6650
+      },
+      "end": {
+        "line": 225,
+        "col": 31,
+        "offset": 7030
+      },
+      "extra": {
+        "message": "The /find endpoints (GET and POST) expose user data without any authentication or authorization. The POST variant is especially dangerous as it allows arbitrary NoSQL queries against the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "main.py",
+      "start": {
+        "line": 185,
+        "col": 1,
+        "offset": 5670
+      },
+      "end": {
+        "line": 216,
+        "col": 28,
+        "offset": 6550
+      },
+      "extra": {
+        "message": "The PUT /user endpoint allows unauthenticated users to insert arbitrary user records into the database. No authentication or authorization is performed, allowing anyone to create accounts or inject malicious data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.broken-access-control",
+      "path": "main.py",
+      "start": {
+        "line": 227,
+        "col": 1,
+        "offset": 7035
+      },
+      "end": {
+        "line": 236,
+        "col": 28,
+        "offset": 7333
+      },
+      "extra": {
+        "message": "The DELETE /user endpoint allows unauthenticated deletion of user records by username or address. Any user can delete any other user's account without authorization, leading to unauthorized data modification and potential denial of service.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization",
+            "CWE-284: Improper Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.availability.denial-of-service",
+      "path": "main.py",
+      "start": {
+        "line": 242,
+        "col": 1,
+        "offset": 7420
+      },
+      "end": {
+        "line": 247,
+        "col": 28,
+        "offset": 7580
+      },
+      "extra": {
+        "message": "The POST /reset endpoint allows any unauthenticated user to delete the entire database (both SQL and NoSQL) and reinitialize it. This is a critical denial-of-service vulnerability allowing complete data loss.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function",
+            "CWE-400: Uncontrolled Resource Consumption"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure.sensitive-data-exposure",
+      "path": "main.py",
+      "start": {
+        "line": 180,
+        "col": 1,
+        "offset": 5500
+      },
+      "end": {
+        "line": 225,
+        "col": 31,
+        "offset": 7030
+      },
+      "extra": {
+        "message": "Multiple endpoints (/select, /find GET, /find POST) expose user data including names, addresses, emails, and contacts without authentication. While passwords are excluded in NoSQL queries, SQL injection can leak password hashes, and the lack of access control exposes all user PII.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+@staticmethod...
+return [(Column(*col) if not isinstance(col, Column) else col) for col in
+    columns]

@@ -1,0 +1,3 @@
+def sort(self, column, order):...
+self.reset()
+self.on_sort.emit(self.columns[column], bool(order))

@@ -1,0 +1,3 @@
+def send_rep(self, reqid, seqnum, status, data):...
+self.wz_sock.send_multipart(self.wz.make_router_rep_msg(reqid, seqnum,
+    status, data))

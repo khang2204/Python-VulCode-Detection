@@ -1,0 +1,230 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "sqli.py",
+      "start": {
+        "line": 16,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 16,
+        "col": 70,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from 'username' parameter is directly interpolated into an SQL query using f-string formatting. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.path-traversal",
+      "path": "lfi.py",
+      "start": {
+        "line": 3,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 3,
+        "col": 26,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input 'name' is passed directly to open() without path validation, allowing arbitrary file read via path traversal sequences like '../etc/passwd'.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssrf",
+      "path": "rfi.py",
+      "start": {
+        "line": 5,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 5,
+        "col": 66,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input 'name' is passed directly to requests.get() as the URL without validation, allowing Server-Side Request Forgery (SSRF) attacks to internal services.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssl.disabled-verification",
+      "path": "rfi.py",
+      "start": {
+        "line": 5,
+        "col": 49,
+        "offset": 0
+      },
+      "end": {
+        "line": 5,
+        "col": 63,
+        "offset": 0
+      },
+      "extra": {
+        "message": "verify=False disables SSL certificate validation, making the application vulnerable to man-in-the-middle attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-295: Improper Certificate Validation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "ssti.py",
+      "start": {
+        "line": 10,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 10,
+        "col": 44,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input 'exp' is concatenated into a Jinja2 Template and rendered, allowing Server-Side Template Injection (SSTI) that can lead to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-1336: Improper Neutralization of Special Elements Used in a Template Engine"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "xss.py",
+      "start": {
+        "line": 10,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 10,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input 'username' is reflected directly in the response without sanitization. If this response is rendered in HTML, it allows reflected XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "hhi.py",
+      "start": {
+        "line": 18,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 18,
+        "col": 56,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Host header value is used directly in HTML anchor tag without sanitization, allowing XSS attacks if the Host header is controlled by an attacker.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.open-redirect",
+      "path": "hhi.py",
+      "start": {
+        "line": 18,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 18,
+        "col": 56,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Host header value is used directly in HTML anchor href attribute. An attacker can manipulate the Host header to create malicious links that redirect users to attacker-controlled domains.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.error-message",
+      "path": "sqli.py",
+      "start": {
+        "line": 19,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 19,
+        "col": 35,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Database error messages are exposed directly to the user in API responses, which can leak sensitive information about the database structure and assist attackers.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

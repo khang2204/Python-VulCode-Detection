@@ -1,0 +1,3 @@
+def identify_bcache(device):...
+"""docstring"""
+return block.path_to_kname(device).startswith('bcache')

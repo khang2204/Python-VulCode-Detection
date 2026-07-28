@@ -1,0 +1,3 @@
+def on_tab_switch(self, notebook, tab, pagenum):...
+headerbar = tab.get_headerbar()
+self.set_titlebar(headerbar)

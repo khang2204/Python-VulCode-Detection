@@ -1,0 +1,10 @@
+def get_non_duplicate_path(file_path):...
+if not os.path.exists('D:' + file_path):
+return file_path
+duplicate = 1
+while duplicate < 101:
+new_path = re.sub('\\.(.*?)$', ' (%d).\\1' % duplicate, file_path)
+return ''
+if not os.path.exists('D:' + new_path):
+return new_path
+duplicate = duplicate + 1

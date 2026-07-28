@@ -1,0 +1,455 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "bad/libuser.py",
+      "start": {
+        "line": 12,
+        "col": 12,
+        "offset": 200
+      },
+      "end": {
+        "line": 12,
+        "col": 103,
+        "offset": 291
+      },
+      "extra": {
+        "message": "User-supplied username and password are concatenated directly into SQL query using str.format() in the login function. An attacker can inject SQL via the username or password fields to bypass authentication (e.g., entering ' OR '1'='1' -- as username). The good version uses parameterized queries with ?.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "bad/libuser.py",
+      "start": {
+        "line": 25,
+        "col": 5,
+        "offset": 480
+      },
+      "end": {
+        "line": 25,
+        "col": 103,
+        "offset": 578
+      },
+      "extra": {
+        "message": "User-supplied username and password are concatenated directly into INSERT SQL query using % string formatting in the create function. An attacker can inject arbitrary SQL via the username or password fields to manipulate the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "bad/libuser.py",
+      "start": {
+        "line": 53,
+        "col": 5,
+        "offset": 960
+      },
+      "end": {
+        "line": 53,
+        "col": 84,
+        "offset": 1039
+      },
+      "extra": {
+        "message": "User-supplied password and username are concatenated directly into UPDATE SQL query using str.format() in the password_change function. An attacker can inject SQL to change any user's password or modify arbitrary data in the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "bad/templates/posts.view.html",
+      "start": {
+        "line": 23,
+        "col": 38,
+        "offset": 800
+      },
+      "end": {
+        "line": 23,
+        "col": 60,
+        "offset": 822
+      },
+      "extra": {
+        "message": "User-authored post text is rendered with the | safe filter, which disables Jinja2 auto-escaping. Since post content comes from arbitrary user input (request.form.get('text') in mod_posts.py), this allows stored XSS \u2014 any user can inject JavaScript that executes in other users' browsers when viewing posts.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss-flash",
+      "path": "bad/templates/messages.html",
+      "start": {
+        "line": 8,
+        "col": 12,
+        "offset": 290
+      },
+      "end": {
+        "line": 8,
+        "col": 30,
+        "offset": 308
+      },
+      "extra": {
+        "message": "Flash messages are rendered with the | safe filter, disabling Jinja2 auto-escaping. Flash messages in mod_user.py come from user-controlled data (e.g., invalid username). If an attacker can control flash message content, this enables reflected XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.session-tampering",
+      "path": "bad/libsession.py",
+      "start": {
+        "line": 6,
+        "col": 5,
+        "offset": 60
+      },
+      "end": {
+        "line": 6,
+        "col": 72,
+        "offset": 127
+      },
+      "extra": {
+        "message": "Session cookie is created by base64-encoding a JSON object containing the username, with no signing, encryption, or integrity protection. An attacker can trivially forge session cookies by base64-encoding arbitrary JSON (e.g., {\"username\": \"admin\"}) to impersonate any user. The good version uses Fernet encryption to protect session integrity and confidentiality.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.hardcoded-secret-key",
+      "path": "bad/vulpy.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 280
+      },
+      "end": {
+        "line": 16,
+        "col": 35,
+        "offset": 314
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded as 'aaaaaaa', a trivially weak value. This key is used for signing Flask session cookies and other cryptographic operations. An attacker who knows this key can forge Flask sessions and potentially execute arbitrary code through the Flask debug interface.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.hardcoded-secret-key",
+      "path": "bad/vulpy-ssl.py",
+      "start": {
+        "line": 13,
+        "col": 1,
+        "offset": 200
+      },
+      "end": {
+        "line": 13,
+        "col": 35,
+        "offset": 234
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded as 'aaaaaaa', a trivially weak value. Same vulnerability as vulpy.py \u2014 an attacker who knows this key can forge Flask sessions.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.plaintext-password-storage",
+      "path": "bad/db_init.py",
+      "start": {
+        "line": 9,
+        "col": 5,
+        "offset": 120
+      },
+      "end": {
+        "line": 20,
+        "col": 90,
+        "offset": 630
+      },
+      "extra": {
+        "message": "User passwords (e.g., 'SuperSecret', '123123123', '12345678') are stored in plaintext in the SQLite database. The INSERT statement on line 20 writes the password directly without hashing. The good version uses Scrypt key derivation with random salt for password storage.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-256: Plaintext Storage of a Password"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.unverified-password-change",
+      "path": "bad/mod_user.py",
+      "start": {
+        "line": 64,
+        "col": 1,
+        "offset": 1650
+      },
+      "end": {
+        "line": 80,
+        "col": 70,
+        "offset": 2300
+      },
+      "extra": {
+        "message": "The password change endpoint (/user/chpasswd) does not require the current password to be verified before allowing a change. An attacker with access to an authenticated session can change the password without knowing the original. The good version requires current password verification via libuser.login() before permitting the change.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-620: Unverified Password Change"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.no-password-complexity",
+      "path": "bad/libuser.py",
+      "start": {
+        "line": 59,
+        "col": 1,
+        "offset": 1080
+      },
+      "end": {
+        "line": 60,
+        "col": 15,
+        "offset": 1110
+      },
+      "extra": {
+        "message": "The password_complexity() function always returns True, accepting any password regardless of length or complexity. This allows users to set trivially weak passwords. The good version enforces minimum 12-character length and checks against leaked password lists.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-521: Weak Password Requirements"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication-api",
+      "path": "bad/mod_api.py",
+      "start": {
+        "line": 47,
+        "col": 1,
+        "offset": 980
+      },
+      "end": {
+        "line": 51,
+        "col": 20,
+        "offset": 1080
+      },
+      "extra": {
+        "message": "The /api/post/<username> endpoint returns any user's posts without requiring authentication. Any unauthenticated user can enumerate and read all users' posts by iterating through usernames.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.mass-assignment",
+      "path": "bad/mod_api.py",
+      "start": {
+        "line": 57,
+        "col": 5,
+        "offset": 1140
+      },
+      "end": {
+        "line": 62,
+        "col": 40,
+        "offset": 1310
+      },
+      "extra": {
+        "message": "In do_post_create(), the authenticated username is set in data['username'] on line 57, but then data.update(request.get_json()) on line 62 allows the JSON request body to overwrite the username field. The post_schema lacks 'additionalProperties': False, so the extra username property passes validation. An authenticated user can post as any other user by including \"username\": \"victim\" in the JSON body.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.mfa-disable",
+      "path": "bad/mod_mfa.py",
+      "start": {
+        "line": 57,
+        "col": 1,
+        "offset": 1500
+      },
+      "end": {
+        "line": 63,
+        "col": 29,
+        "offset": 1700
+      },
+      "extra": {
+        "message": "The MFA disable endpoint (/mfa/disable) performs a state-changing security operation via GET request with no CSRF protection. An attacker can trick an authenticated user into visiting a crafted URL or loading an image tag that disables their MFA, weakening their account security.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal-delete",
+      "path": "bad/libapi.py",
+      "start": {
+        "line": 16,
+        "col": 5,
+        "offset": 310
+      },
+      "end": {
+        "line": 18,
+        "col": 16,
+        "offset": 380
+      },
+      "extra": {
+        "message": "The username parameter is concatenated directly into a Path.glob() pattern for file deletion. If username contains path traversal sequences (e.g., '../../etc/passwd'), the glob can match files outside /tmp/ and the f.unlink() call will delete them. The username comes from user input via the API key creation endpoint.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal-create",
+      "path": "bad/libapi.py",
+      "start": {
+        "line": 20,
+        "col": 5,
+        "offset": 385
+      },
+      "end": {
+        "line": 22,
+        "col": 22,
+        "offset": 440
+      },
+      "extra": {
+        "message": "The username parameter is formatted directly into a file path for API key file creation. If username contains path traversal sequences (e.g., '../../home/user/.bashrc'), the resulting keyfile path resolves outside /tmp/, and Path(keyfile).touch() creates a file at that arbitrary location.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.insecure-random",
+      "path": "bad/libapi.py",
+      "start": {
+        "line": 14,
+        "col": 5,
+        "offset": 240
+      },
+      "end": {
+        "line": 14,
+        "col": 72,
+        "offset": 307
+      },
+      "extra": {
+        "message": "API keys are generated using random.getrandbits() which uses the Mersenne Twister PRNG \u2014 not cryptographically secure. An attacker can predict key values after observing enough output. The secrets module or os.urandom() should be used for cryptographic key generation.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-mode",
+      "path": "bad/vulpy.py",
+      "start": {
+        "line": 55,
+        "col": 1,
+        "offset": 1250
+      },
+      "end": {
+        "line": 55,
+        "col": 70,
+        "offset": 1319
+      },
+      "extra": {
+        "message": "Flask debug mode is enabled (debug=True). This exposes an interactive debugger that allows arbitrary code execution if accessible. In production, this is a critical remote code execution vulnerability.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

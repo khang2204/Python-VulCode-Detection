@@ -1,0 +1,3 @@
+def filter(self, value, op=None):...
+self.filter_string = self.filter_func(value, op)
+print(self.filter_string)

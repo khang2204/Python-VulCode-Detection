@@ -1,0 +1,3 @@
+def get(self):...
+"""docstring"""
+self.write(api.survey.get_all(get_email(self)))

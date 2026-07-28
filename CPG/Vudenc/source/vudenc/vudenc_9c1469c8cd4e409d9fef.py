@@ -1,0 +1,3 @@
+def get_mail(self, mail_ident):...
+res, req = self.get('/mail/%s' % mail_ident)
+return res

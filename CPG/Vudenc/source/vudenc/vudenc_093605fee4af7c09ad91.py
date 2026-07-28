@@ -1,0 +1,3 @@
+def _flatten(iterables: Iterator[Iterator[T]]) ->Iterator[T]:...
+for iterable in iterables:
+yield from iterable

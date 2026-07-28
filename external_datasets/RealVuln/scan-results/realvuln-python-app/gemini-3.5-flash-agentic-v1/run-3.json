@@ -1,0 +1,331 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "target/project/models/Dashboard.py",
+      "start": {
+        "line": 7,
+        "col": 5,
+        "offset": 114
+      },
+      "end": {
+        "line": 7,
+        "col": 87,
+        "offset": 201
+      },
+      "extra": {
+        "message": "User-controlled pageId parameter is concatenated directly into SQL statement passed to db.execute(). This allows SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "target/project/controllers/404.py",
+      "start": {
+        "line": 94,
+        "col": 5,
+        "offset": 2280
+      },
+      "end": {
+        "line": 95,
+        "col": 50,
+        "offset": 2350
+      },
+      "extra": {
+        "message": "User input from request.url is formatted into template string and executed with render_template_string(). This enables Server-Side Template Injection (SSTI) and Remote Code Execution (RCE).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-1336: Improper Coupling of Template Engines and Applications",
+            "CWE-94: Improper Control of Generation of Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle",
+      "path": "target/project/controllers/About.py",
+      "start": {
+        "line": 27,
+        "col": 17,
+        "offset": 850
+      },
+      "end": {
+        "line": 27,
+        "col": 38,
+        "offset": 871
+      },
+      "extra": {
+        "message": "User-provided hex-encoded data from request.form['data_obj'] is decoded, written to a file, and deserialized via pickle.load(). This allows for Remote Code Execution (RCE).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml",
+      "path": "target/project/controllers/Information.py",
+      "start": {
+        "line": 18,
+        "col": 13,
+        "offset": 450
+      },
+      "end": {
+        "line": 18,
+        "col": 41,
+        "offset": 478
+      },
+      "extra": {
+        "message": "Insecure yaml.load() is called on user-supplied base64 encoded input, enabling arbitrary object instantiation and Remote Code Execution (RCE).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.traversal.path-traversal",
+      "path": "target/project/controllers/Validator.py",
+      "start": {
+        "line": 30,
+        "col": 5,
+        "offset": 800
+      },
+      "end": {
+        "line": 31,
+        "col": 80,
+        "offset": 890
+      },
+      "extra": {
+        "message": "User input from request.form['example_file'] is passed directly to open() and send_file() without validation, permitting path traversal to read arbitrary server files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.traversal.file-upload-path-traversal",
+      "path": "target/project/controllers/Validator.py",
+      "start": {
+        "line": 48,
+        "col": 13,
+        "offset": 1500
+      },
+      "end": {
+        "line": 48,
+        "col": 43,
+        "offset": 1530
+      },
+      "extra": {
+        "message": "The file.filename attribute is used directly to save the uploaded file to 'uploads/' directory without sanitization. A path traversal payload in filename can overwrite or create files in arbitrary directories.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss",
+      "path": "target/project/templates/search/index.html",
+      "start": {
+        "line": 13,
+        "col": 41,
+        "offset": 400
+      },
+      "end": {
+        "line": 13,
+        "col": 84,
+        "offset": 443
+      },
+      "extra": {
+        "message": "The search variable is rendered with {% autoescape false %}, which disables Jinja2 auto-escaping and exposes the endpoint to Reflected Cross-Site Scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access.missing-authentication",
+      "path": "target/project/controllers/Monitoring.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 150
+      },
+      "end": {
+        "line": 8,
+        "col": 50,
+        "offset": 230
+      },
+      "extra": {
+        "message": "The /monitoring endpoint does not perform any session checks or authentication, permitting unauthorized users to view process logs and sensitive system information.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access.missing-authentication",
+      "path": "target/project/controllers/Validator.py",
+      "start": {
+        "line": 9,
+        "col": 1,
+        "offset": 200
+      },
+      "end": {
+        "line": 11,
+        "col": 50,
+        "offset": 280
+      },
+      "extra": {
+        "message": "The /validator endpoint lacks authentication or authorization checks, allowing unauthorized users to upload, validate, and download XML templates.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xml.xxe",
+      "path": "target/project/controllers/Validator.py",
+      "start": {
+        "line": 15,
+        "col": 5,
+        "offset": 380
+      },
+      "end": {
+        "line": 15,
+        "col": 49,
+        "offset": 424
+      },
+      "extra": {
+        "message": "Using standard xml.dom.pulldom.parseString on user XML input from request.form['customers'] permits resolution of external entities, leading to XML External Entity (XXE) Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss-link",
+      "path": "target/project/templates/messaging/index.html",
+      "start": {
+        "line": 56,
+        "col": 25,
+        "offset": 2000
+      },
+      "end": {
+        "line": 56,
+        "col": 78,
+        "offset": 2053
+      },
+      "extra": {
+        "message": "The message link (item[3]) is rendered directly inside the href attribute of an <a> tag without scheme validation. An attacker can store a 'javascript:' URI, triggering stored cross-site scripting (XSS) when clicked.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cryptography.hardcoded-secret-key",
+      "path": "target/project/__init__.py",
+      "start": {
+        "line": 5,
+        "col": 1,
+        "offset": 100
+      },
+      "end": {
+        "line": 5,
+        "col": 36,
+        "offset": 135
+      },
+      "extra": {
+        "message": "The application sets app.config['SECRET_KEY'] to a hardcoded string ('random'), allowing session forgery and cookie tampering.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-mode",
+      "path": "target/project/__init__.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 136
+      },
+      "end": {
+        "line": 6,
+        "col": 17,
+        "offset": 152
+      },
+      "extra": {
+        "message": "The Flask application is configured with app.debug = True, enabling the interactive debugger in production, which can expose stack traces and allow remote code execution.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+def index(self):...
+return ''.join(filename + '/\n' if os.path.isdir(os.path.join(self.filename,
+    filename)) else filename + '\n' for filename in os.listdir(self.filename))

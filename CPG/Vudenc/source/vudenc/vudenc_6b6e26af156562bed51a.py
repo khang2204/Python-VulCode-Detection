@@ -1,0 +1,3 @@
+def __contains__(self, entity):...
+cache = self.__cache_map[type(entity)]
+return entity in cache

@@ -1,0 +1,3 @@
+def HigherOrderNodeToPath(self, node):...
+"""docstring"""
+return tuple(node.split(self.separator))

@@ -1,0 +1,3 @@
+def put(self, data):...
+self.cursor.execute(self.SQL_INSERT_JSON % (self.name, json.dumps(data)))
+return self.cursor.fetchone()[0]

@@ -1,0 +1,3 @@
+def put_mail(self, data):...
+res, req = self.put('/mails', data)
+return res, req

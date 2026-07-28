@@ -1,0 +1,3 @@
+@staticmethod...
+for i in xrange(256):
+yield chr(i)

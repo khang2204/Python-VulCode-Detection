@@ -1,0 +1,3 @@
+def _write_processor_info(self, processor_info_file, processors):...
+for processor in processors:
+f.write('{}\n'.format(processor.strip()))

@@ -1,0 +1,3 @@
+def connectionRecovered(self):...
+print('INFO: connection recovered')
+return DeadConnectionDetector.connectionRecovered(self)

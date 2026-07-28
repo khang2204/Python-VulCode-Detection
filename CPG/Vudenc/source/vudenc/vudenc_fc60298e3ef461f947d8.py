@@ -1,0 +1,3 @@
+def hard_reset(repo_path: str) ->str:...
+"""docstring"""
+return shell(f'git -C {repo_path} reset --hard')

@@ -1,0 +1,15 @@
+def test_validation(self):...
+app = TestApp(main({}))
+app.get('/service', status=400)
+res = app.post('/service', params='buh', status=400)
+self.assertTrue('Not a json body' in res.body)
+res = app.post('/service', params=json.dumps('buh'))
+self.assertEqual(res.body, json.dumps({'body': '"buh"'}))
+app.get('/service?paid=yup')
+res = app.get('/service?foo=1&paid=yup')
+self.assertEqual(res.json['foo'], 1)
+res = app.get('/service?foo=buh&paid=yup', status=400)
+errors = Errors.from_json(res.body)
+self.assertEqual(len(errors), 1)
+apidocs = app.app.registry.settings['apidocs']
+self.assertTrue(_json in apidocs['/service', 'POST']['validators'])

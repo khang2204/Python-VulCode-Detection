@@ -1,0 +1,3 @@
+def given_a_dynamic_link(self, dynamic_link):...
+settings.DYNAMIC_LINK = dynamic_link
+return self

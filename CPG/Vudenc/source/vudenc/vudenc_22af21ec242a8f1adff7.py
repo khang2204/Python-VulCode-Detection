@@ -1,0 +1,3 @@
+def test_country_not_provided(self):...
+"""docstring"""
+dummy_player(player_name='James Rogan', country='')

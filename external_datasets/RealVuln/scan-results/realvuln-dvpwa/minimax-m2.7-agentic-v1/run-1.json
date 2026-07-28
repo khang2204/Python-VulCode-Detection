@@ -1,0 +1,382 @@
+{
+  "version": "1.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "sqli/dao/student.py",
+      "start": {
+        "line": 42,
+        "col": 7,
+        "offset": 1062
+      },
+      "end": {
+        "line": 45,
+        "col": 20,
+        "offset": 1111
+      },
+      "extra": {
+        "message": "User input from name parameter is directly interpolated into SQL string using % formatting in Student.create(). This allows SQL injection since the name is not escaped or parameterized.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored",
+      "path": "sqli/templates/course.jinja2",
+      "start": {
+        "line": 3,
+        "col": 18,
+        "offset": 58
+      },
+      "end": {
+        "line": 3,
+        "col": 33,
+        "offset": 73
+      },
+      "extra": {
+        "message": "course.name is rendered without HTML escaping in title block. With autoescape=False in app.py:35, this allows stored XSS attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored",
+      "path": "sqli/templates/course.jinja2",
+      "start": {
+        "line": 14,
+        "col": 7,
+        "offset": 274
+      },
+      "end": {
+        "line": 14,
+        "col": 22,
+        "offset": 289
+      },
+      "extra": {
+        "message": "course.title is rendered without HTML escaping in content block. With autoescape=False in app.py:35, this allows stored XSS attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored",
+      "path": "sqli/templates/course.jinja2",
+      "start": {
+        "line": 15,
+        "col": 7,
+        "offset": 297
+      },
+      "end": {
+        "line": 15,
+        "col": 26,
+        "offset": 316
+      },
+      "extra": {
+        "message": "course.description is rendered without HTML escaping. With autoescape=False in app.py:35, this allows stored XSS attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored",
+      "path": "sqli/templates/course.jinja2",
+      "start": {
+        "line": 9,
+        "col": 47,
+        "offset": 201
+      },
+      "end": {
+        "line": 9,
+        "col": 62,
+        "offset": 216
+      },
+      "extra": {
+        "message": "course.title in breadcrumb link is rendered without HTML escaping. With autoescape=False in app.py:35, this allows stored XSS attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored",
+      "path": "sqli/templates/courses.jinja2",
+      "start": {
+        "line": 16,
+        "col": 31,
+        "offset": 393
+      },
+      "end": {
+        "line": 16,
+        "col": 46,
+        "offset": 408
+      },
+      "extra": {
+        "message": "course.title is rendered without HTML escaping in collection link. With autoescape=False in app.py:35, this allows stored XSS attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored",
+      "path": "sqli/templates/courses.jinja2",
+      "start": {
+        "line": 17,
+        "col": 42,
+        "offset": 457
+      },
+      "end": {
+        "line": 17,
+        "col": 65,
+        "offset": 480
+      },
+      "extra": {
+        "message": "course.description is rendered without HTML escaping. With autoescape=False in app.py:35, this allows stored XSS attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored",
+      "path": "sqli/templates/review.jinja2",
+      "start": {
+        "line": 32,
+        "col": 48,
+        "offset": 815
+      },
+      "end": {
+        "line": 32,
+        "col": 63,
+        "offset": 830
+      },
+      "extra": {
+        "message": "course.title is rendered without HTML escaping in review form. With autoescape=False in app.py:35, this allows stored XSS attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored",
+      "path": "sqli/templates/students.jinja2",
+      "start": {
+        "line": 16,
+        "col": 50,
+        "offset": 395
+      },
+      "end": {
+        "line": 16,
+        "col": 58,
+        "offset": 403
+      },
+      "extra": {
+        "message": "name is rendered without HTML escaping in collection link. With autoescape=False in app.py:35, this allows stored XSS attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.missing",
+      "path": "sqli/app.py",
+      "start": {
+        "line": 27,
+        "col": 13,
+        "offset": 610
+      },
+      "end": {
+        "line": 27,
+        "col": 33,
+        "offset": 630
+      },
+      "extra": {
+        "message": "CSRF middleware is commented out in app initialization. All POST forms are vulnerable to Cross-Site Request Forgery attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authz.missing",
+      "path": "sqli/views.py",
+      "start": {
+        "line": 134,
+        "col": 1,
+        "offset": 3249
+      },
+      "end": {
+        "line": 153,
+        "col": 1,
+        "offset": 3701
+      },
+      "extra": {
+        "message": "The evaluate() view has no @authorize() decorator. Any authenticated user can create marks for any student/course combination by crafting POST requests to /students/{student_id}/evaluate/{course_id}.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization",
+            "CWE-285: Improper Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authz.missing",
+      "path": "sqli/views.py",
+      "start": {
+        "line": 83,
+        "col": 1,
+        "offset": 1987
+      },
+      "end": {
+        "line": 93,
+        "col": 1,
+        "offset": 2220
+      },
+      "extra": {
+        "message": "The courses() view has no @authorize() decorator but creates new courses via POST. Any authenticated user can create courses.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authz.missing",
+      "path": "sqli/views.py",
+      "start": {
+        "line": 51,
+        "col": 1,
+        "offset": 1214
+      },
+      "end": {
+        "line": 60,
+        "col": 1,
+        "offset": 1461
+      },
+      "extra": {
+        "message": "The students() view has no @authorize() decorator but creates new students via POST. Any authenticated user can create student records.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authz.missing",
+      "path": "sqli/views.py",
+      "start": {
+        "line": 111,
+        "col": 1,
+        "offset": 2696
+      },
+      "end": {
+        "line": 131,
+        "col": 1,
+        "offset": 3186
+      },
+      "extra": {
+        "message": "The review() view has no @authorize() decorator. Any authenticated user can post reviews for any course without authorization check.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "sqli/dao/user.py",
+      "start": {
+        "line": 40,
+        "col": 22,
+        "offset": 903
+      },
+      "end": {
+        "line": 40,
+        "col": 69,
+        "offset": 950
+      },
+      "extra": {
+        "message": "Password hashing uses MD5 which is cryptographically broken and vulnerable to collision attacks. Additionally, direct string comparison instead of constant-time comparison exposes passwords to timing attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-327: Use of Broken Cryptographic Algorithm",
+            "CWE-328: Use of Weak Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

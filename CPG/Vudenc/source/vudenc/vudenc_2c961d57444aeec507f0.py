@@ -1,0 +1,3 @@
+def __eq__(self, other):...
+if other:
+return self.name == other.name and self.address == other.address

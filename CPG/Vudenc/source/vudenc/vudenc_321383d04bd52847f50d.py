@@ -1,0 +1,3 @@
+@classmethod...
+return cls.tool_jar_from_products(products, 'compiler-interface', cls.
+    options_scope)

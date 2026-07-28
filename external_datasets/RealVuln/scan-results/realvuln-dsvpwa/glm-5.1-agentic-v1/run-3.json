@@ -1,0 +1,780 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 39,
+        "col": 13,
+        "offset": 1200
+      },
+      "end": {
+        "line": 39,
+        "col": 86,
+        "offset": 1273
+      },
+      "extra": {
+        "message": "User input from params['id'] is concatenated directly into a SQL query string passed to cursor.execute(). An attacker can inject arbitrary SQL, e.g., ?id=0 UNION SELECT 1,2,3,4,5,6 to extract all user data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection-authbypass",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 289,
+        "col": 21,
+        "offset": 9600
+      },
+      "end": {
+        "line": 289,
+        "col": 93,
+        "offset": 9672
+      },
+      "extra": {
+        "message": "User input from params['password'] is concatenated directly into a SQL query in the login handler. The username is sanitized via re.sub but the password is not, allowing SQL injection via the password field (e.g., password=' OR '1'='1) to bypass authentication.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 71,
+        "col": 9,
+        "offset": 2300
+      },
+      "end": {
+        "line": 77,
+        "col": 18,
+        "offset": 2480
+      },
+      "extra": {
+        "message": "User input from params.get('msg') is returned directly without HTML escaping. An attacker can inject arbitrary JavaScript via ?msg=<script>alert(1)</script>, which is rendered in the page.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-guestbook",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 97,
+        "col": 17,
+        "offset": 3100
+      },
+      "end": {
+        "line": 97,
+        "col": 76,
+        "offset": 3159
+      },
+      "extra": {
+        "message": "Comment data retrieved from the database is rendered in HTML using str.format() without escaping. A stored XSS payload submitted via ?comment=<script>alert(1)</script> will execute when any user views the guestbook.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-sqlresults",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 47,
+        "col": 13,
+        "offset": 1500
+      },
+      "end": {
+        "line": 47,
+        "col": 72,
+        "offset": 1559
+      },
+      "extra": {
+        "message": "Database column values are rendered in HTML table cells using str.format() without escaping. If an attacker injects HTML/JS via SQL injection, it will execute when results are displayed.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 164,
+        "col": 17,
+        "offset": 5200
+      },
+      "end": {
+        "line": 170,
+        "col": 36,
+        "offset": 5400
+      },
+      "extra": {
+        "message": "User input from params['domain'] is passed directly to subprocess.check_output() with shell=True. An attacker can inject arbitrary OS commands via ?domain=www.google.com;cat+/etc/passwd, leading to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection-bdr",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 183,
+        "col": 13,
+        "offset": 5400
+      },
+      "end": {
+        "line": 188,
+        "col": 36,
+        "offset": 5600
+      },
+      "extra": {
+        "message": "The do_BDR handler passes self.path[1:] directly to subprocess.check_output() with shell=True. An attacker sending a BDR HTTP request can execute arbitrary OS commands, e.g., BDR /whoami leading to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 199,
+        "col": 22,
+        "offset": 6500
+      },
+      "end": {
+        "line": 199,
+        "col": 66,
+        "offset": 6544
+      },
+      "extra": {
+        "message": "User input from params['object'] is base64-decoded and passed to pickle.loads(). An attacker can craft a malicious pickle payload that executes arbitrary code via __reduce__, leading to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 209,
+        "col": 13,
+        "offset": 6800
+      },
+      "end": {
+        "line": 211,
+        "col": 47,
+        "offset": 6900
+      },
+      "extra": {
+        "message": "User input from params['path'] is passed to open() via os.path.abspath() without validation. An attacker can read arbitrary files via ?path=../../../etc/passwd. The check for '://' only prevents remote URLs from being opened locally, not directory traversal.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 213,
+        "col": 16,
+        "offset": 6930
+      },
+      "end": {
+        "line": 213,
+        "col": 46,
+        "offset": 6960
+      },
+      "extra": {
+        "message": "When the user-supplied path contains '://', it is passed to urllib.request.urlopen() without validation. An attacker can make the server issue requests to internal services via ?path=http://169.254.169.254/latest/meta-data/ to access cloud metadata or internal network resources.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirect.open-redirect",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 118,
+        "col": 9,
+        "offset": 3750
+      },
+      "end": {
+        "line": 125,
+        "col": 18,
+        "offset": 4050
+      },
+      "extra": {
+        "message": "User input from params['path'] is inserted into a JavaScript redirect without validation. An attacker can redirect users to malicious sites via ?path=https://evil.com, enabling phishing attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: Open Redirect"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.redirect-js-injection",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 122,
+        "col": 21,
+        "offset": 3900
+      },
+      "end": {
+        "line": 122,
+        "col": 50,
+        "offset": 3929
+      },
+      "extra": {
+        "message": "User input from params['path'] is inserted directly into a <script> block via str.format() without JavaScript escaping. An attacker can break out of the string literal and inject arbitrary JavaScript, e.g., ?path=');alert('XSS')//",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.session.fixation",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 229,
+        "col": 13,
+        "offset": 7300
+      },
+      "end": {
+        "line": 231,
+        "col": 38,
+        "offset": 7380
+      },
+      "extra": {
+        "message": "The session cookie SESSIONID is set directly from the user-supplied 'session' URL parameter. An attacker can fix a victim's session ID by tricking them into visiting ?session=ATTACKER_KNOWN_ID, enabling session fixation attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-384: Session Fixation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirect.open-redirect-sessionfixation",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 233,
+        "col": 9,
+        "offset": 7400
+      },
+      "end": {
+        "line": 240,
+        "col": 18,
+        "offset": 7700
+      },
+      "extra": {
+        "message": "User input from params['path'] is inserted into a JavaScript redirect without validation in the SessionFixation handler, enabling open redirect attacks via ?path=https://evil.com.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: Open Redirect"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.sessionfixation-js-injection",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 237,
+        "col": 21,
+        "offset": 7600
+      },
+      "end": {
+        "line": 237,
+        "col": 45,
+        "offset": 7624
+      },
+      "extra": {
+        "message": "User input from params['path'] is inserted directly into a <script> block via str.format() without JavaScript escaping, allowing XSS via ?path=');alert('XSS')//",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.command-output",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 171,
+        "col": 17,
+        "offset": 5500
+      },
+      "end": {
+        "line": 171,
+        "col": 56,
+        "offset": 5539
+      },
+      "extra": {
+        "message": "Output from subprocess.check_output() is rendered in HTML via str.format() without escaping. Command output containing HTML special characters will be interpreted as HTML, enabling XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.session-hijacking",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 257,
+        "col": 17,
+        "offset": 8400
+      },
+      "end": {
+        "line": 261,
+        "col": 48,
+        "offset": 8600
+      },
+      "extra": {
+        "message": "User data (username, firstname, lastname, email) retrieved from the database is rendered in HTML via str.format() without escaping. If a user's profile contains HTML/JS, it will execute when viewing the profile page.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.authbypass-welcome",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 296,
+        "col": 17,
+        "offset": 9800
+      },
+      "end": {
+        "line": 296,
+        "col": 62,
+        "offset": 9845
+      },
+      "extra": {
+        "message": "User data (firstname, lastname) from the database is rendered in HTML via str.format() without escaping in the login success message, enabling XSS through crafted user profile data.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.csrf-form",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 333,
+        "col": 21,
+        "offset": 10800
+      },
+      "end": {
+        "line": 347,
+        "col": 30,
+        "offset": 11200
+      },
+      "extra": {
+        "message": "User data (firstname, lastname, email) from the database is rendered in HTML form input value attributes via str.format() without escaping. An attacker can break out of the value attribute and inject arbitrary HTML/JS, e.g., via email value containing \" onmouseover=\"alert(1).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.email-update",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 322,
+        "col": 21,
+        "offset": 10500
+      },
+      "end": {
+        "line": 326,
+        "col": 40,
+        "offset": 10650
+      },
+      "extra": {
+        "message": "The email update in XSRequestForgery is performed via a GET request with no CSRF token or anti-forgery mechanism. An attacker can craft a link that changes a logged-in user's email address without their consent.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.account-delete",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 366,
+        "col": 21,
+        "offset": 11900
+      },
+      "end": {
+        "line": 368,
+        "col": 40,
+        "offset": 12000
+      },
+      "extra": {
+        "message": "The account deletion in Clickjacking is performed via a GET request with no CSRF token. An attacker can trick a logged-in user into deleting their account by visiting a crafted URL with ?delete=1.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 285,
+        "col": 13,
+        "offset": 9400
+      },
+      "end": {
+        "line": 285,
+        "col": 58,
+        "offset": 9445
+      },
+      "extra": {
+        "message": "Hardcoded credentials 'dsvpwa'/'dsvpwa' are used as a backdoor authentication bypass in the login handler, allowing anyone to authenticate without a valid database account.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.plaintext-passwords-xml",
+      "path": "db/users.xml",
+      "start": {
+        "line": 7,
+        "col": 9,
+        "offset": 200
+      },
+      "end": {
+        "line": 7,
+        "col": 37,
+        "offset": 228
+      },
+      "extra": {
+        "message": "Plaintext passwords are stored in the users.xml configuration file (e.g., 'Y3RFgwZP$v6v#D', 'guest', 'babygirl', '123456'). These are loaded into the in-memory database without hashing.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.ssl-weak",
+      "path": "dsvpwa.py",
+      "start": {
+        "line": 37,
+        "col": 13,
+        "offset": 1100
+      },
+      "end": {
+        "line": 39,
+        "col": 52,
+        "offset": 1200
+      },
+      "extra": {
+        "message": "SSL context explicitly disables security options: OP_NO_SSLv3 is removed (allowing SSLv3), OP_NO_COMPRESSION is removed (enabling CRIME attack vector), and OP_CIPHER_SERVER_PREFERENCE is removed (weakening cipher negotiation). This makes TLS connections vulnerable to protocol downgrade and compression-based attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.insecure-headers",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 237,
+        "col": 9,
+        "offset": 7100
+      },
+      "end": {
+        "line": 238,
+        "col": 62,
+        "offset": 7200
+      },
+      "extra": {
+        "message": "The response headers explicitly disable XSS protection (X-XSS-Protection: 0) and set an extremely permissive Content-Security-Policy (default-src * 'unsafe-inline') that allows inline scripts from any source, removing browser-level XSS defenses.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-693: Protection Mechanism Failure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal-static",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 116,
+        "col": 17,
+        "offset": 3400
+      },
+      "end": {
+        "line": 118,
+        "col": 44,
+        "offset": 3550
+      },
+      "extra": {
+        "message": "The request path is used directly in open('./{}'.format(path)) in the StaticHandler without sanitization or path traversal checks. An attacker can read arbitrary files via /../../../etc/passwd.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.sql-error",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 40,
+        "col": 9,
+        "offset": 1300
+      },
+      "end": {
+        "line": 41,
+        "col": 15,
+        "offset": 1330
+      },
+      "extra": {
+        "message": "SQLite OperationalError exceptions are returned directly to the user, exposing database schema information and query details that aid SQL injection attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.sql-error-auth",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 290,
+        "col": 21,
+        "offset": 9650
+      },
+      "end": {
+        "line": 291,
+        "col": 55,
+        "offset": 9700
+      },
+      "extra": {
+        "message": "SQLite OperationalError exceptions from the login query are returned to the user in the page content, exposing database schema and aiding further SQL injection attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.data-exposure.plaintext-passwords",
+      "path": "dsvpwa/server.py",
+      "start": {
+        "line": 27,
+        "col": 1,
+        "offset": 700
+      },
+      "end": {
+        "line": 35,
+        "col": 11,
+        "offset": 950
+      },
+      "extra": {
+        "message": "The users table stores passwords in plaintext (no hashing). The SQL injection vulnerability at /users allows extraction of these plaintext passwords, and the session column leaks active session tokens.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-312: Cleartext Storage of Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authorization",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 134,
+        "col": 9,
+        "offset": 4300
+      },
+      "end": {
+        "line": 142,
+        "col": 50,
+        "offset": 4600
+      },
+      "extra": {
+        "message": "The ExecutionAfterRedirect handler serves admin content (Manage Users, Update Database Settings) before checking authentication. The redirect is client-side JavaScript, so the admin HTML is already in the response body and accessible to unauthenticated users or tools that don't execute JavaScript.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.sensitive-data.session-id-in-url",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 230,
+        "col": 13,
+        "offset": 7350
+      },
+      "end": {
+        "line": 230,
+        "col": 38,
+        "offset": 7375
+      },
+      "extra": {
+        "message": "The session ID is accepted from a URL query parameter and set as a cookie. Session identifiers in URLs are logged in browser history, proxy logs, and referer headers, leading to session token leakage.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,464 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 22,
+        "col": 5,
+        "offset": 650
+      },
+      "end": {
+        "line": 23,
+        "col": 30,
+        "offset": 780
+      },
+      "extra": {
+        "message": "User input from 'username' and 'password_hash' is directly concatenated into a SQL INSERT query without parameterization. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 36,
+        "col": 5,
+        "offset": 1050
+      },
+      "end": {
+        "line": 37,
+        "col": 45,
+        "offset": 1140
+      },
+      "extra": {
+        "message": "User input from 'username' is directly concatenated into a SQL SELECT query without parameterization. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 49,
+        "col": 5,
+        "offset": 1500
+      },
+      "end": {
+        "line": 50,
+        "col": 35,
+        "offset": 1650
+      },
+      "extra": {
+        "message": "User input from 'user_id' query parameter is directly concatenated into a SQL query without parameterization. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 93,
+        "col": 5,
+        "offset": 2800
+      },
+      "end": {
+        "line": 95,
+        "col": 35,
+        "offset": 3000
+      },
+      "extra": {
+        "message": "User input from 'search_term' is directly concatenated into a SQL LIKE query without parameterization. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml-load",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 155,
+        "col": 9,
+        "offset": 4300
+      },
+      "end": {
+        "line": 157,
+        "col": 60,
+        "offset": 4450
+      },
+      "extra": {
+        "message": "User-controlled YAML data is deserialized using yaml.load() with unsafe Loader. This allows arbitrary code execution through YAML deserialization attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.idor",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 141,
+        "col": 5,
+        "offset": 3800
+      },
+      "end": {
+        "line": 148,
+        "col": 50,
+        "offset": 3950
+      },
+      "extra": {
+        "message": "The update_password endpoint accepts a user_id from the request body and updates any user's password without verifying the current user is authorized to modify that account. This allows attackers to change other users' passwords (IDOR vulnerability).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "backend/models.py",
+      "start": {
+        "line": 24,
+        "col": 9,
+        "offset": 600
+      },
+      "end": {
+        "line": 24,
+        "col": 60,
+        "offset": 650
+      },
+      "extra": {
+        "message": "Passwords are hashed using MD5 which is cryptographically broken and unsuitable for password storage. Attackers can easily crack MD5 hashes using rainbow tables or brute force.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort",
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "backend/models.py",
+      "start": {
+        "line": 27,
+        "col": 9,
+        "offset": 680
+      },
+      "end": {
+        "line": 27,
+        "col": 70,
+        "offset": 740
+      },
+      "extra": {
+        "message": "Password verification uses MD5 hash comparison. MD5 is cryptographically broken and allows attackers to crack passwords efficiently.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort",
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.hardcoded-secret",
+      "path": "backend/app.py",
+      "start": {
+        "line": 16,
+        "col": 5,
+        "offset": 300
+      },
+      "end": {
+        "line": 16,
+        "col": 40,
+        "offset": 340
+      },
+      "extra": {
+        "message": "Hardcoded SECRET_KEY in application configuration. This secret is used for session management and should be loaded from environment variables.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.hardcoded-secret",
+      "path": "backend/auth.py",
+      "start": {
+        "line": 23,
+        "col": 9,
+        "offset": 500
+      },
+      "end": {
+        "line": 23,
+        "col": 35,
+        "offset": 530
+      },
+      "extra": {
+        "message": "Hardcoded JWT secret key ('secret') used for token signing. This allows attackers to forge authentication tokens if they have access to the source code.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.insecure-cors",
+      "path": "backend/app.py",
+      "start": {
+        "line": 47,
+        "col": 1,
+        "offset": 1200
+      },
+      "end": {
+        "line": 56,
+        "col": 20,
+        "offset": 1550
+      },
+      "extra": {
+        "message": "Insecure CORS configuration reflects any Origin header and allows credentials. This allows malicious websites to make authenticated requests on behalf of users (CORS misconfiguration).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-942: Permissive Cross-domain Policy with Untrusted Domains",
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.race-condition",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 22,
+        "col": 5,
+        "offset": 800
+      },
+      "end": {
+        "line": 34,
+        "col": 30,
+        "offset": 1300
+      },
+      "extra": {
+        "message": "Time-of-check to time-of-use (TOCTOU) race condition: balance is checked after transaction object creation but before debit. Concurrent requests could cause negative balances or double-spending.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-367: Time-of-check Time-of-use Race Condition"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.storage.sensitive-data",
+      "path": "backend/app.py",
+      "start": {
+        "line": 93,
+        "col": 17,
+        "offset": 2500
+      },
+      "end": {
+        "line": 93,
+        "col": 40,
+        "offset": 2525
+      },
+      "extra": {
+        "message": "Hardcoded SSN (Social Security Number) in test data. Even in test data, sensitive PII should not be hardcoded in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials",
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.storage.sensitive-data",
+      "path": "backend/app.py",
+      "start": {
+        "line": 107,
+        "col": 17,
+        "offset": 2900
+      },
+      "end": {
+        "line": 107,
+        "col": 40,
+        "offset": 2925
+      },
+      "extra": {
+        "message": "Hardcoded SSN (Social Security Number) in test data. Even in test data, sensitive PII should not be hardcoded in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials",
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.storage.sensitive-data",
+      "path": "backend/app.py",
+      "start": {
+        "line": 121,
+        "col": 17,
+        "offset": 3300
+      },
+      "end": {
+        "line": 121,
+        "col": 40,
+        "offset": 3325
+      },
+      "extra": {
+        "message": "Hardcoded SSN (Social Security Number) in test data. Even in test data, sensitive PII should not be hardcoded in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials",
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.storage.sensitive-data",
+      "path": "backend/app.py",
+      "start": {
+        "line": 135,
+        "col": 17,
+        "offset": 3700
+      },
+      "end": {
+        "line": 135,
+        "col": 40,
+        "offset": 3725
+      },
+      "extra": {
+        "message": "Hardcoded SSN (Social Security Number) in test data. Even in test data, sensitive PII should not be hardcoded in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials",
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.storage.sensitive-data",
+      "path": "backend/app.py",
+      "start": {
+        "line": 149,
+        "col": 17,
+        "offset": 4100
+      },
+      "end": {
+        "line": 149,
+        "col": 40,
+        "offset": 4125
+      },
+      "extra": {
+        "message": "Hardcoded SSN (Social Security Number) in test data. Even in test data, sensitive PII should not be hardcoded in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials",
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.storage.sensitive-data",
+      "path": "backend/app.py",
+      "start": {
+        "line": 163,
+        "col": 17,
+        "offset": 4500
+      },
+      "end": {
+        "line": 163,
+        "col": 40,
+        "offset": 4525
+      },
+      "extra": {
+        "message": "Hardcoded SSN (Social Security Number) in test data. Even in test data, sensitive PII should not be hardcoded in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials",
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

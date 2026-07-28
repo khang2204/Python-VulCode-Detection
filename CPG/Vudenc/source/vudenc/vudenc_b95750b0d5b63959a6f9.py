@@ -1,0 +1,3 @@
+def test_http_retries(self):...
+api = self.mock_nsx_clustered_api(retries=9)
+self.assertEqual(session.adapters['https://'].max_retries.total, 9)

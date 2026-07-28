@@ -1,0 +1,3 @@
+def _load_x509_for_saml(self, path):...
+"""docstring"""
+return cryptolib.load_x509_certificate_pem_as_bare_base64(path)

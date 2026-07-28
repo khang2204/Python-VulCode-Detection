@@ -1,0 +1,3 @@
+@api.multi...
+return self.write({'has_agreed_child_protection_charter': True,
+    'date_agreed_child_protection_charter': fields.Datetime.now()})

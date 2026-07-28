@@ -1,0 +1,3 @@
+async def clear_mc(self):...
+for key in (MC_KEY_N_COMMENTS, MC_KEY_COMMENT_LIST):
+await clear_mc(key % self.post_id)

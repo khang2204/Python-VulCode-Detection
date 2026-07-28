@@ -1,0 +1,130 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 367
+      },
+      "end": {
+        "line": 16,
+        "col": 18,
+        "offset": 385
+      },
+      "extra": {
+        "message": "Hardcoded username 'admin' stored in plaintext in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 17,
+        "col": 1,
+        "offset": 386
+      },
+      "end": {
+        "line": 17,
+        "col": 24,
+        "offset": 410
+      },
+      "extra": {
+        "message": "Hardcoded password 'password123' stored in plaintext in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 33,
+        "col": 11,
+        "offset": 822
+      },
+      "end": {
+        "line": 33,
+        "col": 28,
+        "offset": 839
+      },
+      "extra": {
+        "message": "User-controlled request.data is passed directly to pickle.loads() without validation, allowing arbitrary code execution via malicious pickle payloads.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 46,
+        "col": 5,
+        "offset": 1201
+      },
+      "end": {
+        "line": 46,
+        "col": 62,
+        "offset": 1263
+      },
+      "extra": {
+        "message": "User input from request.args.get('id') is concatenated directly into an SQL query string, allowing SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.debug-enabled",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 55,
+        "col": 5,
+        "offset": 1536
+      },
+      "end": {
+        "line": 55,
+        "col": 22,
+        "offset": 1557
+      },
+      "extra": {
+        "message": "Flask application is running with debug=True, which exposes detailed error pages and can leak sensitive information.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

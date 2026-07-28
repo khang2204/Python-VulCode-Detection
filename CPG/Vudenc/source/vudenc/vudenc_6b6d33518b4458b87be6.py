@@ -1,0 +1,3 @@
+def to_str(self):...
+"""docstring"""
+return self.to_bytes().decode('ascii')

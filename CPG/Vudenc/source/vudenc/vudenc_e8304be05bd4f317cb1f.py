@@ -1,0 +1,3 @@
+@app.teardown_appcontext...
+"""docstring"""
+storage.close()

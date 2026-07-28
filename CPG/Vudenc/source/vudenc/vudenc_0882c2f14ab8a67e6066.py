@@ -1,0 +1,3 @@
+def realpath(self, path):...
+"""docstring"""
+return path

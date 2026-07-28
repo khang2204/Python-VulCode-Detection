@@ -1,0 +1,3 @@
+def __init__(self, param, redirect=True, *a, **kw):...
+Validator.__init__(self, param, *a, **kw)
+self.redirect = redirect

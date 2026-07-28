@@ -1,0 +1,3 @@
+def get_dhcp_pid(self):...
+ret = shellutil.run_get_output('/sbin/pidof dhclient')
+return ret[1] if ret[0] == 0 else None

@@ -1,0 +1,3 @@
+@property...
+return super(FilesHandler, self
+    ).content_security_policy + '; sandbox allow-scripts'

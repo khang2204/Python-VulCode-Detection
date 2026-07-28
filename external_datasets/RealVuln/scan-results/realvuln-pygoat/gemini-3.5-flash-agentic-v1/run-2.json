@@ -1,0 +1,455 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "introduction/views.py",
+      "start": {
+        "line": 162,
+        "col": 21,
+        "offset": 5210
+      },
+      "end": {
+        "line": 162,
+        "col": 52,
+        "offset": 5241
+      },
+      "extra": {
+        "message": "User input 'name' and 'password' are concatenated directly into raw SQL query in views.py line 158 and executed using login.objects.raw() on line 162. This allows SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "introduction/views.py",
+      "start": {
+        "line": 878,
+        "col": 24,
+        "offset": 32266
+      },
+      "end": {
+        "line": 878,
+        "col": 59,
+        "offset": 32301
+      },
+      "extra": {
+        "message": "User input 'name' and 'password' are concatenated directly into raw SQL query in views.py line 864 and executed using sql_lab_table.objects.raw() on line 878. This allows SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure-deserialization",
+      "path": "introduction/views.py",
+      "start": {
+        "line": 214,
+        "col": 20,
+        "offset": 7085
+      },
+      "end": {
+        "line": 214,
+        "col": 39,
+        "offset": 7104
+      },
+      "extra": {
+        "message": "Deserialization of untrusted user data via pickle.loads() using 'token' cookie without validation. This can lead to arbitrary code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Insecure Deserialization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure-deserialization",
+      "path": "dockerized_labs/insec_des_lab/main.py",
+      "start": {
+        "line": 36,
+        "col": 15,
+        "offset": 1108
+      },
+      "end": {
+        "line": 36,
+        "col": 39,
+        "offset": 1132
+      },
+      "extra": {
+        "message": "Deserialization of untrusted user data via pickle.loads() from request.form in main.py line 36. This can lead to arbitrary code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Insecure Deserialization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xxe",
+      "path": "introduction/views.py",
+      "start": {
+        "line": 260,
+        "col": 11,
+        "offset": 8432
+      },
+      "end": {
+        "line": 260,
+        "col": 71,
+        "offset": 8492
+      },
+      "extra": {
+        "message": "XML external entity (XXE) vulnerability in parseString via parseString(request.body, parser=parser) where the parser has feature_external_ges enabled. This permits remote file reading or SSRF.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: XML External Entities"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-injection",
+      "path": "introduction/views.py",
+      "start": {
+        "line": 460,
+        "col": 26,
+        "offset": 16430
+      },
+      "end": {
+        "line": 460,
+        "col": 35,
+        "offset": 16439
+      },
+      "extra": {
+        "message": "Execution of arbitrary code via eval() using user-controlled input 'val' from request.POST in cmd_lab2 view.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-95: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-injection",
+      "path": "introduction/mitre.py",
+      "start": {
+        "line": 218,
+        "col": 18,
+        "offset": 6713
+      },
+      "end": {
+        "line": 218,
+        "col": 34,
+        "offset": 6729
+      },
+      "extra": {
+        "message": "Execution of arbitrary code via eval() using user-controlled input 'expression' from request.POST in mitre_lab_25_api.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-95: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "introduction/views.py",
+      "start": {
+        "line": 430,
+        "col": 22,
+        "offset": 15352
+      },
+      "end": {
+        "line": 430,
+        "col": 39,
+        "offset": 15369
+      },
+      "extra": {
+        "message": "OS command injection via subprocess.Popen with shell=True on line 430. The user input 'domain' is formatted directly into command without verification or escaping.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "introduction/mitre.py",
+      "start": {
+        "line": 242,
+        "col": 16,
+        "offset": 7373
+      },
+      "end": {
+        "line": 242,
+        "col": 36,
+        "offset": 7393
+      },
+      "extra": {
+        "message": "OS command injection via subprocess.Popen in mitre_lab_17_api. The user input 'ip' is formatted directly into 'nmap ' command on line 241 and executed with shell=True in command_out().",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf.server-side-request-forgery",
+      "path": "introduction/views.py",
+      "start": {
+        "line": 963,
+        "col": 24,
+        "offset": 35136
+      },
+      "end": {
+        "line": 963,
+        "col": 41,
+        "offset": 35153
+      },
+      "extra": {
+        "message": "Server-Side Request Forgery (SSRF) view ssrf_lab2 allows any authenticated user to send arbitrary requests via requests.get(url) using request.POST['url'] without any host/domain validation.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "introduction/views.py",
+      "start": {
+        "line": 996,
+        "col": 13,
+        "offset": 36640
+      },
+      "end": {
+        "line": 996,
+        "col": 29,
+        "offset": 36656
+      },
+      "extra": {
+        "message": "Server-Side Template Injection (SSTI) view ssti_lab writes unfiltered user-controlled Django templates to files in templates/Lab_2021/A3_Injection/Blogs/ and renders them later, resulting in arbitrary code execution in context of the templates.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.broken-access-control.missing-authorization",
+      "path": "dockerized_labs/sensitive_data_exposure/dataexposure/views.py",
+      "start": {
+        "line": 112,
+        "col": 1,
+        "offset": 4317
+      },
+      "end": {
+        "line": 112,
+        "col": 31,
+        "offset": 4347
+      },
+      "extra": {
+        "message": "Missing authentication and authorization check in all_users_data_view allows completely unauthenticated external access to all users' sensitive PII including SSN, credit cards, and API keys.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.broken-access-control.insecure-cookie",
+      "path": "introduction/views.py",
+      "start": {
+        "line": 347,
+        "col": 13,
+        "offset": 12319
+      },
+      "end": {
+        "line": 347,
+        "col": 46,
+        "offset": 12352
+      },
+      "extra": {
+        "message": "Broken Access Control view ba_lab relies on user-controllable and modifiable HTTP Cookies 'admin' == '1' to authorize administrative operations.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-284: Improper Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.broken-access-control.insecure-cookie",
+      "path": "introduction/views.py",
+      "start": {
+        "line": 758,
+        "col": 9,
+        "offset": 27709
+      },
+      "end": {
+        "line": 758,
+        "col": 42,
+        "offset": 27742
+      },
+      "extra": {
+        "message": "Insecure cookie authorization check in a1_broken_access_lab_1 relies entirely on client-controllable cookie 'admin' == '1' to gain admin access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-284: Improper Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "introduction/views.py",
+      "start": {
+        "line": 927,
+        "col": 20,
+        "offset": 34031
+      },
+      "end": {
+        "line": 927,
+        "col": 39,
+        "offset": 34050
+      },
+      "extra": {
+        "message": "Path traversal vulnerability in ssrf_lab (views.py line 927) allows remote file read via open(filename) since the relative path 'file' is obtained directly from POST request and concatenated using os.path.join().",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.hardcoded-key",
+      "path": "pygoat/settings.py",
+      "start": {
+        "line": 25,
+        "col": 1,
+        "offset": 689
+      },
+      "end": {
+        "line": 25,
+        "col": 61,
+        "offset": 749
+      },
+      "extra": {
+        "message": "Vulnerability CWE-798: Static hardcoded secret keys (SECRET_KEY) used in settings.py can compromise cryptographically signed sessions and security controls.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.missing-csrf-protection",
+      "path": "introduction/mitre.py",
+      "start": {
+        "line": 169,
+        "col": 13,
+        "offset": 4722
+      },
+      "end": {
+        "line": 169,
+        "col": 81,
+        "offset": 4790
+      },
+      "extra": {
+        "message": "Lack of CSRF tokens or validation in mitre.py csrf_transfer_monei_api / csrf_transfer_monei allows Cross-Site Request Forgery (CSRF) via JWT token cookie authentication.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cryptography.weak-hash",
+      "path": "introduction/views.py",
+      "start": {
+        "line": 1026,
+        "col": 24,
+        "offset": 37709
+      },
+      "end": {
+        "line": 1026,
+        "col": 53,
+        "offset": 37738
+      },
+      "extra": {
+        "message": "Use of MD5 cryptographic hash function for hashing password is cryptographically weak and insecure.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Cryptographic Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

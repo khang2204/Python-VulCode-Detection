@@ -1,0 +1,3 @@
+def mark(self, name):...
+self.final = None
+self.marks.append((name, time.time()))

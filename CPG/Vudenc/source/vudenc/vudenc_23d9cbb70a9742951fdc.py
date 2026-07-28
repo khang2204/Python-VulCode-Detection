@@ -1,0 +1,15 @@
+def test_multiline_code(self):...
+"""docstring"""
+self.run_example('multiline_statement.py')
+self.assertEqual(0, len(self.b_mgr.skipped))
+self.assertEqual(1, len(self.b_mgr.files_list))
+self.assertTrue(self.b_mgr.files_list[0].endswith('multiline_statement.py'))
+issues = self.b_mgr.get_issue_list()
+self.assertEqual(2, len(issues))
+self.assertTrue(issues[0].fname.endswith('examples/multiline_statement.py'))
+self.assertEqual(1, issues[0].lineno)
+self.assertEqual(list(range(1, 3)), issues[0].linerange)
+self.assertIn('subprocess', issues[0].get_code())
+self.assertEqual(5, issues[1].lineno)
+self.assertEqual(list(range(3, 6 + 1)), issues[1].linerange)
+self.assertIn('shell=True', issues[1].get_code())

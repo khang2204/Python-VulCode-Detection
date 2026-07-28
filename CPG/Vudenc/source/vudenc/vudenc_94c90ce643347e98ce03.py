@@ -1,0 +1,3 @@
+def start_dhcp_service(self):...
+shellutil.run('/etc/rc.d/dhclient start {0}'.format(self.get_if_name()),
+    chk_err=False)

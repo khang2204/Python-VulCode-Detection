@@ -1,0 +1,9 @@
+def __init__(self, doctype):...
+self.doctype = doctype
+self.tables = []
+self.conditions = []
+self.or_conditions = []
+self.fields = None
+self.user = None
+self.ignore_ifnull = False
+self.flags = frappe._dict()

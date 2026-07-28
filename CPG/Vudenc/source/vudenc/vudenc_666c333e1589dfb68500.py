@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return TraversalPath(*self._path[1:])

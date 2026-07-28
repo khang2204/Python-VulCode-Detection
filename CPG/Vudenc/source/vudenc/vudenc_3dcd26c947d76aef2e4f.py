@@ -1,0 +1,3 @@
+def setUp(self):...
+self.objects = load_model_objects()
+self.client.login(username='Karyn', password='specialP@55word')

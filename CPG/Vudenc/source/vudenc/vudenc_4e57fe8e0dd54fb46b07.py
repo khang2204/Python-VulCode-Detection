@@ -1,0 +1,3 @@
+def redirect(self, url, **kwargs):...
+"""docstring"""
+super(Handler, self).redirect(str(url), **kwargs)

@@ -1,0 +1,3 @@
+def set_cve_names(self, cve_name_list):...
+mydict = self.get_val('mydict')
+mydict['cve_list'] = cve_name_list

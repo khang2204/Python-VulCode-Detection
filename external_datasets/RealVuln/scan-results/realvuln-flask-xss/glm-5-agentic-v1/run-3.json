@@ -1,0 +1,282 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "app/blueprints/sandboxes/templates/sandboxes/unsafe_params.html",
+      "start": {
+        "line": 6,
+        "col": 21,
+        "offset": 150
+      },
+      "end": {
+        "line": 6,
+        "col": 35,
+        "offset": 164
+      },
+      "extra": {
+        "message": "User input from request.args.get('name') is rendered with the 'safe' filter, disabling Jinja2's auto-escaping. The 'name' parameter from app/blueprints/sandboxes/views.py:13 is passed directly to this template, allowing reflected XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "app/blueprints/sandboxes/templates/sandboxes/unsafe_cookies.html",
+      "start": {
+        "line": 6,
+        "col": 21,
+        "offset": 150
+      },
+      "end": {
+        "line": 6,
+        "col": 35,
+        "offset": 164
+      },
+      "extra": {
+        "message": "User input from cookies or form data is rendered with the 'safe' filter, disabling Jinja2's auto-escaping. The 'name' variable from app/blueprints/sandboxes/views.py:27-34 is passed directly to this template, allowing XSS attacks via cookies or form submission.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "app/templates/admin/message.html",
+      "start": {
+        "line": 29,
+        "col": 30,
+        "offset": 900
+      },
+      "end": {
+        "line": 29,
+        "col": 52,
+        "offset": 922
+      },
+      "extra": {
+        "message": "Stored XSS vulnerability: message.from_user is rendered with 'safe' filter. This field can be set by any user via the API endpoint at app/blueprints/api/views.py:50 (no authentication required) or via feedback form at app/blueprints/account_area/views.py:75. An attacker can inject malicious scripts that execute when admins view messages.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "app/templates/admin/message.html",
+      "start": {
+        "line": 30,
+        "col": 26,
+        "offset": 952
+      },
+      "end": {
+        "line": 30,
+        "col": 48,
+        "offset": 974
+      },
+      "extra": {
+        "message": "Stored XSS vulnerability: message.message is rendered with 'safe' filter. This field contains arbitrary user-supplied content from the API (app/blueprints/api/views.py:47-52, no authentication) or feedback form (app/blueprints/account_area/views.py:66-76). Malicious scripts stored here will execute in the admin's browser.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.hardcoded-secret",
+      "path": "app/flask_xss.py",
+      "start": {
+        "line": 23,
+        "col": 5,
+        "offset": 520
+      },
+      "end": {
+        "line": 23,
+        "col": 55,
+        "offset": 570
+      },
+      "extra": {
+        "message": "Hardcoded secret key 'Keep it secret, keep it safe' is used for Flask session signing. An attacker with access to the source code can forge session cookies, potentially leading to authentication bypass and account takeover.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-enabled",
+      "path": "app/flask_xss.py",
+      "start": {
+        "line": 26,
+        "col": 5,
+        "offset": 630
+      },
+      "end": {
+        "line": 26,
+        "col": 33,
+        "offset": 658
+      },
+      "extra": {
+        "message": "Debug mode is enabled by default (DEBUG = True). In production, this exposes detailed error pages with stack traces, source code, and potentially sensitive environment information. It also enables the interactive debugger which can allow arbitrary code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-215: Insertion of Sensitive Information Into Debugging Code",
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.plaintext-password",
+      "path": "app/blueprints/login/views.py",
+      "start": {
+        "line": 17,
+        "col": 19,
+        "offset": 550
+      },
+      "end": {
+        "line": 17,
+        "col": 43,
+        "offset": 574
+      },
+      "extra": {
+        "message": "Password comparison is done in plaintext (user.password == password). Passwords are stored without hashing in the database (see app/models/models.py:11), violating secure password storage practices. If the database is compromised, all user passwords are exposed.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-256: Unprotected Storage of Credentials",
+            "CWE-522: Insufficiently Protected Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.missing-auth",
+      "path": "app/blueprints/api/views.py",
+      "start": {
+        "line": 43,
+        "col": 5,
+        "offset": 1050
+      },
+      "end": {
+        "line": 56,
+        "col": 41,
+        "offset": 1450
+      },
+      "extra": {
+        "message": "The MessagesView.post() method has no authentication decorator (@admin_required is missing, unlike other methods in this class). Any unauthenticated user can create messages with arbitrary content and from_user values, which are then displayed to admins with XSS vulnerabilities.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirect.open-redirect",
+      "path": "app/blueprints/xss_protection/views.py",
+      "start": {
+        "line": 11,
+        "col": 12,
+        "offset": 280
+      },
+      "end": {
+        "line": 12,
+        "col": 25,
+        "offset": 330
+      },
+      "extra": {
+        "message": "Open redirect vulnerability: The 'next' parameter from request.args is used directly in redirect() without validation. An attacker can craft a malicious URL like /toggle_xss_protection/?next=https://evil.com to redirect users to an external malicious site after they toggle XSS protection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.exposure.sensitive-data",
+      "path": "app/models/models.py",
+      "start": {
+        "line": 24,
+        "col": 5,
+        "offset": 620
+      },
+      "end": {
+        "line": 29,
+        "col": 6,
+        "offset": 780
+      },
+      "extra": {
+        "message": "The User.serialize property exposes the password field (line 27). This serialized data is returned by the API endpoint at app/blueprints/api/views.py:84-86, allowing any authenticated user who can view user profiles to see other users' plaintext passwords.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "app/templates/admin/message.html",
+      "start": {
+        "line": 31,
+        "col": 26,
+        "offset": 1004
+      },
+      "end": {
+        "line": 31,
+        "col": 45,
+        "offset": 1023
+      },
+      "extra": {
+        "message": "The message.date field is rendered with 'safe' filter. While the date value is generated server-side, using 'safe' filter is unnecessary and represents a defense-in-depth issue. Combined with the other stored XSS vectors in this template, it indicates a pattern of unsafe rendering.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

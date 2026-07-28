@@ -1,0 +1,3 @@
+def create_dummy_data():...
+drop()
+tools.bulksql(open('sql/data.sql', 'r').read())

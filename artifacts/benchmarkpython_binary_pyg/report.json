@@ -1,0 +1,42 @@
+{
+  "binary_counts": {
+    "benign": 778,
+    "vulnerable": 452
+  },
+  "dataset": "/mnt/c/users/gulli/downloads/python-vulcode-detection/artifacts/benchmarkpython_binary_pyg/benchmarkpython_binary_graphs.pt",
+  "edge_counts_with_reverse_edges": {
+    "AST": 775512,
+    "CFG": 575474,
+    "REACHING_DEF": 1075446
+  },
+  "edge_type_to_id": {
+    "AST": 0,
+    "CFG": 1,
+    "REACHING_DEF": 2
+  },
+  "exported_graphs": 1230,
+  "feature_dim": 128,
+  "labels": {
+    "benign": 0,
+    "vulnerable": 1
+  },
+  "raw_joern_graphs": "/mnt/c/users/gulli/downloads/python-vulcode-detection/artifacts/benchmarkpython_binary_pyg/joern_graphs.jsonl",
+  "selected_samples": 1230,
+  "skipped_graphs": [],
+  "vulnerable_counts_by_cwe": {
+    "22": 65,
+    "328": 71,
+    "330": 99,
+    "501": 18,
+    "502": 18,
+    "601": 13,
+    "611": 8,
+    "614": 24,
+    "643": 51,
+    "78": 13,
+    "79": 31,
+    "89": 5,
+    "90": 16,
+    "94": 20
+  }
+}

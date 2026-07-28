@@ -1,0 +1,3 @@
+def loud_reply(self, body, *args, **kwargs):...
+self.log(body.rstrip())
+self.reply(b'<pre>' + body.encode('utf-8'), *list(args), **kwargs)

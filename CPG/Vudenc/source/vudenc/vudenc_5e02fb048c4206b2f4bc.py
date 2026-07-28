@@ -1,0 +1,34 @@
+def __init__(self, redis_address=None, num_cpus=None, num_gpus=None,...
+self.object_id_seed = object_id_seed
+self.redis_address = redis_address
+self.num_cpus = num_cpus
+self.num_gpus = num_gpus
+self.resources = resources
+self.object_store_memory = object_store_memory
+self.redis_max_memory = redis_max_memory
+self.redis_port = redis_port
+self.redis_shard_ports = redis_shard_ports
+self.object_manager_port = object_manager_port
+self.node_manager_port = node_manager_port
+self.node_ip_address = node_ip_address
+self.num_workers = num_workers
+self.local_mode = local_mode
+self.driver_mode = driver_mode
+self.redirect_worker_output = redirect_worker_output
+self.redirect_output = redirect_output
+self.num_redis_shards = num_redis_shards
+self.redis_max_clients = redis_max_clients
+self.redis_password = redis_password
+self.plasma_directory = plasma_directory
+self.worker_path = worker_path
+self.huge_pages = huge_pages
+self.include_webui = include_webui
+self.plasma_store_socket_name = plasma_store_socket_name
+self.raylet_socket_name = raylet_socket_name
+self.temp_dir = temp_dir
+self.include_log_monitor = include_log_monitor
+self.autoscaling_config = autoscaling_config
+self.include_java = include_java
+self.java_worker_options = java_worker_options
+self._internal_config = _internal_config
+self._check_usage()

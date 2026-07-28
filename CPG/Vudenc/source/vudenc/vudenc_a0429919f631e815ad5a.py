@@ -1,0 +1,3 @@
+def get_queryset(self):...
+return self.get_serializer_class().setup_eager_loading(Organization.objects
+    .all().order_by('-modified'))

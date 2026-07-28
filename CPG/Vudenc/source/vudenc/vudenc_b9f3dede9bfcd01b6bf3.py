@@ -1,0 +1,3 @@
+def add_name(self, name):...
+"""docstring"""
+self.set_name(name, len(self) - 1)

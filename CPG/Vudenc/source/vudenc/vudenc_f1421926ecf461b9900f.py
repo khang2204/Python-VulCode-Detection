@@ -1,0 +1,3 @@
+def delete(self):...
+deleted = db_interac.delete_users()
+return {}, 204

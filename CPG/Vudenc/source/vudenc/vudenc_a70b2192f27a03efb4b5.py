@@ -1,0 +1,3 @@
+def _create_mail_service(self, mail_sender, mail_store, search_engine,...
+return MailService(mail_sender, mail_store, search_engine, self.
+    _mail_address, attachment_store)

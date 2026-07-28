@@ -1,0 +1,355 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "sqli.py",
+      "start": {
+        "line": 16,
+        "col": 13,
+        "offset": 345
+      },
+      "end": {
+        "line": 16,
+        "col": 57,
+        "offset": 389
+      },
+      "extra": {
+        "message": "User input from sqli['username'] is concatenated directly into SQL string passed to cursor.execute(). This allows SQL injection via username parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "custom_db.py",
+      "start": {
+        "line": 22,
+        "col": 14,
+        "offset": 471
+      },
+      "end": {
+        "line": 22,
+        "col": 52,
+        "offset": 509
+      },
+      "extra": {
+        "message": "String values in INSERT statement are not quoted, causing SQL syntax vulnerability. Values like 'xss' end up as unquoted identifiers.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "custom_db.py",
+      "start": {
+        "line": 25,
+        "col": 14,
+        "offset": 546
+      },
+      "end": {
+        "line": 25,
+        "col": 49,
+        "offset": 581
+      },
+      "extra": {
+        "message": "String literals in INSERT statement are not quoted, causing SQL syntax error. Values mike and kaines are interpreted as column names/identifiers instead of strings.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "custom_db.py",
+      "start": {
+        "line": 28,
+        "col": 14,
+        "offset": 614
+      },
+      "end": {
+        "line": 28,
+        "col": 50,
+        "offset": 650
+      },
+      "extra": {
+        "message": "String literals in INSERT statement are not quoted, causing SQL syntax error. Values admin and admin are interpreted as column names/identifiers instead of strings.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss.reflected",
+      "path": "xss.py",
+      "start": {
+        "line": 10,
+        "col": 16,
+        "offset": 170
+      },
+      "end": {
+        "line": 10,
+        "col": 43,
+        "offset": 197
+      },
+      "extra": {
+        "message": "User input from xss['username'] is reflected directly in JSON response without HTML encoding. An attacker can send malicious JavaScript payload that will be executed in victim's browser.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "ssti.py",
+      "start": {
+        "line": 10,
+        "col": 8,
+        "offset": 178
+      },
+      "end": {
+        "line": 12,
+        "col": 33,
+        "offset": 249
+      },
+      "extra": {
+        "message": "User input from ssti['mathexp'] is passed directly to Jinja2 Template() and render(). This allows server-side template injection which can lead to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.rfi",
+      "path": "rfi.py",
+      "start": {
+        "line": 5,
+        "col": 15,
+        "offset": 73
+      },
+      "end": {
+        "line": 5,
+        "col": 63,
+        "offset": 121
+      },
+      "extra": {
+        "message": "User input from rfi['imagelink'] is used as URL in requests.get() without validation. This allows Remote File Inclusion (RFI) - attacker can make the server fetch and return arbitrary content from external or internal resources.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.rfi",
+      "path": "rfi.py",
+      "start": {
+        "line": 18,
+        "col": 25,
+        "offset": 346
+      },
+      "end": {
+        "line": 18,
+        "col": 44,
+        "offset": 365
+      },
+      "extra": {
+        "message": "User-controlled filename parameter passed to fetchimage() which makes an HTTP request. Attacker can supply arbitrary URLs to be fetched by the server.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-ssl",
+      "path": "rfi.py",
+      "start": {
+        "line": 5,
+        "col": 41,
+        "offset": 99
+      },
+      "end": {
+        "line": 5,
+        "col": 50,
+        "offset": 108
+      },
+      "extra": {
+        "message": "requests.get() uses verify=False which disables SSL certificate verification. This allows man-in-the-middle attacks to intercept or modify HTTPS traffic.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-295: Improper Certificate Validation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "lfi.py",
+      "start": {
+        "line": 3,
+        "col": 14,
+        "offset": 41
+      },
+      "end": {
+        "line": 3,
+        "col": 29,
+        "offset": 56
+      },
+      "extra": {
+        "message": "User input from filename parameter is passed directly to open() without path sanitization. This allows Local File Inclusion (LFI) - attacker can read arbitrary files on the server using path traversal sequences like ../../../etc/passwd.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "lfi.py",
+      "start": {
+        "line": 16,
+        "col": 25,
+        "offset": 314
+      },
+      "end": {
+        "line": 16,
+        "col": 40,
+        "offset": 329
+      },
+      "extra": {
+        "message": "User-controlled filename passed to fetchfile() which uses open() without path validation. Attacker can read arbitrary system files using path traversal payloads.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.header-injection",
+      "path": "hhi.py",
+      "start": {
+        "line": 18,
+        "col": 20,
+        "offset": 314
+      },
+      "end": {
+        "line": 18,
+        "col": 45,
+        "offset": 339
+      },
+      "extra": {
+        "message": "User-controllable Host header from request is reflected directly in HTML output without sanitization. An attacker can inject arbitrary HTML/script via the Host header, or perform HTTP response splitting attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-644: Improper Neutralization of HTTP Headers"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credential-exposure",
+      "path": "custom_db.py",
+      "start": {
+        "line": 25,
+        "col": 14,
+        "offset": 546
+      },
+      "end": {
+        "line": 25,
+        "col": 49,
+        "offset": 581
+      },
+      "extra": {
+        "message": "Hardcoded credentials (username: mike, password: kaines) embedded in source code. This constitutes sensitive data exposure and credentials should never be stored in code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credential-exposure",
+      "path": "custom_db.py",
+      "start": {
+        "line": 28,
+        "col": 14,
+        "offset": 614
+      },
+      "end": {
+        "line": 28,
+        "col": 50,
+        "offset": 650
+      },
+      "extra": {
+        "message": "Hardcoded credentials (username: admin, password: admin) embedded in source code. This constitutes sensitive data exposure and credentials should never be stored in code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

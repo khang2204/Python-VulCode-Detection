@@ -1,0 +1,255 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "sqli.py",
+      "start": {
+        "line": 16,
+        "col": 13,
+        "offset": 312
+      },
+      "end": {
+        "line": 16,
+        "col": 78,
+        "offset": 390
+      },
+      "extra": {
+        "message": "User input from sqli.get('username') is directly interpolated into an SQL query string via f-string and passed to cursor.execute(). This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.improper-authentication",
+      "path": "sqli.py",
+      "start": {
+        "line": 16,
+        "col": 13,
+        "offset": 312
+      },
+      "end": {
+        "line": 16,
+        "col": 78,
+        "offset": 390
+      },
+      "extra": {
+        "message": "The password parameter is retrieved but never verified against the database. The SQL query only checks the username, allowing authentication bypass with any non-empty password.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.exposure.error-message",
+      "path": "sqli.py",
+      "start": {
+        "line": 19,
+        "col": 13,
+        "offset": 451
+      },
+      "end": {
+        "line": 19,
+        "col": 50,
+        "offset": 488
+      },
+      "extra": {
+        "message": "Raw database exception details are returned to the client in the response message. This leaks sensitive information about the database structure and query errors.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Information Exposure Through an Error Message"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.exposure.sensitive-data",
+      "path": "sqli.py",
+      "start": {
+        "line": 20,
+        "col": 9,
+        "offset": 489
+      },
+      "end": {
+        "line": 20,
+        "col": 57,
+        "offset": 537
+      },
+      "extra": {
+        "message": "The full database query result including plaintext passwords is returned directly in the response message, exposing sensitive user credentials to the client.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "lfi.py",
+      "start": {
+        "line": 3,
+        "col": 9,
+        "offset": 28
+      },
+      "end": {
+        "line": 3,
+        "col": 36,
+        "offset": 60
+      },
+      "extra": {
+        "message": "User-controlled filename from lfi.get('filename') is passed directly to open() without any sanitization or path validation, allowing arbitrary file read via path traversal.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssrf",
+      "path": "rfi.py",
+      "start": {
+        "line": 5,
+        "col": 9,
+        "offset": 46
+      },
+      "end": {
+        "line": 5,
+        "col": 71,
+        "offset": 109
+      },
+      "extra": {
+        "message": "User-controlled URL from rfi.get('imagelink') is passed directly to requests.get(), allowing Server-Side Request Forgery (SSRF) to internal or external resources.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.insecure-tls",
+      "path": "rfi.py",
+      "start": {
+        "line": 5,
+        "col": 50,
+        "offset": 87
+      },
+      "end": {
+        "line": 5,
+        "col": 61,
+        "offset": 98
+      },
+      "extra": {
+        "message": "SSL certificate verification is disabled via verify=False in requests.get(), making the connection vulnerable to man-in-the-middle attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-295: Improper Certificate Validation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "ssti.py",
+      "start": {
+        "line": 10,
+        "col": 5,
+        "offset": 165
+      },
+      "end": {
+        "line": 10,
+        "col": 44,
+        "offset": 205
+      },
+      "extra": {
+        "message": "User input from ssti.get('mathexp') is concatenated directly into a Jinja2 template string and rendered with Template.render(), enabling server-side template injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-1336: Improper Neutralization of Special Elements Used in a Template Engine"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "hhi.py",
+      "start": {
+        "line": 18,
+        "col": 9,
+        "offset": 302
+      },
+      "end": {
+        "line": 18,
+        "col": 66,
+        "offset": 360
+      },
+      "extra": {
+        "message": "The Host header value from request.headers is embedded directly into HTML content without escaping. An attacker can control the Host header to inject arbitrary HTML or JavaScript.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-mode",
+      "path": "app.py",
+      "start": {
+        "line": 24,
+        "col": 5,
+        "offset": 358
+      },
+      "end": {
+        "line": 24,
+        "col": 53,
+        "offset": 407
+      },
+      "extra": {
+        "message": "Flask debug mode is enabled (debug=True), which exposes sensitive information through detailed error pages and may allow remote code execution via the interactive debugger.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

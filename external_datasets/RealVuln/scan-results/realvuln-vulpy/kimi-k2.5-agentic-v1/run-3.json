@@ -1,0 +1,555 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "bad/libuser.py",
+      "start": {
+        "line": 12,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 12,
+        "col": 100,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from 'username' and 'password' parameters is concatenated directly into SQL query using .format(). This allows SQL injection attacks to bypass authentication or extract data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "bad/libuser.py",
+      "start": {
+        "line": 25,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 25,
+        "col": 150,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from 'username' and 'password' parameters is concatenated directly into SQL INSERT query using % string formatting. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "bad/libuser.py",
+      "start": {
+        "line": 53,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 53,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from 'password' and 'username' parameters is concatenated directly into SQL UPDATE query using .format(). This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "bad/db_init.py",
+      "start": {
+        "line": 20,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 20,
+        "col": 130,
+        "offset": 0
+      },
+      "extra": {
+        "message": "String formatting with % operator is used to construct SQL query with user-controlled values. This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "bad/db.py",
+      "start": {
+        "line": 19,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 19,
+        "col": 90,
+        "offset": 0
+      },
+      "extra": {
+        "message": "String formatting with % operator is used to construct SQL INSERT query. This pattern is vulnerable to SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.template-safe-filter",
+      "path": "bad/templates/posts.view.html",
+      "start": {
+        "line": 23,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 23,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Jinja2 template uses '| safe' filter on user-controlled post text. This disables auto-escaping and allows stored XSS attacks via JavaScript injection in post content.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.template-safe-filter",
+      "path": "bad/templates/messages.html",
+      "start": {
+        "line": 8,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 8,
+        "col": 30,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Jinja2 template uses '| safe' filter on flashed messages. If flash messages contain user input, this enables reflected XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials.secret-key",
+      "path": "bad/vulpy.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 16,
+        "col": 35,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded SECRET_KEY 'aaaaaaa' is used for Flask application. This weak secret can be used to forge session cookies and bypass authentication.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials.secret-key",
+      "path": "bad/vulpy-ssl.py",
+      "start": {
+        "line": 13,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 13,
+        "col": 35,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded SECRET_KEY 'aaaaaaa' is used for Flask application. This weak secret can be used to forge session cookies and bypass authentication.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.insecure-session",
+      "path": "bad/libsession.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 6,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Session data is encoded with base64 without encryption or signing. Attackers can decode, modify, and re-encode session cookies to impersonate any user.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-565: Reliance on Cookies without Validation and Integrity Checking"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.insecure-deserialization",
+      "path": "bad/libsession.py",
+      "start": {
+        "line": 20,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 20,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Session cookie is decoded with base64.b64decode() and passed to json.loads() without cryptographic verification. This allows session tampering and authentication bypass.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.glob-user-input",
+      "path": "bad/libapi.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 16,
+        "col": 70,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'username' parameter is used in Path.glob() pattern. This could allow path traversal if malicious username contains glob special characters or path traversal sequences.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.glob-user-input",
+      "path": "bad/libapi.py",
+      "start": {
+        "line": 33,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 33,
+        "col": 65,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled API key from request header is used in Path.glob() pattern. This could allow path traversal attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-mode",
+      "path": "bad/vulpy.py",
+      "start": {
+        "line": 55,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 55,
+        "col": 70,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Flask debug mode is enabled (debug=True). This exposes detailed error messages, stack traces, and enables the Werkzeug debugger which allows remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-random-key-generation",
+      "path": "bad/libapi.py",
+      "start": {
+        "line": 14,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 14,
+        "col": 75,
+        "offset": 0
+      },
+      "extra": {
+        "message": "API key is generated using random.getrandbits() which is not cryptographically secure. An attacker could predict future keys given enough samples.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-338: Use of Cryptographically Weak PRNG"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "bad/mod_user.py",
+      "start": {
+        "line": 80,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 80,
+        "col": 70,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Password change function does not verify the old password before changing to a new one. Any authenticated user can change their password without proving they know the current password.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor",
+      "path": "bad/mod_posts.py",
+      "start": {
+        "line": 10,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 21,
+        "col": 70,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The '/<username>' route allows viewing any user's posts by manipulating the URL path. There is no authorization check to verify the requesting user should access the requested user's posts.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.storage.insecure-api-key-storage",
+      "path": "bad/api_post.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 6,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "API key is stored in world-readable /tmp/ directory with predictable filename pattern. Other users on the system can read this file.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-732: Incorrect Permission Assignment for Critical Resource"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.storage.insecure-api-key-storage",
+      "path": "bad/libapi.py",
+      "start": {
+        "line": 20,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 22,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "API keys are stored in /tmp/ directory with predictable filename pattern 'vulpy.apikey.{username}.{key}'. This allows other users to access or delete API keys.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-732: Incorrect Permission Assignment for Critical Resource"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.no-rate-limiting",
+      "path": "bad/mod_user.py",
+      "start": {
+        "line": 9,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 35,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Login endpoint has no rate limiting. This allows brute force attacks to guess user credentials without any throttling or account lockout mechanism.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-307: Improper Restriction of Excessive Authentication Attempts"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.storage.plaintext-passwords",
+      "path": "bad/db_init.py",
+      "start": {
+        "line": 9,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 13,
+        "col": 10,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User passwords are stored in plaintext (not hashed) in the database initialization script. This is a critical security vulnerability.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-256: Unprotected Storage of Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.storage.plaintext-passwords",
+      "path": "bad/libuser.py",
+      "start": {
+        "line": 25,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 25,
+        "col": 150,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Passwords are stored in plaintext without any hashing. The SQL query directly inserts the raw password value into the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-256: Unprotected Storage of Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

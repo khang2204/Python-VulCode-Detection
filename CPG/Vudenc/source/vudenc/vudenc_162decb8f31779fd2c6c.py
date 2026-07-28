@@ -1,0 +1,3 @@
+def _open_url(url):...
+time.sleep(1)
+webbrowser.open(url)

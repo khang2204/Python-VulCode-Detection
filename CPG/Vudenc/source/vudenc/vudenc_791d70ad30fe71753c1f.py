@@ -1,0 +1,3 @@
+def _get_startup_folder():...
+path = os.path.dirname(os.path.abspath(__file__))
+return os.path.join(path, '..', 'assets')

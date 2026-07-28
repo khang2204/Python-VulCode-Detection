@@ -1,0 +1,3 @@
+def set_max_jobs(self, value):...
+for p in rt.runtime().system.partitions:
+p._max_jobs = value

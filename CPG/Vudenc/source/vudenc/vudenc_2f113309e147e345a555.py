@@ -1,0 +1,12 @@
+def test_row_gtlt(self):...
+self.cursor.execute('create table t1(n int, s varchar(20))')
+self.cursor.execute("insert into t1 values (1, 'test1')")
+self.cursor.execute("insert into t1 values (1, 'test2')")
+rows = self.cursor.execute('select n, s from t1 order by s').fetchall()
+self.assertTrue(rows[0] < rows[1])
+self.assertTrue(rows[0] <= rows[1])
+self.assertTrue(rows[1] > rows[0])
+self.assertTrue(rows[1] >= rows[0])
+self.assertTrue(rows[0] != rows[1])
+rows = list(rows)
+rows.sort()

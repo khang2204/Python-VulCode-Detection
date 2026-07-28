@@ -1,0 +1,3 @@
+def close(self):...
+self.cursor.close()
+self.mydb.close()

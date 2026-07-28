@@ -1,0 +1,3 @@
+def parse_datetime(value, alignment=1):...
+dt = dateutil_parse(value, ignoretz=True).replace(microsecond=0)
+return dt - timedelta(seconds=(dt - dt.min).seconds % alignment)

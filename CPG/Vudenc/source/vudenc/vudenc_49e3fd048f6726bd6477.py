@@ -1,0 +1,3 @@
+def run_bot(error):...
+self.assertEqual(None, error)
+return 0

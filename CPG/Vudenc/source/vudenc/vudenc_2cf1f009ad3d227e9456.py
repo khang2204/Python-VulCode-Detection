@@ -1,0 +1,3 @@
+def __init__(self, bot):...
+self.bot = bot
+print('Addon "{}" loaded'.format(self.__class__.__name__))

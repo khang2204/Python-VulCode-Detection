@@ -1,0 +1,3 @@
+def test_labextensions():...
+"""docstring"""
+assert os.path.exists('/opt/tljh/user/bin/jupyter-labhub')

@@ -1,0 +1,3 @@
+def _on_view_sort(self, column, ascending):...
+self.model.reset()
+self.load_search_results(self.query, 1, 50)

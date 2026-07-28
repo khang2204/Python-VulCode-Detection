@@ -1,0 +1,3 @@
+def remove_files(self, file_ids):...
+file_ids_string = ', '.join([str(each) for each in file_ids])
+db.delete('file', 'id in (' + file_ids_string + ')')

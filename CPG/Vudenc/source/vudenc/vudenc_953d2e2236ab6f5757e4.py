@@ -1,0 +1,3 @@
+def get_time_now():...
+"""docstring"""
+return calendar.timegm(time.gmtime())

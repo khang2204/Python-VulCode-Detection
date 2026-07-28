@@ -1,0 +1,3 @@
+def test_untyped_none(self):...
+value = self.cursor.execute('select ?', None).fetchone()[0]
+self.assertEqual(value, None)

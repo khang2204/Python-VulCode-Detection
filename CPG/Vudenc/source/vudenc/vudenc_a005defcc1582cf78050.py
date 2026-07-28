@@ -1,0 +1,3 @@
+def test_when_called_redirect_view_redirects_to_apps_url(self):...
+RedirectConfirmEmailTestCase.ScenarioMaker().when_call_get_email_confirmation(
+    ).then_response_should_be_a_redirect_to_app_deeplink_with_params()

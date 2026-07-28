@@ -1,0 +1,207 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "sqli.py",
+      "start": {
+        "line": 16,
+        "col": 13,
+        "offset": 260
+      },
+      "end": {
+        "line": 16,
+        "col": 59,
+        "offset": 306
+      },
+      "extra": {
+        "message": "User input from the 'username' parameter (line 10) is directly interpolated into an SQL query string using f-string formatting without sanitization or parameterized queries. This allows attackers to inject malicious SQL code to bypass authentication, extract data, or modify the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "lfi.py",
+      "start": {
+        "line": 3,
+        "col": 9,
+        "offset": 42
+      },
+      "end": {
+        "line": 3,
+        "col": 24,
+        "offset": 57
+      },
+      "extra": {
+        "message": "The open() function is called with a user-controlled filename parameter (line 13) without any path validation or sanitization. Attackers can use path traversal sequences (e.g., '../../../etc/passwd') to read arbitrary files on the system, potentially exposing sensitive configuration files, source code, or credentials.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "ssti.py",
+      "start": {
+        "line": 10,
+        "col": 12,
+        "offset": 165
+      },
+      "end": {
+        "line": 12,
+        "col": 35,
+        "offset": 250
+      },
+      "extra": {
+        "message": "User-controlled input from the 'mathexp' parameter (line 9) is directly concatenated into a Jinja2 template string and rendered without sandboxing. This allows Server-Side Template Injection (SSTI), which can lead to arbitrary code execution, file access, and complete server compromise through template expressions like {{config}} or {{''.__class__.__mro__[1].__subclasses__()}}.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssrf",
+      "path": "rfi.py",
+      "start": {
+        "line": 5,
+        "col": 9,
+        "offset": 75
+      },
+      "end": {
+        "line": 5,
+        "col": 57,
+        "offset": 123
+      },
+      "extra": {
+        "message": "User-controlled URL from the 'imagelink' parameter (line 15) is passed directly to requests.get() without URL validation or allowlisting. This enables Server-Side Request Forgery (SSRF), allowing attackers to make the server send requests to internal services, cloud metadata endpoints (e.g., http://169.254.169.254), or arbitrary external systems.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssl-disabled",
+      "path": "rfi.py",
+      "start": {
+        "line": 5,
+        "col": 42,
+        "offset": 108
+      },
+      "end": {
+        "line": 5,
+        "col": 54,
+        "offset": 120
+      },
+      "extra": {
+        "message": "SSL certificate verification is disabled with verify=False in requests.get(). This allows Man-in-the-Middle (MITM) attacks where an attacker could intercept and modify traffic between the server and external services, potentially exposing sensitive data or injecting malicious responses.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-295: Improper Certificate Validation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.header-injection",
+      "path": "hhi.py",
+      "start": {
+        "line": 18,
+        "col": 20,
+        "offset": 350
+      },
+      "end": {
+        "line": 18,
+        "col": 56,
+        "offset": 386
+      },
+      "extra": {
+        "message": "The user-controlled Host header from request.headers['Host'] (line 12) is directly injected into an HTML anchor tag href attribute without sanitization. This allows HTTP Header Injection and potential XSS if the response is rendered in an HTML context. Attackers can manipulate the Host header to inject malicious links or JavaScript.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+            "CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.configuration.debug-enabled",
+      "path": "app.py",
+      "start": {
+        "line": 24,
+        "col": 20,
+        "offset": 400
+      },
+      "end": {
+        "line": 24,
+        "col": 40,
+        "offset": 420
+      },
+      "extra": {
+        "message": "Flask application is running with debug=True, which enables the interactive debugger and exposes sensitive information including stack traces, environment variables, and source code. In production, this can lead to information disclosure and allows attackers to execute arbitrary code through the Werkzeug debugger console.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-215: Insertion of Sensitive Information Into Debugging Code",
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "xss.py",
+      "start": {
+        "line": 10,
+        "col": 15,
+        "offset": 165
+      },
+      "end": {
+        "line": 10,
+        "col": 42,
+        "offset": 192
+      },
+      "extra": {
+        "message": "User-controlled input from the 'username' parameter (line 7) is reflected directly in the JSON response without sanitization. While the response is JSON (Content-Type: application/json), if this data is consumed and rendered by a client application without proper HTML escaping, it creates a Cross-Site Scripting vulnerability. The API endpoint is explicitly documented as 'Reflected XSS' in the swagger specification.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

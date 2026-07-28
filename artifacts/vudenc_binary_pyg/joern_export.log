@@ -1,0 +1,1250 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by scala.runtime.LazyVals$ (file:/home/khang/bin/joern/joern-cli/lib/org.scala-lang.scala3-library_3-3.7.4.jar)
+WARNING: Please consider reporting this to the maintainers of class scala.runtime.LazyVals$
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by scala.runtime.LazyVals$ (file:/home/khang/bin/joern/joern-cli/lib/org.scala-lang.scala3-library_3-3.7.4.jar)
+WARNING: Please consider reporting this to the maintainers of class scala.runtime.LazyVals$
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+executing /mnt/c/users/gulli/downloads/python-vulcode-detection/scripts/export_benchmarkpython_cpg.sc with params=Map(files -> /mnt/c/users/gulli/downloads/python-vulcode-detection/artifacts/vudenc_binary_pyg_rebuilt/selected_files.txt, output -> /mnt/c/users/gulli/downloads/python-vulcode-detection/artifacts/vudenc_binary_pyg_rebuilt/joern_graphs.jsonl)
+Creating project `cpg_rebuilt.bin` for CPG at `/mnt/c/users/gulli/downloads/python-vulcode-detection/CPG/Vudenc/cpg_rebuilt.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /mnt/c/users/gulli/downloads/python-vulcode-detection/artifacts/vudenc_binary_pyg_rebuilt/pagvul-joern-_tonzr19/workspace/cpg_rebuilt.bin/cpg.bin.tmp
+[INFO ] initialising from existing storage (/mnt/c/users/gulli/downloads/python-vulcode-detection/artifacts/vudenc_binary_pyg_rebuilt/pagvul-joern-_tonzr19/workspace/cpg_rebuilt.bin/cpg.bin.tmp)
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by com.github.luben.zstd.util.Native$2 in an unnamed module (file:/home/khang/bin/joern/joern-cli/lib/com.github.luben.zstd-jni-1.5.7-2.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+[INFO ] Start of pass: io.joern.x2cpg.frontendspecific.pysrc2cpg.ImportsPass
+[INFO ] Pass io.joern.x2cpg.frontendspecific.pysrc2cpg.ImportsPass completed in 534 ms (27% on mutations). 36444 + 0 changes committed from 12148 parts.
+[INFO ] Start of pass: io.joern.x2cpg.frontendspecific.pysrc2cpg.PythonImportResolverPass
+[INFO ] Pass io.joern.x2cpg.frontendspecific.pysrc2cpg.PythonImportResolverPass completed in 5010 ms (1% on mutations). 63168 + 0 changes committed from 24296 parts.
+[INFO ] Start of pass: io.joern.x2cpg.frontendspecific.pysrc2cpg.DynamicTypeHintFullNamePass
+[INFO ] Pass io.joern.x2cpg.frontendspecific.pysrc2cpg.DynamicTypeHintFullNamePass completed in 397 ms (1% on mutations). 26 + 0 changes committed from 1925 parts.
+[INFO ] Start of pass: io.joern.x2cpg.frontendspecific.pysrc2cpg.PythonInheritanceNamePass
+[INFO ] Pass io.joern.x2cpg.frontendspecific.pysrc2cpg.PythonInheritanceNamePass completed in 63 ms (6% on mutations). 16 + 0 changes committed from 8 parts.
+[INFO ] Start of pass: io.joern.x2cpg.frontendspecific.pysrc2cpg.PythonTypeRecovery
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d14c4a4e7e4b5a693719.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d14c4a4e7e4b5a693719.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_08316412ca74863361b2.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_08316412ca74863361b2.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp13 = QAGroup.objects
+QAGroup.objects.get(extraction_script_id = pk)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L28
+[WARN ] Unable to assign identifier 'group_pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L28
+[WARN ] Unhandled field structure (BLOCK,tmp25 = tmp26 = tmp27 = tmp28 = ExtractedText.objects
+ExtractedText.objects.filter(qa_group = None)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO')
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO').first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L44
+[WARN ] Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L44
+[WARN ] Unhandled field structure (BLOCK,tmp30 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L47
+[WARN ] Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L47
+[WARN ] Unhandled field structure (BLOCK,tmp40 = tmp41 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script = scr)
+ExtractedText.objects.filter(extraction_script = scr).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L59
+[WARN ] Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L59
+[WARN ] Unhandled field structure (BLOCK,tmp43 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L61
+[WARN ] Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L61
+[WARN ] Unhandled field structure (BLOCK,tmp47 = tmp48 = tmp49 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script_id = scr.id)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L65
+[WARN ] Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L65
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d1d324ae7f80b17f2519.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d1d324ae7f80b17f2519.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp3 = tmp4 = article.changeset_set
+article.changeset_set.filter(revision = revision + 1)
+article.changeset_set.filter(revision = revision + 1).get()),(FIELD_IDENTIFIER,old_title) @ vudenc/vudenc_70a9f7e8c96115a7869f.py#L16
+[WARN ] Unable to assign identifier 'old_title' to field load '<unknown>' @ vudenc/vudenc_70a9f7e8c96115a7869f.py#L16
+[WARN ] Unhandled field structure (BLOCK,tmp4 = tmp5 = tmp6 = tmp7 = ExtractedText.objects
+ExtractedText.objects.filter(qa_group = None)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO')
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO').first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L4
+[WARN ] Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp9 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L7
+[WARN ] Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp19 = tmp20 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script = scr)
+ExtractedText.objects.filter(extraction_script = scr).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L19
+[WARN ] Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L19
+[WARN ] Unhandled field structure (BLOCK,tmp22 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L21
+[WARN ] Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L21
+[WARN ] Unhandled field structure (BLOCK,tmp26 = tmp27 = tmp28 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script_id = scr.id)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L25
+[WARN ] Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L25
+[WARN ] Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_aa4003e9c1b77b491a35.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp6 = ProductDocument.objects
+ProductDocument.objects.get(document = doc)),(FIELD_IDENTIFIER,product) @ vudenc/vudenc_d3a9beb2fe1ec102c3a4.py#L11
+[WARN ] Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_aa4003e9c1b77b491a35.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_aa465386dd32c28cd84c.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_aa465386dd32c28cd84c.py#L5
+[WARN ] Unable to assign identifier 'product' to field load '<unknown>' @ vudenc/vudenc_d3a9beb2fe1ec102c3a4.py#L11
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_2d6d0f88561188d64fa4.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_2d6d0f88561188d64fa4.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_538d386f7bb9b4ce3516.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_538d386f7bb9b4ce3516.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp5 = ContentType.objects
+ContentType.objects.get_for_model(Article)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_75567d6c9c94ca6cebda.py#L25
+[WARN ] Unhandled field structure (BLOCK,tmp5 = ContentType.objects
+ContentType.objects.get_for_model(Article)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_75567d6c9c94ca6cebda.py#L25
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ac2f3d27d7b3c35a37cd.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ac2f3d27d7b3c35a37cd.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp2 = tmp3 = self.pool
+self.pool.get('res.partner')
+self.pool.get('res.partner').browse(cr, uid, part)),(FIELD_IDENTIFIER,property_product_pricelist) @ vudenc/vudenc_ac721ff23386b399aa95.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp2 = tmp3 = self.pool
+self.pool.get('res.partner')
+self.pool.get('res.partner').browse(cr, uid, part)),(FIELD_IDENTIFIER,property_product_pricelist) @ vudenc/vudenc_ac721ff23386b399aa95.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_170a238f158350791f5e.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_170a238f158350791f5e.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_76692ae93e9cab87faf5.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_76692ae93e9cab87faf5.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp9 = QAGroup.objects
+QAGroup.objects.get(extraction_script_id = pk)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_0c5e000b2532b74ed1b7.py#L12
+[WARN ] Unable to assign identifier 'group_pk' to field load '<unknown>' @ vudenc/vudenc_0c5e000b2532b74ed1b7.py#L12
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp6 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+[WARN ] Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp6 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+[WARN ] Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp2 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_ade1555910f73a4c625b.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0cf2374844c7156af860.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0cf2374844c7156af860.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp1 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L10
+[WARN ] Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp2 = module.project.testcaseresults_set
+module.project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L16
+[WARN ] Unable to assign identifier 'tmp_tcs' to field load '<unknown>' @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L16
+[WARN ] Unhandled field structure (BLOCK,tmp0 = api.nova
+api.nova.aggregate_get(request, aggregate_id)),(FIELD_IDENTIFIER,metadata) @ vudenc/vudenc_18e873697fcfe82a8bdc.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp5 = LogoutPayload()
+LogoutPayload().dump({'location':location})),(FIELD_IDENTIFIER,data) @ vudenc/vudenc_d723dc655194ef2f68f7.py#L9
+[WARN ] Unhandled field structure (BLOCK,tmp14 = LogoutPayload()
+LogoutPayload().dump({'location':location})),(FIELD_IDENTIFIER,data) @ vudenc/vudenc_d723dc655194ef2f68f7.py#L35
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0ef13bbc94a850dc938d.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0ef13bbc94a850dc938d.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp32 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+[WARN ] Unable to assign identifier 'tmp31' to field load '<unknown>' @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+[WARN ] Unhandled field structure (BLOCK,tmp32 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+[WARN ] Unable to assign identifier 'tmp31' to field load '<unknown>' @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_5808d434e771907c6e05.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_5808d434e771907c6e05.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ef67aed20ba95f790f84.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ef67aed20ba95f790f84.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_585fb32841aa3f5aca91.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_585fb32841aa3f5aca91.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b080e645263b60f37bf3.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b080e645263b60f37bf3.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8be8416532519b4219d.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8be8416532519b4219d.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8f32895368e87055162.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8f32895368e87055162.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = selected_indices[0]
+selected_indices[0].model()),(FIELD_IDENTIFIER,data_items) @ vudenc/vudenc_e00a51a23f5a90e2008c.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_a1fe184ab466819b7d33.py#L8
+[WARN ] Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_a1fe184ab466819b7d33.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a2dbff5aaafe138be883.py#L5
+[WARN ] Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a2dbff5aaafe138be883.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+[WARN ] Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.table_view
+self.table_view.window()),(FIELD_IDENTIFIER,edit_channel_page) @ vudenc/vudenc_e092b1e57509acb36420.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_e092b1e57509acb36420.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a371a4a96fecb9a27bc2.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a371a4a96fecb9a27bc2.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = self.session
+self.session.get('https://www.kijiji.ca/m-my-ads.html/')),(FIELD_IDENTIFIER,text) @ vudenc/vudenc_5a7aa5c69d9b4488a4e8.py#L3
+[WARN ] Unable to assign identifier 'index_page_text' to field load '<unknown>' @ vudenc/vudenc_5a7aa5c69d9b4488a4e8.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get_field(fieldname)),(FIELD_IDENTIFIER,options) @ vudenc/vudenc_e137560ed50cd1d18629.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get_field(fieldname)),(FIELD_IDENTIFIER,options) @ vudenc/vudenc_e181dcd155c25bcc0c24.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_dbac7f49390acef6b3d0.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_dbac7f49390acef6b3d0.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+[WARN ] Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+[WARN ] Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+[WARN ] Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+[WARN ] Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp2 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+[WARN ] Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+[WARN ] Unhandled field structure (BLOCK,tmp2 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+[WARN ] Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a4a4a6900d283802d2f9.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a4a4a6900d283802d2f9.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_38c48d83e6995d2d2fd4.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_38c48d83e6995d2d2fd4.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_a5d262c15fce8b53cc2e.py#L8
+[WARN ] Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_a5d262c15fce8b53cc2e.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7d31d748e544a66e80dc.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7d31d748e544a66e80dc.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_33e776499459278e64f7.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_33e776499459278e64f7.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp6 = dd.products
+dd.products.first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_3bc8d60bfe1ad34197fe.py#L16
+[WARN ] Unable to assign identifier 'pid' to field load '<unknown>' @ vudenc/vudenc_3bc8d60bfe1ad34197fe.py#L16
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7fc622400ddba22673c2.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7fc622400ddba22673c2.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp6 = dd.products
+dd.products.first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_f7c4f223293588c32799.py#L30
+[WARN ] Unable to assign identifier 'pid' to field load '<unknown>' @ vudenc/vudenc_f7c4f223293588c32799.py#L30
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_69727ee9b4774f86e56a.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_69727ee9b4774f86e56a.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp59 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_e527237af47a5fe1070d.py#L153
+[WARN ] Unhandled field structure (BLOCK,tmp64 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_e527237af47a5fe1070d.py#L161
+[WARN ] Unhandled field structure (BLOCK,tmp0 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_6a6a68008a6c2867ffb2.py#L5
+[WARN ] Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_6a6a68008a6c2867ffb2.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b0f6d0ee1898fdb88a60.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b0f6d0ee1898fdb88a60.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp2 = ImportLog.objects
+ImportLog.objects.latest_in_category('prescribing')),(FIELD_IDENTIFIER,current_at) @ vudenc/vudenc_c93a32e1788db04b4c64.py#L4
+[WARN ] Unable to assign identifier 'this_month' to field load '<unknown>' @ vudenc/vudenc_c93a32e1788db04b4c64.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp3 = self.table_view
+self.table_view.verticalScrollBar()),(FIELD_IDENTIFIER,valueChanged) @ vudenc/vudenc_e62f39f788234941915e.py#L6
+[WARN ] Unable to assign identifier 'tmp2' to field load '<unknown>' @ vudenc/vudenc_e62f39f788234941915e.py#L6
+[WARN ] Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_bd9d847cf7acbf10a09a.py#L8
+[WARN ] Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_bd9d847cf7acbf10a09a.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_6cbb021d11e09c93e0f5.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_6cbb021d11e09c93e0f5.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fb81afb368c958d27a48.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fb81afb368c958d27a48.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fbffba32b3cde0706f2f.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fbffba32b3cde0706f2f.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_e6e2a655c29588775a56.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_e6e2a655c29588775a56.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b3b77d03ca78a02feee4.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b3b77d03ca78a02feee4.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp0 = motor.motor_tornado
+motor.motor_tornado.MotorClient()),(FIELD_IDENTIFIER,news) @ vudenc/vudenc_fd9ed3eff806b6338d97.py#L3
+[WARN ] Unable to assign identifier 'db' to field load '<unknown>' @ vudenc/vudenc_fd9ed3eff806b6338d97.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self._zinc_factory
+self._zinc_factory.get_options()),(FIELD_IDENTIFIER,pants_workdir) @ vudenc/vudenc_f08427113537efcf2899.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self._zinc_factory
+self._zinc_factory.get_options()),(FIELD_IDENTIFIER,pants_workdir) @ vudenc/vudenc_f08427113537efcf2899.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_60652bcbfcd7c351fa8c.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_60652bcbfcd7c351fa8c.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp5 = names_combinations_similarity.groupby(['left_team1', 'left_team2'])[0]
+names_combinations_similarity.groupby(['left_team1', 'left_team2'])[0].idxmax()),(FIELD_IDENTIFIER,values) @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L17
+[WARN ] Unable to assign identifier 'indices' to field load '<unknown>' @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L17
+[WARN ] Unhandled field structure (BLOCK,tmp13 = matching.groupby('left_team')[0]
+matching.groupby('left_team')[0].idxmax()),(FIELD_IDENTIFIER,values) @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L26
+[WARN ] Unable to assign identifier 'indices' to field load '<unknown>' @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L26
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f25af410139f026f37f5.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f25af410139f026f37f5.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ff3cb17a95a1bfe5d8dd.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ff3cb17a95a1bfe5d8dd.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_4f1ee3d2b63e17f4eebc.py#L8
+[WARN ] Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_4f1ee3d2b63e17f4eebc.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp0 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_8800417057e67c623202.py#L20
+[WARN ] Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_8800417057e67c623202.py#L20
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_4fd2b8ee782f13a4b76e.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_4fd2b8ee782f13a4b76e.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c4c8007ce21bf5bf7a5d.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c4c8007ce21bf5bf7a5d.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_3ff1907b881ecc1d8658.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_3ff1907b881ecc1d8658.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_400f16b04baa4ba8d702.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_400f16b04baa4ba8d702.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_962954cb6ff09673e0b3.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_962954cb6ff09673e0b3.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get('Iptc.Application2.Headline')),(FIELD_IDENTIFIER,value) @ vudenc/vudenc_96ee146e4cd4b02c4f01.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp2 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_974ddeff5a9960a07bc2.py#L6
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c69f9992e6364b5ae9f2.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c69f9992e6364b5ae9f2.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_63dd45ee8208d0932834.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_63dd45ee8208d0932834.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp2 = selected_indices[0]
+selected_indices[0].model()),(FIELD_IDENTIFIER,data_items) @ vudenc/vudenc_c6c2f1fa25bdf8034726.py#L6
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get('Iptc.Application2.Keywords')),(FIELD_IDENTIFIER,value) @ vudenc/vudenc_c7140fabe0c6b0239621.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ceae6baa7196e7cc3eb8.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ceae6baa7196e7cc3eb8.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_65854c545d71adb4b55c.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_65854c545d71adb4b55c.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp2 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_661726265930bf267b5a.py#L14
+[WARN ] Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_661726265930bf267b5a.py#L14
+[WARN ] Unhandled field structure (BLOCK,tmp0 = apps.get_model('dashboard.ExtractedChemical').objects
+apps.get_model('dashboard.ExtractedChemical').objects.get(rawchem_ptr = id)),(FIELD_IDENTIFIER,data_document) @ vudenc/vudenc_4195b8442f82cf865f36.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = apps.get_model('dashboard.ExtractedFunctionalUse').objects
+apps.get_model('dashboard.ExtractedFunctionalUse').objects.get(rawchem_ptr = id)),(FIELD_IDENTIFIER,data_document) @ vudenc/vudenc_4195b8442f82cf865f36.py#L6
+[WARN ] Unhandled field structure (BLOCK,tmp2 = apps.get_model('dashboard.ExtractedListPresence').objects
+apps.get_model('dashboard.ExtractedListPresence').objects.get(rawchem_ptr = id)),(FIELD_IDENTIFIER,data_document) @ vudenc/vudenc_4195b8442f82cf865f36.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp0 = datetime.now(tz = pytz.utc)
+datetime.now(tz = pytz.utc).astimezone()),(FIELD_IDENTIFIER,tzinfo) @ vudenc/vudenc_420c102b3cb094f59057.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c80903ceabe2226bf23f.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c80903ceabe2226bf23f.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d068249503d275016330.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d068249503d275016330.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_43f00d2fec2fdbb0a0cb.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_43f00d2fec2fdbb0a0cb.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_9abf664616aa92cd0125.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_9abf664616aa92cd0125.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get_field(fieldname)),(FIELD_IDENTIFIER,options) @ vudenc/vudenc_81d9a6e60f0b2d13156c.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_44504ce4a4e127a9aa43.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_44504ce4a4e127a9aa43.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp33 = ProductDocument.objects
+ProductDocument.objects.get(document = doc)),(FIELD_IDENTIFIER,product) @ vudenc/vudenc_82378de1e98bca80624c.py#L108
+[WARN ] Unable to assign identifier 'product' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L108
+[WARN ] Unhandled field structure (BLOCK,tmp36 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+[WARN ] Unable to assign identifier 'tmp34' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+[WARN ] Unhandled field structure (BLOCK,tmp39 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+[WARN ] Unable to assign identifier 'tmp37' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+[WARN ] Unhandled field structure (BLOCK,tmp43 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+[WARN ] Unable to assign identifier 'tmp41' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+[WARN ] Unhandled field structure (BLOCK,tmp46 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+[WARN ] Unable to assign identifier 'tmp45' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+[WARN ] Unhandled field structure (BLOCK,tmp49 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+[WARN ] Unable to assign identifier 'tmp48' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+[WARN ] Unhandled field structure (BLOCK,tmp51 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+[WARN ] Unable to assign identifier 'tmp50' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+[WARN ] Unhandled field structure (BLOCK,tmp55 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+[WARN ] Unable to assign identifier 'tmp54' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+[WARN ] Unhandled field structure (BLOCK,tmp36 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+[WARN ] Unable to assign identifier 'tmp34' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+[WARN ] Unhandled field structure (BLOCK,tmp39 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+[WARN ] Unable to assign identifier 'tmp37' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+[WARN ] Unhandled field structure (BLOCK,tmp43 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+[WARN ] Unable to assign identifier 'tmp41' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+[WARN ] Unhandled field structure (BLOCK,tmp46 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+[WARN ] Unable to assign identifier 'tmp45' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+[WARN ] Unhandled field structure (BLOCK,tmp49 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+[WARN ] Unable to assign identifier 'tmp48' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+[WARN ] Unhandled field structure (BLOCK,tmp51 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+[WARN ] Unable to assign identifier 'tmp50' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+[WARN ] Unhandled field structure (BLOCK,tmp55 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+[WARN ] Unable to assign identifier 'tmp54' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f5c23a20e00b350a022e.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f5c23a20e00b350a022e.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8675bcdc0de0ca7af5ef.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8675bcdc0de0ca7af5ef.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8734e2c3079091bc2690.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8734e2c3079091bc2690.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_8738474ebdfec02b1373.py#L8
+[WARN ] Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_8738474ebdfec02b1373.py#L8
+[INFO ] Pass io.joern.x2cpg.frontendspecific.pysrc2cpg.PythonTypeRecovery completed in 6197 ms (2% on mutations). 110173 + 0 changes committed from 15842 parts.
+[INFO ] Start of pass: io.joern.x2cpg.frontendspecific.pysrc2cpg.PythonTypeRecovery
+[WARN ] Unhandled field structure (BLOCK,tmp6 = dd.products
+dd.products.first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_f7c4f223293588c32799.py#L30
+[WARN ] Unable to assign identifier 'pid' to field load '<unknown>' @ vudenc/vudenc_f7c4f223293588c32799.py#L30
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d14c4a4e7e4b5a693719.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d14c4a4e7e4b5a693719.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d1d324ae7f80b17f2519.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d1d324ae7f80b17f2519.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp5 = names_combinations_similarity.groupby(['left_team1', 'left_team2'])[0]
+names_combinations_similarity.groupby(['left_team1', 'left_team2'])[0].idxmax()),(FIELD_IDENTIFIER,values) @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L17
+[WARN ] Unable to assign identifier 'indices' to field load '<unknown>' @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L17
+[WARN ] Unhandled field structure (BLOCK,tmp13 = matching.groupby('left_team')[0]
+matching.groupby('left_team')[0].idxmax()),(FIELD_IDENTIFIER,values) @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L26
+[WARN ] Unable to assign identifier 'indices' to field load '<unknown>' @ vudenc/vudenc_f2068ea1a42ccf60e4c9.py#L26
+[WARN ] Unhandled field structure (BLOCK,tmp13 = QAGroup.objects
+QAGroup.objects.get(extraction_script_id = pk)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L28
+[WARN ] Unable to assign identifier 'group_pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L28
+[WARN ] Unhandled field structure (BLOCK,tmp25 = tmp26 = tmp27 = tmp28 = ExtractedText.objects
+ExtractedText.objects.filter(qa_group = None)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO')
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO').first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L44
+[WARN ] Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L44
+[WARN ] Unhandled field structure (BLOCK,tmp30 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L47
+[WARN ] Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L47
+[WARN ] Unhandled field structure (BLOCK,tmp40 = tmp41 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script = scr)
+ExtractedText.objects.filter(extraction_script = scr).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L59
+[WARN ] Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L59
+[WARN ] Unhandled field structure (BLOCK,tmp43 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L61
+[WARN ] Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L61
+[WARN ] Unhandled field structure (BLOCK,tmp47 = tmp48 = tmp49 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script_id = scr.id)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a900a7ebacac2483eb87.py#L65
+[WARN ] Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a900a7ebacac2483eb87.py#L65
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f25af410139f026f37f5.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f25af410139f026f37f5.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp6 = ProductDocument.objects
+ProductDocument.objects.get(document = doc)),(FIELD_IDENTIFIER,product) @ vudenc/vudenc_d3a9beb2fe1ec102c3a4.py#L11
+[WARN ] Unable to assign identifier 'product' to field load '<unknown>' @ vudenc/vudenc_d3a9beb2fe1ec102c3a4.py#L11
+[WARN ] Unhandled field structure (BLOCK,tmp4 = tmp5 = tmp6 = tmp7 = ExtractedText.objects
+ExtractedText.objects.filter(qa_group = None)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO')
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO').first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L4
+[WARN ] Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp9 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L7
+[WARN ] Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp19 = tmp20 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script = scr)
+ExtractedText.objects.filter(extraction_script = scr).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L19
+[WARN ] Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L19
+[WARN ] Unhandled field structure (BLOCK,tmp22 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L21
+[WARN ] Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L21
+[WARN ] Unhandled field structure (BLOCK,tmp26 = tmp27 = tmp28 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script_id = scr.id)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L25
+[WARN ] Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L25
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fb81afb368c958d27a48.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fb81afb368c958d27a48.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_aa4003e9c1b77b491a35.py#L8
+[WARN ] Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_aa4003e9c1b77b491a35.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_aa465386dd32c28cd84c.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_aa465386dd32c28cd84c.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_962954cb6ff09673e0b3.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_962954cb6ff09673e0b3.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp5 = LogoutPayload()
+LogoutPayload().dump({'location':location})),(FIELD_IDENTIFIER,data) @ vudenc/vudenc_d723dc655194ef2f68f7.py#L9
+[WARN ] Unhandled field structure (BLOCK,tmp14 = LogoutPayload()
+LogoutPayload().dump({'location':location})),(FIELD_IDENTIFIER,data) @ vudenc/vudenc_d723dc655194ef2f68f7.py#L35
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fbffba32b3cde0706f2f.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_fbffba32b3cde0706f2f.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_538d386f7bb9b4ce3516.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_538d386f7bb9b4ce3516.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get('Iptc.Application2.Headline')),(FIELD_IDENTIFIER,value) @ vudenc/vudenc_96ee146e4cd4b02c4f01.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp2 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_974ddeff5a9960a07bc2.py#L6
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_2d6d0f88561188d64fa4.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_2d6d0f88561188d64fa4.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_fd3b5fd8a12b5f6ae2e1.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8be8416532519b4219d.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8be8416532519b4219d.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ac2f3d27d7b3c35a37cd.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ac2f3d27d7b3c35a37cd.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8f32895368e87055162.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d8f32895368e87055162.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp2 = tmp3 = self.pool
+self.pool.get('res.partner')
+self.pool.get('res.partner').browse(cr, uid, part)),(FIELD_IDENTIFIER,property_product_pricelist) @ vudenc/vudenc_ac721ff23386b399aa95.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp2 = tmp3 = self.pool
+self.pool.get('res.partner')
+self.pool.get('res.partner').browse(cr, uid, part)),(FIELD_IDENTIFIER,property_product_pricelist) @ vudenc/vudenc_ac721ff23386b399aa95.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp0 = motor.motor_tornado
+motor.motor_tornado.MotorClient()),(FIELD_IDENTIFIER,news) @ vudenc/vudenc_fd9ed3eff806b6338d97.py#L3
+[WARN ] Unable to assign identifier 'db' to field load '<unknown>' @ vudenc/vudenc_fd9ed3eff806b6338d97.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_5808d434e771907c6e05.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_5808d434e771907c6e05.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f5c23a20e00b350a022e.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_f5c23a20e00b350a022e.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp2 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_ade1555910f73a4c625b.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_585fb32841aa3f5aca91.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_585fb32841aa3f5aca91.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_9abf664616aa92cd0125.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_9abf664616aa92cd0125.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ef67aed20ba95f790f84.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ef67aed20ba95f790f84.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+[WARN ] Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+[WARN ] Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_d9f92cece9b287cee293.py#L9
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ff3cb17a95a1bfe5d8dd.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ff3cb17a95a1bfe5d8dd.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp1 = selected_indices[0]
+selected_indices[0].model()),(FIELD_IDENTIFIER,data_items) @ vudenc/vudenc_e00a51a23f5a90e2008c.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp6 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+[WARN ] Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp6 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+[WARN ] Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_2172e1a8ebe47dcafe33.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.table_view
+self.table_view.window()),(FIELD_IDENTIFIER,edit_channel_page) @ vudenc/vudenc_e092b1e57509acb36420.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_e092b1e57509acb36420.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get_field(fieldname)),(FIELD_IDENTIFIER,options) @ vudenc/vudenc_e137560ed50cd1d18629.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get_field(fieldname)),(FIELD_IDENTIFIER,options) @ vudenc/vudenc_e181dcd155c25bcc0c24.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b080e645263b60f37bf3.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b080e645263b60f37bf3.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp32 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+[WARN ] Unable to assign identifier 'tmp31' to field load '<unknown>' @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+[WARN ] Unhandled field structure (BLOCK,tmp32 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+[WARN ] Unable to assign identifier 'tmp31' to field load '<unknown>' @ vudenc/vudenc_228478ca9dc84f0baa24.py#L107
+[WARN ] Unhandled field structure (BLOCK,tmp0 = self.session
+self.session.get('https://www.kijiji.ca/m-my-ads.html/')),(FIELD_IDENTIFIER,text) @ vudenc/vudenc_5a7aa5c69d9b4488a4e8.py#L3
+[WARN ] Unable to assign identifier 'index_page_text' to field load '<unknown>' @ vudenc/vudenc_5a7aa5c69d9b4488a4e8.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_ba6ea53efeb1e8fabea3.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_dbac7f49390acef6b3d0.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_dbac7f49390acef6b3d0.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_a1fe184ab466819b7d33.py#L8
+[WARN ] Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_a1fe184ab466819b7d33.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp0 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_8800417057e67c623202.py#L20
+[WARN ] Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_8800417057e67c623202.py#L20
+[WARN ] Unhandled field structure (BLOCK,tmp2 = ImportLog.objects
+ImportLog.objects.latest_in_category('prescribing')),(FIELD_IDENTIFIER,current_at) @ vudenc/vudenc_c93a32e1788db04b4c64.py#L4
+[WARN ] Unable to assign identifier 'this_month' to field load '<unknown>' @ vudenc/vudenc_c93a32e1788db04b4c64.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_bd9d847cf7acbf10a09a.py#L8
+[WARN ] Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_bd9d847cf7acbf10a09a.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a2dbff5aaafe138be883.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a2dbff5aaafe138be883.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp59 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_e527237af47a5fe1070d.py#L153
+[WARN ] Unhandled field structure (BLOCK,tmp64 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_e527237af47a5fe1070d.py#L161
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a371a4a96fecb9a27bc2.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a371a4a96fecb9a27bc2.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp3 = self.table_view
+self.table_view.verticalScrollBar()),(FIELD_IDENTIFIER,valueChanged) @ vudenc/vudenc_e62f39f788234941915e.py#L6
+[WARN ] Unable to assign identifier 'tmp2' to field load '<unknown>' @ vudenc/vudenc_e62f39f788234941915e.py#L6
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_e6e2a655c29588775a56.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_e6e2a655c29588775a56.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+[WARN ] Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+[WARN ] Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+[WARN ] Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp5 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+[WARN ] Unable to assign identifier 'tmp4' to field load '<unknown>' @ vudenc/vudenc_a3fc105ae09d58d8837e.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp2 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_37e57a4d3e0cc033954e.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b0f6d0ee1898fdb88a60.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b0f6d0ee1898fdb88a60.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp2 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+[WARN ] Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+[WARN ] Unhandled field structure (BLOCK,tmp2 = child_formset.__dict__
+child_formset.__dict__.get('queryset')),(FIELD_IDENTIFIER,__dict__) @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+[WARN ] Unable to assign identifier 'tmp1' to field load '<unknown>' @ vudenc/vudenc_a48dcb7918b8b32e546d.py#L9
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a4a4a6900d283802d2f9.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_a4a4a6900d283802d2f9.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_a5d262c15fce8b53cc2e.py#L8
+[WARN ] Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_a5d262c15fce8b53cc2e.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_38c48d83e6995d2d2fd4.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_38c48d83e6995d2d2fd4.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get_field(fieldname)),(FIELD_IDENTIFIER,options) @ vudenc/vudenc_81d9a6e60f0b2d13156c.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp33 = ProductDocument.objects
+ProductDocument.objects.get(document = doc)),(FIELD_IDENTIFIER,product) @ vudenc/vudenc_82378de1e98bca80624c.py#L108
+[WARN ] Unable to assign identifier 'product' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L108
+[WARN ] Unhandled field structure (BLOCK,tmp36 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+[WARN ] Unable to assign identifier 'tmp34' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+[WARN ] Unhandled field structure (BLOCK,tmp39 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+[WARN ] Unable to assign identifier 'tmp37' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+[WARN ] Unhandled field structure (BLOCK,tmp43 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+[WARN ] Unable to assign identifier 'tmp41' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+[WARN ] Unhandled field structure (BLOCK,tmp46 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+[WARN ] Unable to assign identifier 'tmp45' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+[WARN ] Unhandled field structure (BLOCK,tmp49 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+[WARN ] Unable to assign identifier 'tmp48' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+[WARN ] Unhandled field structure (BLOCK,tmp51 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+[WARN ] Unable to assign identifier 'tmp50' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+[WARN ] Unhandled field structure (BLOCK,tmp55 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+[WARN ] Unable to assign identifier 'tmp54' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+[WARN ] Unhandled field structure (BLOCK,tmp36 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+[WARN ] Unable to assign identifier 'tmp34' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L114
+[WARN ] Unhandled field structure (BLOCK,tmp39 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+[WARN ] Unable to assign identifier 'tmp37' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L119
+[WARN ] Unhandled field structure (BLOCK,tmp43 = self.client
+self.client.get(f'/datagroup/{DataGroup.objects.first().id}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+[WARN ] Unable to assign identifier 'tmp41' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L125
+[WARN ] Unhandled field structure (BLOCK,tmp46 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+[WARN ] Unable to assign identifier 'tmp45' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L131
+[WARN ] Unhandled field structure (BLOCK,tmp49 = self.client
+self.client.get(url)),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+[WARN ] Unable to assign identifier 'tmp48' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L136
+[WARN ] Unhandled field structure (BLOCK,tmp51 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+[WARN ] Unable to assign identifier 'tmp50' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L141
+[WARN ] Unhandled field structure (BLOCK,tmp55 = self.client
+self.client.get(f'/datagroup/{pk}/')),(FIELD_IDENTIFIER,content) @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+[WARN ] Unable to assign identifier 'tmp54' to field load '<unknown>' @ vudenc/vudenc_82378de1e98bca80624c.py#L147
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b3b77d03ca78a02feee4.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_b3b77d03ca78a02feee4.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c4c8007ce21bf5bf7a5d.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c4c8007ce21bf5bf7a5d.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c69f9992e6364b5ae9f2.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c69f9992e6364b5ae9f2.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp2 = selected_indices[0]
+selected_indices[0].model()),(FIELD_IDENTIFIER,data_items) @ vudenc/vudenc_c6c2f1fa25bdf8034726.py#L6
+[WARN ] Unhandled field structure (BLOCK,tmp6 = dd.products
+dd.products.first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_3bc8d60bfe1ad34197fe.py#L16
+[WARN ] Unable to assign identifier 'pid' to field load '<unknown>' @ vudenc/vudenc_3bc8d60bfe1ad34197fe.py#L16
+[WARN ] Unhandled field structure (BLOCK,tmp3 = tmp4 = article.changeset_set
+article.changeset_set.filter(revision = revision + 1)
+article.changeset_set.filter(revision = revision + 1).get()),(FIELD_IDENTIFIER,old_title) @ vudenc/vudenc_70a9f7e8c96115a7869f.py#L16
+[WARN ] Unable to assign identifier 'old_title' to field load '<unknown>' @ vudenc/vudenc_70a9f7e8c96115a7869f.py#L16
+[WARN ] Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_4f1ee3d2b63e17f4eebc.py#L8
+[WARN ] Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_4f1ee3d2b63e17f4eebc.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8675bcdc0de0ca7af5ef.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8675bcdc0de0ca7af5ef.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = self.meta
+self.meta.get('Iptc.Application2.Keywords')),(FIELD_IDENTIFIER,value) @ vudenc/vudenc_c7140fabe0c6b0239621.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_4fd2b8ee782f13a4b76e.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_4fd2b8ee782f13a4b76e.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8734e2c3079091bc2690.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_8734e2c3079091bc2690.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_8738474ebdfec02b1373.py#L8
+[WARN ] Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_8738474ebdfec02b1373.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c80903ceabe2226bf23f.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_c80903ceabe2226bf23f.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_08316412ca74863361b2.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_08316412ca74863361b2.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ceae6baa7196e7cc3eb8.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_ceae6baa7196e7cc3eb8.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_3ff1907b881ecc1d8658.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_3ff1907b881ecc1d8658.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_400f16b04baa4ba8d702.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_400f16b04baa4ba8d702.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_69727ee9b4774f86e56a.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_69727ee9b4774f86e56a.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d068249503d275016330.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_d068249503d275016330.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_170a238f158350791f5e.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_170a238f158350791f5e.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp0 = apps.get_model('dashboard.ExtractedChemical').objects
+apps.get_model('dashboard.ExtractedChemical').objects.get(rawchem_ptr = id)),(FIELD_IDENTIFIER,data_document) @ vudenc/vudenc_4195b8442f82cf865f36.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = apps.get_model('dashboard.ExtractedFunctionalUse').objects
+apps.get_model('dashboard.ExtractedFunctionalUse').objects.get(rawchem_ptr = id)),(FIELD_IDENTIFIER,data_document) @ vudenc/vudenc_4195b8442f82cf865f36.py#L6
+[WARN ] Unhandled field structure (BLOCK,tmp2 = apps.get_model('dashboard.ExtractedListPresence').objects
+apps.get_model('dashboard.ExtractedListPresence').objects.get(rawchem_ptr = id)),(FIELD_IDENTIFIER,data_document) @ vudenc/vudenc_4195b8442f82cf865f36.py#L8
+[WARN ] Unhandled field structure (BLOCK,tmp0 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_6a6a68008a6c2867ffb2.py#L5
+[WARN ] Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_6a6a68008a6c2867ffb2.py#L5
+[WARN ] Unhandled field structure (BLOCK,tmp0 = api.nova
+api.nova.aggregate_get(request, aggregate_id)),(FIELD_IDENTIFIER,metadata) @ vudenc/vudenc_18e873697fcfe82a8bdc.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = datetime.now(tz = pytz.utc)
+datetime.now(tz = pytz.utc).astimezone()),(FIELD_IDENTIFIER,tzinfo) @ vudenc/vudenc_420c102b3cb094f59057.py#L2
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_60652bcbfcd7c351fa8c.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_60652bcbfcd7c351fa8c.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp5 = ContentType.objects
+ContentType.objects.get_for_model(Article)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_75567d6c9c94ca6cebda.py#L25
+[WARN ] Unhandled field structure (BLOCK,tmp5 = ContentType.objects
+ContentType.objects.get_for_model(Article)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_75567d6c9c94ca6cebda.py#L25
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_6cbb021d11e09c93e0f5.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_6cbb021d11e09c93e0f5.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_1a71cbbfe97ed7d9fdab.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp9 = QAGroup.objects
+QAGroup.objects.get(extraction_script_id = pk)),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_0c5e000b2532b74ed1b7.py#L12
+[WARN ] Unable to assign identifier 'group_pk' to field load '<unknown>' @ vudenc/vudenc_0c5e000b2532b74ed1b7.py#L12
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0cf2374844c7156af860.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0cf2374844c7156af860.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp1 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L10
+[WARN ] Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp2 = module.project.testcaseresults_set
+module.project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L16
+[WARN ] Unable to assign identifier 'tmp_tcs' to field load '<unknown>' @ vudenc/vudenc_0d37afd1ad3604d8f7c0.py#L16
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_76692ae93e9cab87faf5.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_76692ae93e9cab87faf5.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_43f00d2fec2fdbb0a0cb.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_43f00d2fec2fdbb0a0cb.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_77312fac38b031f7dfad.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0ef13bbc94a850dc938d.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_0ef13bbc94a850dc938d.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_33e776499459278e64f7.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_33e776499459278e64f7.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_44504ce4a4e127a9aa43.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_44504ce4a4e127a9aa43.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_63dd45ee8208d0932834.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_63dd45ee8208d0932834.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp1 = self.dag
+self.dag.reason(self)),(FIELD_IDENTIFIER,missing_output) @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+[WARN ] Unable to assign identifier 'tmp0' to field load '<unknown>' @ vudenc/vudenc_63f8e7964c73ab711628.py#L4
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_65854c545d71adb4b55c.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_65854c545d71adb4b55c.py#L3
+[WARN ] Unhandled field structure (BLOCK,tmp2 = project.testcaseresults_set
+project.testcaseresults_set.latest('updated')),(FIELD_IDENTIFIER,results) @ vudenc/vudenc_661726265930bf267b5a.py#L14
+[WARN ] Unable to assign identifier 'testcases' to field load '<unknown>' @ vudenc/vudenc_661726265930bf267b5a.py#L14
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7d31d748e544a66e80dc.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp0 = tmp1 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7d31d748e544a66e80dc.py#L7
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7fc622400ddba22673c2.py#L10
+[WARN ] Unhandled field structure (BLOCK,tmp1 = tmp2 = self.pool
+self.pool.get('res.users')
+self.pool.get('res.users').browse(cr, uid, uid)),(FIELD_IDENTIFIER,company_id) @ vudenc/vudenc_7fc622400ddba22673c2.py#L10
+[INFO ] Pass io.joern.x2cpg.frontendspecific.pysrc2cpg.PythonTypeRecovery completed in 9996 ms (1% on mutations). 153071 + 0 changes committed from 15842 parts.
+[INFO ] Start of pass: io.joern.x2cpg.frontendspecific.pysrc2cpg.PythonTypeHintCallLinker
+[INFO ] Pass io.joern.x2cpg.frontendspecific.pysrc2cpg.PythonTypeHintCallLinker completed in 226 ms (18% on mutations). 1706 + 0 changes committed from 1 parts.
+[INFO ] Start of pass: io.joern.x2cpg.passes.callgraph.NaiveCallLinker
+[INFO ] Pass io.joern.x2cpg.passes.callgraph.NaiveCallLinker completed in 132 ms (14% on mutations). 106 + 0 changes committed from 1 parts.
+[INFO ] Start of pass: io.joern.x2cpg.passes.base.AstLinkerPass
+[INFO ] Pass io.joern.x2cpg.passes.base.AstLinkerPass completed in 45 ms (3% on mutations). 17 + 0 changes committed from 1 parts.
+Exported 15840 graphs; 1 selected files had no AST nodes.
+[INFO ] writing to storage at `/mnt/c/users/gulli/downloads/python-vulcode-detection/artifacts/vudenc_binary_pyg_rebuilt/pagvul-joern-_tonzr19/workspace/cpg_rebuilt.bin/cpg.bin.tmp`
+[INFO ] closed graph at /mnt/c/users/gulli/downloads/python-vulcode-detection/artifacts/vudenc_binary_pyg_rebuilt/pagvul-joern-_tonzr19/workspace/cpg_rebuilt.bin/cpg.bin.tmp
+closing/saving project `cpg_rebuilt.bin`

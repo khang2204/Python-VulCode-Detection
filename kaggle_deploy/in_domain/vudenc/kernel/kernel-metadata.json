@@ -1,0 +1,17 @@
+{
+  "id": "khangtrn2/vudenc-pag-vul-binary-training",
+  "title": "VUDENC PAG-Vul Binary Training",
+  "code_file": "run_vudenc_binary.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "khangtrn2/vudenc-pagvul-binary-assets"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

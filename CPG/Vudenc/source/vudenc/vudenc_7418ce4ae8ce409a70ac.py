@@ -1,0 +1,3 @@
+def closeDB(conn, cursor=None):...
+conn.commit()
+conn.close()

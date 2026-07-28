@@ -1,0 +1,3 @@
+def start(self, sig_addr, *args, **kvargs):...
+self.sig_addr = sig_addr
+multiprocessing.Process.start(self, *args, **kvargs)

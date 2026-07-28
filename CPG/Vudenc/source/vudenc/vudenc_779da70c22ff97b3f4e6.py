@@ -1,0 +1,3 @@
+def __init__(self):...
+self.xsrf_token = None
+self.session = requests.Session()

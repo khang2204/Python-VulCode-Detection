@@ -1,0 +1,3 @@
+def _get_data_type(self, field):...
+"""docstring"""
+return self.field_mapping[field][self.DATA_TYPE]

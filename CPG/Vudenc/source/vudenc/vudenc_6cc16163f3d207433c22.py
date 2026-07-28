@@ -1,0 +1,3 @@
+def get_phase_acl(self):...
+"""docstring"""
+return get_project_acl(self.project)

@@ -1,0 +1,3 @@
+def authorization_error(self, err):...
+calls.append('authorization_error')
+super(Handler, self).authorization_error(err)

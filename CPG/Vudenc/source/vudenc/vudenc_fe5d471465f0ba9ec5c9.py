@@ -1,0 +1,3 @@
+def _get_subs(self):...
+if 'submitter' in self.request.arguments:
+return list(map(to_unicode, self.request.arguments['submitter']))

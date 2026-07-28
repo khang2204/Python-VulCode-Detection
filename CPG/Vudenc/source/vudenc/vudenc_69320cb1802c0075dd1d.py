@@ -1,0 +1,3 @@
+def test_habitsandpractices(self):...
+response = self.client.get(f'/habitsandpractices/54/')
+self.assertContains(response, '<b>Add New Habit and Practice</b>')

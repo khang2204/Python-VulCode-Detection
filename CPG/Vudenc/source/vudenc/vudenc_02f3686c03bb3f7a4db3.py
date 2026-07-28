@@ -1,0 +1,3 @@
+def __init__(self, etag=None, mtime=0):...
+self.etag = etag
+self.mtime = int(mtime)

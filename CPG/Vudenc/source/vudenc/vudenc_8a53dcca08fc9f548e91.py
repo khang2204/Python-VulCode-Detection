@@ -1,0 +1,3 @@
+def select_core(self, core):...
+self.command('targets zynq.cpu' + str(core), error_message=
+    'Error selecting core')

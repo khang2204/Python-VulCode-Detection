@@ -1,0 +1,3 @@
+def is_current_user_gae_admin(self):...
+"""docstring"""
+return self._get_users_api().is_current_user_gae_admin(self.request)

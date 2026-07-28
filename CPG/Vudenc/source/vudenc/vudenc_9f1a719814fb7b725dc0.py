@@ -1,0 +1,3 @@
+def render_registerForm(form):...
+return render_form(form, False, url_for('auth_user_create'), 'Register', '',
+    True, '')

@@ -1,0 +1,12 @@
+def sync_usrdb(self):...
+mudata = self.db.execute('SELECT * FROM mudb.phrases;').fetchall()
+data_u = filter(lambda x: x[-2] in [1, -3], mudata)
+data_a = filter(lambda x: x[-2] == 2, mudata)
+data_n = filter(lambda x: x[-2] == -2, mudata)
+data_u = map(lambda x: (x[3], x[-3], x[-2], x[-1]), data_u)
+data_a = map(lambda x: (x[3], x[-3], 0, x[-1]), data_a)
+data_n = map(lambda x: (x[3], x[-3], -1, x[-1]), data_n)
+map(self.update_phrase, data_u)
+map(self.u_add_phrase, data_a)
+map(self.u_add_phrase, data_n)
+self.db.commit()

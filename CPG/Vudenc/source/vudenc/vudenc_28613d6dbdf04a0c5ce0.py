@@ -1,0 +1,3 @@
+@pyqtSlot(str)...
+self.log_area.moveCursor(QTextCursor.End)
+self.log_area.insertPlainText(message)

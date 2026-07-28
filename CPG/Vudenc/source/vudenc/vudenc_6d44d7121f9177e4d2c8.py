@@ -1,0 +1,3 @@
+def test_build_graph(self):...
+graph = build_graph(test_offers)
+self.assertDictEqual(graph, expected_graph)

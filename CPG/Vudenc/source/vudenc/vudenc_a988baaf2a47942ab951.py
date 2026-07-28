@@ -1,0 +1,3 @@
+def test_command_arg_spaces_before_command(self):...
+self._tab_after(' ls comp')
+eq_(self.terminal.method_calls, [('write', ('utes ',), {})])

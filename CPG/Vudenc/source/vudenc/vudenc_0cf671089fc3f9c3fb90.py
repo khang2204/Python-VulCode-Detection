@@ -1,0 +1,3 @@
+def get(self, id):...
+self.cursor.execute(self.SQL_GET_JSON % (self.name, id))
+return self.cursor.fetchone()

@@ -1,0 +1,3 @@
+def _drop_database(system_engine):...
+test_db_name = _get_test_db_name()
+conn.execute(f'DROP DATABASE {test_db_name}')

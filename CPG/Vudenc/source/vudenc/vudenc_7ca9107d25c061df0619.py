@@ -1,0 +1,3 @@
+def get_by_username(self, username: str):...
+"""docstring"""
+return User.query.filter_by(username=username).one_or_none()

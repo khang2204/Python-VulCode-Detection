@@ -1,0 +1,3 @@
+def _input(self, string):...
+for s in string:
+self.oms_ssh.characterReceived(s, False)

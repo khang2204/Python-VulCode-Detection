@@ -1,0 +1,1030 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection-execute",
+      "path": "src/vulnpy/trigger/sqli.py",
+      "start": {
+        "line": 37,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 37,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input is formatted directly into a SQL statement and executed via cursor.execute(), leading to SQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection-executemany",
+      "path": "src/vulnpy/trigger/sqli.py",
+      "start": {
+        "line": 48,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 48,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input is formatted directly into a SQL statement and executed via cursor.executemany(), leading to SQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection-executescript",
+      "path": "src/vulnpy/trigger/sqli.py",
+      "start": {
+        "line": 59,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 59,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input is formatted directly into a SQL statement and executed via cursor.executescript(), leading to SQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection-os-system",
+      "path": "src/vulnpy/trigger/cmdi.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 6,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input is passed directly to os.system() without sanitization, leading to Command Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection-subprocess-popen",
+      "path": "src/vulnpy/trigger/cmdi.py",
+      "start": {
+        "line": 10,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 12,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "subprocess.Popen is called with shell=True and untrusted input, allowing arbitrary command execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle-load",
+      "path": "src/vulnpy/trigger/deserialization.py",
+      "start": {
+        "line": 8,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 8,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure deserialization using pickle.load() allows execution of arbitrary code when parsing untrusted data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Insecure Deserialization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle-loads",
+      "path": "src/vulnpy/trigger/deserialization.py",
+      "start": {
+        "line": 12,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 12,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure deserialization using pickle.loads() allows execution of arbitrary code when parsing untrusted data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Insecure Deserialization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml-load",
+      "path": "src/vulnpy/trigger/deserialization.py",
+      "start": {
+        "line": 17,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 17,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure deserialization using yaml.load with UnsafeLoader allows arbitrary object instantiation and code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Insecure Deserialization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml-load-all",
+      "path": "src/vulnpy/trigger/deserialization.py",
+      "start": {
+        "line": 23,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 23,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure deserialization using yaml.load_all with UnsafeLoader allows arbitrary object instantiation and code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Insecure Deserialization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.tarfile-open",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 8,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 8,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "tarfile.TarFile.open receives an unsanitized file path, leading to Path Traversal or Arbitrary File Access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.tarfile-class",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 16,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "tarfile.TarFile instantiation receives an unsanitized file path, leading to Path Traversal or Arbitrary File Access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.tarfile-generic-open",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 24,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 24,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "tarfile.open receives an unsanitized file path, leading to Path Traversal or Arbitrary File Access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.bz2-class",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 32,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 32,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "bz2.BZ2File receives an unsanitized file path, leading to Path Traversal or Arbitrary File Access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.bz2-open",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 40,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 40,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "bz2.open receives an unsanitized file path, leading to Path Traversal or Arbitrary File Access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.io-open",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 48,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 48,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "io.open receives an unsanitized file path, leading to Path Traversal or Arbitrary File Access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.open",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 57,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 57,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "open receives an unsanitized file path, leading to Path Traversal or Arbitrary File Access.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-execfile",
+      "path": "src/vulnpy/trigger/pt.py",
+      "start": {
+        "line": 66,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 66,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "execfile executing arbitrary user-specified file path, allowing Code Injection / Remote Code Execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.templating-open",
+      "path": "src/vulnpy/common/templating.py",
+      "start": {
+        "line": 27,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 27,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "File open with path derived from raw template name formatting, potentially leading to Path Traversal.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf.urlopen",
+      "path": "src/vulnpy/trigger/ssrf.py",
+      "start": {
+        "line": 51,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 51,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "urlopen is called with user-supplied URL/Request argument, resulting in Server-Side Request Forgery.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf.httpconnection-init",
+      "path": "src/vulnpy/trigger/ssrf.py",
+      "start": {
+        "line": 136,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 136,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "HTTP/HTTPS connection class instantiated with user-supplied host, leading to Server-Side Request Forgery.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf.httpconnection-request-call-url",
+      "path": "src/vulnpy/trigger/ssrf.py",
+      "start": {
+        "line": 90,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 90,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Dynamic request/putrequest method call on HTTP/HTTPS connection using user-supplied URL, leading to Server-Side Request Forgery.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-exec",
+      "path": "src/vulnpy/trigger/unsafe_code_exec.py",
+      "start": {
+        "line": 2,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 2,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Calling exec() with user-supplied code allows execution of arbitrary Python commands.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-eval",
+      "path": "src/vulnpy/trigger/unsafe_code_exec.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 6,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Calling eval() with user-supplied expression allows execution of arbitrary Python code.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-compile",
+      "path": "src/vulnpy/trigger/unsafe_code_exec.py",
+      "start": {
+        "line": 10,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 10,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Calling compile() on user-supplied code string can prepare arbitrary expressions for execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xml.xxe-lxml",
+      "path": "src/vulnpy/trigger/xxe.py",
+      "start": {
+        "line": 8,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 8,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "etree.fromstring parses untrusted XML input and is vulnerable to XML External Entity (XXE) attacks depending on lxml version and settings.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: XML External Entity (XXE)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xml.xxe-pulldom",
+      "path": "src/vulnpy/trigger/xxe.py",
+      "start": {
+        "line": 12,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 12,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "pulldom.parseString parses untrusted XML input without disabling external entity resolution, allowing XXE.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: XML External Entity (XXE)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xml.xxe-sax",
+      "path": "src/vulnpy/trigger/xxe.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 16,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "sax.parseString parses untrusted XML input without disabling external entity resolution, allowing XXE.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: XML External Entity (XXE)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xml.xpath-lxml-findall",
+      "path": "src/vulnpy/trigger/xpath.py",
+      "start": {
+        "line": 25,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 25,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "findall() receives unsanitized user input in XPath expression, allowing XPath Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-643: XPath Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xml.xpath-lxml-findtext",
+      "path": "src/vulnpy/trigger/xpath.py",
+      "start": {
+        "line": 29,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 29,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "findtext() receives unsanitized user input in XPath expression, allowing XPath Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-643: XPath Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xml.xpath-etree-findall",
+      "path": "src/vulnpy/trigger/xpath.py",
+      "start": {
+        "line": 34,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 34,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "findall() receives unsanitized user input in XML ElementTree query, allowing XPath Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-643: XPath Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redos.re-match",
+      "path": "src/vulnpy/trigger/redos.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 7,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Evaluating user input against the exponentially backtracking regex '((a)+)+' can cause Regular Expression Denial of Service (ReDoS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-1333: Regular Expression Denial of Service (ReDoS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redos.re-search",
+      "path": "src/vulnpy/trigger/redos.py",
+      "start": {
+        "line": 20,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 20,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Evaluating user input against the exponentially backtracking regex '((a)+)+' can cause Regular Expression Denial of Service (ReDoS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-1333: Regular Expression Denial of Service (ReDoS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash-md5",
+      "path": "src/vulnpy/trigger/hash.py",
+      "start": {
+        "line": 19,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 19,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Use of weak cryptographic hash MD5 is unsafe for password hashing or integrity checks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash-sha1",
+      "path": "src/vulnpy/trigger/hash.py",
+      "start": {
+        "line": 24,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 24,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Use of weak cryptographic hash SHA1 is unsafe for password hashing or integrity checks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-random",
+      "path": "src/vulnpy/trigger/rand.py",
+      "start": {
+        "line": 20,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 20,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The standard random module is not cryptographically secure. Use secrets module for security-sensitive purposes.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.wsgi-raw",
+      "path": "src/vulnpy/wsgi/app.py",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 26,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Concatenating user input directly into HTML response in WSGI app allows Cross-Site Scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.configuration.hsts-disabled",
+      "path": "src/vulnpy/wsgi/app.py",
+      "start": {
+        "line": 36,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 36,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Strict-Transport-Security is disabled (max-age=0), which fails to protect against MITM attacks.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.configuration.xss-protection-disabled",
+      "path": "src/vulnpy/wsgi/app.py",
+      "start": {
+        "line": 35,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 35,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "X-XSS-Protection is disabled ('0'), bypassing potential browser-side protection against Cross-Site Scripting (XSS).",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.django-raw",
+      "path": "src/vulnpy/django/vulnerable.py",
+      "start": {
+        "line": 36,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 36,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Concatenating user input directly into Django HTTP response template allows Cross-Site Scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.flask-raw",
+      "path": "src/vulnpy/flask/blueprint.py",
+      "start": {
+        "line": 55,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 55,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Concatenating user input directly into Flask blueprint response template allows Cross-Site Scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.fastapi-raw",
+      "path": "src/vulnpy/fastapi/vulnerable.py",
+      "start": {
+        "line": 42,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 42,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Concatenating user input directly into FastAPI HTMLResponse allows Cross-Site Scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

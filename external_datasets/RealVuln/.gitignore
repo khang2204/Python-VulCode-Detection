@@ -1,0 +1,85 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+
+# Generated reports (except dashboard and scanner HTML)
+reports/*/
+!reports/scanners/
+reports/scanners/*.json
+# Frozen, immutable per-version site snapshots (served at realvuln.com/v/<ver>/).
+# These must be tracked so they deploy and stay permanent.
+!reports/v/
+!reports/v/**
+# Static asset dir (paper PDF) served at the site root
+!reports/assets/
+!reports/assets/**
+.superpowers/*
+# Transient audit-submission artifacts
+.audit_submit/
+
+# Proprietary/sensitive data
+proprietary-prompts/
+proprietary-scan-results/
+
+# Cloned repos (for LLM benchmark evaluation)
+repos/
+scratch_pad
+
+.claude
+
+# Paper build artifacts
+paper/main.pdf
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/tables/data.json
+paper/figures/*.pdf
+
+# Local/private working artifacts — never commit to any branch
+outreach/
+hf-dataset/*
+!hf-dataset/README.md
+tools/seclab_litellm_keys.json
+tools/seclab_run.log
+tools/seclab-agent/
+vc_repos/*
+!vc_repos/gt-enrichment-todo.md
+
+# CEO design reference / scratch HTML mockups
+tmp/
+
+# dev/experiment scan outputs (not final scanners)
+scan-results/*/twin-*
+scan-results/*/ensemble-*
+scan-results/*/flash-run*
+.semgrep-venv/

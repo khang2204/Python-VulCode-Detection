@@ -1,0 +1,205 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "sqli.py",
+      "start": {
+        "line": 16,
+        "col": 13,
+        "offset": 320
+      },
+      "end": {
+        "line": 16,
+        "col": 62,
+        "offset": 369
+      },
+      "extra": {
+        "message": "User input from sqli.get('username') is directly concatenated into SQL query string without parameterization. Attacker can inject malicious SQL to bypass authentication, extract database contents, or modify data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss-reflected",
+      "path": "xss.py",
+      "start": {
+        "line": 10,
+        "col": 13,
+        "offset": 180
+      },
+      "end": {
+        "line": 10,
+        "col": 51,
+        "offset": 218
+      },
+      "extra": {
+        "message": "User input from xss.get('username') is directly reflected in JSON response without sanitization or encoding. Attacker can inject malicious JavaScript that executes in victim's browser.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "ssti.py",
+      "start": {
+        "line": 10,
+        "col": 12,
+        "offset": 180
+      },
+      "end": {
+        "line": 10,
+        "col": 40,
+        "offset": 208
+      },
+      "extra": {
+        "message": "User input from ssti.get('mathexp') is directly concatenated into Jinja2 template string without sanitization. Template.render() executes the template, allowing arbitrary code execution on the server.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "rfi.py",
+      "start": {
+        "line": 5,
+        "col": 15,
+        "offset": 100
+      },
+      "end": {
+        "line": 5,
+        "col": 61,
+        "offset": 146
+      },
+      "extra": {
+        "message": "User-controlled URL from rfi.get('imagelink') is passed to requests.get() without validation. Attacker can force the server to make arbitrary HTTP requests, potentially accessing internal services or exfiltrating data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "lfi.py",
+      "start": {
+        "line": 3,
+        "col": 15,
+        "offset": 50
+      },
+      "end": {
+        "line": 3,
+        "col": 28,
+        "offset": 63
+      },
+      "extra": {
+        "message": "User input from lfi.get('filename') is directly passed to open() without path validation or sanitization. Attacker can use '../' sequences to read arbitrary files on the server, such as /etc/passwd or application source code.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.header-injection",
+      "path": "hhi.py",
+      "start": {
+        "line": 18,
+        "col": 20,
+        "offset": 400
+      },
+      "end": {
+        "line": 18,
+        "col": 51,
+        "offset": 431
+      },
+      "extra": {
+        "message": "User-controlled Host header from request.headers['Host'] is reflected in HTML response without sanitization. Attacker can inject CRLF characters to split HTTP responses or inject malicious content into the page.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-113: HTTP Header Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-mode",
+      "path": "app.py",
+      "start": {
+        "line": 24,
+        "col": 38,
+        "offset": 660
+      },
+      "end": {
+        "line": 24,
+        "col": 48,
+        "offset": 670
+      },
+      "extra": {
+        "message": "Flask application runs with debug=True, exposing the Werkzeug debug console. This allows remote code execution via the interactive debugger and exposes sensitive application information.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.ssl-verification-disabled",
+      "path": "rfi.py",
+      "start": {
+        "line": 5,
+        "col": 52,
+        "offset": 137
+      },
+      "end": {
+        "line": 5,
+        "col": 59,
+        "offset": 144
+      },
+      "extra": {
+        "message": "SSL certificate verification is disabled (verify=False) in requests.get(), allowing man-in-the-middle attacks when fetching remote URLs.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

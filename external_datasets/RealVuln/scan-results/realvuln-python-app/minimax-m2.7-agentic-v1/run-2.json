@@ -1,0 +1,357 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "target/project/models/Dashboard.py",
+      "start": {
+        "line": 7,
+        "col": 27,
+        "offset": 153
+      },
+      "end": {
+        "line": 7,
+        "col": 77,
+        "offset": 203
+      },
+      "extra": {
+        "message": "User input from pageId parameter is concatenated directly into SQL string in db.execute(). This allows SQL injection via /dashboard/<pageId> route.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "target/project/controllers/Search.py",
+      "start": {
+        "line": 9,
+        "col": 12,
+        "offset": 200
+      },
+      "end": {
+        "line": 11,
+        "col": 49,
+        "offset": 306
+      },
+      "extra": {
+        "message": "User input from request.form.get('search') is rendered directly into template without encoding. X-XSS-Protection header is explicitly disabled.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-deserialization.pickle",
+      "path": "target/project/controllers/About.py",
+      "start": {
+        "line": 27,
+        "col": 14,
+        "offset": 640
+      },
+      "end": {
+        "line": 27,
+        "col": 27,
+        "offset": 653
+      },
+      "extra": {
+        "message": "pickle.load() is used to deserialize data from a file that can be written via /about/sync endpoint. This allows arbitrary code execution via malicious pickle payload.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Insecure Deserialization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-deserialization.yaml",
+      "path": "target/project/controllers/Information.py",
+      "start": {
+        "line": 18,
+        "col": 18,
+        "offset": 380
+      },
+      "end": {
+        "line": 18,
+        "col": 36,
+        "offset": 398
+      },
+      "extra": {
+        "message": "yaml.load() is used with user-controlled input (base64 decoded data from URL). yaml.load() is unsafe and can execute arbitrary code. Should use yaml.safe_load() instead.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Insecure Deserialization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "target/project/controllers/Validator.py",
+      "start": {
+        "line": 29,
+        "col": 18,
+        "offset": 720
+      },
+      "end": {
+        "line": 30,
+        "col": 28,
+        "offset": 763
+      },
+      "extra": {
+        "message": "User input from request.form['example_file'] is used directly in open() call without path sanitization. This allows path traversal attacks to read arbitrary files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command",
+      "path": "target/project/controllers/Monitoring.py",
+      "start": {
+        "line": 13,
+        "col": 26,
+        "offset": 320
+      },
+      "end": {
+        "line": 13,
+        "col": 46,
+        "offset": 340
+      },
+      "extra": {
+        "message": "os.popen(command) is called with user-influenced data. The system_call function is exposed to templates via context_processor and can be used for OS command injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "target/project/controllers/Login.py",
+      "start": {
+        "line": 12,
+        "col": 13,
+        "offset": 290
+      },
+      "end": {
+        "line": 12,
+        "col": 49,
+        "offset": 326
+      },
+      "extra": {
+        "message": "Hardcoded admin credentials: password == 'admin' and username == 'admin'. Anyone can login with these credentials.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.missing-auth",
+      "path": "target/project/controllers/Confidential.py",
+      "start": {
+        "line": 8,
+        "col": 9,
+        "offset": 195
+      },
+      "end": {
+        "line": 8,
+        "col": 24,
+        "offset": 210
+      },
+      "extra": {
+        "message": "The /confidential endpoint checks session['loggedin'] but there is no proper authentication mechanism. The session value is set by /webmaster without verification, and /login accepts hardcoded credentials.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication",
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure",
+      "path": "target/project/controllers/404.py",
+      "start": {
+        "line": 75,
+        "col": 42,
+        "offset": 2100
+      },
+      "end": {
+        "line": 75,
+        "col": 56,
+        "offset": 2114
+      },
+      "extra": {
+        "message": "The 404 error handler exposes request.url (user-controlled) directly in HTML response without encoding, potentially revealing sensitive URL parameters or path information.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.security-misconfiguration",
+      "path": "target/runserver.py",
+      "start": {
+        "line": 8,
+        "col": 19,
+        "offset": 220
+      },
+      "end": {
+        "line": 8,
+        "col": 53,
+        "offset": 254
+      },
+      "extra": {
+        "message": "CORS is configured with origins='*' (allow all origins) and credentials=true. This allows cross-origin access from any domain with credentials, a severe security misconfiguration.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'SameSite' Attribute",
+            "CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.security-misconfiguration",
+      "path": "target/project/__init__.py",
+      "start": {
+        "line": 6,
+        "col": 9,
+        "offset": 160
+      },
+      "end": {
+        "line": 6,
+        "col": 18,
+        "offset": 169
+      },
+      "extra": {
+        "message": "Flask app.debug is set to True. Debug mode should never be enabled in production as it exposes sensitive debugging information and allows code execution.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.security-misconfiguration",
+      "path": "target/project/__init__.py",
+      "start": {
+        "line": 5,
+        "col": 18,
+        "offset": 135
+      },
+      "end": {
+        "line": 5,
+        "col": 35,
+        "offset": 152
+      },
+      "extra": {
+        "message": "SECRET_KEY is hardcoded to 'random'. This key is used for session signing and should be a strong, unique value not stored in source code.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xxe",
+      "path": "target/project/controllers/Validator.py",
+      "start": {
+        "line": 15,
+        "col": 11,
+        "offset": 380
+      },
+      "end": {
+        "line": 15,
+        "col": 40,
+        "offset": 409
+      },
+      "extra": {
+        "message": "XML input from request.form['customers'] is parsed with minidom parseString without disabling external entities. This could allow XXE attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: XML External Entity (XXE) Reference"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssrf",
+      "path": "target/project/controllers/Messaging.py",
+      "start": {
+        "line": 16,
+        "col": 9,
+        "offset": 290
+      },
+      "end": {
+        "line": 16,
+        "col": 28,
+        "offset": 309
+      },
+      "extra": {
+        "message": "User input from request.form.get('link') is stored and displayed without sanitization. This could be exploited for phishing or redirecting users to malicious sites.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: Open Redirect"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

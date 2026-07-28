@@ -1,0 +1,3 @@
+def __init__(self, zinc_factory, products):...
+self._zinc_factory = zinc_factory
+self._products = products

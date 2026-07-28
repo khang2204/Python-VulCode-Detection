@@ -1,0 +1,3 @@
+@property...
+next_url = self.request.session.get('oidc_login_next', None)
+return next_url or import_from_settings('LOGIN_REDIRECT_URL', '/')

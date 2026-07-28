@@ -1,0 +1,3 @@
+def _raise_error(self, status_code, operation, result_msg, error_code=None):...
+"""docstring"""
+error = http_error_to_exception(status_code, error_code)

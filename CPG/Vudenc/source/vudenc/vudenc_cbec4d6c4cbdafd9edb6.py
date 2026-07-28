@@ -1,0 +1,3 @@
+def test_no_authn(self):...
+resp = c.get('/test')
+self.assertEqual(resp.status_code, 200)

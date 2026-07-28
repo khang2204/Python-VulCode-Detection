@@ -1,0 +1,3 @@
+def command(self, command=''):...
+self.write(command + '\n')
+return self.read_until()

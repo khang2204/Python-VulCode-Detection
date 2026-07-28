@@ -1,0 +1,3 @@
+@property...
+if not self._is_function:
+return self._file

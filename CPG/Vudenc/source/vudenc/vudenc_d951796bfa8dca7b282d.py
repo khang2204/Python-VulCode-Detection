@@ -1,0 +1,3 @@
+def run(self):...
+subreddits = Subreddit._by_fullname(request.post.keys())
+return subreddits.values()

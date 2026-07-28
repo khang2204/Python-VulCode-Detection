@@ -1,0 +1,3 @@
+def kill_session_by_name(server, name):...
+session = server.find_where({'session_name': name})
+session.kill_session()

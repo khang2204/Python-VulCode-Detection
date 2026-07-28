@@ -1,0 +1,3 @@
+def test_permissions(self):...
+self.assertEqual(448, os.stat(f.name)[0] & 511)
+self.assertEqual(420, os.stat(path)[0] & 511)

@@ -1,0 +1,3 @@
+def sqlForNonNone(self, value):...
+"""docstring"""
+return '%s' % QuotedString(value)

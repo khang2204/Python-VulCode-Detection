@@ -1,0 +1,3 @@
+def __bool__(self):...
+"""docstring"""
+return True

@@ -1,0 +1,3 @@
+@staticmethod...
+"""docstring"""
+return db.session.query(User.id).all()

@@ -1,0 +1,3 @@
+def has_wildcards(self):...
+"""docstring"""
+return bool(self.wildcard_names)

@@ -1,0 +1,505 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 320,
+        "col": 14,
+        "offset": 10250
+      },
+      "end": {
+        "line": 320,
+        "col": 68,
+        "offset": 10304
+      },
+      "extra": {
+        "message": "User-supplied 'filter' argument is interpolated directly into a SQL text query using string formatting. The query text(\"title = '%s' or content = '%s'\" % (filter, filter)) allows SQL injection. An attacker can supply malicious input to manipulate the SQL query, potentially reading or modifying arbitrary database data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 211,
+        "col": 5,
+        "offset": 6400
+      },
+      "end": {
+        "line": 211,
+        "col": 50,
+        "offset": 6445
+      },
+      "extra": {
+        "message": "User-supplied URL components (scheme, host, port, path) are used to construct a shell command passed to os.popen() via helpers.run_cmd(). The strip_dangerous_characters() function only removes semicolons and ampersands, which is insufficient to prevent command injection. An attacker can inject arbitrary commands via URL parameters (e.g., using backticks, $(), newlines, or other shell metacharacters).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 352,
+        "col": 7,
+        "offset": 11200
+      },
+      "end": {
+        "line": 352,
+        "col": 50,
+        "offset": 11243
+      },
+      "extra": {
+        "message": "User-supplied 'arg' parameter is interpolated directly into a shell command 'ps {}'.format(arg) and passed to os.popen(). An attacker can inject arbitrary shell commands via the 'arg' parameter, e.g., supplying 'aux; id' to execute additional commands.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 345,
+        "col": 9,
+        "offset": 10980
+      },
+      "end": {
+        "line": 345,
+        "col": 40,
+        "offset": 11011
+      },
+      "extra": {
+        "message": "User-supplied 'cmd' parameter is passed to helpers.run_cmd() which executes via os.popen(). In 'easy' mode (the default), all commands are allowed. Even in 'hard' mode, the allowed_cmds check has a typo (missing comma between 'ps' and 'whoami'), allowing only partial protection. An attacker can execute arbitrary system commands.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "core/helpers.py",
+      "start": {
+        "line": 8,
+        "col": 3,
+        "offset": 120
+      },
+      "end": {
+        "line": 9,
+        "col": 32,
+        "offset": 170
+      },
+      "extra": {
+        "message": "The run_cmd() function uses os.popen() to execute arbitrary shell commands without any validation. This function is called from multiple locations with user-supplied input, enabling command injection throughout the application.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "core/views.py",
+      "start": {
+        "line": 210,
+        "col": 5,
+        "offset": 6350
+      },
+      "end": {
+        "line": 211,
+        "col": 50,
+        "offset": 6445
+      },
+      "extra": {
+        "message": "User-supplied host, port, path, and scheme parameters are used to construct a URL that is fetched via curl. An attacker can make the server send requests to arbitrary internal or external services, including cloud metadata endpoints, internal APIs, or other sensitive resources. The strip_dangerous_characters protection is insufficient for SSRF prevention.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "core/helpers.py",
+      "start": {
+        "line": 23,
+        "col": 3,
+        "offset": 420
+      },
+      "end": {
+        "line": 27,
+        "col": 15,
+        "offset": 520
+      },
+      "extra": {
+        "message": "User-supplied 'filename' parameter is concatenated directly with WEB_UPLOADDIR without any path sanitization. An attacker can use path traversal sequences (e.g., '../') to write files to arbitrary locations on the filesystem, potentially achieving remote code execution or overwriting critical system files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.missing-auth",
+      "path": "core/views.py",
+      "start": {
+        "line": 140,
+        "col": 3,
+        "offset": 4000
+      },
+      "end": {
+        "line": 155,
+        "col": 40,
+        "offset": 4550
+      },
+      "extra": {
+        "message": "The EditPaste mutation does not perform any authentication or authorization check. Any user can modify any paste by supplying its ID, regardless of ownership. This allows unauthorized modification of all paste content in the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.missing-auth",
+      "path": "core/views.py",
+      "start": {
+        "line": 164,
+        "col": 3,
+        "offset": 4650
+      },
+      "end": {
+        "line": 173,
+        "col": 38,
+        "offset": 5100
+      },
+      "extra": {
+        "message": "The DeletePaste mutation does not perform any authentication or authorization check. Any user can delete any paste by supplying its ID, regardless of ownership. This allows unauthorized deletion of all pastes in the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.missing-auth",
+      "path": "core/views.py",
+      "start": {
+        "line": 385,
+        "col": 3,
+        "offset": 12500
+      },
+      "end": {
+        "line": 389,
+        "col": 42,
+        "offset": 12680
+      },
+      "extra": {
+        "message": "The resolve_delete_all_pastes query resolver does not perform any authentication check. Any unauthenticated user can delete all pastes from the database, causing data loss and denial of service.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.authentication.missing-auth",
+      "path": "core/views.py",
+      "start": {
+        "line": 380,
+        "col": 3,
+        "offset": 12350
+      },
+      "end": {
+        "line": 383,
+        "col": 18,
+        "offset": 12480
+      },
+      "extra": {
+        "message": "The resolve_audits query resolver does not perform any authentication check. Any unauthenticated user can access all audit logs, which may contain sensitive information about user queries and system operations.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.jwt-no-verification",
+      "path": "core/helpers.py",
+      "start": {
+        "line": 20,
+        "col": 3,
+        "offset": 380
+      },
+      "end": {
+        "line": 21,
+        "col": 80,
+        "offset": 460
+      },
+      "extra": {
+        "message": "JWT tokens are decoded with signature and expiration verification disabled (verify_signature=False, verify_exp=False). This allows an attacker to forge arbitrary JWT tokens, impersonate any user including 'admin', and bypass authentication completely.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.secrets.hardcoded-secret",
+      "path": "app.py",
+      "start": {
+        "line": 14,
+        "col": 3,
+        "offset": 380
+      },
+      "end": {
+        "line": 14,
+        "col": 35,
+        "offset": 412
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded to 'dvga'. This secret is used to sign session cookies and other security-related tokens. An attacker can use this known secret to forge session cookies and bypass security controls.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.secrets.hardcoded-secret",
+      "path": "app.py",
+      "start": {
+        "line": 15,
+        "col": 3,
+        "offset": 415
+      },
+      "end": {
+        "line": 15,
+        "col": 40,
+        "offset": 452
+      },
+      "extra": {
+        "message": "JWT_SECRET_KEY is hardcoded to 'dvga'. This secret is used to sign JWT tokens. An attacker can use this known secret to forge valid JWT tokens and impersonate any user.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.secrets.hardcoded-credential",
+      "path": "setup.py",
+      "start": {
+        "line": 49,
+        "col": 3,
+        "offset": 1450
+      },
+      "end": {
+        "line": 50,
+        "col": 36,
+        "offset": 1520
+      },
+      "extra": {
+        "message": "Weak, hardcoded password 'changeme' is used for the admin user. This allows attackers to easily guess or brute-force the admin credentials.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.secrets.hardcoded-credential",
+      "path": "setup.py",
+      "start": {
+        "line": 64,
+        "col": 55,
+        "offset": 2100
+      },
+      "end": {
+        "line": 64,
+        "col": 70,
+        "offset": 2115
+      },
+      "extra": {
+        "message": "Hardcoded password 'password123' is used for the operator user account. This allows attackers to easily guess or brute-force credentials.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure.stack-trace",
+      "path": "core/view_override.py",
+      "start": {
+        "line": 41,
+        "col": 3,
+        "offset": 1400
+      },
+      "end": {
+        "line": 56,
+        "col": 45,
+        "offset": 1950
+      },
+      "extra": {
+        "message": "Detailed stack traces, exception information, and full file paths are exposed to users in GraphQL error responses. This reveals sensitive implementation details, directory structure, and potentially code logic that aids attackers in understanding and exploiting the application.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-disclosure.password-exposure",
+      "path": "core/views.py",
+      "start": {
+        "line": 338,
+        "col": 5,
+        "offset": 10800
+      },
+      "end": {
+        "line": 339,
+        "col": 30,
+        "offset": 10870
+      },
+      "extra": {
+        "message": "The resolve_system_diagnostics resolver retrieves the admin password from the database and stores it in a local variable. If an error occurs or debugging is enabled, this password could be exposed. Combined with missing authentication on this endpoint, this is a serious vulnerability.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.dos.resource-exhaustion",
+      "path": "core/security.py",
+      "start": {
+        "line": 8,
+        "col": 1,
+        "offset": 90
+      },
+      "end": {
+        "line": 16,
+        "col": 12,
+        "offset": 280
+      },
+      "extra": {
+        "message": "The simulate_load() function runs an unbounded loop that iterates 200-500 times with 100ms sleeps, potentially blocking for up to 50 seconds. This is called from resolve_system_update() without authentication, allowing attackers to trigger resource exhaustion and denial of service by repeatedly calling the systemUpdate query.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection-auth-bypass",
+      "path": "core/views.py",
+      "start": {
+        "line": 234,
+        "col": 9,
+        "offset": 7100
+      },
+      "end": {
+        "line": 234,
+        "col": 70,
+        "offset": 7161
+      },
+      "extra": {
+        "message": "User-supplied username and password are passed directly to a SQLAlchemy filter query. While SQLAlchemy ORM provides some protection, the password comparison uses the plaintext password value directly. An attacker could potentially manipulate the query or exploit timing differences. More critically, passwords are stored and compared in plaintext.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

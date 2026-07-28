@@ -1,0 +1,3 @@
+def get(self, request, *args, **kwargs):...
+form = ShortUrlForm()
+return render(request, 'home.html', {'form': form})

@@ -1,0 +1,3 @@
+def __init__(self, txt):...
+warn('Tables not yet implemented')
+super(TableEnv, self).__init__('Table: ' + txt)

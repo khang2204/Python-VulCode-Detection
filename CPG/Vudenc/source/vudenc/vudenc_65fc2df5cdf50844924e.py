@@ -1,0 +1,3 @@
+def tx_mounts(self):...
+html = self.conn.tpl_mounts.render(this=self)
+self.reply(html.encode('utf-8'))

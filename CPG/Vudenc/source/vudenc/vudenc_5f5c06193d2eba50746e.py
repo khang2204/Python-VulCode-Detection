@@ -1,0 +1,3 @@
+def wrapper(self, *args, **kwargs):...
+if not self.is_group_user(group):
+return method(self, *args, **kwargs)

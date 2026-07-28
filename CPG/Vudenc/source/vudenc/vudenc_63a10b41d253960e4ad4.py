@@ -1,0 +1,3 @@
+def connect():...
+"""docstring"""
+return psycopg2.connect('dbname=tournament')

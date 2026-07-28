@@ -1,0 +1,3 @@
+def decorate(ruleinfo):...
+ruleinfo.version = version
+return ruleinfo

@@ -1,0 +1,355 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "routes/signup.py",
+      "start": {
+        "line": 15,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 17,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SQL Injection vulnerability: User-controlled 'code' parameter from form.registration_code.data is directly interpolated into a raw SQL query using f-string formatting. The validate_token() function executes text(f\"SELECT id, code FROM {RegistrationCode.__tablename__} WHERE code = '{code}'\") which allows attackers to inject malicious SQL.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "routes/account.py",
+      "start": {
+        "line": 31,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 33,
+        "col": 55,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SQL Injection vulnerability: User-controlled 'search' parameter from request.args.get('search', '') is directly interpolated into a SQL LIKE clause using text(f\"text like '%{search_param}%'\"). This allows attackers to inject SQL to access or modify unauthorized data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssrf",
+      "path": "routes/account.py",
+      "start": {
+        "line": 60,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 61,
+        "col": 37,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Server-Side Request Forgery (SSRF): User-supplied URL from form.url.data is passed to get_base64_image_blob() which downloads content via urllib.request.urlopen() without any validation or restrictions. Attackers can supply internal URLs to access internal services, cloud metadata endpoints, or perform port scanning.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle",
+      "path": "routes/account.py",
+      "start": {
+        "line": 118,
+        "col": 22,
+        "offset": 0
+      },
+      "end": {
+        "line": 118,
+        "col": 47,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure Deserialization: The 'preferences' cookie value is base64 decoded and passed directly to pickle.loads() without validation. An attacker can craft a malicious pickle payload to achieve remote code execution when the cookie is deserialized.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "templates/home.html",
+      "start": {
+        "line": 31,
+        "col": 31,
+        "offset": 0
+      },
+      "end": {
+        "line": 31,
+        "col": 44,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Stored Cross-Site Scripting (XSS): The 'safe' filter is applied to note.text which prevents Jinja2 from escaping HTML content. An attacker can store malicious JavaScript in a note (via the CKEditor text field) that will execute when other users view the home page.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-auth",
+      "path": "routes/account.py",
+      "start": {
+        "line": 68,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 68,
+        "col": 37,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Missing Authentication: The update_account() route handler for POST /account does not have the @login_required decorator. This allows unauthenticated attackers to modify user account data including changing passwords and escalating privileges.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss",
+      "path": "app.py",
+      "start": {
+        "line": 31,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 33,
+        "col": 70,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Reflected Cross-Site Scripting (XSS): The page_not_found() error handler passes user-controlled request.path directly into render_template_string() using an f-string without escaping. An attacker can craft a malicious URL containing JavaScript that will execute in the victim's browser.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded-secret",
+      "path": "app.py",
+      "start": {
+        "line": 11,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 11,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded Secret: The Flask secret_key is hardcoded as 'super secret key' in the source code. This weak, predictable secret can be used to forge session cookies and bypass authentication.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.idor",
+      "path": "routes/notes.py",
+      "start": {
+        "line": 39,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 52,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure Direct Object Reference (IDOR): The delete_note() function accepts a note_id parameter and deletes the note without verifying that the current_user owns the note. Any authenticated user can delete any other user's notes by guessing or knowing the note ID.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.idor",
+      "path": "routes/account.py",
+      "start": {
+        "line": 41,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 48,
+        "col": 65,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure Direct Object Reference (IDOR): The get_personal_notes() function accepts a user_id parameter and retrieves notes for that user without verifying that the current_user.id matches the requested user_id. Any authenticated user can view any other user's personal notes.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.mass-assignment",
+      "path": "routes/account.py",
+      "start": {
+        "line": 76,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 81,
+        "col": 54,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Mass Assignment Vulnerability: The filtered_values dictionary from form data is directly merged into current_user.__dict__. Although 'password' is filtered out, other sensitive fields like 'is_admin' can be set via the form. An attacker can send an 'is_admin' field to escalate privileges to administrator.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.missing-auth",
+      "path": "routes/account.py",
+      "start": {
+        "line": 98,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 106,
+        "col": 21,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Missing Authentication: The toggle_darkmode() route handler for POST /darkmode does not have the @login_required decorator. This allows unauthenticated attackers to manipulate the preferences cookie, which is later deserialized using pickle.loads(), potentially leading to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.echo",
+      "path": "models/__init__.py",
+      "start": {
+        "line": 12,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 15,
+        "col": 2,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Security Misconfiguration: SQLAlchemy engine is configured with echo=True which logs all SQL queries including potentially sensitive data. This should be disabled in production to prevent information disclosure.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-532: Insertion of Sensitive Information into Log File"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "db_seed.py",
+      "start": {
+        "line": 9,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 19,
+        "col": 66,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded Credentials: Default user credentials are hardcoded in the seed data (user@evfa.com/user and admin@evfa.com/admin). These predictable credentials can be exploited if not changed after deployment.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

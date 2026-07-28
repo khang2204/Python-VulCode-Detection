@@ -1,0 +1,3 @@
+def genNodes(self):...
+for i in range(self.size):
+self.addNewNode(i)

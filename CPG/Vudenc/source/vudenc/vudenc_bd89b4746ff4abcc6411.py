@@ -1,0 +1,3 @@
+def __init__(self, name, display_name=None):...
+super().__init__(name, display_name)
+self.type = 'port'

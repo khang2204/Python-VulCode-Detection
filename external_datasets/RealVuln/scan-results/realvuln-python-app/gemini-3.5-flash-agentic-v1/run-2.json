@@ -1,0 +1,284 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "target/project/models/Dashboard.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 110
+      },
+      "end": {
+        "line": 7,
+        "col": 82,
+        "offset": 192
+      },
+      "extra": {
+        "message": "User input 'pageId' is concatenated directly into SQL string passed to SQLite execute(). This allows SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.pickle",
+      "path": "target/project/controllers/About.py",
+      "start": {
+        "line": 27,
+        "col": 1,
+        "offset": 920
+      },
+      "end": {
+        "line": 27,
+        "col": 35,
+        "offset": 955
+      },
+      "extra": {
+        "message": "Untrusted user-controlled data from request.form['data_obj'] is hex-decoded and loaded using pickle.load(). This allows arbitrary code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml",
+      "path": "target/project/controllers/Information.py",
+      "start": {
+        "line": 18,
+        "col": 1,
+        "offset": 452
+      },
+      "end": {
+        "line": 18,
+        "col": 42,
+        "offset": 494
+      },
+      "extra": {
+        "message": "Untrusted input from URL path parameter is base64-decoded and passed directly to yaml.load(). This allows arbitrary code execution via unsafe YAML deserialization.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.traversal.path-traversal",
+      "path": "target/project/controllers/Validator.py",
+      "start": {
+        "line": 30,
+        "col": 1,
+        "offset": 1043
+      },
+      "end": {
+        "line": 30,
+        "col": 32,
+        "offset": 1075
+      },
+      "extra": {
+        "message": "User input from request.form['example_file'] is passed directly to open() and send_file() without any sanitization, allowing arbitrary file read/path traversal.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.upload.unrestricted-file-upload",
+      "path": "target/project/controllers/Validator.py",
+      "start": {
+        "line": 48,
+        "col": 1,
+        "offset": 1782
+      },
+      "end": {
+        "line": 48,
+        "col": 43,
+        "offset": 1825
+      },
+      "extra": {
+        "message": "The application saves files using file.filename directly without using secure_filename(), enabling path traversal via file upload (e.g., uploading files outside the uploads directory).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-434: Unrestricted Upload of File with Dangerous Type",
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "target/project/controllers/404.py",
+      "start": {
+        "line": 95,
+        "col": 1,
+        "offset": 2000
+      },
+      "end": {
+        "line": 95,
+        "col": 50,
+        "offset": 2050
+      },
+      "extra": {
+        "message": "User-controlled URL is formatted directly into a template string and then rendered using render_template_string(). This allows Server-Side Template Injection (SSTI) and Remote Code Execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+            "CWE-1336: Improper Neutralization of Template Directives"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.auth-bypass",
+      "path": "target/project/controllers/Webmaster.py",
+      "start": {
+        "line": 12,
+        "col": 1,
+        "offset": 394
+      },
+      "end": {
+        "line": 12,
+        "col": 32,
+        "offset": 426
+      },
+      "extra": {
+        "message": "Simply requesting the /webmaster route automatically populates the session['loggedin'] variable with a valid random UUID, allowing an authentication bypass for the /confidential page.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication",
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.hardcoded-secret",
+      "path": "target/project/__init__.py",
+      "start": {
+        "line": 5,
+        "col": 1,
+        "offset": 99
+      },
+      "end": {
+        "line": 5,
+        "col": 36,
+        "offset": 135
+      },
+      "extra": {
+        "message": "The Flask application's SECRET_KEY is set to a static, easily guessable string ('random'), which allows attackers to forge session cookies and potentially gain unauthorized access.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-mode-enabled",
+      "path": "target/project/__init__.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 136
+      },
+      "end": {
+        "line": 6,
+        "col": 17,
+        "offset": 153
+      },
+      "extra": {
+        "message": "Flask app.debug is set to True, which enables the interactive Werkzeug debugger. If deployed, this can allow arbitrary code execution through the debugger console.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code",
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "target/project/controllers/Monitoring.py",
+      "start": {
+        "line": 13,
+        "col": 1,
+        "offset": 346
+      },
+      "end": {
+        "line": 13,
+        "col": 41,
+        "offset": 387
+      },
+      "extra": {
+        "message": "os.popen() executes command strings directly via the shell, which can lead to Command Injection if untrusted inputs are passed to the system_call utility.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "target/project/controllers/Search.py",
+      "start": {
+        "line": 11,
+        "col": 1,
+        "offset": 352
+      },
+      "end": {
+        "line": 11,
+        "col": 42,
+        "offset": 394
+      },
+      "extra": {
+        "message": "The search input is returned to the template, and the application explicitly disables XSS protection by setting the 'X-XSS-Protection' header to '0'. This facilitates Reflected Cross-Site Scripting.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-Site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

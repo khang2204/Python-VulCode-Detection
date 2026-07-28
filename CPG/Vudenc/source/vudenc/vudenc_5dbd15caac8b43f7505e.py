@@ -1,0 +1,3 @@
+@app.route('/articles')...
+results = get_table_dict('Article')
+return render_template('articles.html', allarticles=results)

@@ -1,0 +1,130 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection.select",
+      "path": "main.py",
+      "start": {
+        "line": 182,
+        "col": 5,
+        "offset": 5163
+      },
+      "end": {
+        "line": 182,
+        "col": 86,
+        "offset": 5244
+      },
+      "extra": {
+        "message": "User input from 'username' parameter is directly formatted into a SQL query string without escaping or parameterization, allowing SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.put",
+      "path": "main.py",
+      "start": {
+        "line": 188,
+        "col": 5,
+        "offset": 5371
+      },
+      "end": {
+        "line": 205,
+        "col": 44,
+        "offset": 6007
+      },
+      "extra": {
+        "message": "Properties from user Pydantic object are concatenated directly into SQL insert statement, allowing SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.nosql-injection.find",
+      "path": "main.py",
+      "start": {
+        "line": 224,
+        "col": 5,
+        "offset": 6531
+      },
+      "end": {
+        "line": 225,
+        "col": 34,
+        "offset": 6598
+      },
+      "extra": {
+        "message": "User input from request body is parsed as JSON and passed directly as a filter query to MontyDB, leading to NoSQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-943: Improper Neutralization of Special Elements in Data Query Logic"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.delete-username",
+      "path": "main.py",
+      "start": {
+        "line": 231,
+        "col": 9,
+        "offset": 6728
+      },
+      "end": {
+        "line": 231,
+        "col": 93,
+        "offset": 6812
+      },
+      "extra": {
+        "message": "User parameter 'username' is directly formatted into a SQL DELETE query string, allowing SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.delete-address",
+      "path": "main.py",
+      "start": {
+        "line": 235,
+        "col": 9,
+        "offset": 7002
+      },
+      "end": {
+        "line": 235,
+        "col": 94,
+        "offset": 7087
+      },
+      "extra": {
+        "message": "The property 'user.address' is formatted directly into a SQL DELETE query without quotes or parameterization, allowing SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+def __init__(self):...
+self.selected_fields = defaultdict(self.__class__)
+self.is_subquery = False

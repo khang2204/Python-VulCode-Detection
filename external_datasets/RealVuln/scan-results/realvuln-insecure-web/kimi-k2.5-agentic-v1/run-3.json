@@ -1,0 +1,183 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/app.py",
+      "start": {
+        "line": 33,
+        "col": 5,
+        "offset": 850
+      },
+      "end": {
+        "line": 34,
+        "col": 50,
+        "offset": 950
+      },
+      "extra": {
+        "message": "SQL Injection: User input from request.form['username'] and request.form['password'] is concatenated directly into SQL query using f-string formatting. An attacker can inject malicious SQL via username or password fields to bypass authentication or extract data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "app/app.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 150
+      },
+      "end": {
+        "line": 8,
+        "col": 25,
+        "offset": 200
+      },
+      "extra": {
+        "message": "Hardcoded Credentials: The application contains hardcoded username 'admin' and password 'password123' in source code. These credentials are visible in plaintext and can be easily discovered.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss",
+      "path": "app/app.py",
+      "start": {
+        "line": 53,
+        "col": 12,
+        "offset": 1450
+      },
+      "end": {
+        "line": 53,
+        "col": 55,
+        "offset": 1493
+      },
+      "extra": {
+        "message": "Reflected XSS: User input from request.args.get('q') is directly rendered in HTML response without sanitization or escaping. An attacker can inject JavaScript via the 'q' parameter which will execute in the victim's browser.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "app/app.py",
+      "start": {
+        "line": 47,
+        "col": 12,
+        "offset": 1200
+      },
+      "end": {
+        "line": 47,
+        "col": 85,
+        "offset": 1273
+      },
+      "extra": {
+        "message": "Reflected/Stored XSS: The 'user' value from request.cookies.get('session') is directly rendered in HTML response without escaping. Additionally, a static XSS payload is always included in the response. An attacker who controls the session cookie can inject malicious JavaScript.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "app/app.py",
+      "start": {
+        "line": 43,
+        "col": 1,
+        "offset": 1050
+      },
+      "end": {
+        "line": 47,
+        "col": 85,
+        "offset": 1273
+      },
+      "extra": {
+        "message": "Missing Authentication: The /dashboard endpoint has no authentication check (as noted in the comment on line 45). Any user can access the dashboard by navigating directly to /dashboard without logging in. The application relies solely on a client-controlled cookie for 'authentication' without server-side validation.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function",
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.session.insecure-cookie",
+      "path": "app/app.py",
+      "start": {
+        "line": 38,
+        "col": 5,
+        "offset": 950
+      },
+      "end": {
+        "line": 38,
+        "col": 50,
+        "offset": 995
+      },
+      "extra": {
+        "message": "Insecure Session Management: The session cookie is set without Secure, HttpOnly, or SameSite flags. The cookie value is the raw username without any cryptographic signature, allowing session forgery. Cookie lacks expiration/MaxAge, making it a session cookie that may persist unexpectedly.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag",
+            "CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Flag"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.plaintext-passwords",
+      "path": "app/app.py",
+      "start": {
+        "line": 15,
+        "col": 5,
+        "offset": 400
+      },
+      "end": {
+        "line": 15,
+        "col": 75,
+        "offset": 470
+      },
+      "extra": {
+        "message": "Plaintext Password Storage: Passwords are stored in the database in plaintext format (INSERT INTO users VALUES with literal password strings). The SQL query also compares plaintext passwords. This violates security best practices for password storage.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-256: Unprotected Storage of Credentials",
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

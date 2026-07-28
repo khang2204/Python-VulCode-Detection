@@ -1,0 +1,3 @@
+def get(self, msg=''):...
+surveys = get_surveys_by_email(self.current_user, 10)
+self.render('index.html', message=msg, surveys=surveys)

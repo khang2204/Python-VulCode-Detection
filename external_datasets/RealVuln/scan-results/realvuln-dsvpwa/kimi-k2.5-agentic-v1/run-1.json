@@ -1,0 +1,530 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 39,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 39,
+        "col": 96,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from params['id'] is concatenated directly into SQL query without parameterization. The id parameter is extracted from user input and directly appended to the SQL query string, allowing SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 289,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 289,
+        "col": 100,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from params['username'] and params['password'] is concatenated directly into SQL query without proper sanitization. Although username has a regex substitution, password is used directly without sanitization, allowing SQL injection through the password parameter.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 183,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 188,
+        "col": 30,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from self.path is passed directly to subprocess.check_output() with shell=True. The path is sliced with [1:] but is otherwise unsanitized, allowing arbitrary command execution when the risk level is 3 or higher.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 165,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 170,
+        "col": 30,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from params['domain'] is concatenated into a command string and executed with shell=True. The domain parameter is extracted from user input and passed to subprocess.check_output() without proper sanitization, allowing command injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure-deserialization",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 199,
+        "col": 20,
+        "offset": 0
+      },
+      "end": {
+        "line": 199,
+        "col": 66,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-supplied input from params['object'] is base64 decoded and passed to pickle.loads() without validation. This allows arbitrary code execution through Python object deserialization. The RCE class embedded in the same file demonstrates this vulnerability.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 71,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 77,
+        "col": 22,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from params['msg'] is returned directly without HTML encoding. The message parameter is extracted from user input and rendered directly in the response, allowing reflected cross-site scripting (XSS) attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 87,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 97,
+        "col": 86,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from params['comment'] is stored in database and later rendered without HTML encoding. Comments are stored via INSERT statement and displayed directly in HTML table cells without sanitization, allowing stored XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 211,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 211,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from params['path'] is used to open files via open() after only checking for '://' substring. The path parameter can contain directory traversal sequences like '../' to access arbitrary files on the filesystem.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 94,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 94,
+        "col": 56,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled input from route['template'] is used to open files without proper validation. The template parameter from the XML configuration is used directly in a format string to construct file paths, potentially allowing path traversal.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 116,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 118,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from path parameter is used directly to open files without sanitization. The path is derived from the request URL and used in format strings to construct file paths, allowing directory traversal attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirect.open-redirect",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 118,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 127,
+        "col": 22,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from params['path'] is used directly in a JavaScript redirect without validation. The path parameter is inserted into a JavaScript window.location.replace() call without checking if it's a trusted URL, allowing open redirect attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: Open Redirect"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf.server-side-request-forgery",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 213,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 213,
+        "col": 48,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from params['path'] can trigger HTTP requests via urllib.request.urlopen() when the path contains '://'. This allows server-side request forgery (SSRF) attacks where an attacker can make the server request arbitrary URLs including internal services.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.session.session-fixation",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 229,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 231,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from params['session'] is used to set the SESSIONID cookie value directly. This allows attackers to force a specific session ID on a victim, enabling session fixation attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-384: Session Fixation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.missing-protection",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 322,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 325,
+        "col": 32,
+        "offset": 0
+      },
+      "extra": {
+        "message": "State-changing operation (UPDATE user email) is performed on GET request without CSRF tokens. The settings form submits via GET method and modifies database state without any CSRF protection, allowing cross-site request forgery attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.missing-protection",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 366,
+        "col": 17,
+        "offset": 0
+      },
+      "end": {
+        "line": 368,
+        "col": 32,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Destructive operation (DELETE user account) is performed on GET request without CSRF tokens. The account deletion form submits via GET method and deletes database records without any CSRF protection.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xml.external-entity",
+      "path": "dsvpwa/server.py",
+      "start": {
+        "line": 9,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 17,
+        "col": 10,
+        "offset": 0
+      },
+      "extra": {
+        "message": "XML file is parsed using ET.parse() without disabling external entity processing. This could allow XML External Entity (XXE) attacks if the XML file contains malicious DTD declarations that reference external resources.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-611: XML External Entity"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xml.external-entity",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 38,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 47,
+        "col": 26,
+        "offset": 0
+      },
+      "extra": {
+        "message": "XML file is parsed using ET.parse() without disabling external entity processing. This could allow XML External Entity (XXE) attacks if the attacks.xml file contains malicious DTD declarations.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-611: XML External Entity"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.weak-csp",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 238,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 238,
+        "col": 78,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Content-Security-Policy header is set to 'default-src * 'unsafe-inline'' which is overly permissive. The 'unsafe-inline' directive allows inline scripts and styles, and the wildcard (*) allows loading resources from any origin, severely weakening XSS protections.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-693: Protection Mechanism Failure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.xss-protection-disabled",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 237,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 237,
+        "col": 45,
+        "offset": 0
+      },
+      "extra": {
+        "message": "X-XSS-Protection header is explicitly set to '0', disabling the browser's XSS filter. This removes an additional layer of protection against reflected XSS attacks.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-693: Protection Mechanism Failure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-ssl",
+      "path": "dsvpwa.py",
+      "start": {
+        "line": 37,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 37,
+        "col": 44,
+        "offset": 0
+      },
+      "extra": {
+        "message": "SSLv3 is explicitly enabled by clearing the OP_NO_SSLv3 flag. SSLv3 is vulnerable to the POODLE attack (Padding Oracle On Downgraded Legacy Encryption) and should never be used.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-326: Inadequate Encryption Strength"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.clickjacking.missing-protection",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 236,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 241,
+        "col": 26,
+        "offset": 0
+      },
+      "extra": {
+        "message": "No X-Frame-Options or Content-Security-Policy frame-ancestors header is set to prevent clickjacking attacks. The application lacks protection against being embedded in malicious iframes.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-1021: Improper Restriction of Rendered UI Layers"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

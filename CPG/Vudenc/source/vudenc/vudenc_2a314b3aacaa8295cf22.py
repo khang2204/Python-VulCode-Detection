@@ -1,0 +1,3 @@
+def do_traverse(self):...
+"""docstring"""
+return True

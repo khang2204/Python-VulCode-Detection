@@ -1,0 +1,3 @@
+def NativeFiletypeCompletionUsable(self):...
+return self.CurrentFiletypeCompletionEnabled(
+    ) and self.NativeFiletypeCompletionAvailable()

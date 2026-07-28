@@ -1,0 +1,3 @@
+def get_posts():...
+"""docstring"""
+return reversed(POSTS)

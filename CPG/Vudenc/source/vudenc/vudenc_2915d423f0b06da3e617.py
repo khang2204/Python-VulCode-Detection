@@ -1,0 +1,3 @@
+@event.listens_for(Engine, 'after_cursor_execute')...
+total = datetime.now() - conn.info['query_start_time'].pop(-1)
+logger.info('SQL: %s' % total)

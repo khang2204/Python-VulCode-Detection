@@ -1,0 +1,3 @@
+def fields(self):...
+return [SmartListField(self, column, self.object) for column in self.
+    smart_list.columns]

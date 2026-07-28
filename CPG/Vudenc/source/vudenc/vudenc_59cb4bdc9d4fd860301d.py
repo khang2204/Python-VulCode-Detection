@@ -1,0 +1,3 @@
+def admin_req(path, args=None, files=None):...
+browser = get_aws_browser()
+return browser.do_request(AWS_BASE_URL + path, args, files)

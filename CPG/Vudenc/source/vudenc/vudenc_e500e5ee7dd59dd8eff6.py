@@ -1,0 +1,3 @@
+def get_handlers(path, method):...
+component = self.paths[path]
+return component._handlers.get(method, None)

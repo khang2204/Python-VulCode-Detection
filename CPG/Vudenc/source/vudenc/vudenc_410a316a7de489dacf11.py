@@ -1,0 +1,3 @@
+def get(self):...
+self.clear_cookie('username')
+self.redirect('/', permanent=true)

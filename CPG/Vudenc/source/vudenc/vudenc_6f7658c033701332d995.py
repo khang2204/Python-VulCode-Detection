@@ -1,0 +1,3 @@
+@register.filter...
+return reverse('model-remove', kwargs=_normal_kwargs(model_object.
+    course_instance, model_name, id=model_object.id))

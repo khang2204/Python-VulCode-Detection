@@ -1,0 +1,430 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/app.py",
+      "start": {
+        "line": 261,
+        "col": 17,
+        "offset": 1
+      },
+      "end": {
+        "line": 261,
+        "col": 100,
+        "offset": 1
+      },
+      "extra": {
+        "message": "User input from request.json['search'] is concatenated directly into a SQL query using string formatting and passed to db.engine.execute(). This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss-reflected",
+      "path": "app/app.py",
+      "start": {
+        "line": 113,
+        "col": 9,
+        "offset": 1
+      },
+      "end": {
+        "line": 113,
+        "col": 30,
+        "offset": 1
+      },
+      "extra": {
+        "message": "The 404 error handler uses request.url directly in a template string passed to render_template_string() without escaping. An attacker can inject malicious JavaScript via a crafted URL to execute XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss-reflected",
+      "path": "app/app.py",
+      "start": {
+        "line": 280,
+        "col": 25,
+        "offset": 1
+      },
+      "end": {
+        "line": 280,
+        "col": 32,
+        "offset": 1
+      },
+      "extra": {
+        "message": "Exception message str(e) is concatenated directly into an HTML template passed to render_template_string(). Error messages containing user input can lead to reflected XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml-load",
+      "path": "app/app.py",
+      "start": {
+        "line": 329,
+        "col": 9,
+        "offset": 1
+      },
+      "end": {
+        "line": 329,
+        "col": 27,
+        "offset": 1
+      },
+      "extra": {
+        "message": "yaml.load() is called without specifying a safe Loader parameter. This allows arbitrary Python object deserialization and can lead to remote code execution when processing untrusted YAML files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.jwt.insecure-verification",
+      "path": "app/app.py",
+      "start": {
+        "line": 97,
+        "col": 5,
+        "offset": 1
+      },
+      "end": {
+        "line": 99,
+        "col": 16,
+        "offset": 1
+      },
+      "extra": {
+        "message": "The insecure_verify() function decodes JWT tokens with verify=False, completely bypassing signature verification. This allows attackers to forge tokens and bypass authentication.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-347: Improper Verification of Cryptographic Signature"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "app/app.py",
+      "start": {
+        "line": 285,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 287,
+        "col": 30,
+        "offset": 1
+      },
+      "extra": {
+        "message": "The /xxe route has no authentication check. Any unauthenticated user can access this endpoint.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "app/app.py",
+      "start": {
+        "line": 290,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 308,
+        "col": 52,
+        "offset": 1
+      },
+      "extra": {
+        "message": "The /xxe_uploader route has no authentication check. Any unauthenticated user can upload files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "app/app.py",
+      "start": {
+        "line": 310,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 313,
+        "col": 30,
+        "offset": 1
+      },
+      "extra": {
+        "message": "The /yaml route has no authentication check. Any unauthenticated user can access this endpoint.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "app/app.py",
+      "start": {
+        "line": 315,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 331,
+        "col": 55,
+        "offset": 1
+      },
+      "extra": {
+        "message": "The /yaml_hammer route has no authentication check. Any unauthenticated user can upload and process YAML files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.path-concatenation",
+      "path": "app/app.py",
+      "start": {
+        "line": 299,
+        "col": 9,
+        "offset": 1
+      },
+      "end": {
+        "line": 299,
+        "col": 42,
+        "offset": 1
+      },
+      "extra": {
+        "message": "File path is constructed using string concatenation with user-controlled filename. Although secure_filename() is used, path traversal is still possible depending on the underlying filesystem and Python version.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.path-concatenation",
+      "path": "app/app.py",
+      "start": {
+        "line": 323,
+        "col": 9,
+        "offset": 1
+      },
+      "end": {
+        "line": 323,
+        "col": 42,
+        "offset": 1
+      },
+      "extra": {
+        "message": "File path is constructed using string concatenation with user-controlled filename in yaml_hammer route. Although secure_filename() is used, path traversal risks remain.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "app/app.py",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 28,
+        "col": 60,
+        "offset": 1
+      },
+      "extra": {
+        "message": "Hardcoded secret keys found in application configuration (SECRET_KEY_HMAC, SECRET_KEY_HMAC_2, secret_key). These should be loaded from environment variables or a secure secrets management system.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash-md5",
+      "path": "app/app.py",
+      "start": {
+        "line": 141,
+        "col": 13,
+        "offset": 1
+      },
+      "end": {
+        "line": 141,
+        "col": 45,
+        "offset": 1
+      },
+      "extra": {
+        "message": "MD5 hash algorithm is used for password hashing. MD5 is cryptographically broken and vulnerable to collision attacks and rainbow table attacks. Use bcrypt, scrypt, or Argon2 instead.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.stack-trace",
+      "path": "app/app.py",
+      "start": {
+        "line": 271,
+        "col": 9,
+        "offset": 1
+      },
+      "end": {
+        "line": 281,
+        "col": 66,
+        "offset": 1
+      },
+      "extra": {
+        "message": "Detailed exception messages are exposed to the client through error pages. This can leak sensitive information about the application's internal structure and logic.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.verbose-error",
+      "path": "app/app.py",
+      "start": {
+        "line": 147,
+        "col": 12,
+        "offset": 1
+      },
+      "end": {
+        "line": 148,
+        "col": 50,
+        "offset": 1
+      },
+      "extra": {
+        "message": "Exception messages are returned directly to the client in JSON responses, potentially exposing internal error details and system information.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.verbose-error",
+      "path": "app/app.py",
+      "start": {
+        "line": 166,
+        "col": 12,
+        "offset": 1
+      },
+      "end": {
+        "line": 167,
+        "col": 50,
+        "offset": 1
+      },
+      "extra": {
+        "message": "Exception messages are returned directly to the client in JSON responses, potentially exposing internal error details and system information.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "app/app.py",
+      "start": {
+        "line": 62,
+        "col": 9,
+        "offset": 1
+      },
+      "end": {
+        "line": 63,
+        "col": 32,
+        "offset": 1
+      },
+      "extra": {
+        "message": "Hardcoded default admin credentials (username: 'admin', password: 'admin123') are created during application setup. These should be configurable or require initial setup.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

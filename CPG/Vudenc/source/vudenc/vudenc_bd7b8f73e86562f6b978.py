@@ -1,0 +1,3 @@
+def _ShowInputUI(self, analysis):...
+return users.is_current_user_admin() and self.request.get('debug'
+    ) == '1' and analysis.status != analysis_status.RUNNING and analysis.try_job_status != analysis_status.RUNNING

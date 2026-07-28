@@ -1,0 +1,3 @@
+def test_getinfo_int(self):...
+value = self.cnxn.getinfo(pyodbc.SQL_DEFAULT_TXN_ISOLATION)
+self.assertTrue(isinstance(value, int))

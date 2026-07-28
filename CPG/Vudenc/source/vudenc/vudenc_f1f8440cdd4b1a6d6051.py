@@ -1,0 +1,3 @@
+def update_state(self, new_state):...
+"""docstring"""
+self._attributes['state'] = new_state

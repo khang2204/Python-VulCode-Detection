@@ -1,0 +1,3 @@
+def __del__(self):...
+self.cursor.close()
+self.db_conn.close()

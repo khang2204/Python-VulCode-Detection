@@ -1,0 +1,3 @@
+def say_no(error_msg):...
+ajax_response = {'rc': 1, 'response': error_msg}
+return HttpResponse(json.dumps(ajax_response))

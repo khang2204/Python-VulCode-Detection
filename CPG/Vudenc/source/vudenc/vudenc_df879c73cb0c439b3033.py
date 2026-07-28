@@ -1,0 +1,3 @@
+def test_arg_edit_player(self):...
+"""docstring"""
+self.parser.parse_args(['--edit-player'])

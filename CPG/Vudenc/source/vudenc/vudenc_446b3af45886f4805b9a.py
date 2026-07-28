@@ -1,0 +1,3 @@
+@staticmethod...
+for i in xrange(cnt):
+yield unichr(random.randint(0, 65535))

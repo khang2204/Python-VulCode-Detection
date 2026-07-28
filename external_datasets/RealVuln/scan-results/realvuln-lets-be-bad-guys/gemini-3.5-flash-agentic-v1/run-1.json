@@ -1,0 +1,255 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 42,
+        "col": 16,
+        "offset": 997
+      },
+      "end": {
+        "line": 42,
+        "col": 67,
+        "offset": 1048
+      },
+      "extra": {
+        "message": "User input from request.GET['p'] is directly concatenated to base_path via os.path.join and opened, allowing path traversal attacks to read arbitrary files.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-execution",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 72,
+        "col": 13,
+        "offset": 1745
+      },
+      "end": {
+        "line": 72,
+        "col": 73,
+        "offset": 1805
+      },
+      "extra": {
+        "message": "User input from request.POST['first_name'] is base64 decoded and executed directly using exec(), resulting in arbitrary code execution / remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access.idor",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 128,
+        "col": 1,
+        "offset": 2840
+      },
+      "end": {
+        "line": 139,
+        "col": 83,
+        "offset": 3230
+      },
+      "extra": {
+        "message": "The view accepts userid directly from the URL and accesses user data without performing any authentication or authorization checks. This allows insecure direct object reference (IDOR) and unauthorized data modifications.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access.missing-authorization",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 155,
+        "col": 1,
+        "offset": 3490
+      },
+      "end": {
+        "line": 159,
+        "col": 73,
+        "offset": 3694
+      },
+      "extra": {
+        "message": "The view allows access to admin actions without checking if the user is authenticated or has administrator privileges.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirect.open-redirect",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 178,
+        "col": 12,
+        "offset": 4055
+      },
+      "end": {
+        "line": 178,
+        "col": 25,
+        "offset": 4068
+      },
+      "extra": {
+        "message": "User-controlled URL parameter from request.GET['url'] is passed directly to django's redirect() function, allowing open redirect attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.reflection.unsafe-reflection",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 183,
+        "col": 16,
+        "offset": 4181
+      },
+      "end": {
+        "line": 183,
+        "col": 41,
+        "offset": 4206
+      },
+      "extra": {
+        "message": "The view retrieves a function from globals() using a user-controlled parameter request.GET['fwd'] and executes it, leading to arbitrary function execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.disabled-middleware",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 102,
+        "col": 5,
+        "offset": 2880
+      },
+      "end": {
+        "line": 102,
+        "col": 54,
+        "offset": 2929
+      },
+      "extra": {
+        "message": "The CSRF middleware ('django.middleware.csrf.CsrfViewMiddleware') is commented out, leaving the entire application vulnerable to Cross-Site Request Forgery.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.exempt-view",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 164,
+        "col": 1,
+        "offset": 3720
+      },
+      "end": {
+        "line": 164,
+        "col": 13,
+        "offset": 3732
+      },
+      "extra": {
+        "message": "The csrf_image view is explicitly decorated with @csrf_exempt, disabling CSRF protection for this endpoint.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded-secret",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 90,
+        "col": 15,
+        "offset": 2420
+      },
+      "end": {
+        "line": 90,
+        "col": 73,
+        "offset": 2478
+      },
+      "extra": {
+        "message": "The Django SECRET_KEY is hardcoded in the settings file, which can lead to cryptographic signature bypasses, session hijacking, and remote code execution if leaked.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-enabled",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 10,
+        "col": 1,
+        "offset": 162
+      },
+      "end": {
+        "line": 10,
+        "col": 12,
+        "offset": 173
+      },
+      "extra": {
+        "message": "DEBUG is set to True in settings. This can expose sensitive traceback information, configuration details, and system environment variables to users.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

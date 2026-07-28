@@ -1,0 +1,3 @@
+def value_to_string(self, obj):...
+value = self.value_from_object(obj)
+return base64.b64encode(self.get_prep_value(value))

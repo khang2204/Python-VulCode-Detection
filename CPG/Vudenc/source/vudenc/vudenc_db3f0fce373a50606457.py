@@ -1,0 +1,3 @@
+def __init__(self, item, length=10000, **kw):...
+VLength.__init__(self, item, length=length, empty_error=errors.NO_MSG_BODY,
+    **kw)

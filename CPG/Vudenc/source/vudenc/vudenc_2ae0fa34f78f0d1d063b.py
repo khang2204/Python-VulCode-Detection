@@ -1,0 +1,3 @@
+async def stop(self):...
+if self._loaded:
+await self._runon('stop')

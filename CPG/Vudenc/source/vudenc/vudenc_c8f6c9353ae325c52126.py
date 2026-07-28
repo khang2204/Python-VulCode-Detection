@@ -1,0 +1,3 @@
+@tornado.web.authenticated...
+data = get_json_request_body(self)
+self.write(api.user.generate_token(data))

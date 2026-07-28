@@ -1,0 +1,3 @@
+@memoized_property...
+"""docstring"""
+return self._zinc_factory._compiler_interface(self._products)

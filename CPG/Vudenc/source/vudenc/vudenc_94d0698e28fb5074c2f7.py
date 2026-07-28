@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return [os.path.join(self.bin_dir_path, self.executable)] + self.args

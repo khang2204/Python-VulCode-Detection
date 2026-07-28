@@ -1,0 +1,154 @@
+{
+  "architecture": "QDENN",
+  "protocol": "ten_percent",
+  "source": "vudenc",
+  "target": "vudenc",
+  "training_seed": 101,
+  "split_seed": 101,
+  "sampling_seed": 101,
+  "evaluation_scope": "fixed_test_split_101",
+  "train_samples": 1108,
+  "validation_samples": 2376,
+  "test_samples": 2376,
+  "source_manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+  "configuration": {
+    "vocabulary": 128,
+    "qubits": 7,
+    "max_length": 100,
+    "epochs": 10,
+    "batch_size": 32,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "fidelity_note": "Learning rate is not reported by the source paper; 0.01 is the declared reproduction choice."
+  },
+  "metrics": {
+    "accuracy": 0.8169191919191919,
+    "balanced_accuracy": 0.5541968641220818,
+    "precision": 0.4492753623188406,
+    "recall": 0.14726840855106887,
+    "f1": 0.221824686940966,
+    "vulnerable_recall": 0.14726840855106887
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.46886164912328004,
+      "validation": {
+        "accuracy": 0.8085016835016835,
+        "balanced_accuracy": 0.5155335913152828,
+        "precision": 0.3023255813953488,
+        "recall": 0.06175771971496437,
+        "f1": 0.10256410256410256,
+        "vulnerable_recall": 0.06175771971496437
+      }
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.42423692916413397,
+      "validation": {
+        "accuracy": 0.8122895622895623,
+        "balanced_accuracy": 0.5271543214001494,
+        "precision": 0.3711340206185567,
+        "recall": 0.0855106888361045,
+        "f1": 0.13899613899613897,
+        "vulnerable_recall": 0.0855106888361045
+      }
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.4141177510637429,
+      "validation": {
+        "accuracy": 0.8131313131313131,
+        "balanced_accuracy": 0.5360528761747392,
+        "precision": 0.39823008849557523,
+        "recall": 0.10688836104513064,
+        "f1": 0.16853932584269665,
+        "vulnerable_recall": 0.10688836104513064
+      }
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.405437968638127,
+      "validation": {
+        "accuracy": 0.8106060606060606,
+        "balanced_accuracy": 0.5317226673794582,
+        "precision": 0.37168141592920356,
+        "recall": 0.0997624703087886,
+        "f1": 0.15730337078651685,
+        "vulnerable_recall": 0.0997624703087886
+      }
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.39995514266303944,
+      "validation": {
+        "accuracy": 0.8114478114478114,
+        "balanced_accuracy": 0.5368936462326332,
+        "precision": 0.3884297520661157,
+        "recall": 0.11163895486935867,
+        "f1": 0.17343173431734316,
+        "vulnerable_recall": 0.11163895486935867
+      }
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.3925422199085652,
+      "validation": {
+        "accuracy": 0.8114478114478114,
+        "balanced_accuracy": 0.5368936462326332,
+        "precision": 0.3884297520661157,
+        "recall": 0.11163895486935867,
+        "f1": 0.17343173431734316,
+        "vulnerable_recall": 0.11163895486935867
+      }
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.3873332101849224,
+      "validation": {
+        "accuracy": 0.8114478114478114,
+        "balanced_accuracy": 0.535029858271926,
+        "precision": 0.38461538461538464,
+        "recall": 0.10688836104513064,
+        "f1": 0.16728624535315986,
+        "vulnerable_recall": 0.10688836104513064
+      }
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.3826401825360207,
+      "validation": {
+        "accuracy": 0.811026936026936,
+        "balanced_accuracy": 0.539433573697991,
+        "precision": 0.390625,
+        "recall": 0.1187648456057007,
+        "f1": 0.18214936247723132,
+        "vulnerable_recall": 0.1187648456057007
+      }
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.3804000665554842,
+      "validation": {
+        "accuracy": 0.8114478114478114,
+        "balanced_accuracy": 0.5406212221540481,
+        "precision": 0.3953488372093023,
+        "recall": 0.12114014251781473,
+        "f1": 0.18545454545454546,
+        "vulnerable_recall": 0.12114014251781473
+      }
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.37453507435375766,
+      "validation": {
+        "accuracy": 0.8106060606060606,
+        "balanced_accuracy": 0.5419735011633487,
+        "precision": 0.3925925925925926,
+        "recall": 0.12589073634204276,
+        "f1": 0.1906474820143885,
+        "vulnerable_recall": 0.12589073634204276
+      }
+    }
+  ]
+}

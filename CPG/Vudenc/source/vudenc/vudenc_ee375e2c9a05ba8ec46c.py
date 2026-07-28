@@ -1,0 +1,3 @@
+@property...
+return (file for rule in self.rules for file in chain(rule.input, rule.
+    output) if not callable(file) and not file.contains_wildcard())

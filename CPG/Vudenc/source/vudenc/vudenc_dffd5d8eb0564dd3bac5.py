@@ -1,0 +1,3 @@
+def value_from_object(self, obj):...
+value = super().value_from_object(obj)
+return self.to_python(value)

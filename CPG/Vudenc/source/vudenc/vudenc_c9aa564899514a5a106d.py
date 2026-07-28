@@ -1,0 +1,3 @@
+def three():...
+HnPFormSet = make_formset(parent, child)
+return ExtractedTextForm, HnPFormSet

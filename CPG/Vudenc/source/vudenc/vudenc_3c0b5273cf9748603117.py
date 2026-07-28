@@ -1,0 +1,26 @@
+def _setup_logging(self):...
+self.logger = logging.getLogger('sos_collector')
+self.logger.setLevel(logging.DEBUG)
+self.logfile = tempfile.NamedTemporaryFile(mode='w+', dir=self.config[
+    'tmp_dir'], delete=False)
+hndlr = logging.StreamHandler(self.logfile)
+hndlr.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s'))
+hndlr.setLevel(logging.DEBUG)
+self.logger.addHandler(hndlr)
+console = logging.StreamHandler(sys.stderr)
+console.setFormatter(logging.Formatter('%(message)s'))
+self.console = logging.getLogger('sos_collector_console')
+self.console.setLevel(logging.DEBUG)
+self.console_log_file = tempfile.NamedTemporaryFile(mode='w+', dir=self.
+    config['tmp_dir'], delete=False)
+chandler = logging.StreamHandler(self.console_log_file)
+cfmt = logging.Formatter('%(asctime)s %(levelname)s: %(message)s')
+chandler.setFormatter(cfmt)
+self.console.addHandler(chandler)
+ui = logging.StreamHandler()
+fmt = logging.Formatter('%(message)s')
+ui.setFormatter(fmt)
+if self.config['verbose']:
+ui.setLevel(logging.DEBUG)
+ui.setLevel(logging.INFO)
+self.console.addHandler(ui)

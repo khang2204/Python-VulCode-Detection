@@ -1,0 +1,3 @@
+def strike(text):...
+"""docstring"""
+return u'̶'.join(text) + u'̶'

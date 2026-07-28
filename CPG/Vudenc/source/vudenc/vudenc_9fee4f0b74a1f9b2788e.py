@@ -1,0 +1,3 @@
+def check_for_setup_error(self):...
+"""docstring"""
+self._check_flags()

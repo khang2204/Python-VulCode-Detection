@@ -1,0 +1,93 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by scala.runtime.LazyVals$ (file:/home/khang/bin/joern/joern-cli/lib/org.scala-lang.scala3-library_3-3.7.4.jar)
+WARNING: Please consider reporting this to the maintainers of class scala.runtime.LazyVals$
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+Parsing code at: /mnt/c/users/gulli/downloads/python-vulcode-detection/CPG/Vudenc/source - language: `PYTHONSRC`
+[+] Running language frontend
+=======================================================================================================
+Invoking CPG generator in a separate process. Note that the new process will consume additional memory.
+If you are importing a large codebase (and/or running into memory issues), please try the following:
+1) exit joern
+2) invoke the frontend: /home/khang/bin/joern/joern-cli/pysrc2cpg -J-Xmx1954m /mnt/c/users/gulli/downloads/python-vulcode-detection/CPG/Vudenc/source -o /mnt/c/users/gulli/downloads/python-vulcode-detection/CPG/Vudenc/cpg.bin
+3) start joern, import the cpg: `importCpg("path/to/cpg")`
+=======================================================================================================
+
+[+] Applying default overlays
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by com.github.luben.zstd.util.Native$2 in an unnamed module (file:/home/khang/bin/joern/joern-cli/lib/com.github.luben.zstd-jni-1.5.7-2.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-07-14 00:43:07.178 WARN  CfgCreator$               Using order fallback for continue statement jump argument
+2026-07-14 00:43:14.661 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = tmp5 = tmp6 = tmp7 = ExtractedText.objects
+ExtractedText.objects.filter(qa_group = None)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO')
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO').first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L4
+2026-07-14 00:43:14.663 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L4
+2026-07-14 00:43:14.671 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp9 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L7
+2026-07-14 00:43:14.672 WARN  RecoverForPythonFile      Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L7
+2026-07-14 00:43:14.677 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp19 = tmp20 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script = scr)
+ExtractedText.objects.filter(extraction_script = scr).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L19
+2026-07-14 00:43:14.678 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L19
+2026-07-14 00:43:14.679 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp22 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L21
+2026-07-14 00:43:14.683 WARN  RecoverForPythonFile      Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L21
+2026-07-14 00:43:14.686 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp26 = tmp27 = tmp28 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script_id = scr.id)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L25
+2026-07-14 00:43:14.687 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L25
+2026-07-14 00:43:14.747 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_aa4003e9c1b77b491a35.py#L8
+2026-07-14 00:43:14.751 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_aa4003e9c1b77b491a35.py#L8
+2026-07-14 00:43:14.762 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.session
+self.session.get('https://www.kijiji.ca/m-my-ads.html/')),(FIELD_IDENTIFIER,text) @ vudenc/vudenc_5a7aa5c69d9b4488a4e8.py#L3
+2026-07-14 00:43:14.767 WARN  RecoverForPythonFile      Unable to assign identifier 'index_page_text' to field load '<unknown>' @ vudenc/vudenc_5a7aa5c69d9b4488a4e8.py#L3
+2026-07-14 00:43:14.792 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_974ddeff5a9960a07bc2.py#L6
+2026-07-14 00:43:14.993 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_a1fe184ab466819b7d33.py#L8
+2026-07-14 00:43:14.999 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_a1fe184ab466819b7d33.py#L8
+2026-07-14 00:43:15.176 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_4f1ee3d2b63e17f4eebc.py#L8
+2026-07-14 00:43:15.183 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_4f1ee3d2b63e17f4eebc.py#L8
+2026-07-14 00:43:15.672 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = tmp5 = tmp6 = tmp7 = ExtractedText.objects
+ExtractedText.objects.filter(qa_group = None)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr)
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO')
+ExtractedText.objects.filter(qa_group = None).filter(extraction_script = scr).filter(data_document__data_group__group_type__code = 'CO').first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L4
+2026-07-14 00:43:15.674 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L4
+2026-07-14 00:43:15.675 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp9 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L7
+2026-07-14 00:43:15.678 WARN  RecoverForPythonFile      Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L7
+2026-07-14 00:43:15.679 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp19 = tmp20 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script = scr)
+ExtractedText.objects.filter(extraction_script = scr).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L19
+2026-07-14 00:43:15.683 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L19
+2026-07-14 00:43:15.692 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp22 = ExtractedText.objects
+ExtractedText.objects.get(pk = pk)),(FIELD_IDENTIFIER,extraction_script) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L21
+2026-07-14 00:43:15.692 WARN  RecoverForPythonFile      Unable to assign identifier 'scr' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L21
+2026-07-14 00:43:15.693 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp26 = tmp27 = tmp28 = ExtractedText.objects
+ExtractedText.objects.filter(extraction_script_id = scr.id)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None)
+ExtractedText.objects.filter(extraction_script_id = scr.id).filter(qa_group = None).first()),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L25
+2026-07-14 00:43:15.693 WARN  RecoverForPythonFile      Unable to assign identifier 'pk' to field load '<unknown>' @ vudenc/vudenc_a9c1b8f7232c38efff20.py#L25
+2026-07-14 00:43:15.727 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp2 = Priority.objects
+Priority.objects.get(value = 'P3')),(FIELD_IDENTIFIER,pk) @ vudenc/vudenc_974ddeff5a9960a07bc2.py#L6
+2026-07-14 00:43:15.753 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_aa4003e9c1b77b491a35.py#L8
+2026-07-14 00:43:15.759 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_aa4003e9c1b77b491a35.py#L8
+2026-07-14 00:43:15.781 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp0 = self.session
+self.session.get('https://www.kijiji.ca/m-my-ads.html/')),(FIELD_IDENTIFIER,text) @ vudenc/vudenc_5a7aa5c69d9b4488a4e8.py#L3
+2026-07-14 00:43:15.787 WARN  RecoverForPythonFile      Unable to assign identifier 'index_page_text' to field load '<unknown>' @ vudenc/vudenc_5a7aa5c69d9b4488a4e8.py#L3
+2026-07-14 00:43:15.974 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_a1fe184ab466819b7d33.py#L8
+2026-07-14 00:43:15.979 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_a1fe184ab466819b7d33.py#L8
+2026-07-14 00:43:16.176 WARN  RecoverForPythonFile      Unhandled field structure (BLOCK,tmp4 = App.objects
+App.objects.get(id = app_id)),(FIELD_IDENTIFIER,release_set) @ vudenc/vudenc_4f1ee3d2b63e17f4eebc.py#L8
+2026-07-14 00:43:16.177 WARN  RecoverForPythonFile      Unable to assign identifier 'tmp3' to field load '<unknown>' @ vudenc/vudenc_4f1ee3d2b63e17f4eebc.py#L8
+Successfully wrote graph to: /mnt/c/users/gulli/downloads/python-vulcode-detection/CPG/Vudenc/cpg.bin
+To load the graph, type `joern /mnt/c/users/gulli/downloads/python-vulcode-detection/CPG/Vudenc/cpg.bin`

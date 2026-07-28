@@ -1,0 +1,3 @@
+@app.route('/initDB')...
+db.create_all()
+return 'This is naughty and MUST not be in production!'

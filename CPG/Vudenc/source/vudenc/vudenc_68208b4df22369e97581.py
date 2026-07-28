@@ -1,0 +1,3 @@
+def is_class_method(f):...
+"""docstring"""
+return hasattr(f, '__self__') and f.__self__ is not None

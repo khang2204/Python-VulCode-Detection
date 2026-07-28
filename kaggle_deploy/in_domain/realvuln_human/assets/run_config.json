@@ -1,0 +1,16 @@
+{
+  "attention": "quantum",
+  "representation": "realvuln_human_manual_python_finding_contexts",
+  "corpus_selection": "human-authored repos; manual-review findings; conflicts and duplicate contexts removed",
+  "split_mode": "standard",
+  "output_prefix": "realvuln_human_binary",
+  "trainer_args": {
+    "seed": 303,
+    "split_seed": 101,
+    "attention_dim": 64,
+    "value_dim": 64,
+    "head_learning_rate": 0.002,
+    "n_qubits": 10,
+    "quantum_depth": 5
+  }
+}

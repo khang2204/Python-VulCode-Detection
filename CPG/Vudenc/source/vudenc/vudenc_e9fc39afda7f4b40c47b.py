@@ -1,0 +1,3 @@
+@app.route('/api/images/<type>/<image>/wait_until_ready', methods=['GET'])...
+get_image_database(type).lookup(image, file_required=False).wait_until_ready()
+return {'ready': True}

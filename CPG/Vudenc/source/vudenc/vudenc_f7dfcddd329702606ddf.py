@@ -1,0 +1,3 @@
+def execute(self):...
+if JvmPlatform.global_instance().get_options().compiler == 'zinc':
+return super(ZincCompile, self).execute()

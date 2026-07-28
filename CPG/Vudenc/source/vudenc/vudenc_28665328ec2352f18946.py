@@ -1,0 +1,3 @@
+def new_search(self):...
+self.controller.remove_frame(SearchPage)
+new_frame = self.controller.create_frame(SearchPage)

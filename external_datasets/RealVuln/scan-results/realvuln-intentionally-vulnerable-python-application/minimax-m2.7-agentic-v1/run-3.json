@@ -1,0 +1,130 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 11,
+        "col": 14,
+        "offset": 240
+      },
+      "end": {
+        "line": 12,
+        "col": 54,
+        "offset": 330
+      },
+      "extra": {
+        "message": "User input from request.args.get('ip') is passed directly to subprocess.check_output() without sanitization. This allows command injection via payloads like '; ls' or '&& whoami'.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-credentials",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 373
+      },
+      "end": {
+        "line": 17,
+        "col": 24,
+        "offset": 415
+      },
+      "extra": {
+        "message": "Hardcoded credentials: USERNAME='admin' and PASSWORD='password123' are directly embedded in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-deserialization",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 33,
+        "col": 10,
+        "offset": 748
+      },
+      "end": {
+        "line": 33,
+        "col": 29,
+        "offset": 767
+      },
+      "extra": {
+        "message": "pickle.loads(request.data) deserializes user-controlled data without validation. Pickle can execute arbitrary code during deserialization, leading to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 46,
+        "col": 13,
+        "offset": 968
+      },
+      "end": {
+        "line": 46,
+        "col": 62,
+        "offset": 1017
+      },
+      "extra": {
+        "message": "User input from request.args.get('id') is concatenated directly into SQL query string. This allows SQL injection via payloads like '1' OR '1'='1'.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.security-misconfiguration",
+      "path": "VulnerablePythonScript.py",
+      "start": {
+        "line": 55,
+        "col": 9,
+        "offset": 1149
+      },
+      "end": {
+        "line": 55,
+        "col": 21,
+        "offset": 1161
+      },
+      "extra": {
+        "message": "Flask app runs with debug=True, which enables the Werkzeug debugger and allows arbitrary code execution via the debugger's interactive console.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Security Misconfiguration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

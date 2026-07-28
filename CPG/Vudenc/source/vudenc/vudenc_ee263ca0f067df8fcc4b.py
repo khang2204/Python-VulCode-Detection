@@ -1,0 +1,3 @@
+def temporary(value):...
+"""docstring"""
+return temp(value)

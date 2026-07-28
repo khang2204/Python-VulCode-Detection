@@ -1,0 +1,3 @@
+@app.route('/')...
+con = get_db(app, g)
+return render_template('index.html')

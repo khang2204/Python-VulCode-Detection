@@ -1,0 +1,3 @@
+@defer.inlineCallbacks...
+self.obj_path = yield db.transact(lambda : [db.ref(db.get_root()['oms_root'])]
+    )()

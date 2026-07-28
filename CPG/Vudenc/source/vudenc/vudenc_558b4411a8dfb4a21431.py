@@ -1,0 +1,3 @@
+def reset_project(self, cr, uid, ids, context={}):...
+res = self.setActive(cr, uid, ids, value=True, context=context)
+return res

@@ -1,0 +1,383 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "dsvw.py",
+      "start": {
+        "line": 30,
+        "col": 21,
+        "offset": 1200
+      },
+      "end": {
+        "line": 30,
+        "col": 87,
+        "offset": 1266
+      },
+      "extra": {
+        "message": "User input from params['id'] is directly concatenated into SQL query without sanitization. Attacker can inject arbitrary SQL to read/modify database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure",
+      "path": "dsvw.py",
+      "start": {
+        "line": 35,
+        "col": 24,
+        "offset": 1365
+      },
+      "end": {
+        "line": 35,
+        "col": 63,
+        "offset": 1404
+      },
+      "extra": {
+        "message": "User input from params['object'] is passed to pickle.loads() which can execute arbitrary code during deserialization. This allows remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "dsvw.py",
+      "start": {
+        "line": 37,
+        "col": 20,
+        "offset": 1442
+      },
+      "end": {
+        "line": 37,
+        "col": 129,
+        "offset": 1551
+      },
+      "extra": {
+        "message": "User input from params['path'] is used to read arbitrary files via open() or make SSRF requests via urllib.request.urlopen(). The check 'not \"://\" in params[\"path\"]' is insufficient and allows path traversal attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "dsvw.py",
+      "start": {
+        "line": 39,
+        "col": 20,
+        "offset": 1593
+      },
+      "end": {
+        "line": 39,
+        "col": 124,
+        "offset": 1697
+      },
+      "extra": {
+        "message": "User input from params['domain'] is directly concatenated into a shell command executed with shell=True. Attacker can inject arbitrary OS commands using shell metacharacters like ;, |, &, etc.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xxe",
+      "path": "dsvw.py",
+      "start": {
+        "line": 41,
+        "col": 20,
+        "offset": 1737
+      },
+      "end": {
+        "line": 41,
+        "col": 179,
+        "offset": 1896
+      },
+      "extra": {
+        "message": "XML parser is configured with dangerous settings: load_dtd=True, resolve_entities=True, no_network=False. This allows XML External Entity (XXE) attacks to read files, cause SSRF, or denial of service.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xpath-injection",
+      "path": "dsvw.py",
+      "start": {
+        "line": 43,
+        "col": 20,
+        "offset": 1936
+      },
+      "end": {
+        "line": 43,
+        "col": 97,
+        "offset": 2013
+      },
+      "extra": {
+        "message": "User input from params['name'] is directly interpolated into XPath query without sanitization. Attacker can manipulate XPath to access unauthorized data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-643: Improper Neutralization of Data within XPath Expressions ('XPath Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.dos.resource-exhaustion",
+      "path": "dsvw.py",
+      "start": {
+        "line": 46,
+        "col": 15,
+        "offset": 2093
+      },
+      "end": {
+        "line": 46,
+        "col": 96,
+        "offset": 2174
+      },
+      "extra": {
+        "message": "User input params['size'] controls both string length and iteration count without bounds checking. Large values cause memory exhaustion and denial of service.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-770: Allocation of Resources Without Limits or Throttling"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "dsvw.py",
+      "start": {
+        "line": 50,
+        "col": 24,
+        "offset": 2277
+      },
+      "end": {
+        "line": 50,
+        "col": 84,
+        "offset": 2337
+      },
+      "extra": {
+        "message": "User input from params['comment'] is directly interpolated into SQL INSERT statement using string formatting. Attacker can inject SQL to modify database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "dsvw.py",
+      "start": {
+        "line": 54,
+        "col": 20,
+        "offset": 2447
+      },
+      "end": {
+        "line": 54,
+        "col": 218,
+        "offset": 2645
+      },
+      "extra": {
+        "message": "Database content from cursor.fetchall() is inserted into HTML without escaping. If attacker injects malicious content via SQL injection (line 50), it will be rendered as HTML causing stored XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-injection",
+      "path": "dsvw.py",
+      "start": {
+        "line": 56,
+        "col": 20,
+        "offset": 2685
+      },
+      "end": {
+        "line": 57,
+        "col": 38,
+        "offset": 2851
+      },
+      "extra": {
+        "message": "User input from params['include'] is used to read arbitrary files or URLs, which are then executed via exec(). This allows remote code execution - attacker can execute arbitrary Python code from local files or remote URLs.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+            "CWE-98: Improper Control of Filename for Include/Require Statement in PHP Program ('PHP File Inclusion')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirect.open-redirect",
+      "path": "dsvw.py",
+      "start": {
+        "line": 61,
+        "col": 20,
+        "offset": 2886
+      },
+      "end": {
+        "line": 61,
+        "col": 103,
+        "offset": 2969
+      },
+      "extra": {
+        "message": "User input from params['redir'] is directly inserted into meta refresh URL without validation. Attacker can redirect users to malicious websites for phishing attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.jsonp-callback",
+      "path": "dsvw.py",
+      "start": {
+        "line": 65,
+        "col": 20,
+        "offset": 3115
+      },
+      "end": {
+        "line": 65,
+        "col": 193,
+        "offset": 3288
+      },
+      "extra": {
+        "message": "User input from params['callback'] is directly inserted into JSONP response without validation. Attacker can inject malicious JavaScript that executes in victim's browser context.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "dsvw.py",
+      "start": {
+        "line": 67,
+        "col": 16,
+        "offset": 3328
+      },
+      "end": {
+        "line": 67,
+        "col": 140,
+        "offset": 3452
+      },
+      "extra": {
+        "message": "User input from params['password'] is directly concatenated into SQL query without sanitization (username is partially sanitized but password is not). Attacker can bypass authentication using SQL injection in password field.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "dsvw.py",
+      "start": {
+        "line": 68,
+        "col": 20,
+        "offset": 3492
+      },
+      "end": {
+        "line": 68,
+        "col": 149,
+        "offset": 3621
+      },
+      "extra": {
+        "message": "User input (username) is inserted into HTML response. While alphanumeric characters are allowed via regex, this partial sanitization may still allow XSS in certain contexts.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss",
+      "path": "dsvw.py",
+      "start": {
+        "line": 31,
+        "col": 20,
+        "offset": 1267
+      },
+      "end": {
+        "line": 31,
+        "col": 250,
+        "offset": 1497
+      },
+      "extra": {
+        "message": "SQL query results are inserted directly into HTML table without HTML escaping. If attacker injects malicious HTML via SQL injection, it will be rendered causing XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

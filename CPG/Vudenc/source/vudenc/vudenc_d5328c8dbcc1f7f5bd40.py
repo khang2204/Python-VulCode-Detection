@@ -1,0 +1,3 @@
+def register_website_context_manager(website, context_manager):...
+additional_context_managers.setdefault(website.lower(), []).append(
+    context_manager)

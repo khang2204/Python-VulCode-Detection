@@ -1,0 +1,3 @@
+@staticmethod...
+return mongo.db.analysis.find_one({'info.id': int(task_id)}, sort=[('_id',
+    pymongo.DESCENDING)])

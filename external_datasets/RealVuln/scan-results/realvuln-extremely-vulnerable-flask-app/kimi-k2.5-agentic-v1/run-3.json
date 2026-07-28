@@ -1,0 +1,305 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "routes/signup.py",
+      "start": {
+        "line": 16,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 18,
+        "col": 15,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from 'code' parameter is directly interpolated into a SQL query using f-string formatting. The validate_token function executes: text(f\"SELECT id, code FROM {RegistrationCode.__tablename__} WHERE code = '{code}'\"). This allows SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "routes/account.py",
+      "start": {
+        "line": 33,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 33,
+        "col": 45,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from 'search' query parameter is directly interpolated into a SQL LIKE clause using f-string: text(f\"text like '%{search_param}%'\"). This allows SQL injection attacks via the search functionality.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf.ssrf",
+      "path": "utils/profile_image.py",
+      "start": {
+        "line": 7,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 8,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "urlopen() is called with a user-controlled URL from form input without any validation or allowlist. This allows Server-Side Request Forgery (SSRF) attacks, enabling attackers to make requests to internal services, cloud metadata endpoints (169.254.169.254), or other restricted networks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.template-injection",
+      "path": "app.py",
+      "start": {
+        "line": 31,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 33,
+        "col": 6,
+        "offset": 0
+      },
+      "extra": {
+        "message": "render_template_string() is used with an f-string containing user-controlled input 'request.path'. This creates a Server-Side Template Injection (SSTI) vulnerability that can lead to Remote Code Execution. Additionally, the rendered content is passed to the template as 'detailed_message' which may be rendered without proper escaping.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "templates/home.html",
+      "start": {
+        "line": 31,
+        "col": 26,
+        "offset": 0
+      },
+      "end": {
+        "line": 31,
+        "col": 44,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled note text is rendered with the '| safe' Jinja2 filter, which disables auto-escaping. Since the note creation form uses CKEditor (rich text editor), stored XSS payloads can be embedded in note text and will execute when other users view the notes.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss",
+      "path": "templates/search.html",
+      "start": {
+        "line": 9,
+        "col": 80,
+        "offset": 0
+      },
+      "end": {
+        "line": 9,
+        "col": 95,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled search parameter is rendered directly in the template as 'value=\"{{search}}\"'. While Jinja2 auto-escaping helps with HTML entities, this is still vulnerable to XSS if the attribute context is not properly handled. An attacker can inject payloads like '\" onclick=\"alert(1)\" x=\"'.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure-deserialization",
+      "path": "routes/account.py",
+      "start": {
+        "line": 118,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 118,
+        "col": 43,
+        "offset": 0
+      },
+      "extra": {
+        "message": "pickle.loads() is called on user-controlled data from the 'preferences' cookie without any validation. Insecure deserialization can lead to Remote Code Execution by crafting malicious pickle payloads that execute arbitrary Python code during deserialization.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.hardcoded-credentials",
+      "path": "app.py",
+      "start": {
+        "line": 11,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 11,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded secret key 'super secret key' is used for Flask session management. This weak secret can be easily guessed, allowing attackers to forge session cookies and impersonate users including administrators.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authentication",
+      "path": "routes/account.py",
+      "start": {
+        "line": 68,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 95,
+        "col": 22,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The '/account' POST endpoint (update_account function) is missing the @login_required decorator. This allows unauthenticated users to update account information. Additionally, the function uses 'current_user' which may reference an unauthenticated anonymous user, but still proceeds with updates.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor",
+      "path": "routes/notes.py",
+      "start": {
+        "line": 39,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 52,
+        "col": 24,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The delete_note function retrieves and deletes a note by ID without verifying that the note belongs to the current user. Any authenticated user can delete any other user's notes by sending a POST request to /notes/<any_note_id>/delete.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor",
+      "path": "routes/account.py",
+      "start": {
+        "line": 41,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 48,
+        "col": 49,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The get_personal_notes function accepts a user_id parameter from the URL and returns notes for that user without verifying that the requested user_id matches the current authenticated user. This allows any authenticated user to view any other user's personal notes.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.privilege-escalation",
+      "path": "routes/account.py",
+      "start": {
+        "line": 76,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 91,
+        "col": 70,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The update_account function accepts 'is_admin' from form data (AccountForm includes is_admin field) and updates the current user's __dict__ with form data including is_admin. This allows any user to escalate privileges to administrator by submitting is_admin=true in the form data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

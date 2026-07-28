@@ -1,0 +1,3 @@
+def remove_frame(self, frame):...
+print('remove_frame: ' + str(frame))
+self.frames.pop(frame, None)

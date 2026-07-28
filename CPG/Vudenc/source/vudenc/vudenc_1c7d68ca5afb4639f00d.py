@@ -1,0 +1,3 @@
+def wait(self):...
+if self.pid:
+os.waitpid(self.pid, 0)

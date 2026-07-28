@@ -1,0 +1,3 @@
+def calcAllLKVM(self):...
+for edge in self.G.edges():
+self.calcLKVM(edge)

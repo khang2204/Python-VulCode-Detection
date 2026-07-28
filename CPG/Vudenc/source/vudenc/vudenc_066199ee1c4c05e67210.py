@@ -1,0 +1,3 @@
+@acs_action('terminate-account-action')...
+"""docstring"""
+return _reauthn('reauthn-for-termination', session_info, user)

@@ -1,0 +1,3 @@
+def saveScript(self, script):...
+script_name = 'result/' + self.cate_str + '_attack' + str(self.count) + '.sh'
+f.write(script)

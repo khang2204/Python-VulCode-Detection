@@ -1,0 +1,3 @@
+def set_hostname(self, hostname):...
+"""docstring"""
+return None

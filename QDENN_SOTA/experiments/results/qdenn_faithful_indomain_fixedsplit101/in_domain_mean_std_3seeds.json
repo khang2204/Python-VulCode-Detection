@@ -1,0 +1,81 @@
+{
+  "architecture": "QDENN_SOTA",
+  "protocol": "in_domain",
+  "aggregation": "mean_and_sample_standard_deviation",
+  "training_seeds": [
+    101,
+    202,
+    303
+  ],
+  "split_seed": 101,
+  "evaluation_scope": "fixed_test_split_101",
+  "metrics": {
+    "benchmarkpython": {
+      "accuracy": {
+        "mean": 0.5945945945945946,
+        "std": 0.03287979746107147
+      },
+      "balanced_accuracy": {
+        "mean": 0.5224358974358974,
+        "std": 0.016812709292238603
+      },
+      "precision": {
+        "mean": 0.4231481481481481,
+        "std": 0.04178994108599578
+      },
+      "recall": {
+        "mean": 0.25,
+        "std": 0.06739081895820149
+      },
+      "f1": {
+        "mean": 0.3082248632333529,
+        "std": 0.04822018469043401
+      }
+    },
+    "vudenc": {
+      "accuracy": {
+        "mean": 0.8331930415263749,
+        "std": 0.0010591799297144304
+      },
+      "balanced_accuracy": {
+        "mean": 0.5612903552415492,
+        "std": 0.005161094193048221
+      },
+      "precision": {
+        "mean": 0.6330733442802409,
+        "std": 0.019368385732113622
+      },
+      "recall": {
+        "mean": 0.14014251781472684,
+        "std": 0.012568889773221181
+      },
+      "f1": {
+        "mean": 0.22922258581288238,
+        "std": 0.01606917103186821
+      }
+    },
+    "realvuln_human": {
+      "accuracy": {
+        "mean": 0.828125,
+        "std": 0.04133986423538423
+      },
+      "balanced_accuracy": {
+        "mean": 0.5179012345679013,
+        "std": 0.027859960693369355
+      },
+      "precision": {
+        "mean": 0.8485734811165845,
+        "std": 0.007440830134165212
+      },
+      "recall": {
+        "mean": 0.9691358024691358,
+        "std": 0.05345835825829868
+      },
+      "f1": {
+        "mean": 0.9044437201216863,
+        "std": 0.025797249728233256
+      }
+    }
+  },
+  "provenance": "Post-hoc inference from the nine completed QDENN checkpoints on their fixed split-seed-101 test sets; no retraining."
+}

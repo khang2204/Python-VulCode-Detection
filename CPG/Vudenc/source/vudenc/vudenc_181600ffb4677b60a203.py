@@ -1,0 +1,3 @@
+def create_field(self, name):...
+field_string = 'id SERIAL PRIMARY KEY'
+return field_string

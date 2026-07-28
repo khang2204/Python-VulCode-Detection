@@ -1,0 +1,3 @@
+def __nonzero__(self):...
+"""docstring"""
+return True

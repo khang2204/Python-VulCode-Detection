@@ -1,0 +1,3 @@
+def set_cuda_visible_devices(gpu_ids):...
+"""docstring"""
+os.environ['CUDA_VISIBLE_DEVICES'] = ','.join([str(i) for i in gpu_ids])

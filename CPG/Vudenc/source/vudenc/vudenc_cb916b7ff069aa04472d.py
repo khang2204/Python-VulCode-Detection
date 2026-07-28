@@ -1,0 +1,3 @@
+def test_metadataview(self):...
+response = c.get('/saml2-metadata')
+self.assertEqual(response.status, '200 OK')

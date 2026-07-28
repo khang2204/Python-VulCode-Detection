@@ -1,0 +1,33 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Secrets and local environment files
+.secrets/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Model weights, checkpoints, and generated binary artifacts
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.bin
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Logs can be experiment results in this repository, so they are not ignored.

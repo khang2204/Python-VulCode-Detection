@@ -1,0 +1,3 @@
+def run(self, value):...
+"""docstring"""
+return '' if value is None else value

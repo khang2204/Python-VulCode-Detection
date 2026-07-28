@@ -1,0 +1,3 @@
+def __init__(self, smart_list, object):...
+self.smart_list = smart_list
+self.object = object

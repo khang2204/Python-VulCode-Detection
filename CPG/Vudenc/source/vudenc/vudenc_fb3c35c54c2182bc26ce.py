@@ -1,0 +1,3 @@
+def serialize_to_json(object):...
+"""docstring"""
+return object.__dict__

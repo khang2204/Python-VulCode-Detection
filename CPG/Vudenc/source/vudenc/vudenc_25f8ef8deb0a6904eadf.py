@@ -1,0 +1,3 @@
+@classmethod...
+return cls.tool_jar_from_products(products, Zinc.ZINC_COMPILER_TOOL_NAME,
+    cls.options_scope)

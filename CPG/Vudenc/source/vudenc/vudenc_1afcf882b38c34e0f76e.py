@@ -1,0 +1,3 @@
+@rest_utils.ajax()...
+"""docstring"""
+return api.nova.server_get(request, server_id).to_dict().get('metadata')

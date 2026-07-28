@@ -1,0 +1,3 @@
+def analyze_scenes(self, chunk):...
+for scene in chunk:
+self.analyze_scene(scene)

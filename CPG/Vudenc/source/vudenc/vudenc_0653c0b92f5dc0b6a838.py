@@ -1,0 +1,3 @@
+@classmethod...
+parser = tournament.argument_parser()
+cls.parser = parser

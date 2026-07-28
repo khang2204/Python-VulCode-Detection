@@ -1,0 +1,3 @@
+def insert_record(cursor, data):...
+cursor.execute(queries['insert'], data)
+conn.commit()

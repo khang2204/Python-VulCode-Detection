@@ -1,0 +1,283 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 22,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 23,
+        "col": 80,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input 'username' and 'password_hash' are concatenated directly into an SQL INSERT statement using f-string formatting. This allows SQL injection attacks where malicious input can modify the SQL query structure.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 36,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 37,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input 'username' is concatenated directly into a SQL SELECT query using f-string formatting in the login function. This allows SQL injection attacks for authentication bypass.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 49,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 50,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input 'user_id' from request args is concatenated directly into a SQL query using f-string formatting. This allows SQL injection attacks to access unauthorized transaction data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 93,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 95,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input 'search_term' is concatenated directly into a SQL LIKE clause using f-string formatting. This allows SQL injection attacks to extract unauthorized data or modify the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-jwt-secret",
+      "path": "backend/auth.py",
+      "start": {
+        "line": 23,
+        "col": 40,
+        "offset": 0
+      },
+      "end": {
+        "line": 23,
+        "col": 48,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded JWT secret key 'secret' used in jwt.decode(). Hardcoded secrets allow attackers to forge valid JWT tokens and bypass authentication.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-flask-secret",
+      "path": "backend/app.py",
+      "start": {
+        "line": 16,
+        "col": 23,
+        "offset": 0
+      },
+      "end": {
+        "line": 16,
+        "col": 37,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded Flask SECRET_KEY 'supersecret' in application configuration. This secret is used for session management and security features; hardcoding it compromises security.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-password-hashing",
+      "path": "backend/models.py",
+      "start": {
+        "line": 24,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 27,
+        "col": 70,
+        "offset": 0
+      },
+      "extra": {
+        "message": "MD5 algorithm used for password hashing in set_password() and check_password(). MD5 is cryptographically broken, vulnerable to collision attacks, and too fast for password hashing. Use bcrypt, scrypt, or Argon2 instead.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash",
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure-yaml-load",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 155,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 157,
+        "col": 60,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure YAML deserialization using yaml.load() with yaml.Loader on user-supplied input. This allows arbitrary code execution through malicious YAML payloads. Use yaml.safe_load() instead.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-authorization",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 139,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 149,
+        "col": 50,
+        "offset": 0
+      },
+      "extra": {
+        "message": "update_password endpoint lacks authorization check - any authenticated user can update any other user's password by providing a different user_id. The endpoint should verify current_user.id matches the user_id being updated.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization",
+            "CWE-285: Improper Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.configuration.insecure-cors",
+      "path": "backend/app.py",
+      "start": {
+        "line": 47,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 56,
+        "col": 20,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Insecure CORS configuration reflects any Origin header value with Access-Control-Allow-Credentials set to true. This allows malicious websites to make authenticated cross-origin requests on behalf of users, leading to CSRF attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration",
+            "CWE-184: Incomplete Blacklist"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-jwt-secret",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 48,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 48,
+        "col": 21,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded JWT secret key 'secret' used in jwt.encode(). This allows attackers to forge authentication tokens.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+def test_temporary_file_within_other_dir(self):...
+self.assertTrue(os.path.realpath(f.name).startswith(os.path.realpath(path)),
+    'file should be created in root_dir if specified.')

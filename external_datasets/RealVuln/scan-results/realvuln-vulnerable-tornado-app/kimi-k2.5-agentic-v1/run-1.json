@@ -1,0 +1,255 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "server.py",
+      "start": {
+        "line": 106,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 107,
+        "col": 40,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from 'username' and 'password' parameters is directly concatenated into an SQL query string without parameterization. The query 'SELECT * FROM Users WHERE User ='' + uname + '' AND Password ='' + pwd + '''' is vulnerable to SQL injection attacks, allowing authentication bypass and data extraction.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "server.py",
+      "start": {
+        "line": 125,
+        "col": 19,
+        "offset": 0
+      },
+      "end": {
+        "line": 125,
+        "col": 46,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from 'server' parameter is directly concatenated into a shell command using os.popen('ping -c 3 ' + server). This allows command injection, enabling attackers to execute arbitrary system commands by injecting shell metacharacters.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.path-traversal",
+      "path": "server.py",
+      "start": {
+        "line": 77,
+        "col": 21,
+        "offset": 0
+      },
+      "end": {
+        "line": 77,
+        "col": 44,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User input from 'file' parameter is used to construct a file path without sanitization. The code reads from 'read/' + file_name, allowing path traversal attacks (e.g., '../../../etc/passwd') to read arbitrary files on the system.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.raw-template-output",
+      "path": "templates/search.html",
+      "start": {
+        "line": 70,
+        "col": 40,
+        "offset": 0
+      },
+      "end": {
+        "line": 70,
+        "col": 55,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'query' parameter is rendered using {% raw query %} which disables Tornado's automatic HTML escaping. This allows Cross-Site Scripting (XSS) attacks by injecting malicious JavaScript into the page.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.raw-template-output-js",
+      "path": "templates/search.html",
+      "start": {
+        "line": 71,
+        "col": 33,
+        "offset": 0
+      },
+      "end": {
+        "line": 71,
+        "col": 48,
+        "offset": 0
+      },
+      "extra": {
+        "message": "User-controlled 'link' parameter is rendered inside a JavaScript context using {% raw link %}, disabling auto-escaping. This creates a DOM-based XSS vulnerability allowing JavaScript code execution.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded-credentials",
+      "path": "server.py",
+      "start": {
+        "line": 140,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 148,
+        "col": 30,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded credentials for multiple user accounts (admin/admin, test-user/test@123, etc.) are stored in plaintext in the database initialization code. These weak, predictable credentials can be easily exploited.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-mode-enabled",
+      "path": "server.py",
+      "start": {
+        "line": 31,
+        "col": 13,
+        "offset": 0
+      },
+      "end": {
+        "line": 31,
+        "col": 25,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Tornado debug mode is enabled ('debug': True). In production, this exposes sensitive information through detailed error pages and enables auto-reloading, which can aid attackers in reconnaissance.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal.static-handler-traversal",
+      "path": "server.py",
+      "start": {
+        "line": 40,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 47,
+        "col": 36,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The StaticHandler class constructs file paths by concatenating 'static/' with user-provided path and uses os.path.join. This can be bypassed using path traversal sequences like '../' to read files outside the intended static directory.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.file-upload.unrestricted-upload",
+      "path": "server.py",
+      "start": {
+        "line": 59,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 69,
+        "col": 56,
+        "offset": 0
+      },
+      "extra": {
+        "message": "The UploadHandler accepts file uploads without validating file types, extensions, or content. Files are written to /tmp/ with only a random filename prefix, potentially allowing upload of executable files or web shells.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-434: Unrestricted Upload of File with Dangerous Type"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.info-disclosure.print-statements",
+      "path": "server.py",
+      "start": {
+        "line": 53,
+        "col": 9,
+        "offset": 0
+      },
+      "end": {
+        "line": 53,
+        "col": 44,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Debug print statements output request URIs to stdout/console. This information disclosure can leak sensitive data like session tokens or query parameters in server logs.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-532: Information Exposure Through Log Files"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+def _IsServerAlive(self):...
+returncode = self._server_popen.poll()
+return returncode is None

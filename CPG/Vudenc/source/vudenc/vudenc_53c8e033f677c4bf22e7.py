@@ -1,0 +1,3 @@
+@property...
+self.check_broken_symlink()
+return os.path.getsize(self.file)

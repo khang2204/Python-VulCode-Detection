@@ -1,0 +1,3 @@
+def test_filters_1(self):...
+self.assertFalse({'name': 'DocType'} in DatabaseQuery('DocType').execute(
+    filters=[['DocType', 'name', 'like', 'J%']]))

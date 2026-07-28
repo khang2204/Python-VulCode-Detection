@@ -1,0 +1,3 @@
+def default_encode(value):...
+if callable(value):
+return value()

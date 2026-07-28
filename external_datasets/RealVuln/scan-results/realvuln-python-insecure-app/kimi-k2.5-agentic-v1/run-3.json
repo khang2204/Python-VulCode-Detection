@@ -1,0 +1,108 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "app/main.py",
+      "start": {
+        "line": 41,
+        "col": 12,
+        "offset": 0
+      },
+      "end": {
+        "line": 41,
+        "col": 36,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Server-Side Template Injection (SSTI): User-controlled 'name' parameter is concatenated into a template string and rendered with Jinja2's Template().render() without sanitization. An attacker can inject Jinja2 template syntax (e.g., {{7*7}} or {{config}}) to execute arbitrary code or access sensitive data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-1336: Improper Neutralization of Special Elements in a Template Engine"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "app/config.py",
+      "start": {
+        "line": 13,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 13,
+        "col": 43,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded credentials: SUPER_SECRET_NAME is hardcoded as 'John Ripper' instead of being loaded from environment variables. This sensitive value is exposed in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials",
+            "CWE-259: Use of Hard-coded Password"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "app/config.py",
+      "start": {
+        "line": 15,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 15,
+        "col": 47,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Hardcoded credentials: SUPER_SECRET_TOKEN is hardcoded as '5u93R53Cr3tT0k3n' instead of being loaded from environment variables. This sensitive authentication token is exposed in source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials",
+            "CWE-259: Use of Hard-coded Password"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-mode-enabled",
+      "path": "app/main.py",
+      "start": {
+        "line": 14,
+        "col": 5,
+        "offset": 0
+      },
+      "end": {
+        "line": 14,
+        "col": 21,
+        "offset": 0
+      },
+      "extra": {
+        "message": "Debug mode enabled: The FastAPI application is configured with debug=config.DEBUG which may expose sensitive information through detailed error messages if DEBUG is set to True. Debug mode should not be enabled in production.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code",
+            "CWE-209: Information Exposure Through an Error Message"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

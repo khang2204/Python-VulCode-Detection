@@ -1,0 +1,3 @@
+@commands.command()...
+"""docstring"""
+await self.bot.say('https://3ds.guide/troubleshooting#gw_fbi')

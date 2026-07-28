@@ -1,0 +1,3 @@
+def add(self):...
+tag, _ = Tag.objects.get_or_create(name=self.tag_name)
+self.obj.add_tag(tag)

@@ -1,0 +1,3 @@
+def __init__(self, tok, txt):...
+self.tok = tok
+self.txt = txt

@@ -1,0 +1,3 @@
+def get(self, survey_id: str):...
+email = get_email(self)
+self.write(api.survey.get_one(survey_id, email=email))

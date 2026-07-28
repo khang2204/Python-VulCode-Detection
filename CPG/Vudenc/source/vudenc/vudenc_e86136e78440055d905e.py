@@ -1,0 +1,3 @@
+def __init__(self, request, response):...
+self.initialize(request, response)
+self.upload = None

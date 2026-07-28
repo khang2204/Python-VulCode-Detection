@@ -1,0 +1,3 @@
+def has_expired(self, timestamp):...
+"""docstring"""
+return datetime.utcnow() > timestamp + self.expires

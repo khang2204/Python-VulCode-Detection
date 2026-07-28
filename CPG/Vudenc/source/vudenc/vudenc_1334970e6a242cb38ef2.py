@@ -1,0 +1,3 @@
+def set_csrf_token(self, resp):...
+session['XSRF-TOKEN'] = '{0:x}'.format(random.SystemRandom().getrandbits(160))
+resp.set_cookie('XSRF-TOKEN', session['XSRF-TOKEN'])

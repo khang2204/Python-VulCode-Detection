@@ -1,0 +1,3 @@
+def for_schema(self):...
+return u'Nested({})'.format(u', '.join(column.for_schema() for column in
+    self.nested_columns))

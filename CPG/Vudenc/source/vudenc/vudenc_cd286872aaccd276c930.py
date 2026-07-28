@@ -1,0 +1,22 @@
+from django.db import models
+from .dsstox_lookup import DSSToxLookup
+from .extracted_text import ExtractedText
+from model_utils.managers import InheritanceManager
+from django.apps import apps
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
+from model_utils import FieldTracker
+extracted_text = models.ForeignKey(ExtractedText, related_name='rawchem',
+    on_delete=models.CASCADE, null=False, blank=False)
+raw_cas = models.CharField('Raw CAS', max_length=100, null=True, blank=True)
+raw_chem_name = models.CharField('Raw chemical name', max_length=500, null=
+    True, blank=True)
+temp_id = models.IntegerField(default=0, null=True, blank=True)
+temp_obj_name = models.CharField(max_length=255, null=True, blank=True)
+rid = models.CharField(max_length=50, null=True, blank=True)
+dsstox = models.ForeignKey(DSSToxLookup, related_name='curated_chemical',
+    on_delete=models.PROTECT, null=True, blank=True)
+objects = InheritanceManager()
+tracker = FieldTracker()
+def __str__(self):...
+return str(self.raw_chem_name) if self.raw_chem_name else ''

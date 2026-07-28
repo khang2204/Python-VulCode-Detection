@@ -1,0 +1,3 @@
+@staticmethod...
+javac_plugin_info_file = os.path.join(resources_dir, _JAVAC_PLUGIN_INFO_FILE)
+f.write(javac_plugin_target.classname)

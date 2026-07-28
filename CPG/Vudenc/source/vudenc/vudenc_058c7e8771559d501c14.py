@@ -1,0 +1,3 @@
+def is_expired(self):...
+"""docstring"""
+return False

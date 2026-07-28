@@ -1,0 +1,3 @@
+def __bool__(self):...
+return bool(self.updated_input or self.missing_output or self.forced or
+    self.updated_input_run or self.noio or self.nooutput)

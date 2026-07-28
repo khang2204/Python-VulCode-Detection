@@ -1,0 +1,155 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.code-eval",
+      "path": "app.py",
+      "start": {
+        "line": 120,
+        "col": 38,
+        "offset": 3843
+      },
+      "end": {
+        "line": 120,
+        "col": 50,
+        "offset": 3855
+      },
+      "extra": {
+        "message": "User input from request.form['expression'] is passed directly to eval() at line 120. This allows arbitrary Python code execution, enabling remote code execution, file system access, and complete server compromise.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-95: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command",
+      "path": "app.py",
+      "start": {
+        "line": 140,
+        "col": 41,
+        "offset": 4683
+      },
+      "end": {
+        "line": 140,
+        "col": 72,
+        "offset": 4714
+      },
+      "extra": {
+        "message": "User input from request.form['address'] is concatenated directly into a shell command passed to popen() via rp() wrapper at line 140. This allows arbitrary OS command execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xxe",
+      "path": "app.py",
+      "start": {
+        "line": 157,
+        "col": 17,
+        "offset": 5414
+      },
+      "end": {
+        "line": 157,
+        "col": 69,
+        "offset": 5466
+      },
+      "extra": {
+        "message": "XML parser is configured with no_network=False and dtd_validation=True at line 157, enabling XML External Entity (XXE) injection. This allows attackers to read local files, perform SSRF attacks, and cause denial of service.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: XML External Entities (XXE)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "app.py",
+      "start": {
+        "line": 189,
+        "col": 38,
+        "offset": 6568
+      },
+      "end": {
+        "line": 189,
+        "col": 65,
+        "offset": 6595
+      },
+      "extra": {
+        "message": "User input from request.form['name'] is interpolated into a template string using % formatting at line 189, then passed to render_template_string() at line 205. This enables Server-Side Template Injection (SSTI), which can lead to remote code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Code Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.hardcoded-secret",
+      "path": "app.py",
+      "start": {
+        "line": 15,
+        "col": 16,
+        "offset": 359
+      },
+      "end": {
+        "line": 15,
+        "col": 48,
+        "offset": 391
+      },
+      "extra": {
+        "message": "Flask secret_key is hardcoded as 'Harry Potter And The Deathly Hallows' at line 15. An attacker who knows this secret key can forge session cookies to impersonate any user.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug",
+      "path": "app.py",
+      "start": {
+        "line": 208,
+        "col": 9,
+        "offset": 7149
+      },
+      "end": {
+        "line": 208,
+        "col": 21,
+        "offset": 7161
+      },
+      "extra": {
+        "message": "Flask debug mode is set to True at line 208. In production, this enables the Werkzeug debugger which allows remote code execution through a PIN code, and also leaks sensitive information about the application.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

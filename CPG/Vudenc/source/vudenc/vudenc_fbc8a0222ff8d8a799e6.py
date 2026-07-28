@@ -1,0 +1,3 @@
+def wrapper(self, *args, **kwargs):...
+if not self.current_user or not self.current_user.admin:
+return method(self, *args, **kwargs)

@@ -1,0 +1,65 @@
+[{"stream_name":"stderr","time":8.414239874,"data":"/usr/local/lib/python3.12/dist-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":8.414309899,"data":"  validate(nb)\n"}
+,{"stream_name":"stderr","time":9.593493856,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.593550817,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.593556883,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.593561441,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":10.45367315,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.453748747,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.453757487,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.453763047,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":15.69112875,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.3/57.3 kB 1.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.894915625,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 58.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.894960832,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.3/57.3 kB 1.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.939442698,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 937.5/937.5 kB 30.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.096677499,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 58.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.096744547,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 937.5/937.5 kB 30.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.250524332,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 25.5/25.5 MB 51.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.319960885,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 56.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.389628762,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 167.2/167.2 kB 7.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.453222829,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 25.5/25.5 MB 51.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.453273689,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 56.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.453295212,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 167.2/167.2 kB 7.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.506835989,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.8/8.8 MB 87.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.71015893,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.8/8.8 MB 87.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":28.71976497,"data":"COMMAND /usr/bin/python3 /kaggle/input/datasets/ryhvic/qdenn-faithful-fixedsplit101-assets/run_in_domain.py --model qdenn --dataset vudenc --epochs 10 --output /kaggle/working/results --cache /kaggle/input/datasets/ryhvic/qdenn-faithful-fixedsplit101-assets/cache\n"}
+,{"stream_name":"stdout","time":916.79493415,"data":"qdenn/vudenc/seed_101 epoch=1/10 val_recall=0.0641\n"}
+,{"stream_name":"stdout","time":1784.514719468,"data":"qdenn/vudenc/seed_101 epoch=2/10 val_recall=0.0855\n"}
+,{"stream_name":"stdout","time":2642.917659288,"data":"qdenn/vudenc/seed_101 epoch=3/10 val_recall=0.1164\n"}
+,{"stream_name":"stdout","time":3504.683263885,"data":"qdenn/vudenc/seed_101 epoch=4/10 val_recall=0.1283\n"}
+,{"stream_name":"stdout","time":4359.304131523,"data":"qdenn/vudenc/seed_101 epoch=5/10 val_recall=0.1663\n"}
+,{"stream_name":"stdout","time":5186.709670293,"data":"qdenn/vudenc/seed_101 epoch=6/10 val_recall=0.1354\n"}
+,{"stream_name":"stdout","time":5992.825445958,"data":"qdenn/vudenc/seed_101 epoch=7/10 val_recall=0.1449\n"}
+,{"stream_name":"stdout","time":6804.671734346,"data":"qdenn/vudenc/seed_101 epoch=8/10 val_recall=0.1639\n"}
+,{"stream_name":"stdout","time":7563.829687632,"data":"qdenn/vudenc/seed_101 epoch=9/10 val_recall=0.1496\n"}
+,{"stream_name":"stdout","time":8340.528863879,"data":"qdenn/vudenc/seed_101 epoch=10/10 val_recall=0.1615\n"}
+,{"stream_name":"stdout","time":9224.517277042,"data":"qdenn/vudenc/seed_202 epoch=1/10 val_recall=0.0784\n"}
+,{"stream_name":"stdout","time":10038.605959868,"data":"qdenn/vudenc/seed_202 epoch=2/10 val_recall=0.0998\n"}
+,{"stream_name":"stdout","time":10855.902590861,"data":"qdenn/vudenc/seed_202 epoch=3/10 val_recall=0.0713\n"}
+,{"stream_name":"stdout","time":11679.984639599,"data":"qdenn/vudenc/seed_202 epoch=4/10 val_recall=0.0784\n"}
+,{"stream_name":"stdout","time":12490.947433541,"data":"qdenn/vudenc/seed_202 epoch=5/10 val_recall=0.1283\n"}
+,{"stream_name":"stdout","time":13289.131133615,"data":"qdenn/vudenc/seed_202 epoch=6/10 val_recall=0.0950\n"}
+,{"stream_name":"stdout","time":14108.875934142,"data":"qdenn/vudenc/seed_202 epoch=7/10 val_recall=0.0998\n"}
+,{"stream_name":"stdout","time":14918.944224908,"data":"qdenn/vudenc/seed_202 epoch=8/10 val_recall=0.1069\n"}
+,{"stream_name":"stdout","time":15756.835062491,"data":"qdenn/vudenc/seed_202 epoch=9/10 val_recall=0.0974\n"}
+,{"stream_name":"stdout","time":16598.389816463,"data":"qdenn/vudenc/seed_202 epoch=10/10 val_recall=0.1164\n"}
+,{"stream_name":"stdout","time":17518.30402189,"data":"qdenn/vudenc/seed_303 epoch=1/10 val_recall=0.0998\n"}
+,{"stream_name":"stdout","time":18370.998736473,"data":"qdenn/vudenc/seed_303 epoch=2/10 val_recall=0.0855\n"}
+,{"stream_name":"stdout","time":19205.163053675,"data":"qdenn/vudenc/seed_303 epoch=3/10 val_recall=0.1306\n"}
+,{"stream_name":"stdout","time":20035.850487533,"data":"qdenn/vudenc/seed_303 epoch=4/10 val_recall=0.1188\n"}
+,{"stream_name":"stdout","time":20861.44661905,"data":"qdenn/vudenc/seed_303 epoch=5/10 val_recall=0.1306\n"}
+,{"stream_name":"stdout","time":21685.40237518,"data":"qdenn/vudenc/seed_303 epoch=6/10 val_recall=0.1235\n"}
+,{"stream_name":"stdout","time":22512.748132565,"data":"qdenn/vudenc/seed_303 epoch=7/10 val_recall=0.1354\n"}
+,{"stream_name":"stdout","time":23339.266533134,"data":"qdenn/vudenc/seed_303 epoch=8/10 val_recall=0.1449\n"}
+,{"stream_name":"stdout","time":24165.614680886,"data":"qdenn/vudenc/seed_303 epoch=9/10 val_recall=0.1354\n"}
+,{"stream_name":"stdout","time":24993.191589719,"data":"qdenn/vudenc/seed_303 epoch=10/10 val_recall=0.1354\n"}
+,{"stream_name":"stdout","time":25064.952836168,"data":"QDENN_IN_DOMAIN_COMPLETE vudenc\n"}
+,{"stream_name":"stderr","time":25068.630311723,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":25068.630365737,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":25068.857217548,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":25068.857260585,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":25069.666187251,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":25070.088958575,"data":"[NbConvertApp] Writing 6125 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":25073.599756114,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":25074.76455303,"data":"[NbConvertApp] Writing 281600 bytes to __results__.html\n"}
+]

@@ -1,0 +1,3 @@
+@staticmethod...
+cursor = mongo.db.analysis.find(filters, sort=[('_id', pymongo.DESCENDING)])
+return [report for report in cursor]

@@ -1,0 +1,3 @@
+def verify_results(client, jwt, query, expected):...
+data = search(client, jwt, query)
+verify(data, expected)

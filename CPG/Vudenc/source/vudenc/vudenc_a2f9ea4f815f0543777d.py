@@ -1,0 +1,3 @@
+def _check_enabled(self, plugin):...
+"""docstring"""
+return plugin in self.sos_info['enabled']

@@ -1,0 +1,3 @@
+def __init__(self, db, access_token):...
+self.db = db
+self.access_token = access_token

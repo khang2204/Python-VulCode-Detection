@@ -1,0 +1,3 @@
+def __init__(self, settings, debug=False):...
+self.settings = settings
+self.sensors = settings['sensors']

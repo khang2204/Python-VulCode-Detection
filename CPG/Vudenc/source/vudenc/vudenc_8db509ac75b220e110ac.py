@@ -1,0 +1,3 @@
+def reset(self):...
+self.infohashes.clear()
+super(TriblerContentModel, self).reset()

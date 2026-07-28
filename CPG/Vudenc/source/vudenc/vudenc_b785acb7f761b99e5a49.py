@@ -1,0 +1,3 @@
+def setUp(self):...
+self.factory = RequestFactory()
+self.client.login(username='Karyn', password='specialP@55word')

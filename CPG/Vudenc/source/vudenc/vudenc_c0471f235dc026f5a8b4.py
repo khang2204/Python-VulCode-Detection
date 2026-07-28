@@ -1,0 +1,3 @@
+def given_a_deep_link_domain(self, deep_link_domain):...
+settings.APP_DEEPLINK_DOMAIN = deep_link_domain
+return self

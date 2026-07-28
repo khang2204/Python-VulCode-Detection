@@ -1,0 +1,3 @@
+def create_db_connnection():...
+return MySQLdb.connect(host='localhost', user='root', passwd='root', db='ouija'
+    )

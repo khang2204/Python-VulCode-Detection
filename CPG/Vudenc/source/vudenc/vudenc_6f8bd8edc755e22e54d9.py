@@ -1,0 +1,3 @@
+def NativeFiletypeCompletionAvailable(self):...
+return any([FiletypeCompleterExistsForFiletype(x) for x in vimsupport.
+    CurrentFiletypes()])

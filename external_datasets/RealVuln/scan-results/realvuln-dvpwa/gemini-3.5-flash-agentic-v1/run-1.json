@@ -1,0 +1,131 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "sqli/dao/student.py",
+      "start": {
+        "line": 41,
+        "col": 5,
+        "offset": 1050
+      },
+      "end": {
+        "line": 45,
+        "col": 31,
+        "offset": 1210
+      },
+      "extra": {
+        "message": "User input is directly interpolated into an SQL query string using python's '%' string formatting in Student.create(), and executed directly via database cursor with no query parameterization. This allows SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.autoescape-disabled",
+      "path": "sqli/app.py",
+      "start": {
+        "line": 33,
+        "col": 5,
+        "offset": 900
+      },
+      "end": {
+        "line": 35,
+        "col": 26,
+        "offset": 1070
+      },
+      "extra": {
+        "message": "The Jinja2 environment is configured with autoescape=False in setup_jinja(). Disabling automatic escaping exposes all rendered templates containing user-controlled variables to Cross-Site Scripting (XSS) attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.missing-csrf",
+      "path": "sqli/app.py",
+      "start": {
+        "line": 27,
+        "col": 13,
+        "offset": 620
+      },
+      "end": {
+        "line": 27,
+        "col": 31,
+        "offset": 638
+      },
+      "extra": {
+        "message": "The csrf_middleware is commented out from the active middleware stack, allowing Cross-Site Request Forgery (CSRF) on state-changing endpoints (e.g., POST endpoints for student/course creation, evaluation, reviews).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.insecure-cookie-httponly",
+      "path": "sqli/middlewares.py",
+      "start": {
+        "line": 20,
+        "col": 5,
+        "offset": 490
+      },
+      "end": {
+        "line": 20,
+        "col": 57,
+        "offset": 542
+      },
+      "extra": {
+        "message": "RedisStorage for session management is initialized with httponly=False. This enables client-side scripts to read the session cookie, facilitating session hijacking in the event of an XSS vulnerability.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Attribute"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash-md5",
+      "path": "sqli/dao/user.py",
+      "start": {
+        "line": 40,
+        "col": 5,
+        "offset": 980
+      },
+      "end": {
+        "line": 41,
+        "col": 74,
+        "offset": 1100
+      },
+      "extra": {
+        "message": "The check_password method uses the MD5 hashing algorithm without salt or iterations to verify user passwords. MD5 is cryptographically weak and insecure for password hashing, leaving hashes highly vulnerable to brute-force and lookup table attacks.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort",
+            "CWE-328: Use of Weak Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

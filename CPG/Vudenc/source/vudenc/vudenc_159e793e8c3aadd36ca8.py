@@ -1,0 +1,3 @@
+def test_complete_quotes(self):...
+self._tab_after('ls "comp')
+eq_(self.terminal.method_calls, [('write', ('utes" ',), {})])

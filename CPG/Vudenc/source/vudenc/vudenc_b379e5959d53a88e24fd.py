@@ -1,0 +1,3 @@
+def _parse_not(self, data):...
+"""docstring"""
+return self._parse_conditions(self.NOT_CONDITION, data)

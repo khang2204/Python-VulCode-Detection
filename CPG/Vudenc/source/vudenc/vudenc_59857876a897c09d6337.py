@@ -1,0 +1,3 @@
+def save_message(message, thread, user):...
+message.parent = thread
+message.put()

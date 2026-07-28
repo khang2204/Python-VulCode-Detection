@@ -1,0 +1,3 @@
+def get_common_objects(self):...
+super().get_common_objects()
+self.get_summary_submissions()

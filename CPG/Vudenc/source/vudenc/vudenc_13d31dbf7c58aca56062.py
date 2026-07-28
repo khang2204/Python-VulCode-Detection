@@ -1,0 +1,3 @@
+def allActorsbyName(self, name):...
+return [self.actors[ID] for ID in self.actors.keys() if name in self.actors
+    [ID].name]

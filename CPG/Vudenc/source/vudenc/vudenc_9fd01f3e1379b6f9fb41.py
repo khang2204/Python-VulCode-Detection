@@ -1,0 +1,3 @@
+def __init__(self):...
+self.initialised = False
+self.board = None

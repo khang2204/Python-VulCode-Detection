@@ -1,0 +1,3 @@
+def test_habitsandpractices(self):...
+found = resolve(f'/habitsandpractices/{self.objects.doc.pk}/')
+self.assertEqual(found.func, views.habitsandpractices)

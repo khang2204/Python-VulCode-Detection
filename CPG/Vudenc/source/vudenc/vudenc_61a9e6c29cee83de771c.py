@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return quote(self.path)

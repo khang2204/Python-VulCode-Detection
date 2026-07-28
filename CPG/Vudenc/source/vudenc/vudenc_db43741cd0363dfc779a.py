@@ -1,0 +1,3 @@
+def test_z_delete_app(self):...
+self.run_test_case(self.scenario.delete_app(), retry_interval_secs=8,
+    max_retries=8)

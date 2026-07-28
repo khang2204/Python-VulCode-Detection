@@ -1,0 +1,3 @@
+def post_tags(self, mail_ident, tags_json):...
+res, req = self.post('/mail/%s/tags' % mail_ident, tags_json)
+return res

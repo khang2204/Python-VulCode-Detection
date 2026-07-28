@@ -1,0 +1,3 @@
+def __str__(self):...
+return 'Error executing adb cmd "%s". ret: %d, stdout: %s, stderr: %s' % (self
+    .cmd, self.ret_code, self.stdout, self.stderr)

@@ -1,0 +1,3 @@
+def mark_many_as_read(self, idents):...
+res, req = self.post('/mails/read', json.dumps({'idents': idents}))
+return res

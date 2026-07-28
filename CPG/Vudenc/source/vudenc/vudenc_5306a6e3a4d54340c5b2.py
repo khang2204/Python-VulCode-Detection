@@ -1,0 +1,3 @@
+def getprop(self, prop_name):...
+"""docstring"""
+return self.shell('getprop %s' % prop_name).decode('utf-8').strip()

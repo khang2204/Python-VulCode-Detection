@@ -1,0 +1,3 @@
+def make_source_proxy(self, data, options=None):...
+"""docstring"""
+return self.__make_proxy('make_source_proxy', data, (), dict(options=options))

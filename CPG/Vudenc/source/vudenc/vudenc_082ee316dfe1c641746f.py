@@ -1,0 +1,3 @@
+def get_queryset(self):...
+return super().get_queryset().filter(Q(child_branch__isnull=False) | Q(
+    child_leaf__learning_container_year__isnull=False))

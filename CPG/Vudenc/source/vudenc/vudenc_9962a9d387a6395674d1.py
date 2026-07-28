@@ -1,0 +1,3 @@
+def _make_yaml_key(s):...
+"""docstring"""
+return s.lower().replace('_', '-')

@@ -1,0 +1,566 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "server/routes.py",
+      "start": {
+        "line": 137,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 137,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "User input from request.args.get('search') is concatenated directly into SQL string using f-string formatting. The search_query variable is interpolated into the SQL query without parameterization, allowing SQL injection attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "server/routes.py",
+      "start": {
+        "line": 136,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 138,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "SQL query constructed using f-string with user-controlled search_query parameter. The query 'SELECT filename FROM files WHERE user_id = {user_id} AND filename LIKE '%{search_query}%'' is vulnerable to SQL injection as user input is directly interpolated into the SQL statement.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssrf",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 240,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 298,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Server-Side Request Forgery (SSRF) vulnerability in update_picture endpoint. User-provided URL from data['picture_url'] is passed directly to requests.get() at line 254 without validation. This allows attackers to make requests to internal services, cloud metadata endpoints, or other restricted resources.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssrf",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 254,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 254,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "SSRF vulnerability: requests.get(picture_url) fetches content from user-controlled URL without validation. The picture_url is obtained from user input at line 250 and passed directly to the requests library, allowing attackers to probe internal network or access restricted resources.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command-injection",
+      "path": "server/routes.py",
+      "start": {
+        "line": 342,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 342,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Path traversal vulnerability in delete_file route. User-controlled filename parameter is concatenated directly into file path using os.path.join(UPLOAD_FOLDER, filename) without validation. Attackers can use '../' sequences to delete arbitrary files on the system.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command-injection",
+      "path": "server/routes.py",
+      "start": {
+        "line": 263,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 263,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Path traversal vulnerability in upload_file route. User-controlled filename from file.filename is used directly in os.path.join(UPLOAD_FOLDER, filename) without sanitization. An attacker can upload files to arbitrary locations using path traversal sequences like '../'.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command-injection",
+      "path": "server/routes.py",
+      "start": {
+        "line": 334,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 334,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Path traversal vulnerability in download_file route. User-controlled filename parameter is passed to send_from_directory(UPLOAD_FOLDER, filename) without validation, allowing attackers to download arbitrary files from the server using directory traversal sequences.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command-injection",
+      "path": "server/routes.py",
+      "start": {
+        "line": 302,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 302,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Path traversal vulnerability in uploaded_file route. The filename parameter from URL is passed directly to send_from_directory(UPLOAD_FOLDER, filename) without sanitization, allowing attackers to access arbitrary files via path traversal attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.broken-access-control",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 215,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 238,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Broken Function Level Authorization vulnerability. The delete-user endpoint at lines 215-238 has no authentication or authorization checks. The token_required decorator is commented out at lines 221-222, allowing any unauthenticated user to delete arbitrary user accounts by ID.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization",
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.broken-access-control",
+      "path": "server/routes.py",
+      "start": {
+        "line": 187,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 196,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Broken Access Control / Privilege Escalation vulnerability. The update_profile route allows users to modify their own role and permissions fields via form parameters. Lines 187-190 and 193-196 check if 'role' and 'permissions' are in request.form and update them without authorization checks, allowing privilege escalation.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management",
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authorization",
+      "path": "server/routes.py",
+      "start": {
+        "line": 307,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 309,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Missing authorization check on profile_pictures route. Lines 307-309 serve profile pictures without verifying if the user is authenticated. The route lacks the session check that other protected routes have, allowing anyone to access any user's profile picture.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization",
+            "CWE-284: Improper Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "server/routes.py",
+      "start": {
+        "line": 371,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 384,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Reflected Cross-Site Scripting (XSS) vulnerability in search route. User input from request.args.get('query') at line 376 is stored in results list at line 382 and passed directly to render_template at line 384 without sanitization. If the template renders this without escaping, it allows XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting (XSS)",
+            "CWE-80: Improper Neutralization of Script-Related HTML Tags"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "server/routes.py",
+      "start": {
+        "line": 393,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 403,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Weak password hashing using MD5 algorithm. The custom_hash function at line 403 uses hashlib.md5() which is cryptographically broken and unsuitable for password storage. MD5 is vulnerable to collision attacks and rainbow table attacks, making it insecure for password hashing.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Broken or Risky Cryptographic Algorithm",
+            "CWE-916: Use of Password Hash With Insufficient Computational Effort"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash",
+      "path": "db/create_dummy_data.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 8,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Weak password hashing using MD5 algorithm. The hash_password function at lines 7-8 uses hashlib.md5() for password hashing. MD5 is cryptographically broken and should not be used for password storage as it is vulnerable to collision and rainbow table attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Broken or Risky Cryptographic Algorithm"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "server/config.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 7,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Hardcoded secret key in configuration file. Line 7 contains SECRET_KEY = 'just_another_secret' which is a hardcoded credential. This secret is used for session signing and JWT token generation, and having it hardcoded makes the application vulnerable to session hijacking if the source code is exposed.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials",
+            "CWE-259: Use of Hard-coded Password"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.security-misconfiguration",
+      "path": "server/config.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 6,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Security misconfiguration: SESSION_COOKIE_HTTPONLY is set to False at line 6. This makes session cookies accessible to JavaScript, exposing them to theft via XSS attacks. The HttpOnly flag should be set to True to prevent client-side scripts from accessing cookies.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag",
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.security-misconfiguration",
+      "path": "server/config.py",
+      "start": {
+        "line": 5,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 5,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Security misconfiguration: DEBUG mode is enabled (DEBUG = True at line 5). Running Flask applications in debug mode in production exposes detailed error messages and enables the interactive debugger, which could allow remote code execution if accessed by attackers.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code",
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.infoexposure.error-messages",
+      "path": "server/routes.py",
+      "start": {
+        "line": 101,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 102,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Information disclosure through error messages. Line 102 prints detailed database error messages (print('Error inserting user:', e)) which could expose sensitive information about the database schema, query structure, or internal paths to anyone with access to the logs.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Information Exposure Through Error Message",
+            "CWE-532: Insertion of Sensitive Information into Log File"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.infoexposure.error-messages",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 297,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 298,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Information disclosure through verbose error messages. Line 298 returns the raw exception message (str(e)) to the user in the API response. This can leak sensitive information about the application's internal state, file paths, or configuration to attackers.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Information Exposure Through Error Message",
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.idor",
+      "path": "server/api/v1/api_v1.py",
+      "start": {
+        "line": 146,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 170,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Insecure Direct Object Reference (IDOR) vulnerability. The UserProfile endpoint at lines 146-170 accepts a user_id parameter and returns user profile data including sensitive fields (role, permissions). There is no authorization check to verify if the requesting user is allowed to view the requested profile, allowing users to access other users' sensitive information.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key",
+            "CWE-200: Information Exposure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.idor",
+      "path": "server/routes.py",
+      "start": {
+        "line": 148,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 154,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Potential IDOR vulnerability in profile route. While the route uses session['user_id'] at line 151, the get_user_details_from_database function may not properly validate access. Users should verify that profile access controls are enforced appropriately.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "LOW",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.security-misconfiguration",
+      "path": "run.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 1
+      },
+      "end": {
+        "line": 7,
+        "col": 100,
+        "offset": 100
+      },
+      "extra": {
+        "message": "Security misconfiguration: Debug mode enabled from configuration. Line 7 sets debug_mode from Config.DEBUG which is True. Running with debug=True exposes detailed error messages and enables the interactive debugger which is dangerous in production.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

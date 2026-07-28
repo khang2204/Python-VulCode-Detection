@@ -1,0 +1,3 @@
+@classmethod...
+return super(BaseZincCompile, cls).implementation_version() + [(
+    'BaseZincCompile', 7)]

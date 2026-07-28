@@ -1,0 +1,280 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "server.py",
+      "start": {
+        "line": 106,
+        "col": 13,
+        "offset": 3500
+      },
+      "end": {
+        "line": 107,
+        "col": 67,
+        "offset": 3595
+      },
+      "extra": {
+        "message": "User input from self.get_argument('username') and self.get_argument('password') is concatenated directly into a SQL query string passed to cur.execute(). An attacker can inject arbitrary SQL (e.g., ' OR '1'='1) to bypass authentication or extract data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "server.py",
+      "start": {
+        "line": 125,
+        "col": 25,
+        "offset": 4120
+      },
+      "end": {
+        "line": 125,
+        "col": 58,
+        "offset": 4153
+      },
+      "extra": {
+        "message": "User input from self.get_argument('server') is concatenated directly into an OS command string passed to os.popen(). An attacker can inject arbitrary shell commands using metacharacters like ;, |, &&, or $(...).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal-content-handler",
+      "path": "server.py",
+      "start": {
+        "line": 77,
+        "col": 25,
+        "offset": 2480
+      },
+      "end": {
+        "line": 77,
+        "col": 57,
+        "offset": 2512
+      },
+      "extra": {
+        "message": "User input from self.get_argument('file') is concatenated directly into a file path passed to io.open() without any path sanitization. An attacker can use ../ sequences to read arbitrary files on the server (e.g., /read?file=../../../etc/passwd).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal-static-handler",
+      "path": "server.py",
+      "start": {
+        "line": 40,
+        "col": 16,
+        "offset": 1280
+      },
+      "end": {
+        "line": 42,
+        "col": 42,
+        "offset": 1380
+      },
+      "extra": {
+        "message": "User-controlled path from the URL is concatenated into a file path in StaticHandler.get(). The path variable from the route /static/(.*) is joined with the base directory without any traversal checks. An attacker can use ../ sequences to read arbitrary files (e.g., /static/../../../etc/passwd).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-html",
+      "path": "templates/search.html",
+      "start": {
+        "line": 70,
+        "col": 33,
+        "offset": 2340
+      },
+      "end": {
+        "line": 70,
+        "col": 49,
+        "offset": 2356
+      },
+      "extra": {
+        "message": "User input from the 'q' query parameter is rendered unescaped in the HTML template using {% raw query %}. This bypasses Tornado's auto-escaping and allows injection of arbitrary HTML/JavaScript. The SearchHandler also explicitly disables the browser XSS filter with self.set_header('X-XSS-Protection', '0') at server.py:88.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-js-context",
+      "path": "templates/search.html",
+      "start": {
+        "line": 71,
+        "col": 30,
+        "offset": 2380
+      },
+      "end": {
+        "line": 71,
+        "col": 46,
+        "offset": 2396
+      },
+      "extra": {
+        "message": "User input from the 'q' query parameter is rendered unescaped inside a JavaScript string literal using {% raw link %}. An attacker can break out of the string context and execute arbitrary JavaScript (e.g., q=';alert(1);//). This is more dangerous than HTML-context XSS because it allows direct JS execution without needing HTML tags.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.xss-protection-disabled",
+      "path": "server.py",
+      "start": {
+        "line": 88,
+        "col": 9,
+        "offset": 2860
+      },
+      "end": {
+        "line": 88,
+        "col": 50,
+        "offset": 2901
+      },
+      "extra": {
+        "message": "The SearchHandler explicitly sets the X-XSS-Protection header to '0', which disables the browser's built-in reflected XSS filter. This makes the existing XSS vulnerabilities in the search template easier to exploit.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded",
+      "path": "server.py",
+      "start": {
+        "line": 140,
+        "col": 13,
+        "offset": 4550
+      },
+      "end": {
+        "line": 147,
+        "col": 53,
+        "offset": 4850
+      },
+      "extra": {
+        "message": "Multiple user credentials are hardcoded in the source code within the create_db() function, including usernames and plaintext passwords such as 'admin'/'admin', 'test-user'/'test@123', and others. Hardcoded credentials cannot be rotated without changing source code and are exposed to anyone with source access.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.plaintext-password-storage",
+      "path": "server.py",
+      "start": {
+        "line": 139,
+        "col": 13,
+        "offset": 4510
+      },
+      "end": {
+        "line": 139,
+        "col": 70,
+        "offset": 4567
+      },
+      "extra": {
+        "message": "The Users table stores passwords in plaintext (column type TEXT without any hashing). If the database is compromised, all user passwords are immediately exposed. Passwords should be hashed using a strong algorithm like bcrypt or argon2.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-256: Plaintext Storage of a Password"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-mode",
+      "path": "server.py",
+      "start": {
+        "line": 31,
+        "col": 13,
+        "offset": 980
+      },
+      "end": {
+        "line": 31,
+        "col": 25,
+        "offset": 992
+      },
+      "extra": {
+        "message": "The Tornado application is configured with debug=True. In debug mode, Tornado enables autoreload, disables template caching, and provides detailed error tracebacks that can leak sensitive information such as source code paths, local variables, and configuration details.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.file-upload.unrestricted",
+      "path": "server.py",
+      "start": {
+        "line": 60,
+        "col": 9,
+        "offset": 1960
+      },
+      "end": {
+        "line": 68,
+        "col": 33,
+        "offset": 2270
+      },
+      "extra": {
+        "message": "The UploadHandler accepts file uploads without validating file type, content, or extension. The original file extension is preserved (line 65: fname + extension) and the uploaded filename is disclosed in the response (line 69). While files are written to /tmp/, an attacker could upload malicious files (e.g., scripts, executables) that could be executed through other vulnerabilities on the server.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-434: Unrestricted Upload of File with Dangerous Type"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

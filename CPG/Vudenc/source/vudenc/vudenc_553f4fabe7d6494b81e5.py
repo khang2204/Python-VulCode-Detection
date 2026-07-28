@@ -1,0 +1,6 @@
+def execute(self, targets=None, dryrun=False, touch=False, cores=1, nodes=1,...
+self.global_resources = dict() if resources is None else resources
+self.global_resources['_cores'] = cores
+self.global_resources['_nodes'] = nodes
+def rules(items):...
+return map(self._rules.__getitem__, filter(self.is_rule, items))

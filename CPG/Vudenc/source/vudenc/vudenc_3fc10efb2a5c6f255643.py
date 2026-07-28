@@ -1,0 +1,3 @@
+def get_global(self, attrname):...
+return self._doc['globals'][attrname] if attrname in self._doc['globals'
+    ] else None

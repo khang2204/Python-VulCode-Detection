@@ -1,0 +1,3 @@
+def get_file_age(path):...
+"""docstring"""
+return os.path.getmtime(path)

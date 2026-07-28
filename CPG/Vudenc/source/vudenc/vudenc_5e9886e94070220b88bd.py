@@ -1,0 +1,9 @@
+def test_ip_whitelist_bot(self):...
+"""docstring"""
+model.bootstrap_ip_whitelist('bots', ['192.168.1.100/32'])
+@api.public...
+self.response.write(api.get_current_identity().to_bytes())
+app = self.make_test_app('/request', Handler)
+def call(ip):...
+api.reset_local_state()
+return app.get('/request', extra_environ={'REMOTE_ADDR': ip}).body

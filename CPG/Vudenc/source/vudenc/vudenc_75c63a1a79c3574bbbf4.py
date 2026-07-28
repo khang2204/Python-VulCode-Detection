@@ -1,0 +1,3 @@
+def vcount(self):...
+"""docstring"""
+return len(self.nodes)

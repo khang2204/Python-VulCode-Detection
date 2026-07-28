@@ -1,0 +1,3 @@
+def load_app(self, config):...
+"""docstring"""
+return eduid_init_app('testing', config)

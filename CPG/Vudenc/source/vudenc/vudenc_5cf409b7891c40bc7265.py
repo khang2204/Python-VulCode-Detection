@@ -1,0 +1,3 @@
+def get_current_time():...
+"""docstring"""
+return float(time.time())

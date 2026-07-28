@@ -1,0 +1,3 @@
+def remove_route_for_dhcp_broadcast(self, ifname):...
+shellutil.run('route delete 255.255.255.255 -iface {0}'.format(ifname),
+    chk_err=False)

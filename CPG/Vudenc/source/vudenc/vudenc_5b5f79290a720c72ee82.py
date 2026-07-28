@@ -1,0 +1,3 @@
+def accepts_vpath(handlers, vpath):...
+args_no = len(vpath)
+return all(len(h.args) == args_no or h.varargs for h in handlers)

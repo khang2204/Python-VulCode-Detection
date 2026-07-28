@@ -1,0 +1,3 @@
+def get_window_pid(window):...
+r = window.cmd('list-panes', '-F #{pane_pid}')
+return [int(p) for p in r.stdout]

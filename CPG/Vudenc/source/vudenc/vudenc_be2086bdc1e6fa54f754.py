@@ -1,0 +1,3 @@
+def add(self, entity_class, entity):...
+cache = self.__cache_map[entity_class]
+cache.add(entity)

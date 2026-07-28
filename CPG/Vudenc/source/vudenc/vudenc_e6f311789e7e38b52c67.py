@@ -1,0 +1,3 @@
+def as_sql(self, compiler, connection):...
+lhs, params = compiler.compile(self.lhs)
+return '%s[%s:%s]' % (lhs, self.start, self.end), params

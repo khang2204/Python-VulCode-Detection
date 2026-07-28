@@ -1,0 +1,3 @@
+@memoized_property...
+return {SubclassesOf(PythonDistribution): self.pydist_has_native_sources,
+    SubclassesOf(NativeLibrary): NativeLibrary.produces_ctypes_native_library}

@@ -1,0 +1,56 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.ssti",
+      "path": "app/main.py",
+      "start": {
+        "line": 41,
+        "col": 5,
+        "offset": 1295
+      },
+      "end": {
+        "line": 41,
+        "col": 37,
+        "offset": 1327
+      },
+      "extra": {
+        "message": "User-controlled input from the 'name' parameter is formatted directly into a string and evaluated as a Jinja2 template via 'Template(content).render()'. This leads to Server-Side Template Injection (SSTI), allowing remote attackers to execute arbitrary Python code on the server.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+            "CWE-1336: Improper Neutralization of Special Elements Used in a Template Engine"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "app/config.py",
+      "start": {
+        "line": 15,
+        "col": 22,
+        "offset": 374
+      },
+      "end": {
+        "line": 15,
+        "col": 40,
+        "offset": 392
+      },
+      "extra": {
+        "message": "The application contains a hardcoded secret token ('5u93R53Cr3tT0k3n') assigned to SUPER_SECRET_TOKEN. Hardcoding sensitive credentials can result in unauthorized access if the codebase or configuration is leaked.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

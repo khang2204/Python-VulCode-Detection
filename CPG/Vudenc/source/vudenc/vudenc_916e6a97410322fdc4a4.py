@@ -1,0 +1,3 @@
+def test_filters_4(self):...
+self.assertTrue({'name': 'DocField'} in DatabaseQuery('DocType').execute(
+    filters={'name': 'DocField'}))

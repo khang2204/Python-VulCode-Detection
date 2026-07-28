@@ -1,0 +1,10 @@
+def test_laod_session_session_id_no_user_id(self):...
+s = models.Session.create()
+s_count = models.Session.query().count()
+self.assertTrue(s_count == 1)
+req = EngineAuthRequest.blank('/auth/google')
+req.cookies['_eauth'] = s.serialize()
+req._load_session()
+self.assertTrue(req.session.session_id == s.session_id)
+s_count2 = models.Session.query().count()
+self.assertTrue(s_count2 == 1)

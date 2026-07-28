@@ -1,0 +1,6 @@
+def test_get_peer_ip(self):...
+@api.public...
+self.response.write(ipaddr.ip_to_string(api.get_peer_ip()))
+app = self.make_test_app('/request', Handler)
+response = app.get('/request', extra_environ={'REMOTE_ADDR': '192.1.2.3'})
+self.assertEqual('192.1.2.3', response.body)

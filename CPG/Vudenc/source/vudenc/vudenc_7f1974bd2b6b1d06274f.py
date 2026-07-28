@@ -1,0 +1,3 @@
+def _sql_injection_proof(self, value):...
+"""docstring"""
+return MySQLdb.escape_string(value)

@@ -1,0 +1,3 @@
+def lutime(f, times):...
+return os.utime(f, times, follow_symlinks=os.utime not in os.
+    supports_follow_symlinks)

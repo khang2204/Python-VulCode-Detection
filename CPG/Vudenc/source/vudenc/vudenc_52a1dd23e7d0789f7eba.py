@@ -1,0 +1,3 @@
+def on_cancel_button_clicked(self, widget):...
+self.override_dialog.destroy()
+self.filechooser_creation_dialog.destroy()

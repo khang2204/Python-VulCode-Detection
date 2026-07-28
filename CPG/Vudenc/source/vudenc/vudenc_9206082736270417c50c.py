@@ -1,0 +1,3 @@
+def is_executable(tweak_group, groups, is_admin=is_admin()):...
+"""docstring"""
+return True

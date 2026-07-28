@@ -1,0 +1,3 @@
+def test_p2_contains_symbol(self):...
+"""docstring"""
+tournament.reportMatch(p1=2, p2='%')

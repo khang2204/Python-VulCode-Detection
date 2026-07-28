@@ -1,0 +1,3 @@
+def prepare(self):...
+"""docstring"""
+if not validate_host(self.request.host):

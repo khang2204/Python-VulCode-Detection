@@ -1,0 +1,3 @@
+def on_finish(self):...
+"""docstring"""
+self.sql_session.close()

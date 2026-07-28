@@ -1,0 +1,3 @@
+def __repr__(self):...
+return 'FlattenedColumn({}, {}, {})'.format(repr(self.base_name), repr(self
+    .name), repr(self.type))

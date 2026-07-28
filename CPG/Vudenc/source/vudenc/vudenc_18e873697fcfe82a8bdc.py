@@ -1,0 +1,3 @@
+@rest_utils.ajax()...
+"""docstring"""
+return api.nova.aggregate_get(request, aggregate_id).metadata

@@ -1,0 +1,3 @@
+@functools.wraps(f)...
+if not self.request.headers.get('X-XSRF-Token-Request'):
+return f(self, *args, **kwargs)

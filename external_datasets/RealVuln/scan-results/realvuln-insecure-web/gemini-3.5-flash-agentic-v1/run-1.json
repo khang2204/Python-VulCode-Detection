@@ -1,0 +1,155 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "app/app.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 128
+      },
+      "end": {
+        "line": 8,
+        "col": 26,
+        "offset": 174
+      },
+      "extra": {
+        "message": "Hardcoded credentials (admin/password123) are defined in the source code.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/app.py",
+      "start": {
+        "line": 33,
+        "col": 5,
+        "offset": 801
+      },
+      "end": {
+        "line": 34,
+        "col": 41,
+        "offset": 935
+      },
+      "extra": {
+        "message": "User input from request.form.get('username') and request.form.get('password') is concatenated directly into SQL string passed to cursor.execute(). This allows SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.session.insecure-cookie",
+      "path": "app/app.py",
+      "start": {
+        "line": 38,
+        "col": 9,
+        "offset": 1050
+      },
+      "end": {
+        "line": 38,
+        "col": 49,
+        "offset": 1090
+      },
+      "extra": {
+        "message": "The session management sets an unhashed, raw username in the 'session' cookie, which lacks 'Secure', 'HttpOnly', and 'SameSite' attributes. This makes session hijacking, spoofing, and fixation attacks trivial.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing-auth",
+      "path": "app/app.py",
+      "start": {
+        "line": 44,
+        "col": 1,
+        "offset": 1184
+      },
+      "end": {
+        "line": 47,
+        "col": 85,
+        "offset": 1378
+      },
+      "extra": {
+        "message": "The /dashboard endpoint retrieves the 'session' cookie but does not validate if the session exists or is valid. It also lacks access control, allowing anyone to access user dashboards or spoof user sessions by setting the 'session' cookie arbitrarily.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-306: Missing Authentication for Critical Function"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss",
+      "path": "app/app.py",
+      "start": {
+        "line": 47,
+        "col": 5,
+        "offset": 1298
+      },
+      "end": {
+        "line": 47,
+        "col": 85,
+        "offset": 1378
+      },
+      "extra": {
+        "message": "User-controlled cookie value is interpolated directly into the HTML response, enabling Cross-Site Scripting (XSS). Additionally, a hardcoded alert script is rendered on the page.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-Site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.reflected-xss",
+      "path": "app/app.py",
+      "start": {
+        "line": 53,
+        "col": 5,
+        "offset": 1500
+      },
+      "end": {
+        "line": 53,
+        "col": 50,
+        "offset": 1545
+      },
+      "extra": {
+        "message": "User input from request.args.get('q') is reflected directly back to the user without escaping or sanitization, resulting in a Reflected Cross-Site Scripting (XSS) vulnerability.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-Site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

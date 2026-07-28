@@ -1,0 +1,3 @@
+def select(self):...
+fields = ', '.join(self.column_selects)
+return 'COALESCE({0}) AS {1}'.format(fields, self.name)

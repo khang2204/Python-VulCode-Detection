@@ -1,0 +1,3 @@
+def _prepare(self):...
+GenericRequest._prepare(self)
+self.files = list(zip(self.submission_format, self.filenames))

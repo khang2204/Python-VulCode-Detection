@@ -1,0 +1,3 @@
+def set_packages(self, package_list):...
+mydict = self.get_val('mydict')
+mydict['package_list'] = package_list

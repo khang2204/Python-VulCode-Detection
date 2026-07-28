@@ -1,0 +1,705 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "bad/libuser.py",
+      "start": {
+        "line": 12,
+        "col": 5,
+        "offset": 600
+      },
+      "end": {
+        "line": 12,
+        "col": 110,
+        "offset": 705
+      },
+      "extra": {
+        "message": "User-controlled username and password are concatenated directly into an SQL query using str.format(), allowing SQL injection authentication bypass or data exfiltration.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "bad/libuser.py",
+      "start": {
+        "line": 25,
+        "col": 5,
+        "offset": 1250
+      },
+      "end": {
+        "line": 25,
+        "col": 140,
+        "offset": 1385
+      },
+      "extra": {
+        "message": "User-controlled username and password are interpolated into an SQL INSERT statement using %-formatting, enabling SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "bad/libuser.py",
+      "start": {
+        "line": 53,
+        "col": 5,
+        "offset": 2650
+      },
+      "end": {
+        "line": 53,
+        "col": 90,
+        "offset": 2735
+      },
+      "extra": {
+        "message": "User-controlled password and username are concatenated directly into an SQL UPDATE statement using str.format(), allowing SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret",
+      "path": "bad/vulpy.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 350
+      },
+      "end": {
+        "line": 16,
+        "col": 38,
+        "offset": 387
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded to a static weak value ('aaaaaaa'), enabling session forgery and cookie tampering.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret",
+      "path": "bad/vulpy-ssl.py",
+      "start": {
+        "line": 13,
+        "col": 1,
+        "offset": 300
+      },
+      "end": {
+        "line": 13,
+        "col": 38,
+        "offset": 337
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded to a static weak value ('aaaaaaa'), enabling session forgery and cookie tampering.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "bad/templates/posts.view.html",
+      "start": {
+        "line": 23,
+        "col": 11,
+        "offset": 1150
+      },
+      "end": {
+        "line": 23,
+        "col": 62,
+        "offset": 1201
+      },
+      "extra": {
+        "message": "The Jinja2 `| safe` filter is applied to post.text, disabling auto-escaping and allowing stored XSS via arbitrary HTML/JS in post content.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss",
+      "path": "bad/templates/messages.html",
+      "start": {
+        "line": 8,
+        "col": 9,
+        "offset": 350
+      },
+      "end": {
+        "line": 8,
+        "col": 31,
+        "offset": 372
+      },
+      "extra": {
+        "message": "The Jinja2 `| safe` filter is applied to flash messages, disabling auto-escaping and allowing XSS if any message contains attacker-controlled input.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.insecure-session",
+      "path": "bad/libsession.py",
+      "start": {
+        "line": 6,
+        "col": 5,
+        "offset": 150
+      },
+      "end": {
+        "line": 7,
+        "col": 44,
+        "offset": 240
+      },
+      "extra": {
+        "message": "Session cookie is created as base64-encoded JSON without any signature, encryption, or HttpOnly/Secure flags. An attacker can trivially decode, modify, and re-encode the cookie to impersonate any user.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-565: Reliance on Cookies without Validation and Integrity Checking"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command",
+      "path": "bad/brute.py",
+      "start": {
+        "line": 21,
+        "col": 5,
+        "offset": 450
+      },
+      "end": {
+        "line": 21,
+        "col": 75,
+        "offset": 520
+      },
+      "extra": {
+        "message": "subprocess.run is executed with user-controlled program path and arguments from sys.argv, allowing arbitrary OS command execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: OS Command Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "bad/libapi.py",
+      "start": {
+        "line": 20,
+        "col": 5,
+        "offset": 550
+      },
+      "end": {
+        "line": 22,
+        "col": 20,
+        "offset": 640
+      },
+      "extra": {
+        "message": "User-controlled username is concatenated into a filesystem path for /tmp without sanitization. Path traversal sequences (e.g., ../) allow writing files outside /tmp.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-credentials",
+      "path": "bad/db_init.py",
+      "start": {
+        "line": 10,
+        "col": 9,
+        "offset": 250
+      },
+      "end": {
+        "line": 12,
+        "col": 30,
+        "offset": 380
+      },
+      "extra": {
+        "message": "Hardcoded plaintext passwords ('SuperSecret', '123123123', '12345678') are inserted into the database without hashing, exposing user credentials if the database is compromised.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-mode",
+      "path": "bad/vulpy.py",
+      "start": {
+        "line": 55,
+        "col": 1,
+        "offset": 1200
+      },
+      "end": {
+        "line": 55,
+        "col": 71,
+        "offset": 1270
+      },
+      "extra": {
+        "message": "Flask debug mode is enabled (debug=True), which exposes Werkzeug debugger, stack traces, and potentially sensitive environment information to users.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-mode",
+      "path": "bad/vulpy-ssl.py",
+      "start": {
+        "line": 29,
+        "col": 1,
+        "offset": 650
+      },
+      "end": {
+        "line": 29,
+        "col": 85,
+        "offset": 735
+      },
+      "extra": {
+        "message": "Flask debug mode is enabled (debug=True), which exposes Werkzeug debugger, stack traces, and potentially sensitive environment information to users.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.weak-password-policy",
+      "path": "bad/libuser.py",
+      "start": {
+        "line": 59,
+        "col": 1,
+        "offset": 2950
+      },
+      "end": {
+        "line": 59,
+        "col": 12,
+        "offset": 2961
+      },
+      "extra": {
+        "message": "password_complexity() unconditionally returns True, effectively disabling all password complexity requirements and allowing trivially weak passwords.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-521: Weak Password Requirements"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.csrf",
+      "path": "bad/mod_mfa.py",
+      "start": {
+        "line": 57,
+        "col": 1,
+        "offset": 1350
+      },
+      "end": {
+        "line": 64,
+        "col": 30,
+        "offset": 1550
+      },
+      "extra": {
+        "message": "MFA disable is a state-changing operation exposed via GET request without any CSRF token or confirmation, allowing attackers to disable MFA by tricking a logged-in user into visiting a URL.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.exposure.sensitive-data",
+      "path": "bad/api_post.py",
+      "start": {
+        "line": 6,
+        "col": 1,
+        "offset": 150
+      },
+      "end": {
+        "line": 6,
+        "col": 45,
+        "offset": 194
+      },
+      "extra": {
+        "message": "API key is stored in a predictable, world-readable file in /tmp (/tmp/supersecret.txt), allowing any local user to steal the key.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-312: Cleartext Storage of Sensitive Information"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.mass-assignment",
+      "path": "bad/mod_api.py",
+      "start": {
+        "line": 62,
+        "col": 5,
+        "offset": 1550
+      },
+      "end": {
+        "line": 62,
+        "col": 35,
+        "offset": 1580
+      },
+      "extra": {
+        "message": "The authenticated username is overwritten by user-controlled JSON via data.update(request.get_json()), allowing an authenticated attacker to post as any arbitrary user (authentication bypass/mass assignment).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.authentication-bypass",
+      "path": "bad/libapi.py",
+      "start": {
+        "line": 10,
+        "col": 5,
+        "offset": 220
+      },
+      "end": {
+        "line": 11,
+        "col": 20,
+        "offset": 310
+      },
+      "extra": {
+        "message": "The condition `if password:` treats an empty string as falsy, allowing an attacker to pass an empty password through JSON schema validation and bypass authentication entirely to generate API keys for arbitrary users.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "good/libuser.py",
+      "start": {
+        "line": 61,
+        "col": 5,
+        "offset": 2700
+      },
+      "end": {
+        "line": 61,
+        "col": 145,
+        "offset": 2840
+      },
+      "extra": {
+        "message": "User-controlled username is interpolated into an SQL INSERT statement using %-formatting, enabling SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret",
+      "path": "good/libsession.py",
+      "start": {
+        "line": 9,
+        "col": 1,
+        "offset": 200
+      },
+      "end": {
+        "line": 9,
+        "col": 50,
+        "offset": 249
+      },
+      "extra": {
+        "message": "Fernet encryption key is hardcoded in source code, allowing anyone with code access to decrypt or forge session cookies.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret",
+      "path": "good/libapi.py",
+      "start": {
+        "line": 10,
+        "col": 1,
+        "offset": 180
+      },
+      "end": {
+        "line": 10,
+        "col": 32,
+        "offset": 211
+      },
+      "extra": {
+        "message": "JWT signing secret is hardcoded in source code as a simple string, allowing token forgery by anyone with code access.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret",
+      "path": "good/vulpy.py",
+      "start": {
+        "line": 17,
+        "col": 1,
+        "offset": 380
+      },
+      "end": {
+        "line": 17,
+        "col": 82,
+        "offset": 461
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded in source code, enabling session forgery if the source is disclosed.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret",
+      "path": "good/vulpy-ssl.py",
+      "start": {
+        "line": 13,
+        "col": 1,
+        "offset": 300
+      },
+      "end": {
+        "line": 13,
+        "col": 38,
+        "offset": 337
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded to a static weak value ('aaaaaaa'), enabling session forgery and cookie tampering.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-mode",
+      "path": "good/vulpy.py",
+      "start": {
+        "line": 53,
+        "col": 1,
+        "offset": 1150
+      },
+      "end": {
+        "line": 53,
+        "col": 71,
+        "offset": 1220
+      },
+      "extra": {
+        "message": "Flask debug mode is enabled (debug=True), which exposes Werkzeug debugger, stack traces, and potentially sensitive environment information to users.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-mode",
+      "path": "good/vulpy-ssl.py",
+      "start": {
+        "line": 29,
+        "col": 1,
+        "offset": 650
+      },
+      "end": {
+        "line": 29,
+        "col": 85,
+        "offset": 735
+      },
+      "extra": {
+        "message": "Flask debug mode is enabled (debug=True), which exposes Werkzeug debugger, stack traces, and potentially sensitive environment information to users.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored-xss",
+      "path": "good/templates/posts.view.html",
+      "start": {
+        "line": 23,
+        "col": 11,
+        "offset": 1150
+      },
+      "end": {
+        "line": 23,
+        "col": 62,
+        "offset": 1201
+      },
+      "extra": {
+        "message": "The Jinja2 `| safe` filter is applied to post.text, disabling auto-escaping and allowing stored XSS via arbitrary HTML/JS in post content.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected-xss",
+      "path": "good/templates/messages.html",
+      "start": {
+        "line": 8,
+        "col": 9,
+        "offset": 350
+      },
+      "end": {
+        "line": 8,
+        "col": 31,
+        "offset": 372
+      },
+      "extra": {
+        "message": "The Jinja2 `| safe` filter is applied to flash messages, disabling auto-escaping and allowing XSS if any message contains attacker-controlled input.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-site Scripting"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.csrf",
+      "path": "good/mod_mfa.py",
+      "start": {
+        "line": 64,
+        "col": 5,
+        "offset": 1550
+      },
+      "end": {
+        "line": 65,
+        "col": 35,
+        "offset": 1650
+      },
+      "extra": {
+        "message": "MFA disable uses an insecure Referer header check (`request.headers['referer'] != 'vulpy.com'`) as CSRF protection. The Referer header can be easily spoofed or omitted by browsers, making this protection ineffective.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

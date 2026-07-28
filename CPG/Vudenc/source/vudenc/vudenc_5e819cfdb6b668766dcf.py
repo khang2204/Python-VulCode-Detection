@@ -1,0 +1,3 @@
+def __str__(self):...
+ident = Target.identify(self.targets())
+return 'Context(id:{}, targets:{})'.format(ident, self.targets())

@@ -1,0 +1,3 @@
+def assert_settings_keys(keys):...
+for settings_key in key:
+assert config.registry.settings.get(settings_key)

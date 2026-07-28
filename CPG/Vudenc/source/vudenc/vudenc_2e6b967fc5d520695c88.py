@@ -1,0 +1,3 @@
+def add_existing_task(task_id, **kwargs):...
+"""docstring"""
+created_tasks[task_id] = kwargs

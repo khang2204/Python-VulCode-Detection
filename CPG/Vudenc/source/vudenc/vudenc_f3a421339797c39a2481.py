@@ -1,0 +1,3 @@
+@property...
+"""docstring"""
+return os.path.join(self.env['GOPATH'], 'bin', 'gometalinter.v1')

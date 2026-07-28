@@ -1,0 +1,3 @@
+def run(self, id_str):...
+tids = id_str.split(',')
+return Thing._by_fullname(tids, data=True, return_dict=False)

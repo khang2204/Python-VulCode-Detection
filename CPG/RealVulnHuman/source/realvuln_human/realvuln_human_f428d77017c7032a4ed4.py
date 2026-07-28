@@ -1,0 +1,20 @@
+type = 'empty'
+message = ''
+content = '''
+    <div class="alert alert-{type}" role="alert">
+        <div class="message">{message}</div>
+    </div>
+'''
+
+if params.keys() == {'username', 'password'}:
+    username = re.sub(r"[^\w]", '', params.get('username')[0])
+    password = params.get('password')[0]
+
+    if username == 'dsvpwa' and password == 'dsvpwa':
+        user = ['dsvpwa', 'Default', 'Default', 'dsvpwa']
+    else:
+        try:
+            cursor.execute("SELECT * FROM users WHERE username='" +  username + "' AND password='" + password + "'")
+        except sqlite3.OperationalError as e:
+            return content.format(type=type, message=e)
+        user = cursor.fetchone()

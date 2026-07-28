@@ -1,0 +1,3 @@
+def get_queryset(self):...
+query = Org.objects.order_by('id')
+return query

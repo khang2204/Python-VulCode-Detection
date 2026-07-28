@@ -1,0 +1,3 @@
+def __init__(self, txt):...
+self.parsedConfig = yaml.load_all(txt)
+self.__class__.docConfig.append(self)

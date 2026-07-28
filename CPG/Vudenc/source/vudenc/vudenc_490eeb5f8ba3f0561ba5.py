@@ -1,0 +1,3 @@
+def generate_summary(text):...
+soup = bs4.BeautifulSoup(text, 'lxml')
+return soup.get_text()[:200]

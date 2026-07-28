@@ -1,0 +1,3 @@
+def cache_files_exist():...
+return pathlib.Path(CONFIG['cache_file_32bit']).exists() and pathlib.Path(
+    CONFIG['cache_file_64bit']).exists()

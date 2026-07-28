@@ -1,0 +1,3 @@
+def halt_dut(self):...
+super().halt_dut('halt 0 1', ['- TARGET: core #0 has entered debug mode',
+    '- TARGET: core #1 has entered debug mode'])

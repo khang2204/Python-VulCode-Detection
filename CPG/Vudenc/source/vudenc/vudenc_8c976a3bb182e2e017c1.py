@@ -1,0 +1,11 @@
+def test_accept(self):...
+app = TestApp(main({}))
+res = app.get('/service2', headers={'Accept': 'audio/*'}, status=406)
+self.assertTrue('application/json' in res.json)
+self.assertTrue('text/json' in res.json)
+app.get('/service2', headers={'Accept': 'application/*'}, status=200)
+app.get('/service2', headers={'Accept': 'audio/*, application/*'}, status=200)
+res = app.get('/service3', headers={'Accept': 'audio/*'}, status=406)
+self.assertTrue('text/json' in res.json)
+app.get('/service3', headers={'Accept': 'text/*'}, status=200)
+app.get('/service2', status=200)

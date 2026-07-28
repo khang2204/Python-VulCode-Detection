@@ -1,0 +1,6 @@
+@classmethod...
+"""docstring"""
+def process_info_file(cp_elem, info_file):...
+plugin_info = ElementTree.parse(info_file).getroot()
+if plugin_info.tag != 'plugin':
+return plugin_info.find('name').text

@@ -1,0 +1,3 @@
+def status(self):...
+fork(['git', '--git-dir=%s/.git' % self.directory, '--work-tree=%s' % self.
+    directory, 'status'])

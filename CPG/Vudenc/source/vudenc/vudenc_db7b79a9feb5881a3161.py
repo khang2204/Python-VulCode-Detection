@@ -1,0 +1,3 @@
+def get_datetime(date):...
+sliced_date = date[5:25]
+return datetime.datetime.strptime(sliced_date, '%d %b %Y %H:%M:%S')

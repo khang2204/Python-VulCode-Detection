@@ -1,0 +1,3 @@
+def startReconnecting(self, f):...
+print('ERROR: database connection is down (error: {0})'.format(f.value))
+return DeadConnectionDetector.startReconnecting(self, f)

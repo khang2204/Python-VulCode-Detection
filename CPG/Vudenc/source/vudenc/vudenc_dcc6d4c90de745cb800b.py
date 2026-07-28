@@ -1,0 +1,3 @@
+def _preset_exists(self, preset):...
+"""docstring"""
+return preset in self.sos_info['presets']

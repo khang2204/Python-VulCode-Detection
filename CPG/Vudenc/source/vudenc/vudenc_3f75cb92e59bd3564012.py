@@ -1,0 +1,3 @@
+def getMapSize(self):...
+assert self.initialised, 'Initialise the map from a file first!'
+return self.mapWidth, self.mapHeight

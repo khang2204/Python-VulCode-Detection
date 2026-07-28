@@ -1,0 +1,3 @@
+def current_user(self):...
+return {'email': 'unauthenticated user', 'first_name': 'unauthenticated',
+    'last_name': 'user'}

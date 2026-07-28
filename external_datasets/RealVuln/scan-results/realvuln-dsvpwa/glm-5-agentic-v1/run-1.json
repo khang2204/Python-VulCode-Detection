@@ -1,0 +1,407 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 39,
+        "col": 13,
+        "offset": 1000
+      },
+      "end": {
+        "line": 39,
+        "col": 104,
+        "offset": 1091
+      },
+      "extra": {
+        "message": "User-controlled 'id' parameter from request query string is directly concatenated into SQL query without sanitization. Attacker can inject arbitrary SQL to bypass authentication or extract data. Example payload: ?id=1 OR 1=1",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 289,
+        "col": 17,
+        "offset": 8000
+      },
+      "end": {
+        "line": 289,
+        "col": 97,
+        "offset": 8080
+      },
+      "extra": {
+        "message": "User-controlled 'username' and 'password' parameters are directly concatenated into SQL query without sanitization. Attacker can bypass authentication with payloads like: password=' OR '1'='1",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 165,
+        "col": 17,
+        "offset": 4800
+      },
+      "end": {
+        "line": 170,
+        "col": 34,
+        "offset": 5000
+      },
+      "extra": {
+        "message": "User-controlled 'domain' parameter from request is concatenated into shell command with shell=True. Attacker can execute arbitrary system commands via payload: ?domain=google.com;id",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.command-injection",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 183,
+        "col": 17,
+        "offset": 5000
+      },
+      "end": {
+        "line": 188,
+        "col": 34,
+        "offset": 5150
+      },
+      "extra": {
+        "message": "The do_BDR handler method executes self.path[1:] directly via subprocess.check_output with shell=True. The path comes from the HTTP request without any validation, allowing arbitrary command execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss-reflected",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 71,
+        "col": 9,
+        "offset": 1900
+      },
+      "end": {
+        "line": 77,
+        "col": 16,
+        "offset": 2050
+      },
+      "extra": {
+        "message": "User input from params.get('msg', '') is returned directly to the response without HTML escaping. Attacker can inject malicious JavaScript via ?msg=<script>alert('XSS')</script>",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.xss-stored",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 92,
+        "col": 13,
+        "offset": 2600
+      },
+      "end": {
+        "line": 98,
+        "col": 50,
+        "offset": 2800
+      },
+      "extra": {
+        "message": "Comments stored in the database are displayed without HTML escaping. Malicious JavaScript injected via ?comment=<script>alert('XSS')</script> will execute in all users' browsers who view the guestbook.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.insecure-deserialization",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 199,
+        "col": 13,
+        "offset": 5900
+      },
+      "end": {
+        "line": 199,
+        "col": 63,
+        "offset": 5950
+      },
+      "extra": {
+        "message": "pickle.loads() is called on base64-decoded user input from the 'object' parameter. Pickle deserialization of untrusted data allows arbitrary code execution. Attacker can craft a malicious pickle payload that executes commands on deserialization.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 209,
+        "col": 13,
+        "offset": 6150
+      },
+      "end": {
+        "line": 211,
+        "col": 51,
+        "offset": 6250
+      },
+      "extra": {
+        "message": "User-controlled 'path' parameter is passed to open() with os.path.abspath() which does not prevent directory traversal. Attacker can read arbitrary files via ?path=../../../etc/passwd",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 213,
+        "col": 17,
+        "offset": 6300
+      },
+      "end": {
+        "line": 213,
+        "col": 50,
+        "offset": 6333
+      },
+      "extra": {
+        "message": "User-controlled 'path' parameter containing '://' is passed to urllib.request.urlopen() allowing Server-Side Request Forgery. Attacker can make the server fetch internal resources via ?path=http://localhost/admin or access cloud metadata endpoints.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.open-redirect",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 118,
+        "col": 9,
+        "offset": 3400
+      },
+      "end": {
+        "line": 125,
+        "col": 26,
+        "offset": 3600
+      },
+      "extra": {
+        "message": "User-controlled 'path' parameter from URL is directly used in JavaScript redirect without validation. Attacker can redirect users to malicious sites via ?path=http://evil.com for phishing attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.session-fixation",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 229,
+        "col": 13,
+        "offset": 6700
+      },
+      "end": {
+        "line": 231,
+        "col": 40,
+        "offset": 6780
+      },
+      "extra": {
+        "message": "Session ID can be set directly from URL parameter ?session=ATTACKER_SESSION without validation. An attacker can fix a victim's session to a known value, enabling session hijacking.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-384: Session Fixation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.ssl",
+      "path": "dsvpwa.py",
+      "start": {
+        "line": 37,
+        "col": 13,
+        "offset": 1050
+      },
+      "end": {
+        "line": 39,
+        "col": 45,
+        "offset": 1150
+      },
+      "extra": {
+        "message": "SSL context explicitly disables security protections: SSLv3 is re-enabled (deprecated, vulnerable to POODLE), compression is enabled (vulnerable to CRIME attack), and cipher server preference is disabled. This weakens TLS security significantly.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm",
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.headers",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 237,
+        "col": 9,
+        "offset": 6600
+      },
+      "end": {
+        "line": 238,
+        "col": 68,
+        "offset": 6700
+      },
+      "extra": {
+        "message": "Response headers explicitly disable browser XSS protections: X-XSS-Protection is set to 0 and Content-Security-Policy allows 'unsafe-inline' scripts and all sources, removing defense-in-depth protections against XSS attacks.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration",
+            "CWE-693: Protection Mechanism Failure"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 322,
+        "col": 17,
+        "offset": 9200
+      },
+      "end": {
+        "line": 326,
+        "col": 54,
+        "offset": 9350
+      },
+      "extra": {
+        "message": "Email update operation via GET request lacks CSRF protection. An attacker can craft a malicious page that triggers this request, changing the victim's email address without their consent.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf",
+      "path": "dsvpwa/attacks.py",
+      "start": {
+        "line": 366,
+        "col": 21,
+        "offset": 10400
+      },
+      "end": {
+        "line": 368,
+        "col": 42,
+        "offset": 10500
+      },
+      "extra": {
+        "message": "Account deletion operation via GET request lacks CSRF protection. An attacker can create a malicious page that deletes the victim's account when visited, causing irreversible damage.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.path-traversal",
+      "path": "dsvpwa/handlers.py",
+      "start": {
+        "line": 116,
+        "col": 17,
+        "offset": 3200
+      },
+      "end": {
+        "line": 118,
+        "col": 46,
+        "offset": 3300
+      },
+      "extra": {
+        "message": "User-controlled path from URL is passed directly to open() without sanitization. The StaticHandler.find() method can be abused to read arbitrary files via /../../../etc/passwd style paths.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

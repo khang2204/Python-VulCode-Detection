@@ -1,0 +1,3 @@
+@classmethod...
+super(TestCommentCaseRuns, cls).setUpTestData()
+cls.many_comments_url = reverse('ajax-comment_case_runs')

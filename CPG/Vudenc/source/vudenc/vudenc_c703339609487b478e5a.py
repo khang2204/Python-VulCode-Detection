@@ -1,0 +1,3 @@
+def describe(self):...
+return 'release test the %s-th submission for task %s (ID %d)' % (self.
+    submission_num, self.task[1], self.task[0])

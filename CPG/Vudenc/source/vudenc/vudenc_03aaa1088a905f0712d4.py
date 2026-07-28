@@ -1,0 +1,3 @@
+def get_abstract_filename(self):...
+ext = self.filename.split('.')[-1]
+return f'document_{self.pk}.{ext}'

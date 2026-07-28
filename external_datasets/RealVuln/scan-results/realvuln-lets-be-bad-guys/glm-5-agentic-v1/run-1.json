@@ -1,0 +1,431 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 39,
+        "col": 5,
+        "offset": 1100
+      },
+      "end": {
+        "line": 42,
+        "col": 60,
+        "offset": 1250
+      },
+      "extra": {
+        "message": "User input from request.GET.get('p') is used directly in os.path.join() and then opened without validation. An attacker can use path traversal sequences (../) to read arbitrary files on the system, including sensitive configuration files like settings.py.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-execution",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 72,
+        "col": 9,
+        "offset": 1950
+      },
+      "end": {
+        "line": 72,
+        "col": 55,
+        "offset": 1996
+      },
+      "extra": {
+        "message": "User input from request.POST.get('first_name') is base64 decoded and passed directly to exec(). This allows arbitrary Python code execution on the server. An attacker can execute any Python code, potentially leading to full system compromise.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-execution",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 76,
+        "col": 13,
+        "offset": 2110
+      },
+      "end": {
+        "line": 76,
+        "col": 50,
+        "offset": 2147
+      },
+      "extra": {
+        "message": "User input from request.POST.get('first_name') is base64 decoded and passed directly to exec() in the Python 2 code path. This allows arbitrary Python code execution on the server.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 110,
+        "col": 5,
+        "offset": 2900
+      },
+      "end": {
+        "line": 110,
+        "col": 45,
+        "offset": 2940
+      },
+      "extra": {
+        "message": "User input from request.GET.get('qs') is passed to template without sanitization. The template at badguys/templates/vulnerable/xss/query.html:37 uses the 'safe' filter ({{qs|safe}}) which disables auto-escaping, allowing XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "badguys/templates/vulnerable/xss/query.html",
+      "start": {
+        "line": 37,
+        "col": 5,
+        "offset": 1200
+      },
+      "end": {
+        "line": 37,
+        "col": 25,
+        "offset": 1220
+      },
+      "extra": {
+        "message": "User-supplied data is rendered using the 'safe' filter which disables Django's auto-escaping. This allows attackers to inject arbitrary JavaScript. The value comes from request.GET.get('qs') in views.py:110.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 105,
+        "col": 5,
+        "offset": 2780
+      },
+      "end": {
+        "line": 105,
+        "col": 40,
+        "offset": 2815
+      },
+      "extra": {
+        "message": "User input from URL path parameter is passed to template without sanitization. The template at badguys/templates/vulnerable/xss/path.html:49 uses the 'safe' filter ({{path|safe}}) which disables auto-escaping, allowing XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "badguys/templates/vulnerable/xss/path.html",
+      "start": {
+        "line": 49,
+        "col": 5,
+        "offset": 1400
+      },
+      "end": {
+        "line": 49,
+        "col": 25,
+        "offset": 1420
+      },
+      "extra": {
+        "message": "User-supplied data from URL path is rendered using the 'safe' filter which disables Django's auto-escaping. This allows attackers to inject arbitrary JavaScript. The value comes from the path parameter in views.py:105.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 98,
+        "col": 5,
+        "offset": 2620
+      },
+      "end": {
+        "line": 98,
+        "col": 45,
+        "offset": 2660
+      },
+      "extra": {
+        "message": "User input from request.GET.get('qs') is passed to template without sanitization. The template at badguys/templates/vulnerable/xss/form.html:28 uses the 'safe' filter ({{qs|safe}}) which disables auto-escaping, allowing XSS attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.reflected",
+      "path": "badguys/templates/vulnerable/xss/form.html",
+      "start": {
+        "line": 28,
+        "col": 5,
+        "offset": 850
+      },
+      "end": {
+        "line": 28,
+        "col": 25,
+        "offset": 870
+      },
+      "extra": {
+        "message": "User-supplied data is rendered in an input value attribute using the 'safe' filter which disables Django's auto-escaping. This allows attackers to break out of the attribute and inject arbitrary HTML/JavaScript. The value comes from request.GET.get('qs') in views.py:98.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 128,
+        "col": 1,
+        "offset": 3300
+      },
+      "end": {
+        "line": 139,
+        "col": 70,
+        "offset": 3700
+      },
+      "extra": {
+        "message": "The dor_user_profile function allows access to any user's profile based solely on the userid parameter in the URL, without any authorization check to verify the requesting user has permission to access or modify that profile. An attacker can enumerate and modify other users' data by changing the userid value.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.missing",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 155,
+        "col": 1,
+        "offset": 4000
+      },
+      "end": {
+        "line": 159,
+        "col": 70,
+        "offset": 4150
+      },
+      "extra": {
+        "message": "Access to admin functionality is controlled only by a query parameter 'action=admin'. There is no authentication or authorization check. Any user can access the admin page by adding ?action=admin to the URL.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.protection-disabled",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 164,
+        "col": 1,
+        "offset": 4170
+      },
+      "end": {
+        "line": 167,
+        "col": 70,
+        "offset": 4300
+      },
+      "extra": {
+        "message": "The @csrf_exempt decorator disables Django's CSRF protection for this view, allowing cross-site request forgery attacks. An attacker can trick authenticated users into performing unwanted actions.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirect.open-redirect",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 176,
+        "col": 1,
+        "offset": 4370
+      },
+      "end": {
+        "line": 178,
+        "col": 25,
+        "offset": 4420
+      },
+      "extra": {
+        "message": "User input from request.GET.get('url') is used directly in redirect() without validation. This allows open redirect attacks that can be used for phishing campaigns or to bypass security checks that trust the redirect domain.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-execution",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 182,
+        "col": 5,
+        "offset": 4470
+      },
+      "end": {
+        "line": 186,
+        "col": 30,
+        "offset": 4580
+      },
+      "extra": {
+        "message": "User input from request.GET.get('fwd') is used to look up a function in globals() and then call it. This allows an attacker to call any function defined in the module, potentially leading to code execution or other malicious actions.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.secrets.hardcoded-secret",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 90,
+        "col": 1,
+        "offset": 2800
+      },
+      "end": {
+        "line": 90,
+        "col": 60,
+        "offset": 2859
+      },
+      "extra": {
+        "message": "Django SECRET_KEY is hardcoded in source code. This secret is used for cryptographic signing including session cookies, CSRF tokens, and password reset tokens. If compromised, an attacker can forge session cookies and bypass security mechanisms.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-enabled",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 10,
+        "col": 1,
+        "offset": 300
+      },
+      "end": {
+        "line": 10,
+        "col": 15,
+        "offset": 314
+      },
+      "extra": {
+        "message": "DEBUG mode is enabled (DEBUG = True). In production, this exposes detailed error messages, stack traces, and sensitive configuration information to users when errors occur. This can leak database credentials, API keys, and other sensitive data.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag",
+            "CWE-215: Insertion of Sensitive Information Into Debugging Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.middleware-disabled",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 102,
+        "col": 5,
+        "offset": 3200
+      },
+      "end": {
+        "line": 102,
+        "col": 40,
+        "offset": 3235
+      },
+      "extra": {
+        "message": "CSRF middleware (django.middleware.csrf.CsrfViewMiddleware) is commented out, disabling CSRF protection globally for the entire application. This leaves all POST forms vulnerable to cross-site request forgery attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

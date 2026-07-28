@@ -1,0 +1,305 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 320,
+        "col": 7,
+        "offset": 10250
+      },
+      "end": {
+        "line": 320,
+        "col": 88,
+        "offset": 10331
+      },
+      "extra": {
+        "message": "User input from the 'filter' argument is directly interpolated into a SQL string passed to sqlalchemy.text() without parameterization or sanitization. This allows SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command-injection",
+      "path": "core/views.py",
+      "start": {
+        "line": 211,
+        "col": 5,
+        "offset": 6800
+      },
+      "end": {
+        "line": 211,
+        "col": 48,
+        "offset": 6843
+      },
+      "extra": {
+        "message": "User-controlled scheme, host, port, and path arguments are formatted directly into a curl command string executed via os.popen(). In easy mode, no characters are stripped; in hard mode, only ';' and '&' are removed, which can be bypassed using subshells or newlines, leading to Remote Code Execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Command / OS Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.ssrf",
+      "path": "core/views.py",
+      "start": {
+        "line": 211,
+        "col": 5,
+        "offset": 6800
+      },
+      "end": {
+        "line": 211,
+        "col": 48,
+        "offset": 6843
+      },
+      "extra": {
+        "message": "The importPaste mutation allows users to specify arbitrary scheme, host, port, and path, and issues an HTTP request via curl on the server side. This can be used to scan internal ports and query internal endpoints (Server-Side Request Forgery).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command-injection-diagnostics",
+      "path": "core/views.py",
+      "start": {
+        "line": 345,
+        "col": 7,
+        "offset": 11100
+      },
+      "end": {
+        "line": 345,
+        "col": 35,
+        "offset": 11128
+      },
+      "extra": {
+        "message": "User-supplied parameter cmd is executed directly via os.popen() in helpers.run_cmd(). Since easy mode allows any command without checks, an attacker with valid or weak default credentials ('admin' / 'changeme') can execute arbitrary system commands.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Command / OS Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.os-command-injection-debug",
+      "path": "core/views.py",
+      "start": {
+        "line": 352,
+        "col": 7,
+        "offset": 11350
+      },
+      "end": {
+        "line": 352,
+        "col": 49,
+        "offset": 11392
+      },
+      "extra": {
+        "message": "User-supplied parameter arg is concatenated directly into a 'ps' shell command executed via os.popen(), allowing arbitrary command execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Command / OS Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.traversal.path-traversal",
+      "path": "core/helpers.py",
+      "start": {
+        "line": 25,
+        "col": 5,
+        "offset": 520
+      },
+      "end": {
+        "line": 25,
+        "col": 41,
+        "offset": 556
+      },
+      "extra": {
+        "message": "The save_file function opens WEB_UPLOADDIR + filename for writing without validating or sanitizing the filename. An attacker can write arbitrary files anywhere on the system using path traversal sequences (e.g., '../../').",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Path Traversal"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.jwt-bypass",
+      "path": "core/helpers.py",
+      "start": {
+        "line": 21,
+        "col": 3,
+        "offset": 410
+      },
+      "end": {
+        "line": 21,
+        "col": 95,
+        "offset": 502
+      },
+      "extra": {
+        "message": "The get_identity helper function decodes JWT tokens with verification disabled (options={'verify_signature': False}). This permits any client to forge arbitrary JWT payloads (e.g. administrator 'identity': 'admin') and bypass authentication controls.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-347: Improper Verification of Cryptographic Signature"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.auth.missing-authorization",
+      "path": "core/views.py",
+      "start": {
+        "line": 385,
+        "col": 3,
+        "offset": 12450
+      },
+      "end": {
+        "line": 389,
+        "col": 37,
+        "offset": 12595
+      },
+      "extra": {
+        "message": "The resolve_delete_all_pastes query resolver deletes all pastes from the database but performs no authentication or authorization checks, allowing any unauthenticated user to delete all application data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.stored",
+      "path": "core/views.py",
+      "start": {
+        "line": 121,
+        "col": 7,
+        "offset": 3500
+      },
+      "end": {
+        "line": 126,
+        "col": 8,
+        "offset": 3680
+      },
+      "extra": {
+        "message": "The createPaste mutation stores unsanitized user-controlled fields (title and content) directly into the database. These fields are subsequently rendered in the frontend without proper escaping, leading to stored Cross-Site Scripting (XSS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Cross-Site Scripting"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded-key",
+      "path": "app.py",
+      "start": {
+        "line": 14,
+        "col": 1,
+        "offset": 360
+      },
+      "end": {
+        "line": 15,
+        "col": 35,
+        "offset": 420
+      },
+      "extra": {
+        "message": "The application hardcodes SECRET_KEY and JWT_SECRET_KEY as 'dvga'. Hardcoding sensitive keys exposes the application to signature forgery and session hijacking if validation mechanisms were enabled.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.disclosure.verbose-errors",
+      "path": "core/view_override.py",
+      "start": {
+        "line": 52,
+        "col": 13,
+        "offset": 1550
+      },
+      "end": {
+        "line": 55,
+        "col": 84,
+        "offset": 1780
+      },
+      "extra": {
+        "message": "Custom GraphQL error formatting includes verbose tracebacks, execution stacks, and internal python source file paths in the 'extensions' field of the error response. This exposes sensitive internal system and application implementation details to the client.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Information Exposure Through an Error Message"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.dos.recursion-limit",
+      "path": "app.py",
+      "start": {
+        "line": 26,
+        "col": 3,
+        "offset": 610
+      },
+      "end": {
+        "line": 26,
+        "col": 30,
+        "offset": 637
+      },
+      "extra": {
+        "message": "The application increases Python's system recursion limit to 100,000 using sys.setrecursionlimit. This can allow deep recursion attacks (e.g. cyclic fragment queries) to cause a thread stack overflow and crash the server, causing a Denial of Service (DoS).",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

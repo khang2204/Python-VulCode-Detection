@@ -1,0 +1,3 @@
+@model.setter...
+self.__dict__['model'] = model
+self.base_field.model = model

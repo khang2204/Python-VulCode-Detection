@@ -1,0 +1,3 @@
+def __init__(self, controller):...
+self.controller = controller
+self._loaded = False

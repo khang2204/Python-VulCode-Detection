@@ -1,0 +1,3 @@
+def get(self):...
+"""docstring"""
+return database_utilities.execute_query('select * from admins')

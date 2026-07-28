@@ -1,0 +1,3 @@
+def modelSize(self):...
+"""docstring"""
+return self.getAdjacencyMatrix().count_nonzero()

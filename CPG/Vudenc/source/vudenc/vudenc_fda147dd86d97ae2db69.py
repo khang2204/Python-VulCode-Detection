@@ -1,0 +1,3 @@
+def __init__(self, name, event=None):...
+self._event = event
+self.name = name

@@ -1,0 +1,6 @@
+@api.route('/songs/<int:id>/related')...
+top = request.args.get('top')
+song = Song.query.filter_by(id=id).first()
+if not song:
+return route_not_found(song)
+return make_response(jsonify(song.get_related_songs_json(top)), 200)

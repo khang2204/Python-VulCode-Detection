@@ -1,0 +1,3 @@
+def hasTemplate(s):...
+"""docstring"""
+return '{' in s and '}' in s

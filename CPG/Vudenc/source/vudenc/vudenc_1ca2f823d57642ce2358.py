@@ -1,0 +1,3 @@
+def check_broken_symlink(self):...
+"""docstring"""
+if not self.exists and lstat(self.file):

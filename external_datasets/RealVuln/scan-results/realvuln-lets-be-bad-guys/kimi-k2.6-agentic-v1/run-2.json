@@ -1,0 +1,405 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.path-traversal",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 42,
+        "col": 9,
+        "offset": 1400
+      },
+      "end": {
+        "line": 42,
+        "col": 66,
+        "offset": 1457
+      },
+      "extra": {
+        "message": "User-controlled filename from request.GET.get('p') is joined with a base path and opened directly without sanitization, allowing path traversal attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.code-execution",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 72,
+        "col": 13,
+        "offset": 2100
+      },
+      "end": {
+        "line": 76,
+        "col": 45,
+        "offset": 2250
+      },
+      "extra": {
+        "message": "User input from request.POST.get('first_name') is base64 decoded and passed directly to exec(), allowing arbitrary Python code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.unsafe-template-filter",
+      "path": "badguys/templates/vulnerable/xss/query.html",
+      "start": {
+        "line": 37,
+        "col": 5,
+        "offset": 1200
+      },
+      "end": {
+        "line": 37,
+        "col": 36,
+        "offset": 1231
+      },
+      "extra": {
+        "message": "User input from request.GET.get('qs') is rendered with the '|safe' filter in a JavaScript context, disabling Django's auto-escaping and allowing XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.unsafe-template-filter",
+      "path": "badguys/templates/vulnerable/xss/path.html",
+      "start": {
+        "line": 49,
+        "col": 1,
+        "offset": 1500
+      },
+      "end": {
+        "line": 49,
+        "col": 33,
+        "offset": 1532
+      },
+      "extra": {
+        "message": "URL path parameter is rendered with the '|safe' filter in a JavaScript context, disabling Django's auto-escaping and allowing XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.unsafe-template-filter",
+      "path": "badguys/templates/vulnerable/xss/form.html",
+      "start": {
+        "line": 28,
+        "col": 5,
+        "offset": 1100
+      },
+      "end": {
+        "line": 28,
+        "col": 66,
+        "offset": 1161
+      },
+      "extra": {
+        "message": "User input from request.GET.get('qs') is rendered with the '|safe' filter in an HTML input value attribute, disabling Django's auto-escaping and allowing XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xss.unsafe-template-filter",
+      "path": "badguys/templates/vulnerable/csrf/image.html",
+      "start": {
+        "line": 48,
+        "col": 1,
+        "offset": 1700
+      },
+      "end": {
+        "line": 48,
+        "col": 27,
+        "offset": 1726
+      },
+      "extra": {
+        "message": "User input from request.GET.get('qs') is rendered with the '|safe' filter in a JavaScript context, disabling Django's auto-escaping and allowing XSS.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.redirect.open-redirect",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 178,
+        "col": 5,
+        "offset": 5200
+      },
+      "end": {
+        "line": 178,
+        "col": 24,
+        "offset": 5219
+      },
+      "extra": {
+        "message": "User input from request.GET.get('url') is passed directly to redirect() without validation, allowing open redirect attacks.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access.unsafe-reflection",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 183,
+        "col": 5,
+        "offset": 5400
+      },
+      "end": {
+        "line": 186,
+        "col": 28,
+        "offset": 5500
+      },
+      "extra": {
+        "message": "User input from request.GET.get('fwd') is used to look up and call arbitrary functions via globals().get(), allowing unsafe reflection and bypass of URL routing.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access.missing-authorization",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 157,
+        "col": 5,
+        "offset": 4700
+      },
+      "end": {
+        "line": 158,
+        "col": 67,
+        "offset": 4800
+      },
+      "extra": {
+        "message": "Admin interface is exposed based solely on a query string parameter (action=admin) without any authentication or authorization checks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-862: Missing Authorization"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access.insecure-direct-object-reference",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 128,
+        "col": 1,
+        "offset": 4000
+      },
+      "end": {
+        "line": 139,
+        "col": 63,
+        "offset": 4200
+      },
+      "extra": {
+        "message": "User profile data is retrieved and modified using a user-supplied userid parameter without any authentication or authorization checks, allowing IDOR attacks.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.csrf.disabled-middleware",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 102,
+        "col": 5,
+        "offset": 3500
+      },
+      "end": {
+        "line": 102,
+        "col": 47,
+        "offset": 3542
+      },
+      "extra": {
+        "message": "django.middleware.csrf.CsrfViewMiddleware is commented out in MIDDLEWARE_CLASSES, disabling CSRF protection for the entire application.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.secrets.hardcoded-secret",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 90,
+        "col": 1,
+        "offset": 3100
+      },
+      "end": {
+        "line": 90,
+        "col": 74,
+        "offset": 3173
+      },
+      "extra": {
+        "message": "Django SECRET_KEY is hardcoded in source code, exposing the cryptographic secret.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-enabled",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 10,
+        "col": 1,
+        "offset": 200
+      },
+      "end": {
+        "line": 10,
+        "col": 15,
+        "offset": 214
+      },
+      "extra": {
+        "message": "DEBUG is set to True, which exposes detailed error pages and sensitive application information.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.debug-toolbar-exposed",
+      "path": "badguys/settings.py",
+      "start": {
+        "line": 180,
+        "col": 1,
+        "offset": 5200
+      },
+      "end": {
+        "line": 185,
+        "col": 15,
+        "offset": 5350
+      },
+      "extra": {
+        "message": "show_toolbar() enables the Django Debug Toolbar based on user-controlled request parameters (GET, POST, or cookies), exposing debug information.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-16: Configuration"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.disclosure.error-message",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 44,
+        "col": 9,
+        "offset": 1500
+      },
+      "end": {
+        "line": 49,
+        "col": 31,
+        "offset": 1650
+      },
+      "extra": {
+        "message": "Different error messages are returned based on filename prefix ('/' vs '..' vs other), leaking file access validation logic to attackers.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Information Exposure Through an Error Message"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.config.missing-httponly-cookie",
+      "path": "badguys/vulnerable/views.py",
+      "start": {
+        "line": 100,
+        "col": 5,
+        "offset": 3300
+      },
+      "end": {
+        "line": 100,
+        "col": 66,
+        "offset": 3361
+      },
+      "extra": {
+        "message": "Cookie 'monster' is set without the HttpOnly flag, making it accessible to client-side scripts and increasing the impact of XSS attacks.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

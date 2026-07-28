@@ -1,0 +1,3 @@
+def test_edit_missing_new_info(self):...
+"""docstring"""
+tournament.editPlayer(new_name='Joan Jett')

@@ -1,0 +1,3 @@
+def test_getinfo_string(self):...
+value = self.cnxn.getinfo(pyodbc.SQL_CATALOG_NAME_SEPARATOR)
+self.assertTrue(isinstance(value, str))

@@ -1,0 +1,3 @@
+def _builtin_pwd(self, name):...
+wd = os.getcwd()
+print(wd)

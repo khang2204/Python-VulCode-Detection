@@ -1,0 +1,3 @@
+@cached_property...
+"""docstring"""
+return self.fields + self.virtual_fields

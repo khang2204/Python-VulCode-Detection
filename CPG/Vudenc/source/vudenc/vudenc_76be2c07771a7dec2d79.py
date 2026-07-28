@@ -1,0 +1,3 @@
+def check_xsrf_cookie(self) ->bool:...
+"""docstring"""
+return True

@@ -1,0 +1,555 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection.register",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 22,
+        "col": 21,
+        "offset": 620
+      },
+      "end": {
+        "line": 23,
+        "col": 29,
+        "offset": 810
+      },
+      "extra": {
+        "message": "User-controlled input from request.get_json()['username'] is directly concatenated into an SQL INSERT statement via f-string and executed with db.session.execute(). An attacker can inject arbitrary SQL to create admin users, insert backdoor records, or exfiltrate data.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.login",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 36,
+        "col": 13,
+        "offset": 1050
+      },
+      "end": {
+        "line": 37,
+        "col": 52,
+        "offset": 1120
+      },
+      "extra": {
+        "message": "User-controlled input from request.get_json()['username'] is directly concatenated into an SQL SELECT statement via f-string and executed with db.session.execute(). An attacker can bypass authentication by injecting SQL like ' OR 1=1 -- to log in as any user, or extract sensitive data from the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.get-transactions",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 47,
+        "col": 1,
+        "offset": 1300
+      },
+      "end": {
+        "line": 50,
+        "col": 40,
+        "offset": 1600
+      },
+      "extra": {
+        "message": "User-controlled input from request.args['user_id'] is directly concatenated into an SQL SELECT statement via f-string and executed with db.session.execute(). The default value is current_user.id, but an attacker can supply any user_id query parameter to inject SQL and extract arbitrary data from the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.search-transactions",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 93,
+        "col": 12,
+        "offset": 2700
+      },
+      "end": {
+        "line": 95,
+        "col": 40,
+        "offset": 3050
+      },
+      "extra": {
+        "message": "User-controlled input from request.args['description'] is directly concatenated into an SQL LIKE clause via f-string and executed with db.session.execute(). An attacker can inject SQL to bypass the sender_id/receiver_id filter and access any user's transactions, or extract arbitrary data from the database.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.insecure-yaml-load",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 157,
+        "col": 24,
+        "offset": 4700
+      },
+      "end": {
+        "line": 157,
+        "col": 68,
+        "offset": 4745
+      },
+      "extra": {
+        "message": "yaml.load() is called with Loader=yaml.Loader (the full/unsafe loader) on user-supplied YAML data from request.get_json()['profile_yaml']. This allows arbitrary Python object instantiation via YAML tags like !!python/object/apply:, enabling remote code execution. The safe alternative is yaml.safe_load() or yaml.load(data, Loader=yaml.SafeLoader).",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor-update-password",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 141,
+        "col": 1,
+        "offset": 4200
+      },
+      "end": {
+        "line": 148,
+        "col": 50,
+        "offset": 4450
+      },
+      "extra": {
+        "message": "The /api/update-password endpoint accepts a user_id from the request body and changes that user's password without verifying that user_id matches the authenticated current_user.id. Any authenticated user can change any other user's password, leading to full account takeover.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor-get-transactions",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 47,
+        "col": 1,
+        "offset": 1300
+      },
+      "end": {
+        "line": 51,
+        "col": 36,
+        "offset": 1530
+      },
+      "extra": {
+        "message": "The /api/transactions endpoint accepts a user_id query parameter that defaults to current_user.id but can be set to any user's ID. There is no authorization check to verify the authenticated user is allowed to view the specified user's transactions. Any authenticated user can view any other user's transaction history.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash-md5-password-set",
+      "path": "backend/models.py",
+      "start": {
+        "line": 24,
+        "col": 9,
+        "offset": 620
+      },
+      "end": {
+        "line": 24,
+        "col": 60,
+        "offset": 672
+      },
+      "extra": {
+        "message": "MD5 (hashlib.md5) is used to hash passwords in User.set_password(). MD5 is cryptographically broken and unsuitable for password hashing: it is fast to compute (enabling brute-force attacks), vulnerable to collision attacks, and lacks salting. A password hashing function like bcrypt, scrypt, or argon2 should be used instead.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash-md5-password-check",
+      "path": "backend/models.py",
+      "start": {
+        "line": 27,
+        "col": 9,
+        "offset": 720
+      },
+      "end": {
+        "line": 27,
+        "col": 74,
+        "offset": 786
+      },
+      "extra": {
+        "message": "MD5 (hashlib.md5) is used to verify passwords in User.check_password(). MD5 is cryptographically broken and unsuitable for password hashing: it is fast to compute (enabling brute-force attacks), vulnerable to collision attacks, and lacks salting. A password hashing function like bcrypt, scrypt, or argon2 should be used instead.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.crypto.weak-hash-md5-register",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 21,
+        "col": 5,
+        "offset": 590
+      },
+      "end": {
+        "line": 21,
+        "col": 60,
+        "offset": 645
+      },
+      "extra": {
+        "message": "MD5 (hashlib.md5) is used to hash the password in the register endpoint before inserting it into the database. MD5 is cryptographically broken and unsuitable for password hashing. This is a redundant and inconsistent implementation that does not use the model's set_password method, which has the same vulnerability but at least centralizes password handling.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded-secret-key",
+      "path": "backend/app.py",
+      "start": {
+        "line": 16,
+        "col": 1,
+        "offset": 320
+      },
+      "end": {
+        "line": 16,
+        "col": 46,
+        "offset": 366
+      },
+      "extra": {
+        "message": "Flask SECRET_KEY is hardcoded as 'supersecret' in the application configuration. This key is used for cryptographically signing session cookies. If an attacker discovers this value, they can forge Flask sessions. The secret should be loaded from an environment variable or a secure secrets manager.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded-jwt-secret-verify",
+      "path": "backend/auth.py",
+      "start": {
+        "line": 23,
+        "col": 28,
+        "offset": 650
+      },
+      "end": {
+        "line": 23,
+        "col": 38,
+        "offset": 660
+      },
+      "extra": {
+        "message": "JWT secret key is hardcoded as 'secret' in jwt.decode(). This key is used to verify the authenticity of all JWT tokens. An attacker who discovers this value can forge valid JWT tokens for any user, bypassing authentication entirely. The secret should be loaded from an environment variable or a secure secrets manager.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded-jwt-secret-sign",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 48,
+        "col": 13,
+        "offset": 1450
+      },
+      "end": {
+        "line": 48,
+        "col": 23,
+        "offset": 1460
+      },
+      "extra": {
+        "message": "JWT secret key is hardcoded as 'secret' in jwt.encode(). This is the same hardcoded secret used in auth.py for token verification. An attacker who discovers this value can forge valid JWT tokens for any user, bypassing authentication entirely. The secret should be loaded from an environment variable or a secure secrets manager.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded-secret-docker",
+      "path": "docker-compose.yml",
+      "start": {
+        "line": 15,
+        "col": 9,
+        "offset": 260
+      },
+      "end": {
+        "line": 15,
+        "col": 30,
+        "offset": 282
+      },
+      "extra": {
+        "message": "The Flask SECRET_KEY is hardcoded as 'supersecret' in the docker-compose.yml environment configuration. This exposes the secret in version control and deployment files. Secrets should be injected via secure environment variable management or a secrets manager, not committed to source control.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.insecure-cors",
+      "path": "backend/app.py",
+      "start": {
+        "line": 48,
+        "col": 1,
+        "offset": 960
+      },
+      "end": {
+        "line": 56,
+        "col": 18,
+        "offset": 1240
+      },
+      "extra": {
+        "message": "The after_request handler reflects any request Origin header back in Access-Control-Allow-Origin with Access-Control-Allow-Credentials set to true. This allows any website to make authenticated cross-origin requests to this API, enabling CSRF attacks and data exfiltration. Only trusted, explicitly whitelisted origins should be allowed.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-942: Permissive Cross-domain Policy with Untrusted Domains"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.debug-mode-enabled",
+      "path": "backend/app.py",
+      "start": {
+        "line": 228,
+        "col": 1,
+        "offset": 6800
+      },
+      "end": {
+        "line": 228,
+        "col": 52,
+        "offset": 6852
+      },
+      "extra": {
+        "message": "Flask is run with debug=True, which enables the Werkzeug interactive debugger. When combined with host='0.0.0.0' (binding to all network interfaces), this exposes a remote code execution endpoint to anyone who can reach the server. The debugger allows executing arbitrary Python code via the browser.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.misconfiguration.bind-all-interfaces",
+      "path": "backend/app.py",
+      "start": {
+        "line": 228,
+        "col": 25,
+        "offset": 6825
+      },
+      "end": {
+        "line": 228,
+        "col": 40,
+        "offset": 6840
+      },
+      "extra": {
+        "message": "The application binds to host='0.0.0.0', which makes it accessible on all network interfaces including potentially untrusted networks. Combined with debug=True, this exposes the interactive debugger to all network-accessible hosts. The application should bind to 127.0.0.1 in development or use a proper WSGI server in production.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-1327: Binding to an Unrestricted IP Address"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-exposure.sensitive-profile-data",
+      "path": "backend/routes/auth_routes.py",
+      "start": {
+        "line": 95,
+        "col": 9,
+        "offset": 2850
+      },
+      "end": {
+        "line": 95,
+        "col": 44,
+        "offset": 2886
+      },
+      "extra": {
+        "message": "The /api/me endpoint returns the full user profile via current_user.get_profile(), which includes highly sensitive data such as Social Security Numbers (SSN), dates of birth, and full addresses. The /api/profile endpoint correctly redacts SSN and DOB, but /api/me does not. Sensitive fields like SSN should never be returned in API responses.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-exposure.error-404-details",
+      "path": "backend/app.py",
+      "start": {
+        "line": 67,
+        "col": 1,
+        "offset": 1260
+      },
+      "end": {
+        "line": 68,
+        "col": 46,
+        "offset": 1310
+      },
+      "extra": {
+        "message": "The 404 error handler returns str(error) directly in the JSON response, which may include internal URL patterns, handler names, or other implementation details that assist attackers in understanding the application's structure.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.information-exposure.error-500-details",
+      "path": "backend/app.py",
+      "start": {
+        "line": 70,
+        "col": 1,
+        "offset": 1320
+      },
+      "end": {
+        "line": 73,
+        "col": 50,
+        "offset": 1380
+      },
+      "extra": {
+        "message": "The 500 error handler returns str(error) directly in the JSON response after rolling back the session. This may expose internal exception details, database error messages, stack trace information, or SQL queries that assist attackers in understanding the application's internals and crafting targeted attacks.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.input-validation.missing-amount-validation",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 14,
+        "col": 5,
+        "offset": 380
+      },
+      "end": {
+        "line": 34,
+        "col": 32,
+        "offset": 990
+      },
+      "extra": {
+        "message": "The /api/transfer endpoint does not validate that the transfer amount is a positive number. A negative amount would pass the balance check (e.g., 5000.00 < -100.00 is False), causing the sender's balance to increase and the receiver's balance to decrease, effectively stealing money from the recipient. A zero amount would create meaningless transactions.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.race-condition.toctou-transfer",
+      "path": "backend/routes/transaction_routes.py",
+      "start": {
+        "line": 30,
+        "col": 5,
+        "offset": 850
+      },
+      "end": {
+        "line": 37,
+        "col": 32,
+        "offset": 1060
+      },
+      "extra": {
+        "message": "The balance check (line 30) and the balance modification (lines 33-34) are not atomic. With SQLite autocommit mode enabled (isolation_level=None in app.py line 23), concurrent transfer requests can both pass the balance check before either transaction commits, allowing spending beyond the account balance. This is a Time-of-Check-Time-of-Use (TOCTOU) race condition.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-367: Time-of-Check Time-of-Use Race Condition"
+          ],
+          "confidence": "MEDIUM",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

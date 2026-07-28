@@ -1,0 +1,3 @@
+def wait(self):...
+self.first.wait()
+self.second.wait()

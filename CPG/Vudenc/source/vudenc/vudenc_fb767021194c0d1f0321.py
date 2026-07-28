@@ -1,0 +1,3 @@
+def get_mails_by_tag(self, tag, page=1, window=100):...
+tags = 'tag:%s' % tag
+return self.search(tags, page, window)

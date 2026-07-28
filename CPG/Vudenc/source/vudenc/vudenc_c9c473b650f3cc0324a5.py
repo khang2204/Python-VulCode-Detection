@@ -1,0 +1,3 @@
+def test_delete_invalid_player_id(self):...
+"""docstring"""
+tournament.deletePlayer(player='38471237401238')

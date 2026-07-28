@@ -1,0 +1,3 @@
+def hello():...
+hostname = socket.getfqdn()
+return '# munin node at ' + hostname + LINEBREAK

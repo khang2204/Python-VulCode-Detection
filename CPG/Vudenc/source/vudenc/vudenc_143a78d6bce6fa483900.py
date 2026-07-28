@@ -1,0 +1,3 @@
+def extract_single_keywords(skw_db, fulltext):...
+"""docstring"""
+return keyworder.get_single_keywords(skw_db, fulltext) or {}

@@ -1,0 +1,3 @@
+def get_sender(this):...
+return db.GqlQuery('SELECT * FROM LoginInformation WHERE user_id = :1',
+    this.created_by_id).get()

@@ -1,0 +1,4 @@
+def connect(addr, timeout):...
+server = create_server(addr)
+client, _ = server.accept()
+return Connection(client, server)

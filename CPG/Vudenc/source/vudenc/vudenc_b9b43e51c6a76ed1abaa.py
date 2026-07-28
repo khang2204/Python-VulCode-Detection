@@ -1,0 +1,3 @@
+def redirect(self, url):...
+self.setResponseCode(302)
+self.setHeader(b'location', url)

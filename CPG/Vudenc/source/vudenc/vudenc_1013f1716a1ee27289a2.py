@@ -1,0 +1,3 @@
+def purchase_by_product_id(self, product_id, quantity):...
+product = self.find_product_by_id(product_id)
+self._purchase_by_product(product, quantity)

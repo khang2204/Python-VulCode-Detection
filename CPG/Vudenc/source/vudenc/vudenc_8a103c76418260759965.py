@@ -1,0 +1,3 @@
+def mock_get_current_identity(self, ident):...
+"""docstring"""
+self.mock(handler.api, 'get_current_identity', lambda : ident)

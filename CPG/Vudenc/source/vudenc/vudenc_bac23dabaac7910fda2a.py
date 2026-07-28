@@ -1,0 +1,3 @@
+@handle_html...
+out = await mazemap.test(request)
+return out

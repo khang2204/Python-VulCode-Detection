@@ -1,0 +1,3 @@
+def toJSON(self):...
+return {'name': self.name, 'children': [child.toJSON() for child in self.
+    children], 'options': self.options}

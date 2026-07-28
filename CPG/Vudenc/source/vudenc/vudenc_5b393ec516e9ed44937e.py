@@ -1,0 +1,3 @@
+def is_unlocked(self):...
+"""docstring"""
+return not self._lock.acquired

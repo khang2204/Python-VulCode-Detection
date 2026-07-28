@@ -1,0 +1,3 @@
+def csv_upload_path(instance, filename):...
+name = '{0}/{1}'.format(instance.fs_id, filename)
+return name

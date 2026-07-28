@@ -1,0 +1,3 @@
+def is_passed(model):...
+entry, _, _, _ = cached_points.find(model)
+return entry['passed']

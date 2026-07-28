@@ -1,0 +1,3 @@
+def get_branches_info(repo_path: str) ->str:...
+"""docstring"""
+return shell(f'git -C {repo_path} branch -a')

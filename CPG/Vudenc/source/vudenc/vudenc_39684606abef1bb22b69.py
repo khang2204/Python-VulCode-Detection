@@ -1,0 +1,3 @@
+def set_log_handler(handler):...
+"""docstring"""
+_handler = handler

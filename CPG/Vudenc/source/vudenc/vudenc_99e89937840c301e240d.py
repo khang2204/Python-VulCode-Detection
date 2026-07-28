@@ -1,0 +1,3 @@
+def moveTick(self):...
+for ID in self.actors.keys():
+self.actors[ID].moveTick()

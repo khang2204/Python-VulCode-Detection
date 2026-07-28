@@ -1,0 +1,15 @@
+def test_poll_server_restart(self):...
+restart = []
+bit = threading.Event()
+self.mock(bit, 'wait', self.fail)
+self.mock(bot_main, 'run_manifest', self.fail)
+self.mock(bot_main, 'update_bot', self.fail)
+self.mock(self.bot, 'restart', lambda *args: restart.append(args))
+self.expected_requests([(
+    'https://localhost:1/auth/api/v1/accounts/self/xsrf_token', {'data': {},
+    'headers': {'X-XSRF-Token-Request': '1'}}, {'xsrf_token': 'token'}), (
+    'https://localhost:1/swarming/api/v1/bot/poll', {'data': self.
+    attributes, 'headers': {'X-XSRF-Token': 'token'}}, {'cmd': 'restart',
+    'message': 'Please die now'})])
+self.assertTrue(bot_main.poll_server(self.bot, bit))
+self.assertEqual([('Please die now',)], restart)

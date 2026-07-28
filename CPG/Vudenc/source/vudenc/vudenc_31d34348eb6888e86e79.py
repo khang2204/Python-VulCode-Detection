@@ -1,0 +1,3 @@
+def logout(self):...
+"""docstring"""
+self.session.get('https://www.kijiji.ca/m-logout.html')

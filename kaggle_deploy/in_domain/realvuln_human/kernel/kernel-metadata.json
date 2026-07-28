@@ -1,0 +1,15 @@
+{
+  "id": "khangtrn2/realvuln-human-pag-vul-binary-training",
+  "title": "RealVuln Human PAG-Vul Binary Training",
+  "code_file": "run_realvuln_human_binary.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "khangtrn2/realvuln-human-pagvul-binary-assets"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

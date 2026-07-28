@@ -1,0 +1,3 @@
+def get_contents(view):...
+contents = view.substr(sublime.Region(0, self.view.size()))
+return contents

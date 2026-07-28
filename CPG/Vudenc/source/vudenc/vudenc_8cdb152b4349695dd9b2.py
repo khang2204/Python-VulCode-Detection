@@ -1,0 +1,3 @@
+def post(self):...
+LogoutHandler.post(self)
+self.get('You logged out')

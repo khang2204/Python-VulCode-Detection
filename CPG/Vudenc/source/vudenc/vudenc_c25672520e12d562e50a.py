@@ -1,0 +1,3 @@
+def set_path(new_path):...
+"""docstring"""
+path = new_path

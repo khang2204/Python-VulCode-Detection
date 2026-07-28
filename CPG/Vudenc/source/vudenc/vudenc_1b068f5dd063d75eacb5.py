@@ -1,0 +1,3 @@
+@app.route('/api/sequences/<id>/start', methods=['POST'])...
+controller.sequences_runner.run(id)
+return controller.sequences.lookup(id).to_map()

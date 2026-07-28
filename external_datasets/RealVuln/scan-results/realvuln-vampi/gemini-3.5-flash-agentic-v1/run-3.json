@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "models/user_model.py",
+      "start": {
+        "line": 72,
+        "col": 13,
+        "offset": 2402
+      },
+      "end": {
+        "line": 73,
+        "col": 57,
+        "offset": 2536
+      },
+      "extra": {
+        "message": "User input from the 'username' parameter is directly interpolated into a SQL string and executed via db.session.execute(). This allows SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.bola.broken-object-level-authorization",
+      "path": "api_views/books.py",
+      "start": {
+        "line": 50,
+        "col": 9,
+        "offset": 1857
+      },
+      "end": {
+        "line": 51,
+        "col": 75,
+        "offset": 1986
+      },
+      "extra": {
+        "message": "Retrieving a book by title does not check if the currently authenticated user is the owner of the book, allowing any logged-in user to read anyone else's book secrets.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+def getConfig():...
+registry = getUtility(IRegistry)
+return registry.forInterface(ISolrSchema, prefix='collective.solr')

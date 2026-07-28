@@ -1,0 +1,3 @@
+@user_passes_test(user_is_superuser)...
+context = context_testcases()
+return render(request, 'testcases/testcases.html', context)

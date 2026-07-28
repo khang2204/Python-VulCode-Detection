@@ -1,0 +1,280 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection",
+      "path": "app/app.py",
+      "start": {
+        "line": 261,
+        "col": 21,
+        "offset": 7430
+      },
+      "end": {
+        "line": 265,
+        "col": 55,
+        "offset": 7710
+      },
+      "extra": {
+        "message": "User input from request.json['search'] is concatenated directly into SQL string and executed using db.engine.execute(). This allows SQL injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.jwt.insecure-jwt-verification",
+      "path": "app/app.py",
+      "start": {
+        "line": 96,
+        "col": 1,
+        "offset": 2341
+      },
+      "end": {
+        "line": 99,
+        "col": 15,
+        "offset": 2426
+      },
+      "extra": {
+        "message": "The insecure_verify function decodes JWT tokens with verify=False and unconditionally returns True, allowing users to bypass JWT signature validation and authenticate with arbitrary tokens.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-347: Improper Verification of Cryptographic Signature"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti-404",
+      "path": "app/app.py",
+      "start": {
+        "line": 101,
+        "col": 1,
+        "offset": 2429
+      },
+      "end": {
+        "line": 114,
+        "col": 88,
+        "offset": 2728
+      },
+      "extra": {
+        "message": "The error handler for 404 uses render_template_string on a template string where user-supplied request.url is directly interpolated. This allows Server-Side Template Injection (SSTI) which can lead to Remote Code Execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.ssti-exception",
+      "path": "app/app.py",
+      "start": {
+        "line": 271,
+        "col": 21,
+        "offset": 7895
+      },
+      "end": {
+        "line": 281,
+        "col": 105,
+        "offset": 8274
+      },
+      "extra": {
+        "message": "The exception handler inside /search uses render_template_string with an interpolated exception message str(e). This allows Server-Side Template Injection (SSTI) leading to Remote Code Execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.deserialization.yaml-load",
+      "path": "app/app.py",
+      "start": {
+        "line": 329,
+        "col": 13,
+        "offset": 9474
+      },
+      "end": {
+        "line": 329,
+        "col": 25,
+        "offset": 9486
+      },
+      "extra": {
+        "message": "Using yaml.load() on untrusted input without specifying a safe loader allows deserialization of arbitrary Python objects, leading to arbitrary code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor-fetch",
+      "path": "app/app.py",
+      "start": {
+        "line": 207,
+        "col": 17,
+        "offset": 5464
+      },
+      "end": {
+        "line": 214,
+        "col": 47,
+        "offset": 5837
+      },
+      "extra": {
+        "message": "The /fetch/customer endpoint retrieves customer details by database ID passed directly from the client JSON body without verifying if the authenticated user has authorization to access the requested customer record.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Instance-Based Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.access-control.idor-get",
+      "path": "app/app.py",
+      "start": {
+        "line": 230,
+        "col": 13,
+        "offset": 6211
+      },
+      "end": {
+        "line": 237,
+        "col": 47,
+        "offset": 6606
+      },
+      "extra": {
+        "message": "The /get/<cust_id> endpoint retrieves and returns customer records using the provided customer ID without authorization checks, allowing any user to view any customer's details.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-639: Instance-Based Access Control"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.credentials.hardcoded-secrets",
+      "path": "app/app.py",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 673
+      },
+      "end": {
+        "line": 28,
+        "col": 48,
+        "offset": 811
+      },
+      "extra": {
+        "message": "Sensitive secrets like SECRET_KEY_HMAC and Flask's secret_key are hardcoded in the application configuration.",
+        "severity": "INFO",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hardcoded Credentials"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cryptography.weak-hash-md5",
+      "path": "app/app.py",
+      "start": {
+        "line": 141,
+        "col": 13,
+        "offset": 3619
+      },
+      "end": {
+        "line": 141,
+        "col": 57,
+        "offset": 3663
+      },
+      "extra": {
+        "message": "Passwords are hashed using MD5, which is a weak and compromised hashing algorithm vulnerable to collision attacks and rapid brute-forcing.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cryptography.plaintext-passwords",
+      "path": "app/app.py",
+      "start": {
+        "line": 161,
+        "col": 13,
+        "offset": 4323
+      },
+      "end": {
+        "line": 161,
+        "col": 82,
+        "offset": 4392
+      },
+      "extra": {
+        "message": "Customer registration saves user passwords in plaintext directly to the database without any hashing, violating secure credential storage principles.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-256: Plaintext Storage of a Password"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.xml.xxe-docx",
+      "path": "app/app.py",
+      "start": {
+        "line": 303,
+        "col": 9,
+        "offset": 8746
+      },
+      "end": {
+        "line": 305,
+        "col": 29,
+        "offset": 8870
+      },
+      "extra": {
+        "message": "Uploading and parsing .docx documents via docx.Document uses underlying parser libraries that may process external entity references, leading to XML External Entity (XXE) vulnerabilities.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

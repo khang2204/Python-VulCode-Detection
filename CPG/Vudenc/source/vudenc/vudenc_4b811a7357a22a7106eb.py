@@ -1,0 +1,3 @@
+def on_back_button_clicked(self, button):...
+self.databases_to_save.clear()
+self.quit_dialog.destroy()

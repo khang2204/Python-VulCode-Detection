@@ -1,0 +1,3 @@
+def get_output(command: str) ->bytes:...
+"""docstring"""
+return subprocess.check_output(command.split())

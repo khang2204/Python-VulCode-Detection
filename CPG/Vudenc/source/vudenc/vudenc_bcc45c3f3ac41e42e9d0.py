@@ -1,0 +1,3 @@
+def fastboot_call(*args):...
+arg_str = ' '.join(str(elem) for elem in args)
+return arg_str

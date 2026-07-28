@@ -1,0 +1,3 @@
+def __init__(self, compileddoc, startingpath):...
+self._doc = compileddoc
+self._root = startingpath

@@ -1,0 +1,3 @@
+def render_GET(self, request):...
+request.setResponseCode(OK)
+return self._render_template(request)

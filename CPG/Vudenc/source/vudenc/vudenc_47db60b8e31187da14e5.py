@@ -1,0 +1,3 @@
+def test_non_applicable(self):...
+request = webapp2.Request({})
+self.assertIsNone(handler.service_to_service_authentication(request))

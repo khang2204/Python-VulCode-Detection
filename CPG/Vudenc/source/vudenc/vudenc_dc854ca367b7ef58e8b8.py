@@ -1,0 +1,3 @@
+def get_by_slug(self, entity_class, slug):...
+cache = self.__cache_map[entity_class]
+return cache.get_by_slug(slug)

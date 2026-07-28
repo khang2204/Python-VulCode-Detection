@@ -1,0 +1,48 @@
+{
+  "architecture": "QDENN",
+  "protocol": "long_tail",
+  "source": "vudenc",
+  "target": "vudenc",
+  "training_seed": 101,
+  "split_seed": 101,
+  "evaluation_scope": "fixed_test_split_101",
+  "train_samples": 11088,
+  "validation_samples": 2376,
+  "test_samples": 2376,
+  "source_manifest_sha256": "3b1a00d932dc923a329e9cbd95ced03d1b9218e40b7a0e6ba8e402ce048805ea",
+  "configuration": {
+    "vocabulary": 128,
+    "qubits": 7,
+    "max_length": 100,
+    "epochs": 10,
+    "batch_size": 32,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "fidelity_note": "Learning rate is not reported by the source paper; 0.01 is the declared reproduction choice."
+  },
+  "metrics": {
+    "accuracy": 0.8333333333333334,
+    "balanced_accuracy": 0.5669669706155724,
+    "precision": 0.6190476190476191,
+    "recall": 0.1543942992874109,
+    "f1": 0.24714828897338403,
+    "vulnerable_recall": 0.1543942992874109
+  },
+  "long_tail": {
+    "rare_cwes": [
+      "VUDENC-TYPE-2",
+      "VUDENC-TYPE-3",
+      "VUDENC-TYPE-6",
+      "VUDENC-TYPE-7"
+    ],
+    "rare_test_samples": 131,
+    "rare_cwe_vulnerable_recall": 0.1679389327764511,
+    "common_cwes": [
+      "VUDENC-TYPE-1",
+      "VUDENC-TYPE-4",
+      "VUDENC-TYPE-5"
+    ],
+    "common_test_samples": 290,
+    "common_cwe_vulnerable_recall": 0.14827586710453033
+  }
+}

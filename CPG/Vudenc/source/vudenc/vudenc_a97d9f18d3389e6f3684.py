@@ -1,0 +1,3 @@
+def set_dhcp_hostname(self, hostname):...
+"""docstring"""
+return None

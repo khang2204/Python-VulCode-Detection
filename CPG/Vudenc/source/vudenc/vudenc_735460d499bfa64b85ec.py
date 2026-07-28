@@ -1,0 +1,3 @@
+def getDjangoURLPatterns():...
+"""docstring"""
+return ROLE_MODELS_URL_PATTERNS

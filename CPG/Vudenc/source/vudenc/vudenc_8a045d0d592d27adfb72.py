@@ -1,0 +1,3 @@
+def _DoCSS(self, template):...
+self._WriteHeader('text/css')
+self._WriteTemplate(template)

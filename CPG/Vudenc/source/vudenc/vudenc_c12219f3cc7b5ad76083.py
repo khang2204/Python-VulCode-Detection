@@ -1,0 +1,3 @@
+def flatten(self, name):...
+return [FlattenedColumn(name, column.name, Array(column.type)) for column in
+    self.nested_columns]

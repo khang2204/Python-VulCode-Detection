@@ -1,0 +1,3 @@
+def get_tile_json(name, tiles, bounds):...
+return {'tilejson': '2.1.0', 'name': name, 'version': '1.0.0', 'scheme':
+    'tms', 'tiles': tiles, 'minzoom': 0, 'maxzoom': 22, 'bounds': bounds}

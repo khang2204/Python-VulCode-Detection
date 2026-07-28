@@ -1,0 +1,3 @@
+def __init__(self):...
+self.__connection = mysql.connect(**conf.DATABASE)
+self.cursor = self.__connection.cursor()

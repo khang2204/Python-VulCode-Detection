@@ -1,0 +1,3 @@
+@classmethod...
+routes = cls.routes or [cls.navbar_tab_url]
+return [webapp2.Route(r, cls) for r in routes]

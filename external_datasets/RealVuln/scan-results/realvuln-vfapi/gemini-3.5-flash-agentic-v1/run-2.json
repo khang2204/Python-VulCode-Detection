@@ -1,0 +1,155 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.security.injection.sql-injection.select",
+      "path": "main.py",
+      "start": {
+        "line": 181,
+        "col": 1,
+        "offset": 5101
+      },
+      "end": {
+        "line": 183,
+        "col": 16,
+        "offset": 5259
+      },
+      "extra": {
+        "message": "User input from 'username' parameter is formatted directly into a SQL query string. This leads to SQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.put-user",
+      "path": "main.py",
+      "start": {
+        "line": 188,
+        "col": 1,
+        "offset": 5371
+      },
+      "end": {
+        "line": 204,
+        "col": 14,
+        "offset": 5918
+      },
+      "extra": {
+        "message": "User attributes from the User model are concatenated directly into the INSERT SQL statement, leading to SQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.delete-username",
+      "path": "main.py",
+      "start": {
+        "line": 229,
+        "col": 1,
+        "offset": 6702
+      },
+      "end": {
+        "line": 232,
+        "col": 26,
+        "offset": 6909
+      },
+      "extra": {
+        "message": "The 'username' query parameter is concatenated directly into the SQL query string in DELETE, allowing SQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.sql-injection.delete-address",
+      "path": "main.py",
+      "start": {
+        "line": 233,
+        "col": 1,
+        "offset": 6910
+      },
+      "end": {
+        "line": 235,
+        "col": 93,
+        "offset": 7087
+      },
+      "extra": {
+        "message": "The 'user.address' attribute from the request body is concatenated directly into the SQL statement, leading to SQL Injection.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-89: SQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.injection.nosql-injection.post-find",
+      "path": "main.py",
+      "start": {
+        "line": 222,
+        "col": 1,
+        "offset": 6464
+      },
+      "end": {
+        "line": 225,
+        "col": 31,
+        "offset": 6597
+      },
+      "extra": {
+        "message": "The entire raw JSON body is passed directly as a query selector to get_nosql_users (MontyDB/MongoDB client), allowing NoSQL Injection via query operators like $ne.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": [
+            "CWE-943: NoSQL Injection"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    },
+    {
+      "check_id": "python.security.cryptography.weak-hash.md5",
+      "path": "main.py",
+      "start": {
+        "line": 187,
+        "col": 1,
+        "offset": 5311
+      },
+      "end": {
+        "line": 187,
+        "col": 59,
+        "offset": 5370
+      },
+      "extra": {
+        "message": "MD5 is a cryptographically broken hashing function and should not be used to hash sensitive data such as user passwords.",
+        "severity": "WARNING",
+        "metadata": {
+          "cwe": [
+            "CWE-328: Use of Weak Cryptographic Hash"
+          ],
+          "confidence": "HIGH",
+          "category": "security"
+        }
+      }
+    }
+  ]
+}

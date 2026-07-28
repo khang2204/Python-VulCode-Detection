@@ -1,0 +1,3 @@
+def save_model(self, request, obj, form, change):...
+create_check_cve_task(obj)
+super().save_model(request, obj, form, change)

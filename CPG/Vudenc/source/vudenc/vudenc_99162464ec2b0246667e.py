@@ -1,0 +1,3 @@
+def go_to_directory(self, directory_id):...
+directory_id = db.select('directory', 'id = ' + directory_id)[0]['id']
+self.path.append(directory_id)

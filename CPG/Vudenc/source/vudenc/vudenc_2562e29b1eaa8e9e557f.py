@@ -1,0 +1,3 @@
+def token_session_key(remote_app):...
+"""docstring"""
+return '%s_%s' % (cfg['OAUTHCLIENT_SESSION_KEY_PREFIX'], remote_app)

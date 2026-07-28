@@ -1,0 +1,3 @@
+def printAll(self):...
+baddies = self.fetch()
+return ' '.join(baddies)

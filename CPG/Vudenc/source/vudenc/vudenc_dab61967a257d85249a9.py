@@ -1,0 +1,3 @@
+def __iter__(self):...
+"""docstring"""
+return iter(self.parts)

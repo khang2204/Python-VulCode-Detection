@@ -1,0 +1,3 @@
+def populate_ancestors(self):...
+for group in self.groups:
+self.add_group(group)

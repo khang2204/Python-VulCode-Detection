@@ -1,0 +1,3 @@
+def __eq__(self, other):...
+f = other._file if isinstance(other, _IOFile) else other
+return self._file == f

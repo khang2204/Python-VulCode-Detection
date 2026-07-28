@@ -1,0 +1,3 @@
+def __bytes__(self):...
+"""docstring"""
+return self.to_bytes()

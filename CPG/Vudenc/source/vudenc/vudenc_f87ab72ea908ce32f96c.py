@@ -1,0 +1,3 @@
+@rest_utils.ajax()...
+"""docstring"""
+return api.nova.flavor_get_extras(request, flavor_id, raw=True)

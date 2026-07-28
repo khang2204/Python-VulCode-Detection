@@ -1,0 +1,3 @@
+async def on_member_remove(self, member):...
+for callback in self.on_member_remove_callbacks:
+await callback(member)

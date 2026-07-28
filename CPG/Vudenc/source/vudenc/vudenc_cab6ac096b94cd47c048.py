@@ -1,0 +1,3 @@
+def __init__(self, base, redirections):...
+self.base = base
+self.redirections = redirections

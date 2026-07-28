@@ -1,0 +1,6 @@
+@contextlib.contextmanager...
+if self.closed:
+result = {'msg': None}
+def match(msg):...
+result['msg'] = msg
+return msg.type == 'event' and msg.event == event

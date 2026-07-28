@@ -1,0 +1,3 @@
+def decode_hexed_b64_to_str(data):...
+return base64.b64decode(binascii.unhexlify(data.encode('utf-8'))).decode(
+    'utf-8')

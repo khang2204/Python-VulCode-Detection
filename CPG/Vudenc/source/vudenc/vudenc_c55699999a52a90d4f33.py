@@ -1,0 +1,3 @@
+async def test_show_leaders(test_client):...
+text = await _get(test_client, '/leaders')
+assert text == '0'

@@ -1,0 +1,3 @@
+def test_nosec(self):...
+expect = {'SEVERITY': {}, 'CONFIDENCE': {}}
+self.check_example('nosec.py', expect)

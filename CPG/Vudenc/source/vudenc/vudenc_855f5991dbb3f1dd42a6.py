@@ -1,0 +1,3 @@
+def __gt__(self, rule):...
+comp = self.workflow._ruleorder.compare(self, rule)
+return comp > 0

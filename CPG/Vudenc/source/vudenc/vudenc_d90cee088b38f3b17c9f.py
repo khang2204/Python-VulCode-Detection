@@ -1,0 +1,3 @@
+def remove(self):...
+tag = Tag.objects.get(name=self.tag_name)
+self.obj.remove_tag(tag)

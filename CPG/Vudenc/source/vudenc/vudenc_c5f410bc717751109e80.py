@@ -1,0 +1,3 @@
+def prepare(self):...
+"""docstring"""
+self.sql_session = SQL_Session()

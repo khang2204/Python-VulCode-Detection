@@ -1,0 +1,3 @@
+@data((' ', ''), ('\n  2019-02-20\n', '2019-02-20'), ('2019-02-20',...
+output_string = clean_pub_date(input_string)
+self.assertEqual(desired_string, output_string)
